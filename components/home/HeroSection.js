@@ -50,12 +50,14 @@ export default function HeroSection() {
             Precision-engineered components for mobility, infrastructure, and
             OEM supply.
           </p>
-          <Link
+          <a
             href="https://prem-sheet-metal.vercel.app"
+            target="_blank"
+            rel="noreferrer"
             className="card-link"
           >
             Visit
-          </Link>
+          </a>
         </div>
 
         <div className="hero-card accent-green">
@@ -64,12 +66,14 @@ export default function HeroSection() {
             High-volume plastic parts with tight tolerances for consumer and
             industrial use.
           </p>
-          <Link
+          <a
             href="https://injection-molding-peach.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
             className="card-link"
           >
             Visit
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -248,16 +252,10 @@ export default function HeroSection() {
           border-left: 4px solid #26b36b;
         }
 
-        .accent-red .card-link {
-          color: #f04b4f;
-        }
-
-        .accent-blue .card-link {
-          color: #3a5ce5;
-        }
-
+        .accent-red .card-link,
+        .accent-blue .card-link,
         .accent-green .card-link {
-          color: #26b36b;
+          color: #f04b4f;
         }
 
         @media (max-width: 768px) {
