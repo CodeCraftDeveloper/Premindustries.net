@@ -1,0 +1,216 @@
+export default function Clients() {
+  return (
+    <section
+      className="faq-funfact-section mt-3"
+      style={{ paddingTop: "100px" }}
+    >
+      <div className="container">
+        <div className="fun-fact-wrapper text-white text-center">
+          <div className="row">
+            <div className="col-md-12 mb-4">
+              <h2 className="text-white" style={{ fontSize: "40px" }}>
+                OUR CLIENTS
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div className="faq-wrapper mb-5 pb-0">
+          <div className="row">
+            <div className="col-lg-12 col-12 col-xl-12 pe-lg-0">
+              <div className="faq-content shadow-lg">
+                <div className="faq-accordion">
+                  <div className="accordion" id="accordion">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <ul>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            HAIER APPLIANCES (INDIA) PVT LTD
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            SYMPHONY LIMITED
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            AMBER ENTERPRISES INDIA LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            POLYCAB INDIA PRIVATE LIMITED
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            MINI METRO EV LLP
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            EASTERN BEARINGS PVT. LTD
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            PURSHOTOM PROFILE PVT. LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            RM COMPONENTS
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="col-md-6">
+                        <ul>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            EPACK POLYMERS PVT. LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            RELIABLE BARREL PVT. LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            FILTECH
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            RANA MATERIAL HANDELING EQUIPMENT PVT. LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            MAHESHWARI ELECTRICALS MFRS PVT. LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            STROLLER MOUNTING SYSTEMS PVT. LTD.
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            VIJAY SHREE STELL INDUSTRIES
+                          </li>
+                          <li
+                            style={{
+                              fontSize: "17px",
+                              fontWeight: 800,
+                              color: "#14254C",
+                            }}
+                            className="mb-1"
+                          >
+                            RADISH TECNOLOGIES
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div
+                        className="col-md-12"
+                        style={{
+                          textAlign: "right",
+                          fontSize: "20px",
+                          fontWeight: 800,
+                          color: "#14254C",
+                        }}
+                      >
+                        and many more...
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
