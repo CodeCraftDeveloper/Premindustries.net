@@ -42,7 +42,7 @@ const HeaderTwo = () => {
                 </Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link href="/">
+                    <Link href="https://prempackaging.com/">
                       Packaging <br />
                       Sector{" "}
                       <i
@@ -50,11 +50,6 @@ const HeaderTwo = () => {
                         style={{ fontSize: "14px" }}
                       ></i>
                     </Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <Link href="/flexible-division">FLEXIBLE DIVISION</Link>
-                      </li>
-                    </ul>
                   </li>
 
                   <li>
@@ -77,6 +72,11 @@ const HeaderTwo = () => {
                         <ul className="sub-menu">
                           <li>
                             <Link href="https://prem-sheet-metal.vercel.app">
+                              Sheet Metal
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href="/sheet-metal-components">
                               Sheet Metal Components
                             </Link>
                           </li>
@@ -115,6 +115,16 @@ const HeaderTwo = () => {
                         </ul>
                       </li>
                     </ul>
+                  </li>
+                  <li>
+                    <Link href="https://injection-molding-peach.vercel.app/">
+                      Moulding <br />
+                      Sector{" "}
+                      <i
+                        className="fa-solid fa-chevron-right"
+                        style={{ fontSize: "14px" }}
+                      ></i>
+                    </Link>
                   </li>
 
                   <li>

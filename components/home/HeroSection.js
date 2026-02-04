@@ -32,8 +32,7 @@ export default function HeroSection() {
         <div className="hero-card accent-red">
           <h3>Packaging Solutions</h3>
           <p>
-            Rigid to flexible packaging for FMCG, retail, and industrial
-            brands.
+            Rigid to flexible packaging for FMCG, retail, and industrial brands.
           </p>
           <a
             href="https://prempackaging.com/"
@@ -51,7 +50,10 @@ export default function HeroSection() {
             Precision-engineered components for mobility, infrastructure, and
             OEM supply.
           </p>
-          <Link href="/sheet-metal-components" className="card-link">
+          <Link
+            href="https://prem-sheet-metal.vercel.app"
+            className="card-link"
+          >
             Visit
           </Link>
         </div>
@@ -62,7 +64,10 @@ export default function HeroSection() {
             High-volume plastic parts with tight tolerances for consumer and
             industrial use.
           </p>
-          <Link href="/contact" className="card-link">
+          <Link
+            href="https://injection-molding-peach.vercel.app/"
+            className="card-link"
+          >
             Visit
           </Link>
         </div>
