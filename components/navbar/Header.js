@@ -76,7 +76,7 @@ const HeaderTwo = () => {
                         </Link>
                         <ul className="sub-menu">
                           <li>
-                            <Link href="/sheet-metal-components">
+                            <Link href="https://prem-sheet-metal.vercel.app">
                               Sheet Metal Components
                             </Link>
                           </li>

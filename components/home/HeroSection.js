@@ -30,11 +30,11 @@ export default function HeroSection() {
 
       <div className="container hero-cards">
         <div className="hero-card accent-red">
-          <div className="card-icon" aria-hidden="true">
-            P
-          </div>
           <h3>Packaging Solutions</h3>
-          <p>Rigid to flexible packaging for FMCG &amp; industrial use.</p>
+          <p>
+            Rigid to flexible packaging for FMCG, retail, and industrial
+            brands.
+          </p>
           <a
             href="https://prempackaging.com/"
             target="_blank"
@@ -46,12 +46,10 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-card accent-blue">
-          <div className="card-icon" aria-hidden="true">
-            S
-          </div>
           <h3>Sheet Metal Fabrication</h3>
           <p>
-            Precision-engineered components for mobility and infrastructure.
+            Precision-engineered components for mobility, infrastructure, and
+            OEM supply.
           </p>
           <Link href="/sheet-metal-components" className="card-link">
             Visit
@@ -59,11 +57,11 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-card accent-green">
-          <div className="card-icon" aria-hidden="true">
-            I
-          </div>
           <h3>Injection Moulding</h3>
-          <p>High-volume plastic parts with tight tolerances.</p>
+          <p>
+            High-volume plastic parts with tight tolerances for consumer and
+            industrial use.
+          </p>
           <Link href="/contact" className="card-link">
             Visit
           </Link>
@@ -72,6 +70,8 @@ export default function HeroSection() {
 
       <style jsx>{`
         .hero-home {
+          width: 100%;
+          padding: 60px 0 80px;
           position: relative;
           overflow: hidden;
           color: #ffffff;
@@ -109,7 +109,8 @@ export default function HeroSection() {
 
         .hero-text {
           color: #ffffff;
-          max-width: 640px;
+          width: 100%;
+          max-width: 100%;
           text-align: left;
           margin: 0;
           padding: 0;
@@ -127,7 +128,7 @@ export default function HeroSection() {
           margin: 0;
           padding: 0;
           text-transform: uppercase;
-          max-width: 520px;
+          max-width: 100%;
         }
 
         .hero-lead {
@@ -188,6 +189,8 @@ export default function HeroSection() {
           display: flex;
           flex-direction: column;
           gap: 10px;
+          text-align: center;
+          align-items: center;
         }
 
         .hero-card h3 {
@@ -216,7 +219,6 @@ export default function HeroSection() {
 
         .card-link {
           margin-top: auto;
-          color: #f04b4f;
           font-weight: 700;
           text-transform: none;
           display: inline-flex;
@@ -239,6 +241,18 @@ export default function HeroSection() {
 
         .accent-green {
           border-left: 4px solid #26b36b;
+        }
+
+        .accent-red .card-link {
+          color: #f04b4f;
+        }
+
+        .accent-blue .card-link {
+          color: #3a5ce5;
+        }
+
+        .accent-green .card-link {
+          color: #26b36b;
         }
 
         @media (max-width: 768px) {
