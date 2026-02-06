@@ -488,7 +488,7 @@ export default function HeroTwo() {
           height: 44px;
           border-radius: 50%;
           background: rgba(11, 60, 160, 0.08);
-          color: #ffffff;
+          color: #000000;
           display: grid;
           place-items: center;
           flex-shrink: 0;

@@ -65,6 +65,7 @@ export default function LogoIntro({ onComplete = () => {} }) {
     const MAX_SCROLL = window.innerHeight * 1.4;
 
     const WHEEL_STRENGTH = 0.18; // slower + smoother
+    const TOUCH_STRENGTH = 0.28; // touch needs a bit more
     const MAX_VELOCITY = 18;
     const FRICTION = 0.92; // tuned for high-refresh feel
 
@@ -127,8 +128,53 @@ export default function LogoIntro({ onComplete = () => {} }) {
 
     window.addEventListener("wheel", onWheel, { passive: false });
 
+    let touchActive = false;
+    let lastTouchY = 0;
+
+    const onTouchStart = (e) => {
+      if (finishedRef.current) return;
+      if (!e.touches || e.touches.length === 0) return;
+      touchActive = true;
+      lastTouchY = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e) => {
+      if (finishedRef.current) return;
+      if (!touchActive || !e.touches || e.touches.length === 0) return;
+      e.preventDefault();
+
+      const currentY = e.touches[0].clientY;
+      const delta = lastTouchY - currentY; // swipe up -> positive
+      lastTouchY = currentY;
+
+      velocityRef.current += delta * TOUCH_STRENGTH;
+      velocityRef.current = Math.max(
+        -MAX_VELOCITY,
+        Math.min(MAX_VELOCITY, velocityRef.current),
+      );
+
+      if (!running) {
+        running = true;
+        lastTime = performance.now();
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    const onTouchEnd = () => {
+      touchActive = false;
+    };
+
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
     return () => {
       window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
       cancelAnimationFrame(rafRef.current);
       document.body.style.overflow = prevOverflow || "";
       document.body.style.overscrollBehavior = prevOverscroll || "";
