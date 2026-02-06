@@ -1,6 +1,24 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function CorporateVideo() {
   return (
-    <>
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeUp}
+    >
       <style jsx>{`
         .video-outer {
           max-width: 1200px;
@@ -70,6 +88,6 @@ export default function CorporateVideo() {
           </video>
         </div>
       </div>
-    </>
+    </motion.section>
   );
 }

@@ -1,8 +1,12 @@
 import Head from "next/head";
+import { useState } from "react";
+import LogoIntro from "@/components/common/LogoIntro";
 // import Home from "../components/frontpage/index";
 import HomeContent from "../components/home/index";
 
 export default function FrontPage() {
+  const [showIntro, setShowIntro] = useState(true);
+
   return (
     <>
       <Head>
@@ -28,7 +32,40 @@ export default function FrontPage() {
           `}
         </script>
       </Head>
-      <HomeContent />
+      {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
+      <div className={`intro-shell${showIntro ? " intro-active" : ""}`}>
+        <HomeContent />
+      </div>
+
+      <style jsx>{`
+        .intro-shell :global(.hero-text) {
+          animation: heroTextFadeUp 0.7s ease-out both;
+        }
+
+        .intro-shell.intro-active :global(.hero-text) {
+          opacity: 0;
+          transform: translateY(18px);
+          animation: none;
+          pointer-events: none;
+        }
+
+        @keyframes heroTextFadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(18px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .intro-shell :global(.hero-text) {
+            animation: none;
+          }
+        }
+      `}</style>
     </>
   );
 }

@@ -1,8 +1,25 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function Clients() {
   return (
-    <section
+    <motion.section
       className="faq-funfact-section mt-3"
       style={{ paddingTop: "100px" }}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeUp}
     >
       <div className="container">
         <div className="fun-fact-wrapper text-white text-center">
@@ -211,6 +228,6 @@ export default function Clients() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

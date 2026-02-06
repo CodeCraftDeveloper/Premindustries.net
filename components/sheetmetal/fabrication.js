@@ -1,8 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function FabricationProcess() {
   return (
-    <div className="container text-center pt-2">
+    <motion.section
+      className="container text-center pt-2"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeUp}
+    >
       <h1 className="text-center" style={{ fontSize: "40px" }}>
         SHEET METAL FABRICATION PROCESS
       </h1>
@@ -17,6 +35,6 @@ export default function FabricationProcess() {
           width={2200}
         />
       </div>
-    </div>
+    </motion.section>
   );
 }

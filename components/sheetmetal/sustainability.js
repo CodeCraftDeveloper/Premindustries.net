@@ -1,9 +1,27 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function SustainabilitySection() {
   return (
     <>
-      <section className="about-section pb-5 wow fadeInLeft animated">
+      <motion.section
+        className="about-section pb-5 wow fadeInLeft animated"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-7 mt-3 mt-lg-0 col-12">
@@ -63,7 +81,7 @@ export default function SustainabilitySection() {
         <h2 className="section-rotate-title-sustainability d-none d-xxl-block">
           GREEN
         </h2>
-      </section>
+      </motion.section>
     </>
   );
 }

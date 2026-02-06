@@ -51,7 +51,7 @@ export default function HeroSection() {
             OEM supply.
           </p>
           <a
-            href="https://prem-sheet-metal.vercel.app"
+            href="/sheet-metal-components"
             target="_blank"
             rel="noreferrer"
             className="card-link"

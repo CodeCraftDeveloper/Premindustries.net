@@ -317,17 +317,39 @@ h6 {
   line-height: 145%;
 }
 
-a {
-  text-decoration: none;
-  font-weight: 600;
-  outline: none !important;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 28px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  color: #14254c;
-}
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    outline: none !important;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 28px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    color: #14254c;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: #e92227;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(233, 34, 39, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 260px;
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(233, 34, 39, 0.45);
+  }
 
 p {
   margin: 0px;

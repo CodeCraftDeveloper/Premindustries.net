@@ -8,6 +8,7 @@ import WorkSectionBody from "./WorkSectionBody";
 import SustainabilitySection from "./SustainabilitySection";
 import InnovationSection from "./InnovationSection";
 import CounterSection from "./CounterSection";
+import { motion } from "framer-motion";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
@@ -24,21 +25,75 @@ export default function HomeTwoClient() {
 
   return (
     <>
-      <HeroSection />
-      <AboutSection
-        subhead="About"
-        head="Prem Industries India Limited"
-        text1="Goel Group's foundation was laid in 1975 by the Chairman Mr. Ved Prakash Goel. Goel Group is now a diversified organization in India with focus on B2B sector. It has created a big footprint in northern India with a portfolio comprising from packaging, steel, retail and construction as the main drivers of growth. Headquartered in Uttar Pradesh, India, it has positioned itself to be the North Indian market leader in packaging and steel trading businesses focusing on large scale development in the region with O&M practices benchmarked to global standards."
-        btnClass="theme-btn mt-35"
-        btnText="read more"
-        verticalText="ABOUT"
-      />
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <HeroSection />
+      </motion.section>
 
-      <WorkSectionHead />
-      <WorkSectionBody />
-      <SustainabilitySection />
-      <InnovationSection />
-      <CounterSection />
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <AboutSection
+          subhead="About"
+          head="Prem Industries India Limited"
+          text1="Goel Group's foundation was laid in 1975 by the Chairman Mr. Ved Prakash Goel. Goel Group is now a diversified organization in India with focus on B2B sector. It has created a big footprint in northern India with a portfolio comprising from packaging, steel, retail and construction as the main drivers of growth. Headquartered in Uttar Pradesh, India, it has positioned itself to be the North Indian market leader in packaging and steel trading businesses focusing on large scale development in the region with O&M practices benchmarked to global standards."
+          btnClass="theme-btn mt-35"
+          btnText="read more"
+          verticalText="ABOUT"
+        />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <WorkSectionHead />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <WorkSectionBody />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <SustainabilitySection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <InnovationSection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <CounterSection />
+      </motion.section>
 
       {/* Popup (uncomment to enable)
       {showPopup && (
