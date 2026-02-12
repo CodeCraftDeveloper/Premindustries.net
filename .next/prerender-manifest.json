@@ -1,11 +1,25 @@
 {
   "version": 4,
-  "routes": {},
+  "routes": {
+    "/": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/1SNA8bvcGb0HG_N-SX1UR/index.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "62dd9572b2216e489c56baaa78079bbf",
-    "previewModeSigningKey": "3e44f4869849895a466c2155bf28338b8e6143cfd3ac50877601d39757bc98e8",
-    "previewModeEncryptionKey": "249efa80819b1e044c9ec2134204eae7235e693ec69e347c9d9fa05d672427cc"
+    "previewModeId": "69ca78a01d88a3462d8b7bbe3911224e",
+    "previewModeSigningKey": "b949eaef1f30d01b563df4494c9e2f51e58846c56e84ec19f81392046d089d70",
+    "previewModeEncryptionKey": "f69ae20ddac18718b7675ceea1660c6c4a2d76ea04aa4edd58df3da6739631dd"
   }
 }

@@ -65,7 +65,7 @@ export default function InjectionAdvantages() {
     <section className="advantages-section">
       <div className="advantages-intro">
         <div className="advantages-intro-text">
-          <p className="advantages-kicker">This Isn't Just a Machine</p>
+          <p className="advantages-kicker">This Isn&apos;t Just a Machine</p>
           <h2 className="advantages-title">
             It&apos;s Speed, Precision, and Creativity Coming Together to Shape
             the Products of Tomorrow
