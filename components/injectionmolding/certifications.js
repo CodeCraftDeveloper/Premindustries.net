@@ -5,22 +5,22 @@ import Image from "next/image";
 const certs = [
   {
     alt: "Injection molding certificate 1",
-    src: "/injectionmolding/injection%20Certificate%201.png",
+    src: "/injectionmolding/injectionCertificate1.png",
     label: "ISO 14001:2015",
   },
   {
     alt: "Injection molding certificate 2",
-    src: "/injectionmolding/injection%20Certificate%202.png",
+    src: "/injectionmolding/injectionCertificate2.png",
     label: "Certificate of Registration",
   },
   {
     alt: "Injection molding certificate 3",
-    src: "/injectionmolding/injection%20Certificate%203.png",
+    src: "/injectionmolding/injectionCertificate3.png",
     label: "ISO 9001:2015",
   },
   {
     alt: "Injection molding certificate 4",
-    src: "/injectionmolding/injection%20Certificate%204.png",
+    src: "/injectionmolding/injectionCertificate4.png",
     label: "Certificate of Registration",
   },
 ];

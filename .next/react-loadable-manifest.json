@@ -1,20 +1,20 @@
 {
   "components\\footer\\PlantsMap.js -> leaflet": {
-    "id": 6895,
+    "id": "components\\footer\\PlantsMap.js -> leaflet",
     "files": [
-      "static/chunks/25f4ac2a.a5a4fd43f90f4d79.js"
+      "static/chunks/_pages-dir-browser_node_modules_leaflet_dist_leaflet-src_js.js"
     ]
   },
   "node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
-    "id": 57,
+    "id": "node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
     "files": [
-      "static/chunks/57.268c8c590d7f2802.js"
+      "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__app_js.js"
     ]
   },
   "node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
-    "id": 4100,
+    "id": "node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
     "files": [
-      "static/chunks/100.dbdf1ef205c72caf.js"
+      "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__error_js.js"
     ]
   }
 }

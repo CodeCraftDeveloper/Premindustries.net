@@ -1,18 +1,8 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/about": "pages/about.html",
-  "/contact": "pages/contact.html",
-  "/clients": "pages/clients.html",
-  "/404": "pages/404.html",
-  "/ctl-machine": "pages/ctl-machine.html",
-  "/injectionmoulding": "pages/injectionmoulding.html",
-  "/press-shop": "pages/press-shop.html",
-  "/shearing-machine": "pages/shearing-machine.html",
-  "/privacy-policy": "pages/privacy-policy.html",
-  "/sheet-metal-components": "pages/sheet-metal-components.html",
-  "/terms-and-conditions": "pages/terms-and-conditions.html",
-  "/slitting-machine": "pages/slitting-machine.html",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js"
+  "/_document": "pages/_document.js",
+  "/injectionmoulding": "pages/injectionmoulding.js",
+  "/": "pages/index.js",
+  "/sheet-metal-components": "pages/sheet-metal-components.js"
 }

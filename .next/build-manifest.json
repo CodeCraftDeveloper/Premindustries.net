@@ -1,123 +1,42 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills-42372ed130431b0a.js"
+    "static/chunks/polyfills.js"
   ],
-  "devFiles": [],
+  "devFiles": [
+    "static/chunks/react-refresh.js"
+  ],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/1SNA8bvcGb0HG_N-SX1UR/_buildManifest.js",
-    "static/1SNA8bvcGb0HG_N-SX1UR/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "rootMainFilesTree": {},
   "pages": {
     "/": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/473-502af816570fded4.js",
-      "static/chunks/pages/index-06a6d86984894f57.js"
-    ],
-    "/404": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/404-0272bfe3d2978c74.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
     ],
     "/_app": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/css/84e7c96971a82d59.css",
-      "static/chunks/pages/_app-2ebc404ebb271aa3.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_app.js"
     ],
     "/_error": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/pages/_error-435383ee38403da9.js"
-    ],
-    "/about": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/473-502af816570fded4.js",
-      "static/chunks/pages/about-bc7ba0f558e6ff1d.js"
-    ],
-    "/clients": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/clients-abee5b06b8b1fa06.js"
-    ],
-    "/contact": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/contact-a78e1d3bacbf6d1f.js"
-    ],
-    "/ctl-machine": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/ctl-machine-696f9fe2101d9c55.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_error.js"
     ],
     "/injectionmoulding": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/493-68b8f479fa6b504b.js",
-      "static/chunks/pages/injectionmoulding-daafd09f6ab6e22c.js"
-    ],
-    "/press-shop": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/press-shop-94c2b04434f876de.js"
-    ],
-    "/privacy-policy": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/privacy-policy-45b5e03fa1bfec6b.js"
-    ],
-    "/shearing-machine": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/shearing-machine-2128678346f5d642.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/injectionmoulding.js"
     ],
     "/sheet-metal-components": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/493-68b8f479fa6b504b.js",
-      "static/chunks/pages/sheet-metal-components-c781a4866828794c.js"
-    ],
-    "/slitting-machine": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/slitting-machine-122a32984b17b4d3.js"
-    ],
-    "/terms-and-conditions": [
-      "static/chunks/webpack-f1650eecf3c5cf26.js",
-      "static/chunks/framework-7c95b8e5103c9e90.js",
-      "static/chunks/main-48988c7ee807f547.js",
-      "static/chunks/29-1400d6a28b0e57ce.js",
-      "static/chunks/pages/terms-and-conditions-f652eab486da255d.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/sheet-metal-components.js"
     ]
   },
   "ampFirstPages": []
