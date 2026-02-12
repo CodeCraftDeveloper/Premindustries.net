@@ -41,9 +41,9 @@ export default function AboutSection() {
             </p>
             <p className="about-copy">
               Our entry into injection molding represents the next chapter in
-              our growth story&mdash;one where we combine decades of manufacturing
-              excellence with cutting-edge technology to deliver solutions that
-              drive industries forward.
+              our growth story&mdash;one where we combine decades of
+              manufacturing excellence with cutting-edge technology to deliver
+              solutions that drive industries forward.
             </p>
             <div className="about-points">
               {aboutHighlights.map((item) => (
@@ -71,7 +71,12 @@ export default function AboutSection() {
         .about-panel {
           width: min(1400px, 94%);
           margin: 0 auto;
-          background: linear-gradient(135deg, #0d144a 0%, #151d5f 45%, #1f2a7a 100%);
+          background: linear-gradient(
+            135deg,
+            #0d144a 0%,
+            #151d5f 45%,
+            #1f2a7a 100%
+          );
           border-radius: 18px;
           overflow: hidden;
           box-shadow: 0 20px 44px rgba(8, 16, 48, 0.35);
@@ -145,7 +150,7 @@ export default function AboutSection() {
         .about-copy {
           margin: 0;
           color: #4a587a;
-          font-size: 13px;
+          font-size: 15px;
           line-height: 1.7;
         }
 

@@ -3,6 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/injectionmoulding": "pages/injectionmoulding.js",
-  "/": "pages/index.js",
-  "/sheet-metal-components": "pages/sheet-metal-components.js"
+  "/sheet-metal-components": "pages/sheet-metal-components.js",
+  "/": "pages/index.js"
 }

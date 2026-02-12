@@ -85,10 +85,22 @@ export default function InjectionAdvantages() {
           <div className="advantages-benefits">
             <h3>What This Means for You</h3>
             <ul>
-              <li>Faster turnaround times without compromising quality</li>
-              <li>Higher production volumes to meet growing demand</li>
-              <li>Reduced energy consumption and operational costs</li>
-              <li>Enhanced part consistency across every production run</li>
+              <li>
+                Faster turnaround times without compromising the quality,
+                precision, or reliability of every molded component
+              </li>
+              <li>
+                Higher production volumes that help you confidently meet
+                growing market demand and delivery commitments
+              </li>
+              <li>
+                Reduced energy consumption and lower overall operational costs
+                through more efficient cooling and process control
+              </li>
+              <li>
+                Enhanced part consistency across every production run for better
+                fit, finish, and long-term performance stability
+              </li>
             </ul>
           </div>
         </div>
@@ -162,7 +174,7 @@ export default function InjectionAdvantages() {
           display: inline-flex;
           align-items: center;
           padding: 6px 12px;
-          border-radius: 999px;
+          border-radius: 0 999px 999px 0;
           background: #e11d2e;
           color: #ffffff;
           font-size: 12px;
@@ -188,11 +200,30 @@ export default function InjectionAdvantages() {
 
         .advantages-benefits ul {
           margin: 0;
-          padding-left: 18px;
+          padding: 0;
+          width: 100%;
           display: grid;
-          gap: 8px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0;
+          list-style: none;
+          border: 1px solid rgba(255, 255, 255, 0.28);
           color: rgba(255, 255, 255, 0.9);
           font-size: 14px;
+        }
+
+        .advantages-benefits li {
+          padding: 12px 14px;
+          border-right: 1px solid rgba(255, 255, 255, 0.28);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+          line-height: 1.45;
+        }
+
+        .advantages-benefits li:nth-child(2n) {
+          border-right: none;
+        }
+
+        .advantages-benefits li:nth-last-child(-n + 2) {
+          border-bottom: none;
         }
 
         .advantages-heading {
