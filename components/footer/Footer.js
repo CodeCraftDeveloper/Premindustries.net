@@ -1,13 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import FooterCta from "./FooterCta";
 import FooterOneCopyrights from "./FooterOneCopyrights";
+import PlantsMap from "./PlantsMap";
+import { footerPlants } from "./footerPlants";
 
 const ScrollToTop = () => {
   if (typeof window !== "undefined") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const lenis = window.__lenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0 });
+    }
   }
 };
 
@@ -103,14 +109,7 @@ const FooterTwo = () => {
                   <h3>Our Footprint</h3>
                 </div>
                 <div className="map-location">
-                  <Image
-                    src="/footer-map.png"
-                    alt="Our footprint map"
-                    width={600}
-                    height={350}
-                    style={{ width: "100%", height: "auto" }}
-                    priority
-                  />
+                  <PlantsMap plants={footerPlants} />
                 </div>
               </div>
             </div>

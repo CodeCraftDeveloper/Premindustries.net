@@ -5,8 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 
 const featureCards = [
   {
@@ -173,7 +171,18 @@ export default function HeroTwo() {
       variants={fadeUp}
     >
       <div className="hero">
-        <div className="hero-media" />
+        <div className="hero-media">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="hero-video"
+          >
+            <source src="/sheetmetal/Comp%201_1.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div className="hero-overlay" />
         <div className="container hero-content">
           <div className="hero-text">
@@ -318,10 +327,15 @@ export default function HeroTwo() {
         .hero-media {
           position: absolute;
           inset: 0;
-          background-image: url("/sheetmetal/best.jpg");
-          background-size: cover;
-          background-position: center;
+          overflow: hidden;
           filter: saturate(1.05);
+        }
+
+        .hero-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
         }
 
         .hero-overlay {

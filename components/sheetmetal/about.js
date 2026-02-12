@@ -105,8 +105,8 @@ export default function AboutTwo() {
               <div className="block-contents">
                 <div className="section-title">
                   <h3
-                    className="wow fadeInLeft animated"
-                    style={{ fontSize: "40px" }}
+                    className=""
+                    style={{ fontSize: "clamp(26px, 4vw, 40px)" }}
                   >
                     Sheet Metal &amp; Components
                   </h3>
@@ -114,8 +114,11 @@ export default function AboutTwo() {
               </div>
 
               <p
-                className="wow fadeInLeft animated"
-                style={{ textAlign: "justify", fontSize: "17px" }}
+                className=""
+                style={{
+                  textAlign: "justify",
+                  fontSize: "clamp(14px, 2.2vw, 17px)",
+                }}
               >
                 At Prem Industries India Limited, our Sheet Metal and Components
                 Division is a testament to precision engineering and robust
@@ -133,10 +136,7 @@ export default function AboutTwo() {
             <div className="col-xl-6 col-12 pe-xl-0">
               <div className="d-flex flex-column" style={{ gap: 0 }}>
                 {/* Optimized Next.js image (equivalent to your background block) */}
-                <div
-                  className="wow fadeInLeft animated mt-4 shadow-sm"
-                  style={{ borderRadius: "12px" }}
-                >
+                <div className="mt-4 shadow-sm" style={{ borderRadius: "12px" }}>
                   <div
                     className="position-relative w-100"
                     style={{
@@ -175,8 +175,11 @@ export default function AboutTwo() {
 
             <div className="col-xl-6 mt-5 mt-lg-0 col-12">
               <p
-                className="wow fadeInLeft animated mt-2"
-                style={{ textAlign: "justify", fontSize: "17px" }}
+                className="mt-2"
+                style={{
+                  textAlign: "justify",
+                  fontSize: "clamp(14px, 2.2vw, 17px)",
+                }}
               >
                 With an initial investment of Rs 75 crores and a projected Rs
                 175 crores investment over the next three years, we are poised
@@ -186,8 +189,11 @@ export default function AboutTwo() {
                 sectors.
               </p>
               <p
-                className="wow fadeInLeft animated mt-2"
-                style={{ textAlign: "justify", fontSize: "17px" }}
+                className="mt-2"
+                style={{
+                  textAlign: "justify",
+                  fontSize: "clamp(14px, 2.2vw, 17px)",
+                }}
               >
                 We specialize in the design, fabrication, and assembly of
                 high-quality sheet metal components, maintaining strict

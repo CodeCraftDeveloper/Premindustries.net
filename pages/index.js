@@ -42,10 +42,13 @@ export default function FrontPage() {
           animation: heroTextFadeUp 0.7s ease-out both;
         }
 
-        .intro-shell.intro-active :global(.hero-text) {
+        .intro-shell.intro-active :global(.hero-content),
+        .intro-shell.intro-active :global(.hero-text),
+        .intro-shell.intro-active :global(.hero-cards),
+        .intro-shell.intro-active :global(.hero-card),
+        .intro-shell.intro-active :global(.hero-cta) {
           opacity: 0;
-          transform: translateY(18px);
-          animation: none;
+          visibility: hidden;
           pointer-events: none;
         }
 

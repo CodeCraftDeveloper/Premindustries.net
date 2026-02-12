@@ -67,7 +67,7 @@ export default function HeroSection() {
             industrial use.
           </p>
           <a
-            href="https://injection-molding-peach.vercel.app/"
+            href="/injectionmoulding"
             target="_blank"
             rel="noreferrer"
             className="card-link"
@@ -80,6 +80,8 @@ export default function HeroSection() {
       <style jsx>{`
         .hero-home {
           width: 100%;
+          min-height: 100vh;
+          min-height: 100svh;
           padding: 60px 0 80px;
           position: relative;
           overflow: hidden;
@@ -102,7 +104,7 @@ export default function HeroSection() {
               rgba(8, 16, 24, 0.35) 60%,
               rgba(8, 16, 24, 0.15) 100%
             ),
-            url("/home/hero-steel.jpg");
+            url("/sheetmetal/best.jpg");
           background-size: cover;
           background-position: center;
           z-index: 0;
@@ -162,19 +164,25 @@ export default function HeroSection() {
           justify-content: center;
           padding: 12px 28px;
           border-radius: 12px;
-          background: #f04b4f;
-          color: #ffffff;
+          background: #e92127;
+          color: #ffffff !important;
           font-weight: 700;
           text-transform: none;
-          box-shadow: 0 12px 24px rgba(240, 75, 79, 0.35);
+          box-shadow: 0 12px 24px rgba(233, 33, 39, 0.35);
           transition:
             transform 0.2s ease,
             box-shadow 0.2s ease;
         }
 
+        .hero-cta:visited,
+        .hero-cta:hover,
+        .hero-cta:focus {
+          color: #ffffff !important;
+        }
+
         .hero-cta:hover {
           transform: translateY(-2px);
-          box-shadow: 0 16px 28px rgba(240, 75, 79, 0.45);
+          box-shadow: 0 16px 28px rgba(233, 33, 39, 0.45);
         }
 
         .hero-cards {
@@ -215,15 +223,16 @@ export default function HeroSection() {
         }
 
         .card-icon {
-          width: 46px;
-          height: 46px;
-          border-radius: 12px;
-          background: #ffffff;
-          display: grid;
-          place-items: center;
-          font-weight: 800;
-          color: #1a2332;
-          box-shadow: 0 8px 18px rgba(10, 20, 30, 0.18);
+          width: 36px;
+          height: 36px;
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          font-size: 14px;
         }
 
         .card-link {
@@ -241,11 +250,11 @@ export default function HeroSection() {
         }
 
         .accent-red {
-          border-left: 4px solid #f04b4f;
+          border-left: 4px solid #e92127;
         }
 
         .accent-blue {
-          border-left: 4px solid #3a5ce5;
+          border-left: 4px solid #13224d;
         }
 
         .accent-green {
@@ -255,7 +264,7 @@ export default function HeroSection() {
         .accent-red .card-link,
         .accent-blue .card-link,
         .accent-green .card-link {
-          color: #f04b4f;
+          color: #e92127;
         }
 
         @media (max-width: 768px) {

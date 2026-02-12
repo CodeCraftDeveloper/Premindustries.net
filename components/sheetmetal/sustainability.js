@@ -16,7 +16,7 @@ export default function SustainabilitySection() {
   return (
     <>
       <motion.section
-        className="about-section pb-5 wow fadeInLeft animated"
+        className="about-section pb-5"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
@@ -27,13 +27,18 @@ export default function SustainabilitySection() {
             <div className="col-xl-7 mt-3 mt-lg-0 col-12">
               <div className="block-contents">
                 <div className="section-title">
-                  <h2 style={{ fontSize: "40px" }}>Sustainability</h2>
+                  <h2 style={{ fontSize: "clamp(26px, 4vw, 40px)" }}>
+                    Sustainability
+                  </h2>
                 </div>
               </div>
 
               <p
                 className="mb-3"
-                style={{ textAlign: "justify", fontSize: "17px" }}
+                style={{
+                  textAlign: "justify",
+                  fontSize: "clamp(14px, 2.2vw, 17px)",
+                }}
               >
                 Sustainability is a responsibility we embrace fully. We have
                 installed a 0.5 mW solar power plant, reducing our dependence on

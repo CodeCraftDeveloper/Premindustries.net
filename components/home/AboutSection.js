@@ -5,7 +5,12 @@ import Link from "next/link";
 
 const ScrollToTop = () => {
   if (typeof window !== "undefined") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const lenis = window.__lenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0 });
+    }
   }
 };
 

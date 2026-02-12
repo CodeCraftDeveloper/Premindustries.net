@@ -147,7 +147,7 @@ export default function Infrastructure() {
         <div className="press-infra-media">
           <div className="press-infra-image">
             <Image
-              src="/sheetmetal/infrastructure/2.jpg"
+              src="/sheetmetal/5.jpg.jpeg"
               alt="Press shop infrastructure"
               fill
               sizes="(max-width: 900px) 100vw, 40vw"

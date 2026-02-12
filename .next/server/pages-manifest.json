@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/sheet-metal-components": "pages/sheet-metal-components.js"
+  "/": "pages/index.js",
+  "/sheet-metal-components": "pages/sheet-metal-components.js",
+  "/injectionmoulding": "pages/injectionmoulding.js"
 }

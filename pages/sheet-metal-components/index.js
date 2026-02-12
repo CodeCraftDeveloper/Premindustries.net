@@ -8,6 +8,7 @@ import CorporateVideoSection from "@/components/sheetmetal/corporate";
 import ClientSection from "@/components/sheetmetal/clients";
 import Head from "next/head";
 import LogoIntro from "@/components/common/LogoIntro";
+import SectionReveal from "@/components/common/SectionReveal";
 
 export default function Index() {
   const [showIntro, setShowIntro] = useState(true);
@@ -24,25 +25,52 @@ export default function Index() {
       </Head>
       {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
       <div className={`intro-shell${showIntro ? " intro-active" : ""}`}>
-        <Hero />
-        <AboutSection />
-        <FabricationProcessSection />
-        <InfrastructureSection />
+        <SectionReveal>
+          <Hero />
+        </SectionReveal>
+        <SectionReveal>
+          <AboutSection />
+        </SectionReveal>
+        <SectionReveal>
+          <FabricationProcessSection />
+        </SectionReveal>
+        <SectionReveal>
+          <InfrastructureSection />
+        </SectionReveal>
         <div className="pt-5"></div>
-        <SustainabilitySection />
-        <CorporateVideoSection />
-        <ClientSection />
+        <SectionReveal>
+          <SustainabilitySection />
+        </SectionReveal>
+        <SectionReveal>
+          <CorporateVideoSection />
+        </SectionReveal>
+        <SectionReveal>
+          <ClientSection />
+        </SectionReveal>
       </div>
 
       <style jsx>{`
+        .intro-shell {
+          width: 100%;
+          overflow-x: clip;
+        }
+
+        :global(body) {
+          overflow-x: hidden;
+        }
+
         .intro-shell :global(.hero-text) {
           animation: heroTextFadeUp 0.7s ease-out both;
         }
 
-        .intro-shell.intro-active :global(.hero-text) {
+        .intro-shell.intro-active :global(.hero-content),
+        .intro-shell.intro-active :global(.hero-text),
+        .intro-shell.intro-active :global(.hero-eyebrow),
+        .intro-shell.intro-active :global(.hero-lead),
+        .intro-shell.intro-active :global(.hero-sublead),
+        .intro-shell.intro-active :global(.hero-btn) {
           opacity: 0;
-          transform: translateY(18px);
-          animation: none;
+          visibility: hidden;
           pointer-events: none;
         }
 

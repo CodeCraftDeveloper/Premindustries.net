@@ -1,4 +1,10 @@
 {
+  "components\\footer\\PlantsMap.js -> leaflet": {
+    "id": "components\\footer\\PlantsMap.js -> leaflet",
+    "files": [
+      "static/chunks/_pages-dir-browser_node_modules_leaflet_dist_leaflet-src_js.js"
+    ]
+  },
   "node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
     "id": "node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
     "files": [

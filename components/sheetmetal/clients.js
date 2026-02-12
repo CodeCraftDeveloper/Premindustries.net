@@ -25,7 +25,7 @@ export default function Clients() {
         <div className="fun-fact-wrapper text-white text-center">
           <div className="row">
             <div className="col-md-12 mb-4">
-              <h2 className="text-white" style={{ fontSize: "40px" }}>
+              <h2 className="text-white" style={{ fontSize: "clamp(26px, 4vw, 40px)" }}>
                 OUR CLIENTS
               </h2>
             </div>
@@ -43,7 +43,7 @@ export default function Clients() {
                         <ul>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -53,7 +53,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -63,7 +63,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -73,7 +73,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -83,7 +83,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -93,7 +93,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -103,7 +103,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -113,7 +113,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -128,7 +128,7 @@ export default function Clients() {
                         <ul>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -138,7 +138,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -148,7 +148,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -158,7 +158,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -168,7 +168,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -178,7 +178,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -188,7 +188,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -198,7 +198,7 @@ export default function Clients() {
                           </li>
                           <li
                             style={{
-                              fontSize: "17px",
+                              fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
@@ -213,7 +213,7 @@ export default function Clients() {
                         className="col-md-12"
                         style={{
                           textAlign: "right",
-                          fontSize: "20px",
+                          fontSize: "clamp(14px, 2.4vw, 20px)",
                           fontWeight: 800,
                           color: "#14254C",
                         }}

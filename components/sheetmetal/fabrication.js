@@ -21,7 +21,7 @@ export default function FabricationProcess() {
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeUp}
     >
-      <h1 className="text-center" style={{ fontSize: "40px" }}>
+      <h1 className="text-center" style={{ fontSize: "clamp(24px, 4vw, 40px)" }}>
         SHEET METAL FABRICATION PROCESS
       </h1>
 

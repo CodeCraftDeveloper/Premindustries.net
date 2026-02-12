@@ -1,14 +1,22 @@
 // components/HomeTwoClient.js
 "use client";
 
-import HeroSection from "./HeroSection";
+import EntryHeroSection from "./EntryHeroSection";
 import AboutSection from "./AboutSection";
 import WorkSectionHead from "./WorkSectionHead";
 import WorkSectionBody from "./WorkSectionBody";
+import WorkForYouSection from "./WorkForYouSection";
+import GoalAccessibilitySection from "./GoalAccessibilitySection";
+import ConstructionTrustSection from "./ConstructionTrustSection";
 import SustainabilitySection from "./SustainabilitySection";
 import InnovationSection from "./InnovationSection";
 import CounterSection from "./CounterSection";
+import MissionVisionSection from "./MissionVisionSection";
+import WhyPremSection from "./WhyPremSection";
+import ExecutionProcessSection from "./ExecutionProcessSection";
+import HomeCtaSection from "./HomeCtaSection";
 import { motion } from "framer-motion";
+import HeroSection from "./HeroSection";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
@@ -56,6 +64,60 @@ export default function HomeTwoClient() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
+        <WorkForYouSection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <GoalAccessibilitySection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <ConstructionTrustSection />
+      </motion.section>
+
+      {/* <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <MissionVisionSection />
+      </motion.section> */}
+
+      {/* <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <EntryHeroSection />
+      </motion.section> */}
+
+      {/* <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <WhyPremSection />
+      </motion.section> */}
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <WorkSectionHead />
       </motion.section>
 
@@ -74,6 +136,15 @@ export default function HomeTwoClient() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
+        <ExecutionProcessSection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <SustainabilitySection />
       </motion.section>
 
@@ -84,6 +155,15 @@ export default function HomeTwoClient() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <InnovationSection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <HomeCtaSection />
       </motion.section>
 
       <motion.section

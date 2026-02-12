@@ -6,14 +6,19 @@ import Image from "next/image";
 
 const ScrollToTop = () => {
   if (typeof window !== "undefined") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const lenis = window.__lenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0 });
+    }
   }
 };
 
 export default function ProjectsTab() {
   return (
-    <section className="our-info-tabs-wrapper wow fadeInLeft animated">
-      <div className="container">
+    <section className="our-info-tabs-wrapper wow fadeInLeft animated home-tabs">
+      <div className="container home-tabs-container">
         <div className="row">
           <div className="col-12 col-xl-12">
             <div className="project-tabs-wrapper">
@@ -281,6 +286,59 @@ export default function ProjectsTab() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .home-tabs-container {
+          max-width: 1380px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        :global(.home-tabs .project-tabs-wrapper .nav.nav-pills) {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 0;
+          margin-left: 0;
+        }
+
+        :global(.home-tabs .project-tabs-wrapper .nav.nav-pills .nav-item) {
+          width: 100%;
+        }
+
+        @media (max-width: 992px) {
+          .home-tabs-container {
+            padding-left: 18px;
+            padding-right: 18px;
+          }
+
+          :global(.home-tabs .project-tabs-wrapper .nav.nav-pills) {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+          }
+
+          :global(.home-tabs .project-tabs-wrapper .nav.nav-pills .nav-item) {
+            width: auto;
+            min-width: 240px;
+            flex: 0 0 auto;
+          }
+
+          :global(.home-tabs .project-tabs-wrapper .nav.nav-pills .nav-link) {
+            white-space: nowrap;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .home-tabs-container {
+            padding-left: 14px;
+            padding-right: 14px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

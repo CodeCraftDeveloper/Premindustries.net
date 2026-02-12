@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Hero from "@/components/press-shop/hero";
+import SectionReveal from "@/components/common/SectionReveal";
 
 export default function Index() {
   return (
@@ -16,8 +17,11 @@ export default function Index() {
           content="Press Shop - Prem Industries India Limited"
         />
       </Head>
-      <Hero />
-      <div className="container-fluid why-choice-us pt-5 pb-5">
+      <SectionReveal>
+        <Hero />
+      </SectionReveal>
+      <SectionReveal>
+        <div className="container-fluid why-choice-us pt-5 pb-5">
         <div className="container">
           {/* test */}
           <div className="row">
@@ -119,7 +123,8 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </SectionReveal>
     </>
   );
 }

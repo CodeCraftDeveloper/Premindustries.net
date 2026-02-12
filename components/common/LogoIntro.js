@@ -5,9 +5,17 @@ import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 
 export default function LogoIntro({ onComplete = () => {} }) {
   const finishedRef = useRef(false);
+  const cleanupRef = useRef(null);
+  const cleanedRef = useRef(false);
   const virtualScrollRef = useRef(0);
   const velocityRef = useRef(0);
   const rafRef = useRef(null);
+  const lenisRef = useRef(null);
+  const wheelHandlerRef = useRef(null);
+  const touchStartRef = useRef(null);
+  const touchMoveRef = useRef(null);
+  const touchEndRef = useRef(null);
+  const prevStylesRef = useRef(null);
 
   const [logoSrc, setLogoSrc] = useState("/logo-main-desktop.png");
 
@@ -17,6 +25,22 @@ export default function LogoIntro({ onComplete = () => {} }) {
   const finishIntro = useCallback(() => {
     if (finishedRef.current) return;
     finishedRef.current = true;
+    if (typeof window !== "undefined") {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.overscrollBehavior = "";
+      document.documentElement.style.overscrollBehavior = "";
+    }
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new Event("logoIntro:complete"));
+    }
+    if (lenisRef.current && typeof lenisRef.current.start === "function") {
+      lenisRef.current.start();
+    }
+    if (cleanupRef.current && !cleanedRef.current) {
+      cleanedRef.current = true;
+      cleanupRef.current();
+    }
     onComplete();
   }, [onComplete]);
 
@@ -56,11 +80,26 @@ export default function LogoIntro({ onComplete = () => {} }) {
    * Scroll lock + smooth wheel control
    * -------------------------------------------------- */
   useEffect(() => {
+    const lenis = typeof window !== "undefined" ? window.__lenis : null;
+    lenisRef.current = lenis;
+    if (lenis && typeof lenis.stop === "function") lenis.stop();
+
     const prevOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
     const prevOverscroll = document.body.style.overscrollBehavior;
+    const prevHtmlOverscroll =
+      document.documentElement.style.overscrollBehavior;
+    prevStylesRef.current = {
+      prevOverflow,
+      prevHtmlOverflow,
+      prevOverscroll,
+      prevHtmlOverscroll,
+    };
 
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overscrollBehavior = "none";
+    document.documentElement.style.overscrollBehavior = "none";
 
     const MAX_SCROLL = window.innerHeight * 1.4;
 
@@ -106,7 +145,7 @@ export default function LogoIntro({ onComplete = () => {} }) {
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    const onWheel = (e) => {
+    function onWheel(e) {
       if (finishedRef.current) return;
       e.preventDefault();
 
@@ -124,21 +163,16 @@ export default function LogoIntro({ onComplete = () => {} }) {
         lastTime = performance.now();
         rafRef.current = requestAnimationFrame(tick);
       }
-    };
+    }
 
-    window.addEventListener("wheel", onWheel, { passive: false });
-
-    let touchActive = false;
-    let lastTouchY = 0;
-
-    const onTouchStart = (e) => {
+    function onTouchStart(e) {
       if (finishedRef.current) return;
       if (!e.touches || e.touches.length === 0) return;
       touchActive = true;
       lastTouchY = e.touches[0].clientY;
-    };
+    }
 
-    const onTouchMove = (e) => {
+    function onTouchMove(e) {
       if (finishedRef.current) return;
       if (!touchActive || !e.touches || e.touches.length === 0) return;
       e.preventDefault();
@@ -158,26 +192,55 @@ export default function LogoIntro({ onComplete = () => {} }) {
         lastTime = performance.now();
         rafRef.current = requestAnimationFrame(tick);
       }
-    };
+    }
 
-    const onTouchEnd = () => {
+    function onTouchEnd() {
       touchActive = false;
+    }
+
+    let touchActive = false;
+    let lastTouchY = 0;
+
+    wheelHandlerRef.current = onWheel;
+    touchStartRef.current = onTouchStart;
+    touchMoveRef.current = onTouchMove;
+    touchEndRef.current = onTouchEnd;
+
+    cleanupRef.current = () => {
+      const wheelHandler = wheelHandlerRef.current;
+      const touchStart = touchStartRef.current;
+      const touchMove = touchMoveRef.current;
+      const touchEnd = touchEndRef.current;
+
+      if (wheelHandler) window.removeEventListener("wheel", wheelHandler);
+      if (touchStart) window.removeEventListener("touchstart", touchStart);
+      if (touchMove) window.removeEventListener("touchmove", touchMove);
+      if (touchEnd) {
+        window.removeEventListener("touchend", touchEnd);
+        window.removeEventListener("touchcancel", touchEnd);
+      }
+
+      cancelAnimationFrame(rafRef.current);
+
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.overscrollBehavior = "";
+      document.documentElement.style.overscrollBehavior = "";
+
+      if (lenis && typeof lenis.start === "function") lenis.start();
     };
 
+    window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchmove", onTouchMove, { passive: false });
     window.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("touchcancel", onTouchEnd, { passive: true });
 
     return () => {
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("touchend", onTouchEnd);
-      window.removeEventListener("touchcancel", onTouchEnd);
-      cancelAnimationFrame(rafRef.current);
-      document.body.style.overflow = prevOverflow || "";
-      document.body.style.overscrollBehavior = prevOverscroll || "";
+      if (cleanupRef.current && !cleanedRef.current) {
+        cleanedRef.current = true;
+        cleanupRef.current();
+      }
     };
   }, [finishIntro, targetProgress]);
 

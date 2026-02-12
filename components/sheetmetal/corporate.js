@@ -75,7 +75,9 @@ export default function CorporateVideo() {
       <div className="container">
         <div className="row text-center">
           <div className="col-md-12">
-            <h1 style={{ fontSize: "40px" }}>Our Corporate Video</h1>
+            <h1 style={{ fontSize: "clamp(26px, 4vw, 40px)" }}>
+              Our Corporate Video
+            </h1>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import VisionSection from "../../components/about/VisionSection";
 import ValueSection from "../../components/about/ValueSection";
 import KeypointSection from "../../components/about/KeyPointSection";
 import Head from "next/head";
+import SectionReveal from "@/components/common/SectionReveal";
 
 export default function index() {
   return (
@@ -19,28 +20,44 @@ export default function index() {
           content="About Us - Prem Industries India Limited"
         />
       </Head>
-      <PageBanner title="About Us" bannerBg="/about/banner.jpg" />
-      <AboutSection />
-      <div
-        className="container-fluid text-white"
-        style={{ backgroundColor: "#14254C" }}
-      >
-        <CounterSection />
-      </div>
-      <MissionSection />
-      <VisionSection />
-      <div
-        className="container-fluid pt-4 pb-5"
-        style={{ backgroundColor: "#14254C" }}
-      >
-        <div className="row">
-          {/* <div className="col-md-12 text-center text-white">
-            <h1>Our Values</h1>
-          </div> */}
+      <SectionReveal>
+        <PageBanner title="About Us" bannerBg="/about/banner.jpg" />
+      </SectionReveal>
+      <SectionReveal>
+        <AboutSection />
+      </SectionReveal>
+      <SectionReveal>
+        <div
+          className="container-fluid text-white"
+          style={{ backgroundColor: "#14254C" }}
+        >
+          <CounterSection />
         </div>
-      </div>
-      <ValueSection />
-      <KeypointSection />
+      </SectionReveal>
+      <SectionReveal>
+        <MissionSection />
+      </SectionReveal>
+      <SectionReveal>
+        <VisionSection />
+      </SectionReveal>
+      <SectionReveal>
+        <div
+          className="container-fluid pt-4 pb-5"
+          style={{ backgroundColor: "#14254C" }}
+        >
+          <div className="row">
+            {/* <div className="col-md-12 text-center text-white">
+              <h1>Our Values</h1>
+            </div> */}
+          </div>
+        </div>
+      </SectionReveal>
+      <SectionReveal>
+        <ValueSection />
+      </SectionReveal>
+      <SectionReveal>
+        <KeypointSection />
+      </SectionReveal>
     </>
   );
 }
