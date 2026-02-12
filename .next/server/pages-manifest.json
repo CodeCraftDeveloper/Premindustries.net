@@ -1,8 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/injectionmoulding": "pages/injectionmoulding.js",
-  "/sheet-metal-components": "pages/sheet-metal-components.js",
-  "/": "pages/index.js"
-}
