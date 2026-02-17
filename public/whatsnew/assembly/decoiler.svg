@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="140" viewBox="0 0 240 140">
-  <rect width="240" height="140" rx="16" fill="#eef2ff"/>
-  <rect x="16" y="80" width="208" height="32" rx="8" fill="#cbd5e1"/>
-  <circle cx="56" cy="72" r="22" fill="#94a3b8"/>
-  <circle cx="56" cy="72" r="10" fill="#334155"/>
-  <rect x="90" y="44" width="116" height="52" rx="10" fill="#64748b"/>
-  <text x="120" y="28" font-family="Arial" font-size="16" fill="#1e293b" font-weight="700">Decoiler</text>
-</svg>
