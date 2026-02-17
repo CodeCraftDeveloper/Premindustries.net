@@ -10874,6 +10874,58 @@ header .header-top-bar .top-social-icons a:hover {
   color: #14254c;
 }
 
+.footer-2 .footer-widgets-wrapper {
+  padding-top: 20px;
+  padding-bottom: 38px;
+}
+
+.footer-2 .footer-wrap .single-footer-wid {
+  margin-top: 16px;
+}
+
+.footer-2 .footer-wrap .single-footer-wid .wid-title {
+  margin-bottom: 12px;
+}
+
+.footer-2 .footer-cta-wrapper .footer-cta-bg-wrapper {
+  padding: 20px 24px;
+}
+
+.footer-2 .footer-bottom {
+  padding: 8px 0px;
+}
+
+.footer-2 .footer-cta-wrapper::after {
+  height: 12px;
+}
+
+.footer-2 .footer-social-icon a {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.footer-2 .footer-wrap .single-footer-wid.site_info_widget .single-contact-info {
+  margin-bottom: 10px;
+}
+
+.footer-2 .footer-wrap .single-footer-wid ul li > a {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 991px) {
+  .footer-2 .footer-widgets-wrapper {
+    padding-top: 16px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-2 .footer-cta-wrapper .footer-cta-bg-wrapper {
+    padding: 14px 16px;
+  }
+}
+
 .footer-2 .single-contact-info .icon {
   color: #fff !important;
 }

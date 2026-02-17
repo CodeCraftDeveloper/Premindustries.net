@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="140" viewBox="0 0 240 140">
+  <rect width="240" height="140" rx="16" fill="#f0fdf4"/>
+  <rect x="16" y="92" width="208" height="20" rx="8" fill="#86efac"/>
+  <rect x="36" y="44" width="60" height="50" rx="8" fill="#16a34a"/>
+  <rect x="106" y="44" width="44" height="50" rx="8" fill="#22c55e"/>
+  <rect x="160" y="44" width="44" height="50" rx="8" fill="#15803d"/>
+  <text x="94" y="28" font-family="Arial" font-size="16" fill="#166534" font-weight="700">QA/Pack</text>
+</svg>

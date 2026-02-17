@@ -25,9 +25,9 @@ export default function AboutSection() {
           <div className="about-text">
             <div className="about-tag">
               <span className="about-dot" />
-              <span>About Us</span>
+              <span>About Us</span> 
             </div>
-            <h2>About Prem Industries</h2>
+            <h2>About Prem Industries India Limited</h2>
             <p className="about-copy">
               Founded with a vision to revolutionize manufacturing in India,
               Prem Industries India Limited has grown from a single facility to

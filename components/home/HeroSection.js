@@ -29,52 +29,36 @@ export default function HeroSection() {
       </div>
 
       <div className="container hero-cards">
-        <div className="hero-card accent-red">
+        <a
+          href="https://prempackaging.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="hero-card accent-red"
+        >
           <h3>Packaging Solutions</h3>
           <p>
             Rigid to flexible packaging for FMCG, retail, and industrial brands.
           </p>
-          <a
-            href="https://prempackaging.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="card-link"
-          >
-            Visit
-          </a>
-        </div>
+          <span className="card-link">Visit</span>
+        </a>
 
-        <div className="hero-card accent-blue">
+        <Link href="/sheet-metal-components" className="hero-card accent-blue">
           <h3>Sheet Metal Fabrication</h3>
           <p>
             Precision-engineered components for mobility, infrastructure, and
             OEM supply.
           </p>
-          <a
-            href="/sheet-metal-components"
-            target="_blank"
-            rel="noreferrer"
-            className="card-link"
-          >
-            Visit
-          </a>
-        </div>
+          <span className="card-link">Visit</span>
+        </Link>
 
-        <div className="hero-card accent-green">
+        <Link href="/injectionmoulding" className="hero-card accent-green">
           <h3>Injection Moulding</h3>
           <p>
             High-volume plastic parts with tight tolerances for consumer and
             industrial use.
           </p>
-          <a
-            href="/injectionmoulding"
-            target="_blank"
-            rel="noreferrer"
-            className="card-link"
-          >
-            Visit
-          </a>
-        </div>
+          <span className="card-link">Visit</span>
+        </Link>
       </div>
 
       <style jsx>{`
@@ -195,7 +179,7 @@ export default function HeroSection() {
           gap: 20px;
         }
 
-        .hero-card {
+        :global(.hero-card) {
           background: rgba(255, 255, 255, 0.8);
           border-radius: 18px;
           padding: 22px 22px 18px;
@@ -208,15 +192,30 @@ export default function HeroSection() {
           gap: 10px;
           text-align: center;
           align-items: center;
+          text-decoration: none;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+          cursor: pointer;
         }
 
-        .hero-card h3 {
+        :global(.hero-card:hover) {
+          transform: translateY(-2px);
+          box-shadow: 0 22px 44px rgba(10, 20, 30, 0.3);
+        }
+
+        :global(.hero-card:focus-visible) {
+          outline: 2px solid rgba(255, 255, 255, 0.9);
+          outline-offset: 2px;
+        }
+
+        :global(.hero-card h3) {
           font-size: 18px;
           font-weight: 700;
           margin: 0;
         }
 
-        .hero-card p {
+        :global(.hero-card p) {
           font-size: 14px;
           margin: 0;
           color: rgba(26, 35, 50, 0.75);
@@ -235,35 +234,36 @@ export default function HeroSection() {
           font-size: 14px;
         }
 
-        .card-link {
+        :global(.card-link) {
           margin-top: auto;
           font-weight: 700;
           text-transform: none;
           display: inline-flex;
           align-items: center;
           gap: 6px;
+          text-decoration: none;
         }
 
-        .card-link::after {
+        :global(.card-link::after) {
           content: ">";
           font-size: 16px;
         }
 
-        .accent-red {
+        :global(.accent-red) {
           border-left: 4px solid #e92127;
         }
 
-        .accent-blue {
+        :global(.accent-blue) {
           border-left: 4px solid #13224d;
         }
 
-        .accent-green {
+        :global(.accent-green) {
           border-left: 4px solid #26b36b;
         }
 
-        .accent-red .card-link,
-        .accent-blue .card-link,
-        .accent-green .card-link {
+        :global(.accent-red .card-link),
+        :global(.accent-blue .card-link),
+        :global(.accent-green .card-link) {
           color: #e92127;
         }
 

@@ -7,42 +7,58 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 export default function InjectionProcess() {
   const machineSlides = [
     {
-      title: "250 Ton - Precision Series",
+      title: "250 Ton Injection Molding Machine",
       description:
-        "Ideal for tight-tolerance parts and intricate components. Optimized for repeatability with fast cycle times and excellent surface finish.",
+        "Compact high-precision molding system ideal for small to medium components with excellent repeatability.",
       image: "/injectionmolding/machines/250Ton.png",
     },
     {
-      title: "600 Ton - High Volume Line",
+      title: "360 Ton Injection Molding Machine",
       description:
-        "Balanced for speed and stability. Suitable for medium to large parts with consistent dimensional control and low scrap rates.",
+        "Mid-range production press engineered for stable clamping force and consistent dimensional accuracy.",
+      image: "/injectionmolding/machines/360TON.png",
+    },
+    {
+      title: "450 Ton Injection Molding Machine",
+      description:
+        "Versatile molding platform suitable for automotive and industrial-grade components.",
+      image: "/injectionmolding/machines/450ton.png",
+    },
+    {
+      title: "600 Ton Injection Molding Machine",
+      description:
+        "High-performance press designed for large-volume production with uniform fill and reduced scrap rates.",
       image: "/injectionmolding/machines/600ton.png",
     },
     {
-      title: "850 Ton - Assembly Line",
+      title: "850 Ton Injection Molding Machine",
       description:
-        "Integrated assembly and inspection workflows to ensure ready-to-ship components with consistent quality checks.",
+        "Heavy-duty clamping system built for large industrial parts requiring strong structural stability.",
       image: "/injectionmolding/machines/850Ton.png",
     },
     {
-      title: "1000 Ton - Structural Molding",
+      title: "1000 Ton Injection Molding Machine",
       description:
-        "Built for heavier-duty components. Supports complex tooling and multi-cavity molds without compromising precision.",
+        "Engineered for complex tooling and high-tonnage applications with consistent cycle efficiency.",
       image: "/injectionmolding/machines/1000ton.png",
     },
     {
-      title: "1800 Ton - Large Part Cell",
+      title: "1400 Ton Injection Molding Machine",
       description:
-        "For large industrial parts requiring stable clamping force, uniform fill, and repeatable quality across long runs.",
-      image: "/injectionmolding/machines/1800ton.png",
-      scale: 0.8,
+        "Industrial-scale molding system supporting large molds and extended production runs.",
+      image: "/injectionmolding/machines/1400Ton.png",
     },
     {
-      title: "3000 Ton - Heavy Duty Platform",
+      title: "1800 Ton Injection Molding Machine",
       description:
-        "Our largest capacity system for oversized parts and demanding tolerances with robust automation support.",
+        "Large-part manufacturing press delivering uniform material flow and stable clamping force.",
+      image: "/injectionmolding/machines/1800ton.png",
+    },
+    {
+      title: "3000 Ton Injection Molding Machine",
+      description:
+        "Ultra heavy-duty platform for oversized components and advanced automation integration.",
       image: "/injectionmolding/machines/3000ton.png",
-      scale: 0.8,
     },
   ];
 

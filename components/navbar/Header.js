@@ -71,11 +71,6 @@ const HeaderTwo = () => {
                         </Link>
                         <ul className="sub-menu">
                           <li>
-                            <Link href="https://prem-sheet-metal.vercel.app">
-                              Sheet Metal
-                            </Link>
-                          </li>
-                          <li>
                             <Link href="/sheet-metal-components">
                               Sheet Metal Components
                             </Link>
@@ -117,7 +112,7 @@ const HeaderTwo = () => {
                     </ul>
                   </li>
                   <li>
-                    <Link href="https://injection-molding-peach.vercel.app/">
+                    <Link href="/injectionmoulding">
                       Moulding <br />
                       Sector{" "}
                       <i

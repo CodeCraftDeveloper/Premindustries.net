@@ -25,9 +25,9 @@ const certs = [
   },
 ];
 
-export default function CertificationsSection() {
+export default function CertificationsSection({ bgColor = "#14264f" }) {
   return (
-    <section className="cert-section">
+    <section className="cert-section" style={{ background: bgColor }}>
       <div className="cert-wrap">
         <h2>Certified for Excellence</h2>
         <div className="cert-card">
@@ -58,7 +58,6 @@ export default function CertificationsSection() {
 
       <style jsx>{`
         .cert-section {
-          background: #14264f;
           padding: 50px 0 70px;
         }
 

@@ -54,7 +54,7 @@ export default function Index() {
 
         <div className="pt-5"></div>
         <SectionReveal>
-          <CertificationsSection />
+          <CertificationsSection bgColor="#14264f" />
         </SectionReveal>
         <SectionReveal>
           <InjectionCtaSection />

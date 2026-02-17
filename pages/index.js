@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
 import { useState } from "react";
 import LogoIntro from "@/components/common/LogoIntro";

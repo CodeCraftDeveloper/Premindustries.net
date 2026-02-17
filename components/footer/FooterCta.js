@@ -30,8 +30,8 @@ const FooterCta = () => {
                   <Image
                     src="/logo-white.png"
                     alt="logo"
-                    width={150}
-                    height={150}
+                    width={125}
+                    height={125}
                     priority
                   />
                 </Link>

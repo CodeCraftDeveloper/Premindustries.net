@@ -44,16 +44,22 @@ const PlantsMap = ({ plants }) => {
       const bounds = L.latLngBounds(points);
 
       plants.forEach((plant) => {
+        const isLongLabel = (plant.label || "").length > 3;
+        const labelClass = isLongLabel
+          ? "marker-label marker-label-compact"
+          : "marker-label";
+        const labelWidth = Math.max(64, (plant.label || "").length * 8 + 16);
+
         const icon = L.divIcon({
           className: "custom-plant-marker",
           html: `
             <div class="marker-container">
               <div class="marker-pin"></div>
-              <div class="marker-label">${plant.label}</div>
+              <div class="${labelClass}">${plant.label}</div>
             </div>
           `,
-          iconSize: [40, 60],
-          iconAnchor: [20, 50],
+          iconSize: [labelWidth, 60],
+          iconAnchor: [Math.round(labelWidth / 2), 50],
         });
 
         const marker = L.marker([plant.lat, plant.lng], {
@@ -100,7 +106,7 @@ const PlantsMap = ({ plants }) => {
       <style jsx>{`
         .plants-map {
           width: 100%;
-          height: 320px;
+          height: 210px;
           border-radius: 8px;
           overflow: hidden;
         }
@@ -155,6 +161,13 @@ const PlantsMap = ({ plants }) => {
           color: #ef4444;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
           border: 2px solid #ef4444;
+          white-space: nowrap;
+        }
+
+        :global(.marker-label-compact) {
+          font-size: 11px;
+          padding: 3px 8px;
+          border-radius: 10px;
         }
 
         :global(.leaflet-popup-content-wrapper) {
@@ -207,7 +220,7 @@ const PlantsMap = ({ plants }) => {
 
         @media (max-width: 768px) {
           .plants-map {
-            height: 260px;
+            height: 170px;
           }
         }
       `}</style>
