@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="140" viewBox="0 0 240 140">
+  <rect width="240" height="140" rx="16" fill="#fff7ed"/>
+  <rect x="16" y="92" width="208" height="20" rx="8" fill="#fdba74"/>
+  <circle cx="80" cy="64" r="24" fill="#f97316"/>
+  <circle cx="160" cy="64" r="24" fill="#ea580c"/>
+  <path d="M110 64h20" stroke="#7c2d12" stroke-width="6"/>
+  <text x="92" y="28" font-family="Arial" font-size="16" fill="#9a3412" font-weight="700">Welding</text>
+</svg>

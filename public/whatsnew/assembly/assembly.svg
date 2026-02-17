@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="140" viewBox="0 0 240 140">
+  <rect width="240" height="140" rx="16" fill="#eff6ff"/>
+  <rect x="16" y="92" width="208" height="20" rx="8" fill="#93c5fd"/>
+  <rect x="34" y="44" width="66" height="50" rx="8" fill="#2563eb"/>
+  <rect x="110" y="44" width="42" height="50" rx="8" fill="#1d4ed8"/>
+  <rect x="160" y="44" width="46" height="50" rx="8" fill="#1e40af"/>
+  <text x="80" y="28" font-family="Arial" font-size="16" fill="#1e3a8a" font-weight="700">Assembly</text>
+</svg>
