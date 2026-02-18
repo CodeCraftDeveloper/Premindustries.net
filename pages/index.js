@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
+import Script from "next/script";
 import { useState } from "react";
 import LogoIntro from "@/components/common/LogoIntro";
 // import Home from "../components/frontpage/index";
@@ -18,21 +18,19 @@ export default function FrontPage() {
           name="google-site-verification"
           content="wy-WtsDt1PUSXEq5FRxcjjANTZezjcBT-9dhlKsRiCc"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-W5TJVHXT4T"
-        ></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-W5TJVHXT4T");
-          `}
-        </script>
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-W5TJVHXT4T"
+        strategy="afterInteractive"
+      />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W5TJVHXT4T');
+        `}
+      </Script>
       {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
       <div className={`intro-shell${showIntro ? " intro-active" : ""}`}>
         <HomeContent />
