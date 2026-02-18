@@ -11674,3 +11674,295 @@ body::-webkit-scrollbar-thumb {
 .clients-section-margin-top {
   margin-top: 100px;
 }
+
+/* Why Choose Prem Chimneys (global css) */
+.wcp-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000000;
+}
+
+.wcp-bg-glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(700px 380px at 80% 10%, rgba(56, 189, 248, 0.08), transparent 65%);
+}
+
+.wcp-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 100%;
+  padding: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.wcp-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wcp-left {
+  position: relative;
+  z-index: 2;
+}
+
+.wcp-title {
+  margin: 0;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  font-size: clamp(2rem, 5.4vw, 3.2rem);
+}
+
+.wcp-subtitle {
+  margin: 0.9rem 0 0;
+  color: #5eead4;
+  font-size: clamp(0.92rem, 1.8vw, 1.2rem);
+  line-height: 1.25;
+}
+
+.wcp-card-list {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.wcp-feature-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 30px rgba(2, 8, 23, 0.35);
+  padding: 0.85rem;
+}
+
+.wcp-feature-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.wcp-feature-badge {
+  display: inline-flex;
+  width: 2.3rem;
+  height: 2.3rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(94, 234, 212, 0.7);
+  background: rgba(15, 23, 42, 0.7);
+  color: #cffafe;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: inset 0 0 0 2px rgba(20, 184, 166, 0.15);
+}
+
+.wcp-feature-copy h3 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.15;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  text-transform: none;
+}
+
+.wcp-feature-copy ul {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.wcp-feature-copy li {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.85);
+  font-size: clamp(0.72rem, 0.95vw, 0.84rem);
+  line-height: 1.35;
+}
+
+.wcp-get-started {
+  margin: 1.2rem 0 0;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 2.7vw, 2.15rem);
+  line-height: 1;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.wcp-chip-row {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.wcp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 0.5rem 1rem;
+  color: #f1f5f9;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.wcp-chip-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #5eead4;
+}
+
+.wcp-action-row {
+  margin-top: 0.75rem;
+}
+
+.wcp-contact-btn {
+  display: inline-flex;
+  min-width: 170px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2dd4bf 0%, #22d3ee 100%);
+  border: 1px solid transparent;
+  padding: 0 1.25rem;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 16px 34px rgba(45, 212, 191, 0.35);
+  transition: filter 0.2s ease;
+}
+
+.wcp-contact-btn:hover {
+  filter: brightness(1.1);
+}
+
+.wcp-contact-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #5eead4, 0 0 0 4px #050b1b;
+}
+
+.wcp-right {
+  position: relative;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wcp-image-frame {
+  position: absolute;
+  inset: 5rem 1rem;
+  border-radius: 28px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.wcp-image-panel {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+}
+
+.wcp-product-image {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: drop-shadow(0 24px 40px rgba(2, 6, 23, 0.45));
+}
+
+.wcp-image-fade {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  height: 10rem;
+  background: linear-gradient(to top, #050b1b 0%, transparent 100%);
+}
+
+@media (min-width: 1024px) {
+  .wcp-container {
+    padding: 1.5rem 2rem;
+  }
+
+  .wcp-grid {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .wcp-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .wcp-container {
+    padding: 2.5rem 1rem;
+  }
+
+  .wcp-feature-card {
+    padding: 1rem;
+  }
+
+  .wcp-feature-inner {
+    gap: 0.75rem;
+  }
+
+  .wcp-feature-badge {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .wcp-contact-btn {
+    min-width: 150px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  .wcp-right {
+    min-height: 320px;
+    height: 320px;
+  }
+
+  .wcp-image-panel {
+    inset: 0;
+  }
+
+  .wcp-image-frame {
+    inset: 2.25rem 0.75rem;
+  }
+
+  .wcp-product-image {
+    inset: 0 !important;
+  }
+}

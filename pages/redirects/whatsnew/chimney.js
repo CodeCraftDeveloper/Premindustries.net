@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import WhyChoosePremChimneys from "@/components/whatsnew/WhyChoosePremChimneys";
 
 const DIRECT_LINK = "https://premindustries.net/redirects/whatsnew/chimney";
 
@@ -61,50 +62,48 @@ const heroSlides = [
   },
 ];
 
-const productFeatures = [
-  {
-    image: "/whatsnew/chimneys/6.webp",
-    title: "In-House Manufacturing",
-    text: "End-to-end production control.\n30-40% cost advantage on sheet metal.\n45-50% savings on plastic molding.",
-  },
-  {
-    image: "/whatsnew/chimneys/8.webp",
-    title: "BIS Certified",
-    text: "ISI Mark compliant.\nIS 302 (Part 2/Sec 31): 2009.\nQuality assured for dealers.",
-  },
-  {
-    image: "/whatsnew/chimneys/9.webp",
-    title: "OEM & Private Label Ready",
-    text: "Custom branding available.\nScalable production (5,000+ units/month).\nStrong dealer support network.",
-  },
-  {
-    image: "/whatsnew/chimneys/10.jpeg",
-    title: "Advanced Technology",
-    text: "Auto-clean function.\nMotion & touch controls.\nEnergy-efficient motors.\nHeat-resistant housings.",
-  },
-];
-
-const manufacturingHighlights = [
-  {
-    title: "Manufacturing Heritage",
-    text: "50 Years of Excellence. Established 1975 | 4 Strategic Production Units | 40-650 Ton Press Capacity.",
-  },
-  {
-    title: "Production Capabilities",
-    text: "Industry-Leading Infrastructure. Sheet Metal: 40-650 Tons | Injection Molding: 160-3000 Tons | 75m Assembly Line.",
-  },
-  {
-    title: "Quality Promise",
-    text: "Built for Indian Kitchens. Handles heavy tadka & oil | 58-65 dB quiet operation | Baffle filtration | Auto-clean technology.",
-  },
+const capabilityScores = [
+  { label: "Sheet Metal Fabrication", value: 95 },
+  { label: "Motor & Blower Assembly", value: 90 },
+  { label: "Quality Validation", value: 92 },
 ];
 
 const chimneyCategories = [
-  "Wall-Mounted Chimneys - Popular in standard kitchens",
-  "Island Chimneys - For open-plan kitchens with central cooking",
-  "Inclined Glass Chimneys - Contemporary look plus performance",
-  "Straight-Line Chimneys - Compact, minimalist profiles",
-  "Built-in/Integrated - Concealed for seamless kitchens",
+  {
+    title: "Wall-Mounted Chimneys",
+    subtitle: "Best for standard kitchen layouts",
+    description:
+      "Mounted directly above the cooktop with strong suction and broad smoke capture for daily Indian cooking.",
+    image: "/whatsnew/chimneys/1.jpeg",
+  },
+  {
+    title: "Island Chimneys",
+    subtitle: "Designed for open kitchens",
+    description:
+      "Ceiling-hung models for island counters, delivering 360° visual appeal with balanced airflow performance.",
+    image: "/whatsnew/chimneys/2.jpeg",
+  },
+  {
+    title: "Inclined Glass Chimneys",
+    subtitle: "Modern look with easy access",
+    description:
+      "Angled glass design improves headroom and offers efficient extraction with touch-friendly operation.",
+    image: "/whatsnew/chimneys/3.png",
+  },
+  {
+    title: "Straight-Line Chimneys",
+    subtitle: "Compact and minimal profiles",
+    description:
+      "Slim silhouette for contemporary interiors where space efficiency and clean lines are priorities.",
+    image: "/whatsnew/chimneys/4.png",
+  },
+  {
+    title: "Built-in / Integrated",
+    subtitle: "Hidden inside cabinetry",
+    description:
+      "Concealed installation for seamless modular kitchens while maintaining reliable odor and smoke control.",
+    image: "/whatsnew/chimneys/5.jpeg",
+  },
 ];
 
 const revealUp = {
@@ -182,7 +181,10 @@ export default function ChimneyProductPage() {
       <section
         className="whatsnew-page"
         ref={heroSectionRef}
-        style={{ "--hero-steps": heroSlides.length, "--hero-scroll-factor": 0.45 }}
+        style={{
+          "--hero-steps": heroSlides.length,
+          "--hero-scroll-factor": 0.45,
+        }}
       >
         <div className="hero-card">
           <p className="label">What&apos;s New</p>
@@ -286,97 +288,138 @@ export default function ChimneyProductPage() {
         </div>
       </section>
 
-      <section className="details-strip-wrap">
-        <div className="details-strip">
-          <h3 className="details-heading">Manufacturing Heritage</h3>
-          <div className="highlight-grid">
-            {manufacturingHighlights.map((item, index) => (
-              <article className="highlight-item" key={item.title}>
-                <motion.div
-                  custom={index}
-                  variants={revealUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                >
-                  <h4>{item.title}</h4>
-                  <p>{item.text}</p>
-                </motion.div>
-              </article>
-            ))}
-          </div>
-          <h3 className="details-heading stats-heading">Key Industry Numbers</h3>
-          <div className="details-grid">
-            {detailItems.map((item, index) => (
-              <article className="detail-tile" key={item.title}>
-                <motion.div
-                  custom={index}
-                  variants={revealUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                >
-                  <p className="detail-title">{item.title}</p>
-                  <p className="detail-text">{item.text}</p>
-                </motion.div>
-              </article>
-            ))}
+      <section className="product-section-wrap">
+        <div className="product-section category-section-shell">
+          <div className="category-list-wrap">
+            <h3>Categories</h3>
+            <div className="category-grid">
+              {chimneyCategories.map((category, index) => (
+                <article className="category-card" key={category.title}>
+                  <motion.div
+                    custom={index}
+                    variants={revealUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                  >
+                    <div className="category-image-wrap">
+                      <Image
+                        src={category.image}
+                        alt={category.title}
+                        width={420}
+                        height={260}
+                        className="category-image"
+                      />
+                    </div>
+                    <div className="category-copy">
+                      <h4>{category.title}</h4>
+                      <p className="category-subtitle">{category.subtitle}</p>
+                      <p className="category-description">
+                        {category.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="product-section-wrap">
-        <div className="product-section">
-          <h3>Why Prem Chimneys</h3>
-          <div className="feature-list">
-            {productFeatures.map((feature, index) => (
-              <article className="feature-item" key={feature.title}>
-                <motion.div
+      <section className="details-strip-wrap">
+        <div className="details-strip">
+          <div className="showcase-top">
+            <div className="showcase-top-image">
+              <Image
+                src="/whatsnew/chimneys/7.jpeg"
+                alt="Chimney manufacturing and quality control"
+                fill
+                className="showcase-image"
+              />
+            </div>
+            <div className="showcase-top-copy">
+              <p className="showcase-kicker">About Us</p>
+              <h3>We Always Make The Best</h3>
+              <p>
+                Prem Industries combines deep manufacturing heritage with modern
+                chimney engineering. Every product is designed for Indian
+                cooking conditions with consistent quality checks and long-life
+                performance.
+              </p>
+              <Link
+                href="/contact"
+                className="showcase-btn showcase-btn-inline"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          <div className="showcase-middle">
+            <div className="skills-box">
+              <h4>Our Skills</h4>
+              <p>
+                Precision-led processes across fabrication, molding, and final
+                testing deliver dependable chimney performance.
+              </p>
+              <div className="skill-list">
+                {capabilityScores.map((item) => (
+                  <div className="skill-row" key={item.label}>
+                    <div className="skill-head">
+                      <span>{item.label}</span>
+                      <strong>{item.value}%</strong>
+                    </div>
+                    <div className="skill-track">
+                      <span style={{ width: `${item.value}%` }}></span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="stats-box">
+              {detailItems.map((item, index) => (
+                <motion.article
+                  className="stat-card"
+                  key={item.title}
                   custom={index}
                   variants={revealUp}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
                 >
-                  <div className="feature-item-motion">
-                    <div className="feature-visual feature-visual-badge" aria-hidden="true">
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                    </div>
-                    <div className="feature-divider">
-                      <span></span>
-                    </div>
-                    <div className="feature-copy">
-                      <h4>{feature.title}</h4>
-                      <p>{feature.text}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </article>
-            ))}
-          </div>
-          <div className="category-list-wrap">
-            <h3>5 Categories</h3>
-            <ul className="category-list">
-              {chimneyCategories.map((category) => (
-                <li key={category}>{category}</li>
+                  <p className="stat-value">{item.title}</p>
+                  <p className="stat-label">{item.text}</p>
+                </motion.article>
               ))}
-            </ul>
+            </div>
           </div>
-          <div className="product-cta-row">
-            <Link href="/contact" className="primary-btn query-btn">
-              Request Quote
-            </Link>
-            <a
-              href="/whatsnew/chimneys/CHIMNEY%20CATALOGUE.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="primary-btn query-btn"
-            >
-              Download Catalog
-            </a>
+
+          <div className="showcase-banner">
+            <Image
+              src="/whatsnew/chimneys/chimneyLandscape.png"
+              alt="Kitchen chimney production and installation"
+              fill
+              className="showcase-banner-image"
+            />
+            <div className="showcase-banner-overlay"></div>
+            <div className="showcase-banner-copy">
+              <p>Hire Us Now</p>
+              <div className="showcase-banner-main">
+                <h4>We Are Always Ready To Make A Perfect Shot</h4>
+                <Link
+                  href="/contact"
+                  className="showcase-btn showcase-btn-hero"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <WhyChoosePremChimneys />
 
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
@@ -396,8 +439,7 @@ export default function ChimneyProductPage() {
           width: 100%;
           height: calc(
             var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-              var(--hero-scroll-factor, 0.45) +
-              var(--nav-offset)
+              var(--hero-scroll-factor, 0.45) + var(--nav-offset)
           );
           min-height: 100vh;
           padding-top: var(--nav-offset);
@@ -925,6 +967,275 @@ export default function ChimneyProductPage() {
           padding: 28px 36px 32px;
         }
 
+        .details-strip {
+          max-width: 1240px;
+          width: 100%;
+          margin: 0 auto;
+          display: grid;
+          gap: 22px;
+        }
+
+        .showcase-top {
+          display: grid;
+          grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr);
+          gap: 22px;
+          align-items: stretch;
+        }
+
+        .showcase-top-image {
+          position: relative;
+          min-height: 270px;
+          border-radius: 6px;
+          overflow: hidden;
+        }
+
+        .showcase-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .showcase-top-copy {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          color: #d8e3f4;
+        }
+
+        .showcase-kicker {
+          margin: 0 0 6px;
+          color: #97acc9;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+        }
+
+        .showcase-top-copy h3 {
+          margin: 0 0 10px;
+          text-align: left;
+          font-size: clamp(30px, 3.1vw, 42px);
+          letter-spacing: -0.01em;
+          text-transform: none;
+          line-height: 1.08;
+          color: #ffffff;
+          max-width: 540px;
+        }
+
+        .showcase-top-copy p {
+          margin: 0;
+          color: #d0def3;
+          font-size: 13px;
+          line-height: 1.7;
+          max-width: 520px;
+        }
+
+        .showcase-btn {
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background-color 0.2s ease;
+        }
+
+        :global(a.showcase-btn),
+        :global(a.showcase-btn:hover),
+        :global(a.showcase-btn:focus),
+        :global(a.showcase-btn:visited) {
+          margin: 0 !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          border-radius: 999px !important;
+          white-space: nowrap !important;
+          min-height: 42px !important;
+          padding: 0 20px !important;
+          font-size: 14px !important;
+          font-weight: 700 !important;
+          line-height: 1.1 !important;
+          letter-spacing: 0 !important;
+          text-transform: none !important;
+          color: #142033 !important;
+          background: #ffffff !important;
+          border: 1px solid #ffffff !important;
+          box-shadow: 0 8px 16px rgba(4, 10, 20, 0.22) !important;
+          text-decoration: none !important;
+        }
+
+        :global(a.showcase-btn-inline) {
+          margin-top: 14px !important;
+          min-width: 140px !important;
+        }
+
+        :global(a.showcase-btn-hero) {
+          min-width: 140px !important;
+        }
+
+        :global(a.showcase-btn:hover),
+        :global(a.showcase-btn:focus-visible) {
+          background: #f3f5f9 !important;
+          border-color: #f3f5f9 !important;
+          transform: translateY(-1px) !important;
+          box-shadow: 0 12px 20px rgba(4, 10, 20, 0.28) !important;
+        }
+
+        .showcase-middle {
+          display: grid;
+          grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+          gap: 22px;
+          align-items: stretch;
+        }
+
+        .skills-box h4 {
+          margin: 0;
+          color: #ffffff;
+          font-size: 34px;
+          text-transform: none;
+          line-height: 1;
+        }
+
+        .skills-box p {
+          margin: 10px 0 0;
+          color: #bacbe4;
+          font-size: 12px;
+          line-height: 1.6;
+        }
+
+        .skill-list {
+          margin-top: 16px;
+          display: grid;
+          gap: 14px;
+        }
+
+        .skill-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          margin-bottom: 5px;
+        }
+
+        .skill-head span,
+        .skill-head strong {
+          color: #d9e5f8;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .skill-track {
+          width: 100%;
+          height: 4px;
+          border-radius: 999px;
+          background: rgba(148, 169, 201, 0.26);
+          overflow: hidden;
+        }
+
+        .skill-track span {
+          display: block;
+          height: 100%;
+          border-radius: 999px;
+          background: linear-gradient(90deg, #eff4ff 0%, #bfd4fb 100%);
+        }
+
+        .stats-box {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .stat-card {
+          border-radius: 8px;
+          border: 1px solid rgba(136, 161, 198, 0.25);
+          background: rgba(17, 26, 40, 0.7);
+          padding: 18px 14px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-height: 104px;
+        }
+
+        .stat-value {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(28px, 2.6vw, 40px);
+          font-weight: 800;
+          letter-spacing: -0.01em;
+          line-height: 1.05;
+          text-transform: none;
+        }
+
+        .stat-label {
+          margin: 8px 0 0;
+          color: #c2d2e9;
+          font-size: 12px;
+          line-height: 1.5;
+        }
+
+        .showcase-banner {
+          position: relative;
+          min-height: 250px;
+          border-radius: 6px;
+          overflow: hidden;
+        }
+
+        .showcase-banner-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .showcase-banner-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(9, 15, 24, 0.32) 0%,
+            rgba(5, 8, 14, 0.66) 100%
+          );
+        }
+
+        .showcase-banner-copy {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: flex-end;
+          text-align: left;
+          padding: 18px 18px 22px;
+        }
+
+        .showcase-banner-copy p {
+          margin: 0;
+          color: #e4eeff;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .showcase-banner-main {
+          margin-top: 6px;
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 14px;
+        }
+
+        .showcase-banner-copy h4 {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(22px, 3vw, 40px);
+          line-height: 1.12;
+          text-transform: none;
+          max-width: calc(100% - 210px);
+        }
+
+        .showcase-banner-copy .showcase-btn-hero {
+          margin-top: 0;
+          flex-shrink: 0;
+          align-self: flex-end;
+        }
+
         .details-strip h3,
         .product-section h3 {
           margin: 0 0 18px;
@@ -1026,129 +1337,274 @@ export default function ChimneyProductPage() {
           padding-bottom: 34px;
         }
 
-        .feature-list {
+        .category-section-shell {
+          padding-top: 26px;
+          padding-bottom: 26px;
+        }
+
+        .category-section-shell .category-list-wrap {
+          margin-top: 0;
+          border-top: none;
+          padding-top: 0;
+        }
+
+        .why-choose-section {
+          padding-top: 26px;
+          padding-bottom: 34px;
+          background: #020918;
+        }
+
+        .why-choose-shell {
           position: relative;
-          margin: 6px auto 0;
-          width: min(760px, 100%);
-          max-width: 760px;
-          transform: translateX(56px);
-        }
-
-        .feature-list::before {
-          display: none;
-        }
-
-        .feature-item {
-          margin: 0 auto 18px;
-          width: 100%;
-          max-width: none;
-        }
-
-        .feature-item-motion {
-          display: grid;
-          grid-template-columns: 180px minmax(0, 1fr);
-          align-items: center;
-          gap: 28px;
-          min-height: 142px;
-          width: 100%;
-        }
-
-        .feature-visual {
-          width: 168px;
-          height: 168px;
-          border-radius: 18px;
-          background: linear-gradient(140deg, #243148 0%, #1a2436 100%);
-          box-shadow: 0 16px 26px rgba(0, 0, 0, 0.35);
-          justify-self: center;
-          position: relative;
+          min-height: 950px;
+          border-radius: 14px;
           overflow: hidden;
-          border: 1px solid rgba(143, 160, 186, 0.35);
-          justify-self: start;
-          margin-right: 0;
+          border: 1px solid rgba(101, 132, 180, 0.32);
+          box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+          max-width: 1200px;
+          margin: 0 auto;
+          background: #040b1b;
         }
 
-        .feature-visual-badge {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .why-bg-image {
+          object-fit: cover;
+          object-position: right center;
+          z-index: 1;
+        }
+
+        .why-choose-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
           background:
             radial-gradient(
-              circle at 35% 30%,
-              rgba(138, 194, 255, 0.26),
-              rgba(23, 36, 56, 0.95) 70%
+              760px 460px at 22% 8%,
+              rgba(78, 123, 214, 0.22),
+              rgba(78, 123, 214, 0) 62%
             ),
-            linear-gradient(140deg, #22314a 0%, #131d2e 100%);
-          border-color: rgba(115, 168, 220, 0.45);
+            linear-gradient(
+              90deg,
+              rgba(3, 8, 20, 0.97) 0%,
+              rgba(7, 15, 34, 0.93) 38%,
+              rgba(11, 22, 45, 0.6) 60%,
+              rgba(12, 24, 48, 0.15) 100%
+            );
         }
 
-        .feature-visual-badge span {
-          font-size: 34px;
-          font-weight: 800;
-          letter-spacing: 0.08em;
-          color: #d7e8ff;
-        }
-
-        .feature-image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          padding: 2px;
-        }
-
-        .feature-divider {
-          display: none;
-        }
-
-        .feature-divider span {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%;
-          border: 2px solid #6ad8f3;
-          background: #0f1724;
-          box-shadow: 0 0 0 4px rgba(87, 206, 237, 0.14);
+        .why-left-panel {
           position: relative;
-          z-index: 2;
+          z-index: 3;
+          width: min(54%, 610px);
+          padding: 62px 34px 42px;
         }
 
-        .feature-copy {
-          justify-self: start;
-          margin-left: 0;
+        .why-heading {
+          margin: 0;
+          color: #e8eefc;
+          font-size: clamp(48px, 6vw, 88px);
+          line-height: 0.94;
+          letter-spacing: -0.02em;
+          text-transform: uppercase;
         }
 
-        .feature-copy h4 {
-          margin: 0 0 8px;
-          color: #e9effb;
-          font-size: 19px;
+        .why-subheading {
+          margin: 18px 0 24px;
+          color: #7ed9d5;
+          font-size: clamp(24px, 2.2vw, 33px);
+          line-height: 1.2;
+          max-width: 520px;
+        }
+
+        .why-step-list {
+          display: grid;
+          gap: 14px;
+        }
+
+        .why-step-card {
+          margin: 0;
+        }
+
+        .why-step-main {
+          display: grid;
+          grid-template-columns: 54px minmax(0, 1fr);
+          align-items: flex-start;
+          gap: 14px;
+          padding: 17px 18px 16px;
+          border-radius: 18px;
+          border: 1px solid rgba(119, 151, 201, 0.34);
+          background: linear-gradient(
+            145deg,
+            rgba(24, 39, 70, 0.74),
+            rgba(15, 28, 52, 0.58)
+          );
+          backdrop-filter: blur(4px);
+        }
+
+        .why-step-index {
+          width: 48px;
+          height: 48px;
+          border-radius: 999px;
+          border: 1px solid rgba(95, 222, 205, 0.68);
+          background: radial-gradient(
+            circle at 35% 30%,
+            rgba(66, 95, 143, 0.9),
+            rgba(17, 35, 63, 0.95)
+          );
+          color: #d7f7ff;
+          font-size: 29px;
+          font-weight: 700;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+        }
+
+        .why-step-copy h4 {
+          margin: 2px 0 8px;
+          color: #f4f8ff;
+          font-size: clamp(30px, 3.1vw, 44px);
+          line-height: 1.04;
           text-transform: none;
         }
 
-        .feature-copy p {
+        .why-step-copy p {
           margin: 0;
+          color: #d6e2f7;
           font-size: 13px;
-          line-height: 1.7;
-          color: #9db0cf;
-          max-width: 480px;
+          line-height: 1.48;
           white-space: pre-line;
+          max-width: 520px;
+        }
+
+        .why-start-title {
+          margin: 18px 0 12px;
+          color: #e8eefc;
+          font-size: clamp(44px, 4vw, 62px);
+          line-height: 1;
+          text-transform: none;
+        }
+
+        .why-pill-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-bottom: 14px;
+        }
+
+        .why-pill-row span {
+          border-radius: 999px;
+          border: 1px solid rgba(143, 171, 212, 0.48);
+          background: rgba(32, 49, 79, 0.72);
+          color: #dce8fd;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1;
+          padding: 12px 18px;
+        }
+
+        .why-contact-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 220px;
+          height: 56px;
+          border-radius: 999px;
+          border: 1px solid rgba(111, 237, 214, 0.68);
+          background: linear-gradient(180deg, #7ae4d6 0%, #4aaea1 100%);
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 700;
+          text-decoration: none;
+          box-shadow: 0 16px 32px rgba(66, 169, 154, 0.26);
+        }
+
+        :global(a.why-contact-btn),
+        :global(a.why-contact-btn:hover),
+        :global(a.why-contact-btn:focus),
+        :global(a.why-contact-btn:visited) {
+          color: #ffffff !important;
+          text-decoration: none !important;
         }
 
         .category-list-wrap {
           margin-top: 12px;
           border-top: 1px solid rgba(130, 154, 189, 0.24);
           padding-top: 18px;
-          max-width: 980px;
+          max-width: 1140px;
           margin-left: auto;
           margin-right: auto;
         }
 
-        .category-list {
-          margin: 0 auto;
-          width: fit-content;
-          max-width: min(100%, 860px);
-          color: #b8c7de;
-          font-size: 14px;
-          line-height: 1.8;
-          padding-left: 20px;
-          text-align: left;
+        .category-grid {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 14px;
+          margin-top: 8px;
+        }
+
+        .category-card {
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid rgba(151, 171, 200, 0.24);
+          background: rgba(17, 24, 36, 0.8);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+          height: 100%;
+        }
+
+        .category-image-wrap {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          overflow: hidden;
+          background: radial-gradient(
+            circle at 50% 40%,
+            rgba(39, 56, 89, 0.45),
+            rgba(18, 26, 41, 0.95) 68%
+          );
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .category-image {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+          display: block;
+          padding: 8px;
+          transition: transform 0.25s ease;
+        }
+
+        .category-card:hover .category-image {
+          transform: scale(1.02);
+        }
+
+        .category-copy {
+          padding: 12px 12px 14px;
+        }
+
+        .category-copy h4 {
+          margin: 0 0 6px;
+          font-size: 13px;
+          line-height: 1.35;
+          color: #edf3ff;
+          text-transform: none;
+        }
+
+        .category-subtitle {
+          margin: 0;
+          color: #8fb4ff;
+          font-size: 11px;
+          line-height: 1.5;
+          font-weight: 600;
+        }
+
+        .category-description {
+          margin: 6px 0 0;
+          color: #b7c8e3;
+          font-size: 12px;
+          line-height: 1.55;
         }
 
         .product-cta-row {
@@ -1232,8 +1688,7 @@ export default function ChimneyProductPage() {
             --nav-offset: 84px;
             height: calc(
               var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-                var(--hero-scroll-factor, 0.45) +
-                var(--nav-offset)
+                var(--hero-scroll-factor, 0.45) + var(--nav-offset)
             );
             min-height: 100vh;
           }
@@ -1329,6 +1784,32 @@ export default function ChimneyProductPage() {
             padding-right: 20px;
           }
 
+          .details-strip {
+            gap: 18px;
+          }
+
+          .showcase-top {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+
+          .showcase-top-image {
+            min-height: 220px;
+          }
+
+          .showcase-top-copy h3 {
+            font-size: clamp(30px, 6vw, 40px);
+          }
+
+          .showcase-middle {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+
+          .showcase-banner {
+            min-height: 220px;
+          }
+
           .details-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
@@ -1337,36 +1818,25 @@ export default function ChimneyProductPage() {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
 
-          .feature-item {
-            width: 100%;
-            max-width: none;
+          .why-choose-shell {
+            min-height: 780px;
           }
 
-          .feature-list {
-            transform: none;
+          .why-left-panel {
+            width: min(72%, 610px);
+            padding: 42px 24px 30px;
           }
 
-          .feature-item-motion {
-            grid-template-columns: 140px minmax(0, 1fr);
-            min-height: 128px;
+          .why-heading {
+            font-size: clamp(42px, 7vw, 64px);
           }
 
-          .feature-visual {
-            width: 124px;
-            height: 124px;
-            margin-right: 46px;
+          .why-step-copy h4 {
+            font-size: clamp(24px, 3.4vw, 36px);
           }
 
-          .feature-copy {
-            margin-left: 46px;
-          }
-
-          .feature-copy h4 {
-            font-size: 16px;
-          }
-
-          .feature-copy p {
-            font-size: 12px;
+          .category-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
           }
         }
 
@@ -1375,8 +1845,7 @@ export default function ChimneyProductPage() {
             --nav-offset: 78px;
             height: calc(
               var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-                var(--hero-scroll-factor, 0.45) +
-                var(--nav-offset)
+                var(--hero-scroll-factor, 0.45) + var(--nav-offset)
             );
             min-height: 100vh;
           }
@@ -1481,45 +1950,107 @@ export default function ChimneyProductPage() {
             grid-template-columns: 1fr;
           }
 
+          .stats-box {
+            grid-template-columns: 1fr;
+          }
+
+          .showcase-banner-copy h4 {
+            font-size: clamp(28px, 8vw, 42px);
+            max-width: calc(100% - 180px);
+          }
+
+          .showcase-banner-main {
+            align-items: flex-end;
+          }
+
+          .showcase-banner-copy .showcase-btn-hero {
+            min-width: 132px;
+            min-height: 44px;
+            font-size: 14px;
+          }
+
           .highlight-grid {
             grid-template-columns: 1fr;
           }
 
-          .feature-list::before {
-            display: none;
+          .why-choose-shell {
+            min-height: auto;
           }
 
-          .feature-item {
-            padding: 12px 10px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(147, 168, 198, 0.2);
-            border-radius: 14px;
-            background: rgba(23, 32, 46, 0.55);
+          .why-bg-image {
+            object-position: 68% center;
           }
 
-          .feature-item-motion {
-            grid-template-columns: 110px minmax(0, 1fr);
-            gap: 14px;
+          .why-choose-overlay {
+            background:
+              radial-gradient(
+                560px 320px at 24% 6%,
+                rgba(78, 123, 214, 0.18),
+                rgba(78, 123, 214, 0) 68%
+              ),
+              linear-gradient(
+                90deg,
+                rgba(3, 8, 20, 0.98) 0%,
+                rgba(7, 15, 34, 0.94) 52%,
+                rgba(10, 20, 40, 0.46) 82%,
+                rgba(10, 20, 40, 0.2) 100%
+              );
           }
 
-          .feature-divider {
-            display: none;
+          .why-left-panel {
+            width: 100%;
+            padding: 30px 14px 24px;
           }
 
-          .feature-visual {
-            width: 96px;
-            height: 96px;
-            justify-self: start;
-            margin-right: 0;
+          .why-heading {
+            font-size: clamp(34px, 10.5vw, 50px);
           }
 
-          .feature-copy {
-            margin-left: 0;
+          .why-subheading {
+            font-size: clamp(19px, 4.8vw, 27px);
+            margin-bottom: 16px;
           }
 
-          .category-list {
-            font-size: 13px;
-            line-height: 1.7;
+          .why-step-main {
+            grid-template-columns: 40px minmax(0, 1fr);
+            gap: 10px;
+            padding: 12px 12px;
+          }
+
+          .why-step-index {
+            width: 34px;
+            height: 34px;
+            font-size: 20px;
+          }
+
+          .why-step-copy h4 {
+            font-size: clamp(20px, 5.2vw, 28px);
+          }
+
+          .why-step-copy p {
+            font-size: 12px;
+            line-height: 1.5;
+          }
+
+          .why-start-title {
+            font-size: clamp(30px, 8vw, 42px);
+            margin: 12px 0 10px;
+          }
+
+          .why-pill-row span {
+            font-size: 12px;
+            padding: 10px 14px;
+          }
+
+          .why-contact-btn {
+            min-width: 190px;
+            height: 46px;
+            font-size: 14px;
+          }
+
+          .category-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
           }
         }
 
@@ -1528,8 +2059,7 @@ export default function ChimneyProductPage() {
             --nav-offset: 78px;
             height: calc(
               var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-                var(--hero-scroll-factor, 0.45) +
-                var(--nav-offset)
+                var(--hero-scroll-factor, 0.45) + var(--nav-offset)
             );
             min-height: 100vh;
             padding-top: var(--nav-offset);
@@ -1611,44 +2141,75 @@ export default function ChimneyProductPage() {
             font-size: 18px;
           }
 
+          .showcase-top-copy h3 {
+            font-size: clamp(26px, 9vw, 36px);
+          }
+
+          .showcase-banner-main {
+            gap: 10px;
+          }
+
+          .showcase-banner-copy h4 {
+            max-width: calc(100% - 146px);
+            font-size: clamp(18px, 6.2vw, 24px);
+          }
+
+          .showcase-banner-copy .showcase-btn-hero {
+            min-width: 124px;
+            min-height: 38px;
+            padding: 0 14px !important;
+            font-size: 13px;
+          }
+
+          .skills-box h4 {
+            font-size: 30px;
+          }
+
+          .stat-value {
+            font-size: clamp(24px, 9vw, 34px);
+          }
+
           .highlight-item {
             padding: 12px;
           }
 
-          .feature-list::before {
-            display: none;
+          .why-step-main {
+            padding: 10px 10px;
           }
 
-          .feature-item {
-            padding: 12px 8px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(147, 168, 198, 0.2);
-            border-radius: 14px;
-            background: rgba(23, 32, 46, 0.55);
+          .why-step-copy h4 {
+            font-size: clamp(18px, 6.4vw, 24px);
           }
 
-          .feature-item-motion {
-            grid-template-columns: 84px minmax(0, 1fr);
-            gap: 12px;
+          .why-step-copy p {
+            font-size: 11px;
           }
 
-          .feature-divider {
-            display: none;
+          .why-pill-row {
+            gap: 8px;
           }
 
-          .feature-visual {
-            width: 76px;
-            height: 76px;
-            justify-self: start;
+          .why-pill-row span {
+            font-size: 11px;
+            padding: 9px 12px;
           }
 
-          .feature-copy p {
-            max-width: none;
+          .why-contact-btn {
+            min-width: 164px;
+            height: 42px;
+            font-size: 13px;
           }
 
-          .category-list {
+          .feature-kicker {
             font-size: 12px;
-            line-height: 1.65;
+          }
+
+          .feature-brand-row span {
+            font-size: 10px;
+          }
+
+          .category-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

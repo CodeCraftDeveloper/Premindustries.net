@@ -1,4 +1,4 @@
-"use client"; // add if you're using Next.js app/ directory
+﻿"use client"; // add if you're using Next.js app/ directory
 
 import React from "react";
 import Link from "next/link";
@@ -19,7 +19,7 @@ const AboutTwo = () => {
             >
               <div className="our-experience-years shadow-lg">
                 <div className="year-outline">
-                  <h2>{currentYear - 1976 || 49}</h2>
+                  <h2>{currentYear - 1976 || 50}</h2>
                 </div>
                 <p>
                   Years of <span>Experience</span>

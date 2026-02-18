@@ -10,7 +10,7 @@ export default function FunFact() {
           <div className="col-lg-3 col-md-6 mt-30 col-12">
             <div className="single-fun-fact">
               <h2>
-                <CountUp end={49} duration={10} />+
+                <CountUp end={50} duration={10} />+
               </h2>
               <h3>Years of Experience</h3>
             </div>
