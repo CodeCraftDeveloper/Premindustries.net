@@ -31,22 +31,6 @@ export default function InjectionContactSection() {
             </p>
           </div>
         </div>
-        <div className="contact-meta">
-          <div>
-            <span className="contact-meta-label">Phone</span>
-            <a href="tel:+918447247227">+91-84472 47227</a>
-          </div>
-          <div>
-            <span className="contact-meta-label">Website</span>
-            <a
-              href="https://www.premindustries.net"
-              target="_blank"
-              rel="noreferrer"
-            >
-              www.premindustries.net
-            </a>
-          </div>
-        </div>
       </div>
 
       <style jsx>{`
