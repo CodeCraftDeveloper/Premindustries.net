@@ -164,13 +164,6 @@ export default function CoolersProductPage() {
               </div>
             ))}
           </div>
-          <div className="dot-row" aria-hidden="true">
-            <span className="dot active"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
         </section>
 
         <section className="content-section">
@@ -191,12 +184,6 @@ export default function CoolersProductPage() {
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="cta-wrap infra-cta-wrap">
-            <Link href="/contact" className="pill-btn">
-              Request Manufacturing Quote
-            </Link>
           </div>
 
           <h2 className="mt scope-title">Complete Component Scope</h2>
@@ -291,11 +278,12 @@ export default function CoolersProductPage() {
           margin: 0;
           text-align: center;
           font-size: clamp(72px, 13vw, 136px);
-          line-height: 0.86;
+          line-height: 0.9;
           letter-spacing: 0.02em;
           font-family: inherit;
           color: rgba(231, 240, 255, 0.96);
           text-transform: none;
+          text-wrap: balance;
         }
 
         .hero-left {
@@ -319,11 +307,12 @@ export default function CoolersProductPage() {
         .hero-left h2 {
           margin: 0;
           font-size: 50px;
-          line-height: 0.95;
+          line-height: 1.02;
           letter-spacing: 0.01em;
           font-family: inherit;
           text-transform: none;
           color: #f1f6ff;
+          text-wrap: balance;
         }
 
         .hero-left p:last-child {
@@ -391,10 +380,11 @@ export default function CoolersProductPage() {
         .hero-right h3 {
           margin: 0;
           font-size: 27px;
-          line-height: 1.05;
+          line-height: 1.12;
           color: #eff4ff;
           font-family: inherit;
           text-transform: none;
+          text-wrap: balance;
         }
 
         .hero-right-sub {
@@ -419,19 +409,57 @@ export default function CoolersProductPage() {
           align-items: center;
           justify-content: center;
           margin-top: 20px;
-          min-width: 156px;
-          padding: 0 22px;
-          height: 42px;
+          min-width: 190px;
+          min-height: 42px;
+          padding: 0 20px;
           border-radius: 999px;
           background: #ffffff;
-          color: #0b1d39;
-          font-size: 11px;
+          color: #142033;
+          font-size: 14px;
           font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.07em;
+          line-height: 1.1;
+          text-transform: none;
+          letter-spacing: 0;
           font-family: inherit;
           border: 1px solid #ffffff;
+          box-shadow: 0 8px 16px rgba(4, 10, 20, 0.22);
           text-decoration: none;
+          white-space: nowrap;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background-color 0.2s ease;
+        }
+
+        :global(a.pill-btn),
+        :global(a.pill-btn:hover),
+        :global(a.pill-btn:focus),
+        :global(a.pill-btn:visited) {
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          border-radius: 999px !important;
+          min-height: 42px !important;
+          padding: 0 20px !important;
+          border: 1px solid #ffffff !important;
+          background: #ffffff !important;
+          color: #142033 !important;
+          font-size: 14px !important;
+          font-weight: 700 !important;
+          line-height: 1.1 !important;
+          letter-spacing: 0 !important;
+          text-transform: none !important;
+          text-decoration: none !important;
+          white-space: nowrap !important;
+          box-shadow: 0 8px 16px rgba(4, 10, 20, 0.22) !important;
+        }
+
+        :global(a.pill-btn:hover),
+        :global(a.pill-btn:focus-visible) {
+          background: #f3f5f9 !important;
+          border-color: #f3f5f9 !important;
+          transform: translateY(-1px) !important;
+          box-shadow: 0 12px 20px rgba(4, 10, 20, 0.28) !important;
         }
 
         .hero-cards {
@@ -548,9 +576,10 @@ export default function CoolersProductPage() {
           margin: 0;
           text-align: center;
           color: #e8f0ff;
-          line-height: 1.05;
+          line-height: 1.12;
           font-family: inherit;
           text-transform: uppercase;
+          text-wrap: balance;
         }
 
         .surface-section h2 {
@@ -682,6 +711,7 @@ export default function CoolersProductPage() {
         .infra-title {
           font-size: 30px !important;
           letter-spacing: 0.03em;
+          line-height: 1.14;
         }
 
         .infra-cta-wrap {
@@ -691,8 +721,8 @@ export default function CoolersProductPage() {
         .infra-cta-wrap .pill-btn {
           min-width: 190px;
           height: 42px;
-          font-size: 12px;
-          letter-spacing: 0.03em;
+          font-size: 14px;
+          letter-spacing: 0;
           text-transform: none;
         }
 
@@ -741,6 +771,7 @@ export default function CoolersProductPage() {
         .scope-title {
           font-size: 42px !important;
           letter-spacing: 0.02em;
+          line-height: 1.08;
         }
 
         .scope-subtext {
@@ -764,6 +795,7 @@ export default function CoolersProductPage() {
           align-items: center;
           justify-content: center;
           font-size: 28px;
+          line-height: 1.1;
           color: #e9f1ff;
           font-family: inherit;
           font-weight: 700;
@@ -800,7 +832,7 @@ export default function CoolersProductPage() {
             width: auto;
             margin: 0;
             font-size: clamp(58px, 9vw, 96px);
-            line-height: 0.9;
+            line-height: 0.92;
             text-align: center;
           }
 
@@ -861,7 +893,7 @@ export default function CoolersProductPage() {
             width: auto;
             margin: 0;
             font-size: clamp(62px, 12vw, 100px);
-            line-height: 0.9;
+            line-height: 0.94;
             text-align: center;
           }
 
@@ -956,7 +988,7 @@ export default function CoolersProductPage() {
           }
 
           .hero h1 {
-            font-size: clamp(56px, 18vw, 92px);
+            font-size: clamp(54px, 17vw, 88px);
           }
 
           .hero-left,
@@ -1033,7 +1065,7 @@ export default function CoolersProductPage() {
           .surface-section h2,
           .content-section h2,
           .feature-copy h3 {
-            font-size: 26px;
+            font-size: 24px;
           }
 
           .hero-cards,

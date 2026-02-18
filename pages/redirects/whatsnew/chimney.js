@@ -534,8 +534,9 @@ export default function ChimneyProductPage() {
           top: clamp(190px, 30vh, 320px);
           margin: 0;
           font-size: clamp(54px, 11vw, 154px);
-          line-height: 0.88;
+          line-height: 0.9;
           letter-spacing: -0.02em;
+          text-wrap: balance;
           text-transform: none;
           transform: translateX(-50%);
           text-align: center;
@@ -564,10 +565,12 @@ export default function ChimneyProductPage() {
         .left-copy-panel h2 {
           margin: 0 0 10px;
           font-size: clamp(20px, 2.2vw, 30px);
-          line-height: 1.2;
+          line-height: 1.16;
+          letter-spacing: -0.01em;
           color: #e8eefb;
           text-transform: none;
           min-height: calc(1.2em * 2);
+          text-wrap: balance;
         }
 
         .left-copy-panel p {
@@ -604,14 +607,14 @@ export default function ChimneyProductPage() {
           position: absolute;
           left: 0;
           right: 0;
-          bottom: 200px;
+          bottom: 254px;
           z-index: 11;
           pointer-events: none;
         }
 
         .gallery-corner {
           position: absolute;
-          width: min(360px, 28vw);
+          width: min(320px, 26vw);
           pointer-events: auto;
         }
 
@@ -636,9 +639,9 @@ export default function ChimneyProductPage() {
           border: 1px solid rgba(159, 177, 209, 0.28);
           border-radius: 6px;
           padding: 8px;
-          text-align: left;
+          text-align: center;
           cursor: pointer;
-          min-height: 158px;
+          min-height: 182px;
           transition:
             border-color 0.2s ease,
             transform 0.2s ease,
@@ -665,7 +668,9 @@ export default function ChimneyProductPage() {
 
         .gallery-image-wrap {
           width: 100%;
-          height: 86px;
+          max-width: none;
+          height: 98px;
+          margin: 0 auto;
           border-radius: 4px;
           overflow: hidden;
           background:
@@ -688,41 +693,45 @@ export default function ChimneyProductPage() {
         }
 
         .gallery-image {
-          width: auto;
+          width: 100%;
           height: 100%;
-          max-width: none;
-          object-fit: contain;
+          max-width: 100%;
+          object-fit: cover;
+          object-position: center;
           display: block;
           transition: transform 0.2s ease;
         }
 
         .gallery-image-1 {
-          transform: scale(2.05) translateY(6%);
+          transform: scale(1.72) translateY(2%);
+          object-position: center 42%;
         }
 
         .gallery-image-2 {
-          transform: scale(1.38) translateY(5%);
+          transform: scale(1.34) translateY(1.5%);
         }
 
         .gallery-image-3 {
-          transform: scale(1.45) translateY(4%);
+          transform: scale(1.38) translateY(1.5%);
         }
 
         .gallery-card.active .gallery-image-1 {
-          transform: scale(2.15) translateY(6%);
+          transform: scale(1.82) translateY(2%);
+          object-position: center 42%;
         }
 
         .gallery-card.active .gallery-image-2 {
-          transform: scale(1.45) translateY(5%);
+          transform: scale(1.42) translateY(1.5%);
         }
 
         .gallery-card.active .gallery-image-3 {
-          transform: scale(1.52) translateY(4%);
+          transform: scale(1.46) translateY(1.5%);
         }
 
         .gallery-copy {
           display: block;
           margin-top: 9px;
+          text-align: center;
         }
 
         .gallery-title {
@@ -868,9 +877,10 @@ export default function ChimneyProductPage() {
           margin: 0 0 8px;
           color: #e9eef9;
           font-size: 17px;
-          line-height: 1.4;
+          line-height: 1.32;
           text-transform: none;
           min-height: calc(1.4em * 2);
+          text-wrap: balance;
         }
 
         .sku {
@@ -1019,9 +1029,10 @@ export default function ChimneyProductPage() {
           font-size: clamp(30px, 3.1vw, 42px);
           letter-spacing: -0.01em;
           text-transform: none;
-          line-height: 1.08;
+          line-height: 1.1;
           color: #ffffff;
           max-width: 540px;
+          text-wrap: balance;
         }
 
         .showcase-top-copy p {
@@ -1092,7 +1103,8 @@ export default function ChimneyProductPage() {
           color: #ffffff;
           font-size: 34px;
           text-transform: none;
-          line-height: 1;
+          line-height: 1.06;
+          letter-spacing: -0.01em;
         }
 
         .skills-box p {
@@ -1161,8 +1173,9 @@ export default function ChimneyProductPage() {
           font-size: clamp(28px, 2.6vw, 40px);
           font-weight: 800;
           letter-spacing: -0.01em;
-          line-height: 1.05;
+          line-height: 1.08;
           text-transform: none;
+          text-wrap: balance;
         }
 
         .stat-label {
@@ -1227,9 +1240,10 @@ export default function ChimneyProductPage() {
           margin: 0;
           color: #ffffff;
           font-size: clamp(22px, 3vw, 40px);
-          line-height: 1.12;
+          line-height: 1.16;
           text-transform: none;
           max-width: calc(100% - 210px);
+          text-wrap: balance;
         }
 
         .showcase-banner-copy .showcase-btn-hero {
@@ -1711,11 +1725,11 @@ export default function ChimneyProductPage() {
           }
 
           .hero-gallery-corners {
-            bottom: 102px;
+            bottom: 156px;
           }
 
           .gallery-corner {
-            width: min(300px, 24vw);
+            width: min(290px, 24vw);
           }
 
           .footer-row {
@@ -1744,11 +1758,11 @@ export default function ChimneyProductPage() {
           }
 
           .hero-gallery-corners {
-            bottom: 118px;
+            bottom: 176px;
           }
 
           .gallery-corner {
-            width: min(340px, 32vw);
+            width: min(300px, 28vw);
           }
 
           .gallery-corner.left {
@@ -1768,6 +1782,83 @@ export default function ChimneyProductPage() {
           .category-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
+          }
+        }
+
+        @media (max-width: 1366px) and (min-width: 981px) {
+          .hero-card {
+            padding: 22px 20px 18px;
+          }
+
+          .display-title {
+            top: clamp(150px, 24vh, 210px);
+            font-size: clamp(52px, 8.5vw, 96px);
+          }
+
+          .left-copy-panel {
+            left: 20px;
+            width: min(34vw, 360px);
+            top: clamp(136px, 22vh, 200px);
+          }
+
+          .detail-panel {
+            right: 20px;
+            width: min(33vw, 340px);
+            top: clamp(128px, 20vh, 188px);
+          }
+
+          .product-render {
+            top: clamp(40%, 34vh, 46%);
+            width: clamp(250px, 24vw, 340px);
+          }
+
+          .hero-gallery-corners {
+            bottom: 92px;
+          }
+
+          .gallery-corner {
+            width: min(270px, 24vw);
+          }
+        }
+
+        @media (max-width: 1100px) and (min-width: 769px) {
+          .display-title {
+            top: 154px;
+            font-size: clamp(48px, 8.6vw, 84px);
+          }
+
+          .left-copy-panel {
+            left: 18px;
+            width: min(44vw, 410px);
+            top: 146px;
+          }
+
+          .left-copy-panel h2 {
+            font-size: clamp(24px, 3.2vw, 34px);
+          }
+
+          .detail-panel {
+            right: 18px;
+            width: min(40vw, 320px);
+            top: 146px;
+          }
+
+          .detail-panel h2 {
+            font-size: 15px;
+          }
+
+          .copy {
+            font-size: 13px;
+            line-height: 1.6;
+          }
+
+          .product-render {
+            width: min(42vw, 300px);
+            top: 42%;
+          }
+
+          .hero-gallery-corners {
+            display: none;
           }
         }
 
@@ -1858,11 +1949,11 @@ export default function ChimneyProductPage() {
           }
 
           .hero-gallery-corners {
-            bottom: 64px;
+            bottom: 126px;
           }
 
           .gallery-corner {
-            width: min(320px, 40vw);
+            width: min(280px, 34vw);
           }
 
           .gallery-corner.left {
@@ -1874,12 +1965,12 @@ export default function ChimneyProductPage() {
           }
 
           .gallery-card {
-            min-height: 142px;
+            min-height: 166px;
             padding: 7px;
           }
 
           .gallery-image-wrap {
-            height: 76px;
+            height: 90px;
           }
 
           .gallery-title {
@@ -1917,7 +2008,7 @@ export default function ChimneyProductPage() {
           }
 
           .showcase-top-copy h3 {
-            font-size: clamp(30px, 6vw, 40px);
+            font-size: clamp(28px, 5.5vw, 38px);
           }
 
           .showcase-middle {
@@ -1983,9 +2074,9 @@ export default function ChimneyProductPage() {
           .hero-bg-video {
             left: 0;
             right: 0;
-            transform: scaleX(1.85);
+            transform: none;
             transform-origin: center;
-            object-fit: fill;
+            object-fit: cover;
             object-position: center;
             opacity: 0.9;
           }
@@ -2019,7 +2110,7 @@ export default function ChimneyProductPage() {
 
           .left-copy-panel h2 {
             margin-bottom: 8px;
-            font-size: clamp(30px, 9vw, 44px);
+            font-size: clamp(28px, 8.4vw, 40px);
             line-height: 1.06;
             min-height: 0;
           }
@@ -2075,7 +2166,7 @@ export default function ChimneyProductPage() {
           }
 
           .showcase-banner-copy h4 {
-            font-size: clamp(28px, 8vw, 42px);
+            font-size: clamp(26px, 7.4vw, 38px);
             max-width: calc(100% - 180px);
           }
 
@@ -2262,7 +2353,7 @@ export default function ChimneyProductPage() {
           }
 
           .showcase-top-copy h3 {
-            font-size: clamp(26px, 9vw, 36px);
+            font-size: clamp(24px, 8.4vw, 32px);
           }
 
           .showcase-banner-main {
@@ -2271,7 +2362,7 @@ export default function ChimneyProductPage() {
 
           .showcase-banner-copy h4 {
             max-width: calc(100% - 146px);
-            font-size: clamp(18px, 6.2vw, 24px);
+            font-size: clamp(18px, 6vw, 23px);
           }
 
           .showcase-banner-copy .showcase-btn-hero {
