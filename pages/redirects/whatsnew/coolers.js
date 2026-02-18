@@ -248,6 +248,7 @@ export default function CoolersProductPage() {
             #0c1424;
           color: #e7efff;
           font-family: "Poppins", sans-serif;
+          overflow-x: clip;
         }
 
         .coolers-page :global(*) {
@@ -774,12 +775,165 @@ export default function CoolersProductPage() {
           margin-bottom: 30px;
         }
 
-        @media (max-width: 1100px) {
-          .hero-left,
-          .hero-right {
-            width: min(300px, 34vw);
+        @media (min-width: 1201px) and (max-height: 820px) {
+          .hero {
+            height: auto;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 28px 30px 22px;
           }
 
+          .hero-label {
+            position: static;
+            align-self: flex-end;
+            margin: 0;
+          }
+
+          .hero h1 {
+            position: static;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: auto;
+            margin: 0;
+            font-size: clamp(58px, 9vw, 96px);
+            line-height: 0.9;
+            text-align: center;
+          }
+
+          .hero-left,
+          .hero-right {
+            position: static;
+            width: 100%;
+            max-width: 820px;
+            text-align: center;
+          }
+
+          .hero-image-wrap {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: rotate(-10deg);
+            width: 220px;
+            height: 340px;
+            margin: 4px auto;
+            animation: none;
+          }
+
+          .hero-image {
+            animation: none;
+          }
+
+          .hero-cards {
+            position: static;
+            transform: none;
+            width: 100%;
+            max-width: 980px;
+            margin-top: 6px;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .hero {
+            height: auto;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding: 34px 24px 28px;
+          }
+
+          .hero-label {
+            position: static;
+            align-self: flex-end;
+            margin: 0;
+          }
+
+          .hero h1 {
+            position: static;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: auto;
+            margin: 0;
+            font-size: clamp(62px, 12vw, 100px);
+            line-height: 0.9;
+            text-align: center;
+          }
+
+          .hero-left,
+          .hero-right {
+            position: static;
+            width: 100%;
+            max-width: 760px;
+            text-align: center;
+          }
+
+          .hero-image-wrap {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: rotate(-9deg);
+            width: min(250px, 40vw);
+            height: min(390px, 62vw);
+            margin: 8px auto 4px;
+            animation: none;
+          }
+
+          .hero-image {
+            animation: none;
+          }
+
+          .hero-cards {
+            position: static;
+            transform: none;
+            width: 100%;
+            max-width: 900px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 8px;
+          }
+
+          .hero-card:last-child {
+            grid-column: 1 / -1;
+          }
+
+          .surface-section,
+          .content-section {
+            padding-left: 24px;
+            padding-right: 24px;
+          }
+
+          .chips-row,
+          .scope-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media (max-width: 1100px) and (min-height: 1200px) {
+          .hero h1 {
+            font-size: clamp(68px, 10vw, 104px);
+          }
+
+          .hero-left,
+          .hero-right {
+            max-width: 820px;
+          }
+
+          .feature-list {
+            max-width: 760px;
+          }
+
+          .tonnage-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 700px;
+          }
+        }
+
+        @media (max-width: 1100px) {
           .hero-left h2,
           .surface-section h2,
           .content-section h2,
@@ -798,65 +952,27 @@ export default function CoolersProductPage() {
           }
 
           .hero {
-            height: auto;
-            min-height: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
             padding-bottom: 28px;
           }
 
-          .hero-label {
-            position: static;
-            align-self: flex-end;
-            margin: 0;
-          }
-
           .hero h1 {
-            position: static;
-            top: auto;
-            left: auto;
-            transform: none;
-            width: auto;
-            margin: 0;
             font-size: clamp(56px, 18vw, 92px);
-            line-height: 0.9;
-            text-align: center;
           }
 
           .hero-left,
           .hero-right {
-            position: static;
-            width: 100%;
             max-width: 680px;
-            text-align: center;
-          }
-
-          .hero-left {
-            margin-top: 0;
           }
 
           .hero-image-wrap {
-            position: relative;
-            left: auto;
-            top: auto;
             transform: rotate(-8deg);
             width: min(220px, 52vw);
             height: min(360px, 78vw);
             margin: 8px auto 2px;
-            animation: none;
-          }
-
-          .hero-image {
-            animation: none;
           }
 
           .hero-cards {
-            position: static;
-            transform: none;
-            width: 100%;
-            margin-top: 8px;
+            max-width: 760px;
           }
 
           .chips-row {
@@ -926,6 +1042,10 @@ export default function CoolersProductPage() {
             grid-template-columns: 1fr;
           }
 
+          .hero-card:last-child {
+            grid-column: auto;
+          }
+
           .tonnage-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 8px;
@@ -938,6 +1058,37 @@ export default function CoolersProductPage() {
 
           .hero-card {
             min-height: 0;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .pill-btn {
+            width: 100%;
+            min-width: 0;
+          }
+
+          .tonnage-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .hero h1 {
+            font-size: clamp(42px, 16vw, 60px);
+          }
+
+          .hero-left h2 {
+            font-size: 24px;
+          }
+
+          .hero-left p:last-child,
+          .hero-right p {
+            font-size: 12px;
+            line-height: 1.6;
+          }
+
+          .hero-card {
+            padding: 16px 12px 12px;
           }
         }
       `}</style>

@@ -88,7 +88,7 @@ const chimneyCategories = [
     subtitle: "Modern look with easy access",
     description:
       "Angled glass design improves headroom and offers efficient extraction with touch-friendly operation.",
-    image: "/whatsnew/chimneys/3.png",
+    image: "/whatsnew/chimneys/inclinedchimney.png",
   },
   {
     title: "Straight-Line Chimneys",
@@ -444,6 +444,7 @@ export default function ChimneyProductPage() {
           min-height: 100vh;
           padding-top: var(--nav-offset);
           background: #000000;
+          overflow-x: clip;
         }
 
         .hero-card {
@@ -946,6 +947,7 @@ export default function ChimneyProductPage() {
           width: 100%;
           padding: 0;
           background: #000000;
+          overflow-x: clip;
         }
 
         .details-strip-wrap {
@@ -1683,6 +1685,123 @@ export default function ChimneyProductPage() {
           font-weight: 500;
         }
 
+        @media (min-width: 1201px) and (max-height: 820px) {
+          .hero-card {
+            padding: 20px 24px 18px;
+          }
+
+          .display-title {
+            top: clamp(150px, 24vh, 216px);
+            font-size: clamp(52px, 8.8vw, 112px);
+          }
+
+          .left-copy-panel {
+            top: clamp(126px, 21vh, 186px);
+            width: min(31vw, 340px);
+          }
+
+          .detail-panel {
+            top: clamp(120px, 20vh, 178px);
+            width: min(31vw, 340px);
+          }
+
+          .product-render {
+            top: clamp(39%, 34vh, 46%);
+            width: clamp(250px, 24vw, 360px);
+          }
+
+          .hero-gallery-corners {
+            bottom: 102px;
+          }
+
+          .gallery-corner {
+            width: min(300px, 24vw);
+          }
+
+          .footer-row {
+            bottom: 16px;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .hero-card {
+            padding: 24px 24px 20px;
+          }
+
+          .display-title {
+            top: clamp(164px, 26vh, 250px);
+            font-size: clamp(56px, 12vw, 118px);
+          }
+
+          .left-copy-panel {
+            width: min(34vw, 360px);
+            top: clamp(138px, 24vh, 228px);
+          }
+
+          .detail-panel {
+            width: min(35vw, 360px);
+            top: clamp(132px, 20vh, 204px);
+          }
+
+          .hero-gallery-corners {
+            bottom: 118px;
+          }
+
+          .gallery-corner {
+            width: min(340px, 32vw);
+          }
+
+          .gallery-corner.left {
+            left: 22px;
+          }
+
+          .gallery-corner.right {
+            right: 22px;
+          }
+
+          .details-strip,
+          .product-section {
+            padding-left: 24px;
+            padding-right: 24px;
+          }
+
+          .category-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+          }
+        }
+
+        @media (max-width: 1100px) and (min-width: 981px) and (orientation: portrait) {
+          .left-copy-panel {
+            width: min(36vw, 370px);
+            top: clamp(146px, 20vh, 220px);
+          }
+
+          .detail-panel {
+            width: min(36vw, 370px);
+            top: clamp(138px, 18vh, 210px);
+          }
+
+          .details-strip,
+          .product-section {
+            padding-left: 22px;
+            padding-right: 22px;
+          }
+
+          .showcase-top,
+          .showcase-middle {
+            grid-template-columns: 1fr;
+          }
+
+          .stats-box {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .category-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
         @media (max-width: 980px) {
           .whatsnew-page {
             --nav-offset: 84px;
@@ -1836,7 +1955,8 @@ export default function ChimneyProductPage() {
           }
 
           .category-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
           }
         }
 
@@ -1899,8 +2019,8 @@ export default function ChimneyProductPage() {
 
           .left-copy-panel h2 {
             margin-bottom: 8px;
-            font-size: clamp(42px, 11vw, 56px);
-            line-height: 1.02;
+            font-size: clamp(30px, 9vw, 44px);
+            line-height: 1.06;
             min-height: 0;
           }
 
@@ -2099,7 +2219,7 @@ export default function ChimneyProductPage() {
           }
 
           .left-copy-panel h2 {
-            font-size: 20px;
+            font-size: clamp(24px, 8.4vw, 32px);
           }
 
           .left-copy-panel p {
@@ -2210,6 +2330,37 @@ export default function ChimneyProductPage() {
 
           .category-grid {
             grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .left-copy-panel {
+            bottom: 14px;
+          }
+
+          .left-copy-panel h2 {
+            font-size: clamp(22px, 8.2vw, 28px);
+            line-height: 1.08;
+          }
+
+          .left-copy-panel p {
+            font-size: 12px;
+            line-height: 1.45;
+            max-width: 100%;
+          }
+
+          .showcase-banner-main {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+          }
+
+          .showcase-banner-copy h4 {
+            max-width: 100%;
+          }
+
+          .showcase-banner-copy .showcase-btn-hero {
+            align-self: flex-start;
           }
         }
       `}</style>
