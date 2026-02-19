@@ -809,61 +809,56 @@ export default function CoolersProductPage() {
 
         @media (min-width: 1201px) and (max-height: 820px) {
           .hero {
-            height: auto;
-            min-height: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            padding: 28px 30px 22px;
+            padding: 32px 24px 16px;
+            height: clamp(42rem, calc(100vh - var(--nav-offset)), 46rem);
+            min-height: 42rem;
           }
 
           .hero-label {
-            position: static;
-            align-self: flex-end;
-            margin: 0;
+            top: 24px;
+            right: 28px;
           }
 
           .hero h1 {
-            position: static;
-            top: auto;
-            left: auto;
-            transform: none;
-            width: auto;
-            margin: 0;
-            font-size: clamp(58px, 9vw, 96px);
+            top: 30%;
+            font-size: clamp(58px, 8.8vw, 94px);
             line-height: 0.92;
-            text-align: center;
           }
 
-          .hero-left,
+          .hero-left {
+            top: 128px;
+            left: 24px;
+            width: min(300px, 30vw);
+          }
+
+          .hero-left h2 {
+            font-size: clamp(34px, 2.8vw, 44px);
+          }
+
           .hero-right {
-            position: static;
-            width: 100%;
-            max-width: 820px;
-            text-align: center;
+            top: 142px;
+            right: 24px;
+            width: min(300px, 30vw);
           }
 
           .hero-image-wrap {
-            position: relative;
-            left: auto;
-            top: auto;
-            transform: rotate(-10deg);
+            top: 94px;
             width: 220px;
-            height: 340px;
-            margin: 4px auto;
-            animation: none;
-          }
-
-          .hero-image {
-            animation: none;
+            height: 356px;
           }
 
           .hero-cards {
-            position: static;
-            transform: none;
-            width: 100%;
-            max-width: 980px;
+            bottom: 8px;
+            width: min(940px, calc(100% - 48px));
+            gap: 8px;
+          }
+
+          .hero-card {
+            min-height: 102px;
+            padding: 16px 12px 10px;
+          }
+
+          .hero-card h4 {
             margin-top: 6px;
           }
         }

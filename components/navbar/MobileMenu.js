@@ -3,12 +3,16 @@
 
 import Link from "next/link";
 
-const MobileMenu = ({ mobileMenu, handleMobileMenu }) => {
+const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
   // Close menu when a nav item is clicked (optional UX)
-  const onNavClick = () => handleMobileMenu();
+  const onNavClick = () => closeMobileMenu();
 
   return (
-    <div className={mobileMenu ? "mobile-nav" : "mobile-nav show"}>
+    <div
+      id="mobile-nav-panel"
+      className={mobileMenu ? "mobile-nav show" : "mobile-nav"}
+      aria-hidden={!mobileMenu}
+    >
       <button onClick={handleMobileMenu} type="button" className="close-nav">
         <i className="fa fa-times-circle"></i>
       </button>

@@ -2074,11 +2074,12 @@ export default function ChimneyProductPage() {
           .hero-bg-video {
             left: 0;
             right: 0;
-            transform: none;
+            transform: scale(1.06);
             transform-origin: center;
             object-fit: cover;
-            object-position: center;
-            opacity: 0.9;
+            object-position: center 24%;
+            opacity: 0.94;
+            background: #000;
           }
 
           .label {
@@ -2100,6 +2101,14 @@ export default function ChimneyProductPage() {
             max-width: none;
             text-align: left;
             z-index: 30;
+            padding: 10px 8px 8px;
+            border-radius: 10px;
+            background: linear-gradient(
+              180deg,
+              rgba(3, 8, 18, 0) 0%,
+              rgba(3, 8, 18, 0.66) 42%,
+              rgba(3, 8, 18, 0.86) 100%
+            );
           }
 
           .left-tag {
@@ -2294,7 +2303,9 @@ export default function ChimneyProductPage() {
 
           .hero-bg-video {
             width: 100%;
-            transform: scaleX(2);
+            transform: scale(1.12);
+            object-fit: cover;
+            object-position: center 22%;
           }
 
           .detail-panel h2 {

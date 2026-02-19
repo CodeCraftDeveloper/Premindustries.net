@@ -1,17 +1,33 @@
 // app/components/HeaderTwo.tsx (or /components/HeaderTwo.tsx)
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 
 const HeaderTwo = () => {
-  const [search, setSearch] = useState(true);
-  const [mobileMenu, setMobileMenu] = useState(true);
+  const [search] = useState(true);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
-  const handleSearch = () => setSearch((s) => !s);
   const handleMobileMenu = () => setMobileMenu((m) => !m);
+  const closeMobileMenu = () => setMobileMenu(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("nav-open", mobileMenu);
+    return () => document.body.classList.remove("nav-open");
+  }, [mobileMenu]);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenu(false);
+      }
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <header className="header-wrap header-2">
@@ -26,7 +42,7 @@ const HeaderTwo = () => {
             </Link>
           </div>
 
-          <div className="main-menu d-none d-lg-block">
+          <div className="main-menu desktop-nav">
             <ul>
               <li>
                 <Link href="/">Home</Link>
@@ -202,20 +218,36 @@ const HeaderTwo = () => {
             </ul>
           </div>
 
-          <div className="d-inline-block d-lg-none">
+          <div className="mobile-nav-trigger">
             <div className="mobile-nav-wrap">
-              <div id="hamburger" onClick={handleMobileMenu}>
-                <i className="fa fa-bars" />
-              </div>
+              <button
+                id="hamburger"
+                type="button"
+                onClick={handleMobileMenu}
+                className={mobileMenu ? "hamburger-btn is-open" : "hamburger-btn"}
+                aria-expanded={mobileMenu}
+                aria-controls="mobile-nav-panel"
+                aria-label={mobileMenu ? "Close menu" : "Open menu"}
+              >
+                <span />
+                <span />
+                <span />
+              </button>
               <MobileMenu
                 mobileMenu={mobileMenu}
                 handleMobileMenu={handleMobileMenu}
+                closeMobileMenu={closeMobileMenu}
               />
             </div>
-            <div className="overlay" />
+            <button
+              type="button"
+              className={mobileMenu ? "overlay active" : "overlay"}
+              aria-label="Close menu"
+              onClick={closeMobileMenu}
+            />
           </div>
 
-          <div className="right-elements d-none d-xl-flex d-flex align-items-center">
+          <div className="right-elements desktop-right d-flex align-items-center">
             <div className="search-icon">
               {/* Toggle button (uncomment if you need a trigger icon) */}
               {/* <span className="search-btn" onClick={handleSearch} style={{ cursor: "pointer" }}>
