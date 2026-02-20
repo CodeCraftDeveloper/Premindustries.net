@@ -17,6 +17,7 @@ import ExecutionProcessSection from "./ExecutionProcessSection";
 import HomeCtaSection from "./HomeCtaSection";
 import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
+import AaharPromoBanner from "@/components/common/AaharPromoBanner";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
@@ -40,6 +41,15 @@ export default function HomeTwoClient() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <HeroSection />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <AaharPromoBanner />
       </motion.section>
 
       <motion.section

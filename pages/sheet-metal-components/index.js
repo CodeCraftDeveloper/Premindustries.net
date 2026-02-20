@@ -12,7 +12,6 @@ import SectionReveal from "@/components/common/SectionReveal";
 
 export default function Index() {
   const [showIntro, setShowIntro] = useState(true);
-
   return (
     <>
       <Head>

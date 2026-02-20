@@ -19,7 +19,10 @@ export default function AboutTwo(props) {
   const years = currentYear - 1976;
 
   return (
-    <section className="about-section section-padding">
+    <section
+      className="about-section section-padding"
+      style={{ backgroundColor: "#f5f5f5" }}
+    >
       <div className="container">
         <div className="row align-items-center">
           <div className="col-xl-6 col-12 pe-xl-0">
