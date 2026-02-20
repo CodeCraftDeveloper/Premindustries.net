@@ -1,7 +1,7 @@
 export default function ProjectsTabHead() {
   return (
     <div
-      className="container-fluid pt-4 pb-4 wow fadeInLeft animated"
+      className="container-fluid pt-4 pb-4"
       style={{ backgroundColor: "#14254C" }}
     >
       <div className="row">

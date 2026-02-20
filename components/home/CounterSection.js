@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 
 export default function FunFact() {
   return (
-    <section className="fun-fact-wrapper pb-5 text-center wow fadeInLeft animated">
+    <section className="fun-fact-wrapper pb-5 text-center">
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-3 col-md-6 mt-30 col-12">

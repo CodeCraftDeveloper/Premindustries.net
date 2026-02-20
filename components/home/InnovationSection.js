@@ -1,6 +1,6 @@
-export default function Innovation() {
+﻿export default function Innovation() {
   return (
-    <section className="why-choice-us why-choose-us-margin-top mb-5 wow fadeInLeft animated">
+    <section className="why-choice-us why-choose-us-margin-top mb-5">
       <div
         className="why-choice-bg bg-cover d-none d-xl-block"
         style={{ backgroundImage: "url(/home/Innovation.jpg)" }}
@@ -40,7 +40,8 @@ export default function Innovation() {
                 <h3>Customer-Centric Product Development</h3>
                 <p style={{ textAlign: "justify" }}>
                   We consistently develop new products and services tailored to
-                  evolving market demands, whether it’s through smart packaging
+                  evolving market demands, whether it&apos;s through smart
+                  packaging
                   solutions, high-performance steel, personalized retail
                   experiences, or state of the art construction techniques.
                 </p>
@@ -52,3 +53,4 @@ export default function Innovation() {
     </section>
   );
 }
+

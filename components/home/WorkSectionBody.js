@@ -17,7 +17,7 @@ const ScrollToTop = () => {
 
 export default function ProjectsTab() {
   return (
-    <section className="our-info-tabs-wrapper wow fadeInLeft animated home-tabs">
+    <section className="our-info-tabs-wrapper home-tabs">
       <div className="container home-tabs-container">
         <div className="row">
           <div className="col-12 col-xl-12">

@@ -1,6 +1,6 @@
 export default function Sustainability() {
   return (
-    <section className="about-section pt-5 wow fadeInLeft animated">
+    <section className="about-section pt-5">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-xl-6 mt-5 mt-lg-0 col-12">

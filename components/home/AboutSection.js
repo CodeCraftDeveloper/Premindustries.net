@@ -24,8 +24,8 @@ export default function AboutTwo(props) {
         <div className="row align-items-center">
           <div className="col-xl-6 col-12 pe-xl-0">
             <div
-              className="about-cover-bg bg-cover me-xl-5 wow fadeInLeft animated"
-              style={{ backgroundImage: "url(home/about-img.jpg)" }}
+              className="about-cover-bg bg-cover me-xl-5"
+              style={{ backgroundImage: "url(/home/about-img.jpg)" }}
             >
               <div className="our-experience-years shadow-lg">
                 <div className="year-outline">
@@ -42,18 +42,16 @@ export default function AboutTwo(props) {
             <div className="block-contents">
               <div className="section-title">
                 <span
-                  className="wow fadeInLeft animated"
                   style={{ fontSize: "17px" }}
                 >
                   {props.subhead}
                 </span>
-                <h2 className="wow fadeInLeft animated">{props.head}</h2>
+                <h2>{props.head}</h2>
               </div>
               {/* <blockquote>Innovation in Action</blockquote> */}
             </div>
 
             <p
-              className="wow fadeInLeft animated"
               style={{ textAlign: "justify", fontSize: "17px" }}
             >
               {props.text1} <br />
