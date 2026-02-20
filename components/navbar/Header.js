@@ -30,7 +30,7 @@ const HeaderTwo = () => {
   }, []);
 
   return (
-    <header className="header-wrap header-2">
+    <header className="header-wrap header-2 header-no-accent">
       <div className="main-header-wrapper">
         <div
           className="container-fluid align-items-center justify-content-between d-flex"
@@ -224,7 +224,9 @@ const HeaderTwo = () => {
                 id="hamburger"
                 type="button"
                 onClick={handleMobileMenu}
-                className={mobileMenu ? "hamburger-btn is-open" : "hamburger-btn"}
+                className={
+                  mobileMenu ? "hamburger-btn is-open" : "hamburger-btn"
+                }
                 aria-expanded={mobileMenu}
                 aria-controls="mobile-nav-panel"
                 aria-label={mobileMenu ? "Close menu" : "Open menu"}
@@ -272,6 +274,11 @@ const HeaderTwo = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        :global(.header-no-accent .main-header-wrapper::before) {
+          display: none;
+        }
+      `}</style>
     </header>
   );
 };
