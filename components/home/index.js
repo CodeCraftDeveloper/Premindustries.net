@@ -6,8 +6,8 @@ import AboutSection from "./AboutSection";
 import WorkSectionHead from "./WorkSectionHead";
 import WorkSectionBody from "./WorkSectionBody";
 import WorkForYouSection from "./WorkForYouSection";
-import GoalAccessibilitySection from "./GoalAccessibilitySection";
-import ConstructionTrustSection from "./ConstructionTrustSection";
+// import GoalAccessibilitySection from "./GoalAccessibilitySection";
+// import ConstructionTrustSection from "./ConstructionTrustSection";
 import SustainabilitySection from "./SustainabilitySection";
 import InnovationSection from "./InnovationSection";
 import CounterSection from "./CounterSection";
@@ -77,23 +77,23 @@ export default function HomeTwoClient() {
         <WorkForYouSection />
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <GoalAccessibilitySection />
-      </motion.section>
+      </motion.section> */}
 
-      <motion.section
+      {/* <motion.section
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <ConstructionTrustSection />
-      </motion.section>
+      </motion.section> */}
 
       {/* <motion.section
         initial={{ opacity: 0, y: 24 }}
