@@ -17,9 +17,9 @@ const heroCards = [
   },
   {
     id: "02",
-    title: "Advanced Injection Molding Infrastructure",
+    title: "Advanced Injection Moulding Infrastructure",
     text: "160 to 3000 ton capacity",
-    rightTitle: "Advanced Injection Molding Infrastructure",
+    rightTitle: "Advanced Injection Moulding Infrastructure",
     rightSub: "160 To 3000 Ton Capacity",
     rightCopy:
       "Our wide tonnage range supports both large cooler cabinets and high-precision functional parts with consistent dimensional control and repeatable production quality.",
@@ -88,13 +88,13 @@ export default function CoolersProductPage() {
         <title>Coolers | Prem Industries</title>
         <meta
           name="description"
-          content="Precision injection molded cooler components built for scale, with advanced tonnage infrastructure and quality traceability."
+          content="Precision injection moulded cooler components built for scale, with advanced tonnage infrastructure and quality traceability."
         />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="noindex,nofollow" />
         <meta property="og:title" content="Coolers | Prem Industries" />
         <meta
           property="og:description"
-          content="Complete cooler component manufacturing under one roof with advanced injection molding infrastructure."
+          content="Complete cooler component manufacturing under one roof with advanced injection moulding infrastructure."
         />
         <meta property="og:url" content={DIRECT_LINK} />
         <link rel="canonical" href={DIRECT_LINK} />
@@ -112,7 +112,7 @@ export default function CoolersProductPage() {
             <h2>Engineered for Performance</h2>
             <p>
               Prem Industries India Limited has unlocked a new level of
-              innovation with advanced injection molding capabilities from 160
+              innovation with advanced injection moulding capabilities from 160
               Tons to 3000 Tons, enabling high-performance coolers and complete
               cooler components with unmatched precision and consistency.
             </p>
@@ -168,7 +168,7 @@ export default function CoolersProductPage() {
 
         <section className="content-section">
           <h2 className="infra-title">
-            Advanced Injection Molding Infrastructure
+            Advanced Injection Moulding Infrastructure
           </h2>
           <div className="feature-list">
             {infraFeatures.map((feature) => (
@@ -189,7 +189,7 @@ export default function CoolersProductPage() {
           <h2 className="mt scope-title">Complete Component Scope</h2>
           <p className="subtext scope-subtext">
             With dedicated in-house assembly lines, we support seamless
-            integration from molded part to finished product.
+            integration from moulded part to finished product.
           </p>
           <div className="scope-grid">
             {componentScopeBottom.map((item) => (
@@ -199,7 +199,7 @@ export default function CoolersProductPage() {
             ))}
           </div>
 
-          <h2 className="mt">Injection Molding Machine Infrastructure</h2>
+          <h2 className="mt">Injection Moulding Machine Infrastructure</h2>
           <p className="subtext">
             This wide tonnage range enables both large cooler cabinets and
             precision functional components with equal efficiency.

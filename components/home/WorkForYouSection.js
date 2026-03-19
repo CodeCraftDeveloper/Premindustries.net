@@ -2,29 +2,62 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import {
+  getAosProps,
+  homeViewport,
+  motion,
+  revealCard,
+  revealLeft,
+  revealRight,
+  staggerCards,
+} from "./homeMotion";
 
 export default function WorkForYouSection() {
   return (
-    <section className="work-for-you">
-      <div className="container">
-        <div className="head">
-          <div className="left">
-            {/* <p className="kicker">ABOUT US</p> */}
-            <h2>
-              We Work For You Since <span>1977</span> Industrial Around The
+    <section className="bg-white px-[14px] pb-[34px] pt-[26px] sm:px-[18px] lg:px-6">
+      <div className="mx-auto max-w-[1380px]">
+        <div className="mb-[14px] grid items-start gap-[18px] lg:grid-cols-[minmax(280px,1fr)_minmax(260px,0.7fr)]">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={homeViewport}
+            variants={revealLeft}
+            {...getAosProps("left", 40)}
+          >
+            <h2 className="mt-2 max-w-[720px] text-[clamp(25px,7vw,36px)] leading-[1.08] text-[#202020] sm:text-[clamp(30px,2.8vw,44px)]">
+              Supporting Indian manufacturing since{" "}
+              <span className="text-[#e92127]">1977</span> with dependable
+              industrial execution
             </h2>
-          </div>
-          <p className="intro">
-            Welcome to Prem Industries. Your trusted partner in delivering
-            top-quality metal solutions. We combine legacy knowledge and modern
-            industrial expertise.
-          </p>
+          </motion.div>
+          <motion.p
+            className="mt-[2px] text-left text-[13px] leading-[1.6] text-[#7a7a7a]"
+            initial="hidden"
+            whileInView="show"
+            viewport={homeViewport}
+            variants={revealRight}
+            {...getAosProps("right", 120)}
+          >
+            Prem Industries combines decades of operational experience with
+            modern production systems to support OEM sourcing, industrial
+            manufacturing, and supply continuity for growing businesses.
+          </motion.p>
         </div>
 
-        <div className="body">
-          <div className="photo-main">
+        <motion.div
+          className="grid gap-[10px] lg:grid-cols-[minmax(300px,1fr)_minmax(220px,0.42fr)]"
+          initial="hidden"
+          whileInView="show"
+          viewport={homeViewport}
+          variants={staggerCards}
+        >
+          <motion.div
+            className="relative min-h-[280px] overflow-hidden rounded-[4px] lg:min-h-[360px]"
+            variants={revealLeft}
+            {...getAosProps("left", 60)}
+          >
             <video
-              className="main-video"
+              className="block h-full w-full object-cover"
               autoPlay
               muted
               loop
@@ -33,209 +66,60 @@ export default function WorkForYouSection() {
             >
               <source src="/home/luxury-packaging.mp4" type="video/mp4" />
             </video>
-          </div>
+          </motion.div>
 
-          <div className="side">
-            <article className="badge">
-              <h3>Prem Industries</h3>
-              <p>we build the business in world together with quality</p>
-              <div className="badge-links">
-                <a href="tel:+918447247227">+918447247227</a>
-                <a href="mailto:ecommerce@premindustries.in">
+          <div className="grid gap-[10px] lg:grid-rows-[auto_1fr]">
+            <motion.article
+              className="rounded-[4px] bg-[#13224d] px-[18px] py-4 text-white"
+              variants={revealCard}
+              {...getAosProps("right", 120)}
+            >
+              <h3 className="m-0 text-[20px] font-bold text-white">
+                Prem Industries
+              </h3>
+              <p className="mb-[10px] mt-2 text-[12px] leading-[1.5] text-white/90">
+                Discuss your product requirement, production volume, and
+                delivery timeline with our team.
+              </p>
+              <div className="grid gap-[6px]">
+                <a
+                  href="tel:+918447247227"
+                  className="text-[13px] font-bold !text-[#dce7ff] transition-colors duration-200 hover:!text-white"
+                >
+                  +918447247227
+                </a>
+                <a
+                  href="mailto:ecommerce@premindustries.in"
+                  className="text-[13px] font-bold !text-[#dce7ff] transition-colors duration-200 hover:!text-white"
+                >
                   ecommerce@premindustries.in
                 </a>
-                <Link href="/contact" className="badge-cta">
+                <Link
+                  href="/contact"
+                  className="mt-1 inline-flex w-fit items-center justify-center rounded-full border border-[#e92127] bg-[#e92127] px-[14px] py-2 text-[13px] tracking-[0.04em] !text-white transition-all duration-200 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:!text-[#13224d]"
+                >
                   Contact Form
                 </Link>
               </div>
-            </article>
+            </motion.article>
 
-            <div className="photo-small">
+            <motion.div
+              className="relative min-h-[164px] overflow-hidden rounded-[4px]"
+              variants={revealRight}
+              {...getAosProps("right", 180)}
+            >
               <Image
                 src="/home/Innovation.jpg"
                 alt="Industrial operations"
                 fill
                 unoptimized
                 sizes="(max-width: 991px) 100vw, 30vw"
-                style={{ objectFit: "cover" }}
+                className="object-cover"
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
-
-      <style jsx>{`
-        .work-for-you {
-          padding: 26px 0 34px;
-          background: #f5f5f5;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
-        }
-
-        .head {
-          display: grid;
-          grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.7fr);
-          gap: 18px;
-          align-items: start;
-          margin-bottom: 14px;
-        }
-
-        .kicker {
-          margin: 0;
-          font-size: 11px;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #8a8a8a;
-          font-weight: 700;
-        }
-
-        .left h2 {
-          margin: 8px 0 0;
-          font-size: clamp(30px, 2.8vw, 44px);
-          line-height: 1.08;
-          color: #202020;
-          text-transform: none;
-          max-width: 720px;
-        }
-
-        .left h2 span {
-          color: #e92127;
-        }
-
-        .intro {
-          margin: 2px 0 0;
-          color: #7a7a7a;
-          font-size: 13px;
-          line-height: 1.6;
-          text-align: left;
-        }
-
-        .body {
-          display: grid;
-          grid-template-columns: minmax(300px, 1fr) minmax(220px, 0.42fr);
-          gap: 10px;
-        }
-
-        .photo-main,
-        .photo-small {
-          position: relative;
-          overflow: hidden;
-          border-radius: 4px;
-        }
-
-        .photo-main {
-          min-height: 360px;
-        }
-
-        .main-video {
-          width: 100%;
-          height: 100%;
-          display: block;
-          object-fit: cover;
-        }
-
-        .side {
-          display: grid;
-          grid-template-rows: auto 1fr;
-          gap: 10px;
-        }
-
-        .badge {
-          background: #13224d;
-          color: #ffffff;
-          border-radius: 4px;
-          padding: 16px 18px;
-        }
-
-        .badge h3 {
-          margin: 0;
-          font-size: 20px;
-          color: #ffffff;
-          text-transform: none;
-          font-weight: 700;
-        }
-
-        .badge p {
-          margin: 8px 0 10px;
-          font-size: 12px;
-          color: rgba(255, 255, 255, 0.92);
-          line-height: 1.5;
-        }
-
-        .badge-links {
-          display: grid;
-          gap: 6px;
-        }
-
-        .badge-links a {
-          color: #dce7ff !important;
-          font-size: 13px;
-          font-weight: 700;
-          text-decoration: none;
-        }
-
-        .badge-links a:hover {
-          color: #ffffff !important;
-        }
-
-        .badge .badge-cta {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: fit-content;
-          margin-top: 4px;
-          padding: 8px 14px;
-          border-radius: 999px;
-          border: 1px solid #e92127;
-          background: #e92127;
-          color: #ffffff !important;
-          letter-spacing: 0.04em;
-          transition: background 0.2s ease, border-color 0.2s ease,
-            color 0.2s ease, transform 0.2s ease;
-        }
-
-        .badge .badge-cta:hover {
-          background: #ffffff;
-          border-color: #ffffff;
-          color: #13224d !important;
-          transform: translateY(-1px);
-        }
-
-        .photo-small {
-          min-height: 164px;
-        }
-
-        @media (max-width: 991px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
-          .head,
-          .body {
-            grid-template-columns: 1fr;
-          }
-
-          .photo-main {
-            min-height: 280px;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
-          }
-
-          .left h2 {
-            font-size: clamp(25px, 7vw, 36px);
-          }
-        }
-      `}</style>
     </section>
   );
 }

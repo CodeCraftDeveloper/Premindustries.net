@@ -1,198 +1,220 @@
-// app/components/MobileMenu.tsx (or /components/MobileMenu.tsx)
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { mobileNavItems } from "./navData";
 
-const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
-  // Close menu when a nav item is clicked (optional UX)
-  const onNavClick = () => closeMobileMenu();
+const formatNavLabel = (label) => (typeof label === "string" ? label.toUpperCase() : label);
+
+const MobileLink = ({ item, className, onClick, children }) => {
+  if (!item.href) {
+    return <span className={className}>{children}</span>;
+  }
+
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noreferrer"
+        className={className}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
+  }
 
   return (
+    <Link href={item.href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+};
+
+const MobileNavItem = ({ item, depth = 0, closeMobileMenu }) => {
+  const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+  const itemClassName =
+    depth === 0
+      ? "flex items-center justify-between px-0 py-2.5 text-sm font-semibold uppercase tracking-[0.1em] leading-[1.2] text-white transition hover:text-white/80"
+      : "flex items-center justify-between px-0 py-2 text-sm font-semibold uppercase tracking-[0.08em] leading-[1.2] text-slate-100 transition hover:text-white";
+  const detailsClassName =
+    depth === 0
+      ? "group"
+      : "group";
+  const summaryClassName =
+    depth === 0
+      ? "flex cursor-pointer list-none items-center justify-between gap-3 px-0 py-2.5 text-sm font-semibold uppercase tracking-[0.1em] leading-[1.2] text-white"
+      : "flex cursor-pointer list-none items-center justify-between gap-3 px-0 py-2 text-sm font-semibold uppercase tracking-[0.08em] leading-[1.2] text-white";
+
+  if (!hasChildren) {
+    return (
+      <li>
+        <MobileLink item={item} className={itemClassName} onClick={closeMobileMenu}>
+          <span>{formatNavLabel(item.label)}</span>
+        </MobileLink>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <details className={detailsClassName}>
+        <summary className={summaryClassName}>
+          <span>{formatNavLabel(item.label)}</span>
+          <i
+            className="fa-solid fa-chevron-down text-[11px] transition group-open:rotate-180"
+            aria-hidden="true"
+          />
+        </summary>
+
+        <div className="px-2 pb-2">
+          {item.href ? (
+            <MobileLink
+              item={item}
+              className="mb-1.5 flex items-center justify-between px-0 py-2 text-xs font-semibold uppercase tracking-[0.1em] leading-[1.2] text-white transition hover:text-white/80"
+              onClick={closeMobileMenu}
+            >
+              <span>VISIT {formatNavLabel(item.label)}</span>
+              <i className="fa-solid fa-arrow-up-right-from-square text-[11px]" aria-hidden="true" />
+            </MobileLink>
+          ) : null}
+
+          <ul className={depth === 0 ? "space-y-2" : "space-y-1 pl-3"}>
+            {item.children.map((child) => (
+              <MobileNavItem
+                key={`${depth}-${child.label}`}
+                item={child}
+                depth={depth + 1}
+                closeMobileMenu={closeMobileMenu}
+              />
+            ))}
+          </ul>
+        </div>
+      </details>
+    </li>
+  );
+};
+
+const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
+  return (
     <div
-      id="mobile-nav-panel"
-      className={mobileMenu ? "mobile-nav show" : "mobile-nav"}
+      className={
+        mobileMenu
+          ? "site-mobile-menu fixed inset-0 z-50 lg:hidden"
+          : "site-mobile-menu pointer-events-none fixed inset-0 z-50 lg:hidden"
+      }
       aria-hidden={!mobileMenu}
     >
-      <button onClick={handleMobileMenu} type="button" className="close-nav">
-        <i className="fa fa-times-circle"></i>
-      </button>
+      <button
+        type="button"
+        onClick={closeMobileMenu}
+        className={
+          mobileMenu
+            ? "site-mobile-overlay absolute inset-0 opacity-100 backdrop-blur-[2px] transition"
+            : "site-mobile-overlay absolute inset-0 opacity-0 transition"
+        }
+        aria-label="Close menu"
+      />
 
-      <nav className="sidebar-nav">
-        <ul className="metismenu" id="mobile-menu">
-          <li>
-            <Link className="fa-arrow" href="/" onClick={onNavClick}>
-              HOME
-            </Link>
-          </li>
+      <aside
+        id="mobile-nav-panel"
+        className={
+          mobileMenu
+            ? "site-mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm translate-x-0 flex-col bg-brand-navy px-5 pb-6 pt-5 shadow-float transition duration-300"
+            : "site-mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm translate-x-full flex-col bg-brand-navy px-5 pb-6 pt-5 shadow-float transition duration-300"
+        }
+        style={{ fontFamily: "Roboto, sans-serif" }}
+        >
+        <div className="mb-6 flex items-center justify-between gap-4 border-b border-white/10 pb-4">
+          <div className="flex items-center rounded-xl bg-white px-3 py-2">
+            <Image
+              src="/logo.png"
+              alt="Prem Industries"
+              width={100}
+              height={70}
+              className="h-auto w-[84px]"
+              priority
+            />
+          </div>
 
-          <li>
-            <Link href="/about" onClick={onNavClick}>
-              ABOUT US
-            </Link>
-          </li>
+          <button
+            onClick={handleMobileMenu}
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
+            aria-label="Close menu"
+          >
+            <i className="fa-solid fa-xmark text-lg" aria-hidden="true" />
+          </button>
+        </div>
 
-          <li>
-            <Link href="/" onClick={onNavClick}>
-              SECTORS
-            </Link>
-            <ul className="sub-menu">
-              <li>
-                <a
-                  href="https://prempackaging.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  PACKAGING SECTOR
-                </a>
-                <ul className="sub-menu">
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link href="/" target="_blank" rel="noreferrer">
-                      FLEXIBLE DIVISION
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+        <nav className="flex-1 overflow-y-auto pr-1" aria-label="Mobile navigation">
+          <ul className="space-y-1">
+            {mobileNavItems.map((item) => (
+              <MobileNavItem
+                key={item.label}
+                item={item}
+                closeMobileMenu={closeMobileMenu}
+              />
+            ))}
+          </ul>
+        </nav>
 
-              <li>
-                <a href="https://phsteel.in/" target="_blank" rel="noreferrer">
-                  STEEL SECTOR
-                </a>
-                <ul className="sub-menu">
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link
-                      href="/sheet-metal-components"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      SHEET METAL COMPONENTS
-                    </Link>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link
-                      href="/mangaldeep-steels"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      MANGALDEEP STEELS
-                    </Link>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link href="/premhari" target="_blank" rel="noreferrer">
-                      PREM HARI
-                    </Link>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <a
-                      href="https://www.phsteel.in/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      PH STEELS
-                    </a>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link
-                      href="/dream-metplast"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      DREAM METPLAST
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+        <div className="mt-6 space-y-3 border-t border-white/10 pt-5 text-sm text-slate-100">
+          <a
+            href="mailto:info@premindustries.in"
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:bg-white/10"
+          >
+            <i className="fa-solid fa-envelope text-brand-red" aria-hidden="true" />
+            <span>info@premindustries.in</span>
+          </a>
 
-              <li>
-                <Link href="/retail-sector" onClick={onNavClick}>
-                  RETAIL SECTOR
-                </Link>
-                <ul className="sub-menu">
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link href="/prem-paints" target="_blank" rel="noreferrer">
-                      PREM PAINTS
-                    </Link>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link
-                      href="/nourishing-foods"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      NOURISHING FOODS
-                    </Link>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link href="/prem-shanti" target="_blank" rel="noreferrer">
-                      PREM SHANTI
-                    </Link>
-                  </li>
-                  <li style={{ paddingLeft: "20px" }}>
-                    <Link
-                      href="/prem-pigments"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      PREM PIGMENTS
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+          <a
+            href="tel:+918447247227"
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:bg-white/10"
+          >
+            <i className="fa-solid fa-phone text-brand-red" aria-hidden="true" />
+            <span>+91-84-472-47227</span>
+          </a>
 
-              <li>
-                <Link href="/construction-sector" onClick={onNavClick}>
-                  CONSTRUCTION SECTOR
-                </Link>
-              </li>
-            </ul>
-          </li>
+          <Link
+            href="/contact"
+            className="inline-flex w-full items-center justify-center rounded-full bg-brand-red px-4 py-3 font-display text-sm font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-[#cf171d]"
+            onClick={closeMobileMenu}
+          >
+            Contact Us
+          </Link>
+        </div>
+      </aside>
 
-          <li>
-            <Link className="fa-arrow" href="/clients" onClick={onNavClick}>
-              OUR CLIENTS
-            </Link>
-          </li>
+      <style jsx>{`
+        .site-mobile-menu {
+          position: fixed;
+          inset: 0;
+          z-index: 50;
+        }
 
-          <li>
-            <Link href="/contact" onClick={onNavClick}>
-              CONTACT US
-            </Link>
-          </li>
+        .site-mobile-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(20, 37, 76, 0.55);
+          transition:
+            opacity 0.3s ease,
+            backdrop-filter 0.3s ease;
+        }
 
-          <li>
-            <Link href="/" onClick={onNavClick}>
-              OTHER WEBSITES
-            </Link>
-            <ul className="sub-menu">
-              <li>
-                <a
-                  href="https://prempackaging.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  PREM PACKAGING
-                </a>
-              </li>
-              <li>
-                <a href="https://phsteel.in/" target="_blank" rel="noreferrer">
-                  PH STEEL
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="action-bar">
-        <a href="mailto:info@premindustries.in">
-          <i className="fa fa-envelope"></i>info@premindustries.in
-        </a>
-        <a href="tel:+918447247227">
-          <i className="fa fa-phone"></i>+91-84-472-47227
-        </a>
-        <Link href="/contact" className="d-btn theme-btn" onClick={onNavClick}>
-          Contact Us
-        </Link>
-      </div>
+        .site-mobile-panel {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          height: 100%;
+          width: min(100%, 24rem);
+          flex-direction: column;
+          background: #14254c;
+          box-shadow: 0 22px 55px rgba(20, 37, 76, 0.28);
+        }
+      `}</style>
     </div>
   );
 };

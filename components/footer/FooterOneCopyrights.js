@@ -1,13 +1,18 @@
-// app/components/FooterOneCopyrights.tsx
 "use client";
 
 import Link from "next/link";
 
 const currentYear = new Date().getFullYear();
 
+const legalLinks = [
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+];
+
 const ScrollToTop = () => {
   if (typeof window !== "undefined") {
     const lenis = window.__lenis;
+
     if (lenis && typeof lenis.scrollTo === "function") {
       lenis.scrollTo(0);
     } else {
@@ -18,37 +23,40 @@ const ScrollToTop = () => {
 
 const FooterOneCopyrights = () => {
   return (
-    <div className="footer-bottom">
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-md-6 col-12 text-center text-md-start">
-            <div className="copyright-info">
-              <p>
-                &copy; {currentYear}{" "}
-                <Link href="/" onClick={ScrollToTop}>
-                  Prem Industries India Limited
-                </Link>
-                . All Rights Reserved
-              </p>
-            </div>
-          </div>
+    <div className="bg-white py-4">
+      <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-between gap-3 text-center md:flex-row md:text-left">
+          <p className="text-sm leading-5 text-brand-navy">
+            &copy; {currentYear}{" "}
+            <Link
+              href="/"
+              onClick={ScrollToTop}
+              className="font-semibold text-brand-navy transition hover:text-brand-red"
+            >
+              Prem Industries India Limited
+            </Link>
+            . All Rights Reserved
+          </p>
 
-          <div className="col-md-6 col-12">
-            <div className="footer-menu mt-3 mt-md-0 text-center text-md-end">
-              <ul>
-                <li>
-                  <Link href="/terms-and-conditions" onClick={ScrollToTop}>
-                    Terms &#38; Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy-policy" onClick={ScrollToTop}>
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ul className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
+            {legalLinks.map((item, index) => (
+              <li key={item.label} className="flex items-center gap-2">
+                {index > 0 ? (
+                  <span
+                    className="h-4 w-px bg-brand-border"
+                    aria-hidden="true"
+                  />
+                ) : null}
+                <Link
+                  href={item.href}
+                  onClick={ScrollToTop}
+                  className="text-sm font-medium text-brand-navy transition hover:text-brand-red"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const featureCards = [
     points: [
       "End-to-end production control.",
       "30-40% cost advantage on sheet metal.",
-      "45-50% savings on plastic molding.",
+      "45-50% savings on plastic moulding.",
     ],
   },
   {

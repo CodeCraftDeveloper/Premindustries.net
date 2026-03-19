@@ -108,7 +108,7 @@ export default function AboutTwo() {
                     className=""
                     style={{ fontSize: "clamp(26px, 4vw, 40px)" }}
                   >
-                    Sheet Metal &amp; Components
+                    Sheet Metal Components Manufacturing
                   </h3>
                 </div>
               </div>
@@ -120,14 +120,12 @@ export default function AboutTwo() {
                   fontSize: "clamp(14px, 2.2vw, 17px)",
                 }}
               >
-                At Prem Industries India Limited, our Sheet Metal and Components
-                Division is a testament to precision engineering and robust
-                infrastructure. Spread across a 22,000 square meter land area,
-                the facility boasts a state-of-the-art built-up space of 4.5
-                lakh square feet over three floors. First of its kind setup in
-                north India with integrated processing from steel coil to
-                component, this facility reflects our commitment to end-to-end
-                manufacturing excellence.
+                Prem Industries India Limited operates an integrated sheet metal
+                components manufacturing division designed for dimensional
+                accuracy, repeatability, and high-volume dispatch. From coil
+                handling and cutting to forming and fabrication, our workflow is
+                aligned for OEM and industrial production programs where quality
+                consistency matters in every batch.
               </p>
             </div>
           </div>
@@ -136,7 +134,10 @@ export default function AboutTwo() {
             <div className="col-xl-6 col-12 pe-xl-0">
               <div className="d-flex flex-column" style={{ gap: 0 }}>
                 {/* Optimized Next.js image (equivalent to your background block) */}
-                <div className="mt-4 shadow-sm" style={{ borderRadius: "12px" }}>
+                <div
+                  className="mt-4 shadow-sm"
+                  style={{ borderRadius: "12px" }}
+                >
                   <div
                     className="position-relative w-100"
                     style={{
@@ -181,12 +182,12 @@ export default function AboutTwo() {
                   fontSize: "clamp(14px, 2.2vw, 17px)",
                 }}
               >
-                With an initial investment of Rs 75 crores and a projected Rs
-                175 crores investment over the next three years, we are poised
-                for exponential growth. Our division is equipped with modern
-                machinery, 100% power backup, and advanced technology to meet
-                the dynamic needs of automotive, industrial, and appliance
-                sectors.
+                Our manufacturing setup combines modern machinery, process
+                monitoring, and trained teams to serve automotive, appliance,
+                infrastructure, and general engineering applications. We focus
+                on stable throughput, controlled tolerances, and practical lead
+                times so customers can plan downstream assembly, vendor
+                schedules, and material movement with confidence.
               </p>
               <p
                 className="mt-2"
@@ -195,12 +196,11 @@ export default function AboutTwo() {
                   fontSize: "clamp(14px, 2.2vw, 17px)",
                 }}
               >
-                We specialize in the design, fabrication, and assembly of
-                high-quality sheet metal components, maintaining strict
-                adherence to global standards. With a strong focus on
-                efficiency, innovation, and scalability, Prem Industries India
-                Limited continues to deliver reliable, cost-effective solutions
-                across diverse industries.
+                Beyond part manufacturing, we emphasize engineering support,
+                quality checkpoints, packaging discipline, and dispatch
+                readiness to reduce rejection risk at customer plants. This
+                approach helps us deliver reliable sheet metal components that
+                are ready for immediate use in production lines.
               </p>
             </div>
           </div>
@@ -220,17 +220,19 @@ export default function AboutTwo() {
           <div className="coverage-text">
             <h2>Sheet Metal Industry Coverage</h2>
             <p>
-              We deliver components across automotive, construction,
-              electronics, and appliances, covering everything from panels to
-              structural assemblies.
+              Our sheet metal component portfolio spans automotive,
+              construction, electrical, appliance, and consumer categories,
+              with production capability for both standard and custom
+              engineered parts.
             </p>
             <p>
-              We also support household and consumer products like mailboxes,
-              furniture, utensils, cans, and elevators, plus industrial
-              machinery housing, brackets, custom machine parts, and tanks.
+              We support applications such as enclosures, support brackets,
+              structural members, utility parts, and fabricated assemblies,
+              backed by process control designed for repeat business and OEM
+              supply continuity.
             </p>
             <Link href="/contact" className="coverage-cta">
-              Explore Applications
+              Request A Quote
               <span aria-hidden="true">-&gt;</span>
             </Link>
           </div>
@@ -242,7 +244,7 @@ export default function AboutTwo() {
               </span>
               <div>
                 <h3>Automotive</h3>
-                <p>Car doors, interior panels</p>
+                <p>Brackets, reinforcements, structural and formed parts</p>
               </div>
             </div>
             <div className="coverage-card">
@@ -251,7 +253,7 @@ export default function AboutTwo() {
               </span>
               <div>
                 <h3>Construction</h3>
-                <p>Roofing, wall cladding, pipe racks</p>
+                <p>Support systems, channels, structural accessories</p>
               </div>
             </div>
             <div className="coverage-card">
@@ -260,7 +262,7 @@ export default function AboutTwo() {
               </span>
               <div>
                 <h3>Electronics</h3>
-                <p>Device casings, server racks</p>
+                <p>Panels, cabinets, control housings, device enclosures</p>
               </div>
             </div>
           </div>

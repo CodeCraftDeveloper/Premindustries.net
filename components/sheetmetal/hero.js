@@ -9,17 +9,17 @@ import { Navigation } from "swiper/modules";
 const featureCards = [
   {
     title: "Precision Sheet Metal Engineering",
-    text: "Prem Industries India Limited delivers high-precision sheet metal manufacturing backed by advanced engineering expertise and a robust production infrastructure.",
+    text: "Prem Industries delivers precision sheet metal manufacturing backed by engineering support, process control, and production infrastructure built for repeat quality.",
     image: "/sheetmetal/press-new.jpg",
   },
   {
     title: "Advanced Machinery & Infrastructure",
-    text: "Our sheet metal manufacturing facility is equipped with modern machinery, 100% power backup, and automated processes to serve automotive, industrial, and appliance industries efficiently.",
+    text: "Our sheet metal facility is equipped with modern machinery, power backup, and integrated processing workflows to serve automotive, industrial, and appliance sectors efficiently.",
     image: "/sheetmetal/weld.jpg",
   },
   {
     title: "Global Quality & Manufacturing Standards",
-    text: "We design, fabricate, and assemble high-quality sheet metal components in strict compliance with international quality standards, ensuring durability, accuracy, and consistency.",
+    text: "We fabricate and assemble sheet metal components with documented quality systems that support durability, accuracy, and consistency across recurring production runs.",
     image: "/sheetmetal/tool.jpg",
   },
 ];
@@ -27,22 +27,22 @@ const featureCards = [
 const quickPills = [
   {
     title: "Manufacturing",
-    subtitle: "Speed, flexibility",
+    subtitle: "Scale, repeatability",
     icon: "factory",
   },
   {
     title: "Construction",
-    subtitle: "Heavy performance",
+    subtitle: "Structural strength",
     icon: "building",
   },
   {
     title: "Engineering",
-    subtitle: "Complex builds",
+    subtitle: "Custom parts",
     icon: "wrench",
   },
   {
     title: "Energy",
-    subtitle: "Efficient & clean",
+    subtitle: "Utility applications",
     icon: "leaf",
   },
 ];
@@ -132,7 +132,7 @@ function QuickIcon({ name }) {
 const applicationCards = [
   {
     title: "Automotive Manufacturing",
-    text: "Precision sheet metal components engineered for automotive applications, meeting high standards of safety, strength, and dimensional accuracy.",
+    text: "Precision sheet metal components engineered for automotive applications where safety, strength, and dimensional accuracy are critical.",
     image: "/sheetmetal/infrastructure/1.jpg",
   },
   {
@@ -147,7 +147,7 @@ const applicationCards = [
   },
   {
     title: "Press Shop Operations",
-    text: "Comprehensive press shop capabilities including blanking, punching, bending, forming, and deep drawing for complex sheet metal components.",
+    text: "Integrated press shop capabilities including blanking, punching, bending, forming, and deep drawing for complex sheet metal components.",
     image: "/sheetmetal/infrastructure/5.jpg",
   },
 ];
@@ -187,26 +187,26 @@ export default function HeroTwo() {
         <div className="container hero-content">
           <div className="hero-text">
             <span className="hero-eyebrow">
-              Precision Sheet Metal Manufacturing in India
+              Sheet Metal Components Manufacturer In India
             </span>
             <h1>
-              Engineering Strength.
+              Precision Sheet Metal.
               <br />
-              Delivering Reliability.
+              Reliable Industrial Supply.
             </h1>
 
             <p className="hero-lead">
-              At Prem Industries India Limited, our Sheet Metal and Components
-              Division is a testament to precision engineering and robust
-              infrastructure.
+              Prem Industries runs an integrated sheet metal and components
+              division built for precision engineering, process discipline, and
+              reliable OEM supply.
             </p>
             <p className="hero-sublead">
-              First of its kind setup in north India with integrated processing
-              from steel coil to component, this facility reflects our
-              commitment to end-to-end manufacturing excellence.
+              With integrated processing from steel coil to finished component,
+              our facility supports automotive, appliance, infrastructure, and
+              industrial manufacturing requirements with repeatable quality.
             </p>
             <Link href="/contact" className="hero-btn">
-              Contact Us
+              Request A Quote
             </Link>
           </div>
         </div>
@@ -251,11 +251,11 @@ export default function HeroTwo() {
 
       <div className="container applications">
         <div className="applications-header">
-          <h2>Sheet Metal &amp; Components</h2>
+          <h2>Sheet Metal Manufacturing Applications</h2>
           <p>
-            With a strong focus on efficiency, innovation, and scalability, Prem
-            Industries India Limited continues to deliver reliable,
-            cost-effective solutions across diverse industries.
+            With a strong focus on efficiency, quality, and scalability, Prem
+            Industries continues to deliver dependable sheet metal solutions
+            across diverse industrial applications.
           </p>
         </div>
 

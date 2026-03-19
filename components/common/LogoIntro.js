@@ -19,18 +19,26 @@ export default function LogoIntro({ onComplete = () => {} }) {
 
   const [logoSrc, setLogoSrc] = useState("/logo-main-desktop.png");
 
+  const restoreDocumentStyles = useCallback(() => {
+    if (typeof window === "undefined") return;
+
+    const prev = prevStylesRef.current;
+    document.body.style.overflow = prev?.prevOverflow ?? "";
+    document.documentElement.style.overflow = prev?.prevHtmlOverflow ?? "";
+    document.body.style.overscrollBehavior = prev?.prevOverscroll ?? "";
+    document.documentElement.style.overscrollBehavior =
+      prev?.prevHtmlOverscroll ?? "";
+  }, []);
+
   /* --------------------------------------------------
    * Finish helper
    * -------------------------------------------------- */
   const finishIntro = useCallback(() => {
     if (finishedRef.current) return;
     finishedRef.current = true;
-    if (typeof window !== "undefined") {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.body.style.overscrollBehavior = "";
-      document.documentElement.style.overscrollBehavior = "";
-    }
+
+    restoreDocumentStyles();
+
     if (typeof window !== "undefined") {
       window.dispatchEvent(new Event("logoIntro:complete"));
     }
@@ -42,12 +50,14 @@ export default function LogoIntro({ onComplete = () => {} }) {
       cleanupRef.current();
     }
     onComplete();
-  }, [onComplete]);
+  }, [onComplete, restoreDocumentStyles]);
 
   /* --------------------------------------------------
    * Responsive logo source
    * -------------------------------------------------- */
   useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
     const media = window.matchMedia("(max-width: 480px)");
 
     const update = () => {
@@ -80,6 +90,8 @@ export default function LogoIntro({ onComplete = () => {} }) {
    * Scroll lock + smooth wheel control
    * -------------------------------------------------- */
   useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
     const lenis = typeof window !== "undefined" ? window.__lenis : null;
     lenisRef.current = lenis;
     if (lenis && typeof lenis.stop === "function") lenis.stop();
@@ -101,6 +113,9 @@ export default function LogoIntro({ onComplete = () => {} }) {
     document.body.style.overscrollBehavior = "none";
     document.documentElement.style.overscrollBehavior = "none";
 
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let reducedMotionTimeout = null;
+
     const MAX_SCROLL = window.innerHeight * 1.4;
 
     const WHEEL_STRENGTH = 0.18; // slower + smoother
@@ -110,6 +125,13 @@ export default function LogoIntro({ onComplete = () => {} }) {
 
     let running = false;
     let lastTime = performance.now();
+
+    if (reducedMotion.matches) {
+      targetProgress.set(1);
+      reducedMotionTimeout = window.setTimeout(() => {
+        finishIntro();
+      }, 120);
+    }
 
     const tick = (now) => {
       if (finishedRef.current) return;
@@ -198,6 +220,16 @@ export default function LogoIntro({ onComplete = () => {} }) {
       touchActive = false;
     }
 
+    function onKeyDown(e) {
+      if (finishedRef.current) return;
+
+      if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        targetProgress.set(1);
+        finishIntro();
+      }
+    }
+
     let touchActive = false;
     let lastTouchY = 0;
 
@@ -219,22 +251,24 @@ export default function LogoIntro({ onComplete = () => {} }) {
         window.removeEventListener("touchend", touchEnd);
         window.removeEventListener("touchcancel", touchEnd);
       }
+      window.removeEventListener("keydown", onKeyDown);
 
       cancelAnimationFrame(rafRef.current);
+      if (reducedMotionTimeout) window.clearTimeout(reducedMotionTimeout);
 
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.body.style.overscrollBehavior = "";
-      document.documentElement.style.overscrollBehavior = "";
+      restoreDocumentStyles();
 
       if (lenis && typeof lenis.start === "function") lenis.start();
     };
 
-    window.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
-    window.addEventListener("touchend", onTouchEnd, { passive: true });
-    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    if (!reducedMotion.matches) {
+      window.addEventListener("wheel", onWheel, { passive: false });
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: false });
+      window.addEventListener("touchend", onTouchEnd, { passive: true });
+      window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    }
+    window.addEventListener("keydown", onKeyDown);
 
     return () => {
       if (cleanupRef.current && !cleanedRef.current) {
@@ -242,22 +276,31 @@ export default function LogoIntro({ onComplete = () => {} }) {
         cleanupRef.current();
       }
     };
-  }, [finishIntro, targetProgress]);
+  }, [finishIntro, restoreDocumentStyles, targetProgress]);
 
   /* --------------------------------------------------
    * Render
    * -------------------------------------------------- */
   return (
     <div className="logo-intro-root">
+      <button
+        type="button"
+        className="logo-intro-skip"
+        onClick={finishIntro}
+      >
+        Skip intro
+      </button>
+
       <motion.img
         src={logoSrc}
         alt=""
         draggable={false}
         className="logo-intro-art"
+        onError={finishIntro}
         style={{ scale, y, opacity }}
       />
       <div className="logo-intro-scroll" aria-hidden="true">
-        Scroll up
+        Scroll, swipe, or skip
       </div>
 
       <style jsx>{`
@@ -271,6 +314,7 @@ export default function LogoIntro({ onComplete = () => {} }) {
           align-items: center;
           justify-content: center;
           background: transparent;
+          backdrop-filter: none;
         }
 
         .logo-intro-art {
@@ -283,6 +327,38 @@ export default function LogoIntro({ onComplete = () => {} }) {
           transform-origin: center;
           will-change: transform, opacity;
           user-select: none;
+        }
+
+        .logo-intro-skip {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          z-index: 2;
+          pointer-events: auto;
+          border: 1px solid rgba(20, 37, 76, 0.14);
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.88);
+          padding: 10px 16px;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #14254c;
+          box-shadow: 0 12px 28px rgba(20, 37, 76, 0.12);
+          transition:
+            border-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+        }
+
+        .logo-intro-skip:hover,
+        .logo-intro-skip:focus-visible {
+          border-color: rgba(233, 34, 39, 0.28);
+          color: #e92227;
+          transform: translateY(-1px);
+          box-shadow: 0 14px 32px rgba(20, 37, 76, 0.18);
+          outline: none;
         }
 
         .logo-intro-scroll {
@@ -315,6 +391,12 @@ export default function LogoIntro({ onComplete = () => {} }) {
         }
 
         @media (max-width: 480px) {
+          .logo-intro-skip {
+            top: 16px;
+            right: 16px;
+            padding: 9px 14px;
+          }
+
           .logo-intro-art {
             object-fit: cover;
             object-position: center;

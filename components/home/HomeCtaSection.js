@@ -1,126 +1,61 @@
 "use client";
 
 import Link from "next/link";
+import {
+  getAosProps,
+  homeViewport,
+  motion,
+  revealLeft,
+  revealRight,
+} from "./homeMotion";
 
 export default function HomeCtaSection() {
   return (
-    <section className="home-cta">
-      <div className="container">
-        <div className="cta-shell">
-          <div className="cta-copy">
-            <p className="kicker">NEXT STEP</p>
-            <h2>Let&apos;s build your next industrial milestone together.</h2>
-            <p>
-              Connect with our team to discuss your requirement, project scope,
-              and execution timelines.
+    <section className="bg-white px-4 pb-[34px] pt-[28px] sm:px-[18px] lg:px-6">
+      <div className="mx-auto max-w-[1380px]">
+        <div className="grid items-center gap-[22px] rounded-[10px] bg-[linear-gradient(100deg,#101d2b_0%,#172b3f_100%)] px-[22px] py-6 text-white md:grid-cols-[minmax(260px,1.2fr)_minmax(220px,0.8fr)] md:px-8 md:py-[30px]">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={homeViewport}
+            variants={revealLeft}
+            {...getAosProps("left", 40)}
+          >
+            <p className="m-0 text-[11px] font-bold uppercase tracking-[0.14em] text-[#ff9e8b]">
+              NEXT STEP
             </p>
-          </div>
+            <h2 className="my-[10px] text-[clamp(24px,2.5vw,34px)] leading-[1.2] text-white">
+              Let&apos;s plan your next manufacturing program together.
+            </h2>
+            <p className="m-0 text-[14px] leading-[1.7] text-white/90">
+              Share your drawings, target volumes, quality expectations, and
+              timelines with our team to start a practical project discussion.
+            </p>
+          </motion.div>
 
-          <div className="cta-actions">
-            <Link href="/contact" className="cta-btn solid">
-              Start a Conversation
+          <motion.div
+            className="flex flex-col gap-[10px]"
+            initial="hidden"
+            whileInView="show"
+            viewport={homeViewport}
+            variants={revealRight}
+            {...getAosProps("right", 100)}
+          >
+            <Link
+              href="/contact"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-[5px] bg-[#c5302c] px-4 text-center text-[12px] font-bold uppercase tracking-[0.08em] text-white transition-transform duration-200 hover:-translate-y-[1px]"
+            >
+              Request A Callback
             </Link>
-            <Link href="/about" className="cta-btn outline">
+            <Link
+              href="/about"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-[5px] border border-white/40 px-4 text-center text-[12px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:border-white hover:text-white"
+            >
               Know More About Us
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
-
-      <style jsx>{`
-        .home-cta {
-          padding: 10px 0 26px;
-          background: #f8f8f6;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
-        }
-
-        .cta-shell {
-          background: linear-gradient(100deg, #101d2b 0%, #172b3f 100%);
-          border-radius: 10px;
-          padding: 26px;
-          color: #ffffff;
-          display: grid;
-          grid-template-columns: minmax(260px, 1.2fr) minmax(220px, 0.8fr);
-          gap: 18px;
-          align-items: center;
-        }
-
-        .kicker {
-          margin: 0;
-          font-size: 11px;
-          letter-spacing: 0.14em;
-          font-weight: 700;
-          color: #ff9e8b;
-          text-transform: uppercase;
-        }
-
-        .cta-copy h2 {
-          margin: 10px 0;
-          font-size: clamp(24px, 2.5vw, 34px);
-          line-height: 1.2;
-          color: #ffffff;
-        }
-
-        .cta-copy p {
-          margin: 0;
-          font-size: 14px;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.88);
-        }
-
-        .cta-actions {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .cta-btn {
-          min-height: 44px;
-          border-radius: 5px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          text-align: center;
-          padding: 0 16px;
-        }
-
-        .cta-btn.solid {
-          background: #c5302c;
-          color: #ffffff;
-        }
-
-        .cta-btn.outline {
-          border: 1px solid rgba(255, 255, 255, 0.4);
-          color: #ffffff;
-        }
-
-        @media (max-width: 992px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
-          .cta-shell {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
-          }
-        }
-      `}</style>
     </section>
   );
 }

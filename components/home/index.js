@@ -15,9 +15,15 @@ import MissionVisionSection from "./MissionVisionSection";
 import WhyPremSection from "./WhyPremSection";
 import ExecutionProcessSection from "./ExecutionProcessSection";
 import HomeCtaSection from "./HomeCtaSection";
-import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
-import AaharPromoBanner from "@/components/common/AaharPromoBanner";
+import {
+  getAosProps,
+  homeViewport,
+  motion,
+  revealLeft,
+  revealRight,
+  revealSoft,
+} from "./homeMotion";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
@@ -31,49 +37,33 @@ export default function HomeTwoClient() {
   // const handleOutsideClick = (e) => {
   //   if (e.target.id === "popup") setShowPopup(false);
   // };
+  const sectionProps = (variants, aosDirection, delay = 0) => ({
+    initial: "hidden",
+    whileInView: "show",
+    viewport: homeViewport,
+    variants,
+    ...getAosProps(aosDirection, delay),
+  });
 
   return (
-    <>
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+    <div className="home-typography">
+      <motion.section {...sectionProps(revealSoft, "up")}>
         <HeroSection />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <AaharPromoBanner />
-      </motion.section>
-
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealRight, "right", 40)}>
         <AboutSection
           subhead="About"
           head="Prem Industries India Limited"
-          text1="Goel Group's foundation was laid in 1975 by the Chairman Mr. Ved Prakash Goel. Goel Group is now a diversified organization in India with focus on B2B sector. It has created a big footprint in northern India with a portfolio comprising from packaging, steel, retail and construction as the main drivers of growth. Headquartered in Uttar Pradesh, India, it has positioned itself to be the North Indian market leader in packaging and steel trading businesses focusing on large scale development in the region with O&M practices benchmarked to global standards."
-          btnClass="theme-btn mt-35"
+          text1="Prem Industries India Limited is a manufacturing company in India serving OEMs, industrial buyers, and supply chain partners through sheet metal fabrication, steel processing, injection moulding, and packaging-linked support. Our facilities in Uttar Pradesh are built for repeatability, production discipline, and dependable delivery."
+          text2="From engineering alignment and tooling support to production control and dispatch planning, every stage is managed with measurable quality systems and process visibility. We work with customers who need consistent output, practical lead times, and a long-term manufacturing partner."
+          text3="Our focus is to manufacture reliable industrial products, reduce execution risk for customers, and strengthen supply chains with scalable, quality-driven production."
           btnText="read more"
           verticalText="ABOUT"
         />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealLeft, "left", 60)}>
         <WorkForYouSection />
       </motion.section>
 
@@ -122,66 +112,28 @@ export default function HomeTwoClient() {
         <WhyPremSection />
       </motion.section> */}
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealSoft, "up", 80)}>
         <WorkSectionHead />
-      </motion.section>
-
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
         <WorkSectionBody />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealRight, "right", 40)}>
         <ExecutionProcessSection />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealLeft, "left", 60)}>
         <SustainabilitySection />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealRight, "right", 80)}>
         <InnovationSection />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealLeft, "left", 60)}>
         <HomeCtaSection />
       </motion.section>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+      <motion.section {...sectionProps(revealSoft, "up", 40)}>
         <CounterSection />
       </motion.section>
 
@@ -196,36 +148,6 @@ export default function HomeTwoClient() {
           </div>
         </div>
       )} */}
-
-      <style jsx>{`
-        .popup {
-          position: fixed;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          display: block;
-          z-index: 999;
-        }
-        .popup-content {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 80%;
-          height: 80%;
-          padding: 20px;
-          border-radius: 10px;
-          overflow: hidden;
-        }
-        .close-popup {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 34px;
-          cursor: pointer;
-        }
-      `}</style>
-    </>
+    </div>
   );
 }

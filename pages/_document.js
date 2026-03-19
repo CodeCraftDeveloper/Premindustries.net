@@ -17,12 +17,6 @@ export default function Document() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
 
-        {/* AOS CDN */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-        />
-
         {/* Wow.js CDN */}
         <link
           rel="stylesheet"

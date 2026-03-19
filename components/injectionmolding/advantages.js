@@ -5,7 +5,7 @@ import { useState } from "react";
 const cards = [
   {
     title: "Material Management & Polymer Know-How",
-    body: "Efficient injection molding begins with understanding materials. We work with carefully selected plastics chosen for their strength, durability, and suitability for your specific applications. Our controlled storage, drying, and feeding systems maintain material integrity from start to finish, ensuring smooth flow and a consistent, high-quality finish every time.",
+    body: "Efficient injection moulding begins with understanding materials. We work with carefully selected plastics chosen for their strength, durability, and suitability for your specific applications. Our controlled storage, drying, and feeding systems maintain material integrity from start to finish, ensuring smooth flow and a consistent, high-quality finish every time.",
   },
   {
     title: "Inspection Standard",
@@ -17,11 +17,11 @@ const cards = [
   },
   {
     title: "Supply Chain & Delivery Assurance",
-    body: "Our injection molding operations are backed by a structured supply chain system. Planned sourcing, inventory control, and production scheduling ensure uninterrupted manufacturing. Coordinated dispatch and logistics processes enable timely deliveries across varied volumes. This reliability allows you to depend on us for consistent supply and operational continuity.",
+    body: "Our injection moulding operations are backed by a structured supply chain system. Planned sourcing, inventory control, and production scheduling ensure uninterrupted manufacturing. Coordinated dispatch and logistics processes enable timely deliveries across varied volumes. This reliability allows you to depend on us for consistent supply and operational continuity.",
   },
   {
     title: "Technology-Ready Manufacturing Platform",
-    body: "Our injection molding setup is designed to adapt to future technologies and evolving manufacturing requirements. Flexible systems and upgrade-ready infrastructure allow seamless integration of advanced automation, monitoring, and process enhancements. This forward-thinking approach ensures long-term relevance and competitiveness in an ever-changing industrial landscape.",
+    body: "Our injection moulding setup is designed to adapt to future technologies and evolving manufacturing requirements. Flexible systems and upgrade-ready infrastructure allow seamless integration of advanced automation, monitoring, and process enhancements. This forward-thinking approach ensures long-term relevance and competitiveness in an ever-changing industrial landscape.",
   },
 ];
 
@@ -75,8 +75,8 @@ export default function InjectionAdvantages() {
               UP TO 25% CYCLE TIME REDUCTION
             </span>
             <p>
-              Conformal cooling in injection molding optimizes heat dissipation,
-              allowing faster and more uniform cooling of the mold. This
+              Conformal cooling in injection moulding optimizes heat dissipation,
+              allowing faster and more uniform cooling of the mould. This
               accelerates material solidification, reduces overall cycle time,
               and increases production efficiency&mdash;all while maintaining
               exceptional part quality.
@@ -87,11 +87,11 @@ export default function InjectionAdvantages() {
             <ul>
               <li>
                 Faster turnaround times without compromising the quality,
-                precision, or reliability of every molded component
+                precision, or reliability of every moulded component
               </li>
               <li>
-                Higher production volumes that help you confidently meet
-                growing market demand and delivery commitments
+                Higher production volumes that help you confidently meet growing
+                market demand and delivery commitments
               </li>
               <li>
                 Reduced energy consumption and lower overall operational costs
@@ -141,11 +141,11 @@ export default function InjectionAdvantages() {
         .advantages-intro {
           width: 100%;
           margin: 0 0 36px;
-          background: linear-gradient(135deg, #0b2a63 0%, #113b7a 100%);
+          background: linear-gradient(135deg, #14254c 0%, #1a2d54 100%);
           // border-radius: 18px;
           padding: clamp(24px, 4vw, 40px);
           color: #ffffff;
-          box-shadow: 0 18px 40px rgba(7, 18, 48, 0.3);
+          box-shadow: 0 18px 40px rgba(20, 37, 76, 0.3);
         }
 
         .advantages-kicker {

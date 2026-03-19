@@ -1,81 +1,28 @@
-// components/AboutTwo.js
 "use client";
 
-import Link from "next/link";
-
-const ScrollToTop = () => {
-  if (typeof window !== "undefined") {
-    const lenis = window.__lenis;
-    if (lenis && typeof lenis.scrollTo === "function") {
-      lenis.scrollTo(0);
-    } else {
-      window.scrollTo({ top: 0 });
-    }
-  }
-};
+import ExperienceShowcase from "@/components/common/ExperienceShowcase";
+import { getAosProps, homeViewport, motion, revealRight } from "./homeMotion";
 
 export default function AboutTwo(props) {
-  const currentYear = new Date().getFullYear();
-  const years = currentYear - 1976;
+  const paragraphs = [props.text1, props.text2, props.text3].filter(Boolean);
 
   return (
-    <section
-      className="about-section section-padding"
-      style={{ backgroundColor: "#f5f5f5" }}
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={homeViewport}
+      variants={revealRight}
+      {...getAosProps("right", 40)}
     >
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-xl-6 col-12 pe-xl-0">
-            <div
-              className="about-cover-bg bg-cover me-xl-5"
-              style={{ backgroundImage: "url(/home/about-img.jpg)" }}
-            >
-              <div className="our-experience-years shadow-lg">
-                <div className="year-outline">
-                  <h2>{years}</h2>
-                </div>
-                <p>
-                  Years of <span>Experience</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-xl-6 mt-5 mt-lg-0 col-12">
-            <div className="block-contents">
-              <div className="section-title">
-                <span
-                  style={{ fontSize: "17px" }}
-                >
-                  {props.subhead}
-                </span>
-                <h2>{props.head}</h2>
-              </div>
-              {/* <blockquote>Innovation in Action</blockquote> */}
-            </div>
-
-            <p
-              style={{ textAlign: "justify", fontSize: "17px" }}
-            >
-              {props.text1} <br />
-              {props.text2} <br />
-              {props.text3}
-            </p>
-
-            <Link
-              href="/about"
-              className={props.btnClass}
-              onClick={ScrollToTop}
-            >
-              {props.btnText}
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <h2 className="section-rotate-title d-none d-xxl-block">
-        {props.verticalText}
-      </h2>
-    </section>
+      <ExperienceShowcase
+        kicker={props.subhead}
+        title={props.head}
+        paragraphs={paragraphs}
+        buttonText={props.btnText}
+        buttonHref="/about"
+        surface="muted"
+        verticalLabel={props.verticalText}
+      />
+    </motion.div>
   );
 }

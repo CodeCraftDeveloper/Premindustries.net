@@ -13,48 +13,41 @@ export default function index() {
   return (
     <>
       <Head>
-        <title>About Us - Prem Industries India Limited</title>
-        <meta name="title" content="About Us - Prem Industries India Limited" />
+        <title>About Prem Industries | Manufacturing Company in India</title>
+        <meta
+          name="title"
+          content="About Prem Industries | Manufacturing Company in India"
+        />
         <meta
           name="description"
-          content="About Us - Prem Industries India Limited"
+          content="Learn about Prem Industries India Limited, an Indian manufacturing company serving OEMs and industrial buyers through sheet metal fabrication, injection moulding, and process-driven production."
         />
       </Head>
+
       <SectionReveal>
         <PageBanner title="About Us" bannerBg="/about/banner.jpg" />
       </SectionReveal>
+
       <SectionReveal>
         <AboutSection />
       </SectionReveal>
+
       <SectionReveal>
-        <div
-          className="container-fluid text-white"
-          style={{ backgroundColor: "#14254C" }}
-        >
-          <CounterSection />
-        </div>
+        <CounterSection tone="dark" />
       </SectionReveal>
+
       <SectionReveal>
         <MissionSection />
       </SectionReveal>
+
       <SectionReveal>
         <VisionSection />
       </SectionReveal>
-      <SectionReveal>
-        <div
-          className="container-fluid pt-4 pb-5"
-          style={{ backgroundColor: "#14254C" }}
-        >
-          <div className="row">
-            {/* <div className="col-md-12 text-center text-white">
-              <h1>Our Values</h1>
-            </div> */}
-          </div>
-        </div>
-      </SectionReveal>
+
       <SectionReveal>
         <ValueSection />
       </SectionReveal>
+
       <SectionReveal>
         <KeypointSection />
       </SectionReveal>

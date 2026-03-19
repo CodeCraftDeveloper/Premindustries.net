@@ -16,7 +16,35 @@ import InjectionContactSection from "@/components/injectionmolding/contact";
 import SustainabilitySection from "@/components/injectionmolding/sustainability";
 import CorporateVideoSection from "@/components/injectionmolding/corporate";
 import ClientSection from "@/components/injectionmolding/clients";
-import AboutBannerSection from "@/components/injectionmolding/aboutBanner";
+import FaqBlock from "@/components/common/FaqBlock";
+
+const injectionFaqs = [
+  {
+    question: "What type of injection moulding programs do you support?",
+    answer:
+      "We support medium and high-volume injection moulding programs for industrial and consumer categories with process-focused production control and repeatability.",
+  },
+  {
+    question: "How do you maintain quality consistency in moulded parts?",
+    answer:
+      "Our teams follow setup discipline, in-process verification, and documented quality checkpoints to maintain dimensional and finish consistency across batches.",
+  },
+  {
+    question: "Can Prem Industries support production scale-up requirements?",
+    answer:
+      "Yes. We are equipped to support ramp-ups through structured planning, machine capacity alignment, and delivery-focused execution for ongoing customer programs.",
+  },
+  {
+    question: "Which industries do your moulded components serve?",
+    answer:
+      "We supply moulded components for appliances, consumer durables, industrial assemblies, and other high-volume product categories that require repeatable finish and fit.",
+  },
+  {
+    question: "Do you support tooling and new product development?",
+    answer:
+      "Yes. We work with customers on product onboarding, mould planning, process setup, and structured production launches to support smooth scale-up.",
+  },
+];
 
 export default function Index() {
   const [showIntro, setShowIntro] = useState(true);
@@ -24,12 +52,17 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Injection Molding - Prem Industries India Limited</title>
+        <title>
+          Injection Moulding Manufacturer in India | Prem Industries
+        </title>
         <meta
           name="description"
-          content="Explore our high-quality injection molding capabilities."
+          content="Prem Industries is an injection moulding manufacturer in India delivering OEM plastic components, tooling support, and scale-ready production for industrial and consumer applications."
         />
-        <meta name="title" content="Injection Molding" />
+        <meta
+          name="title"
+          content="Injection Moulding Manufacturer in India | Prem Industries"
+        />
       </Head>
       {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
       <div className={`intro-shell${showIntro ? " intro-active" : ""}`}>
@@ -51,7 +84,6 @@ export default function Index() {
         <SectionReveal>
           <AboutSection />
         </SectionReveal>
-
         <div className="pt-5"></div>
         <SectionReveal>
           <CertificationsSection bgColor="#14264f" />
@@ -74,6 +106,13 @@ export default function Index() {
         </SectionReveal>
         <SectionReveal>
           <InjectionContactSection />
+        </SectionReveal>
+        <SectionReveal>
+          <FaqBlock
+            title="Injection Moulding FAQs"
+            intro="Find practical answers about our injection moulding capacity, tooling support, quality control systems, OEM program handling, and production planning for repeat manufacturing."
+            faqs={injectionFaqs}
+          />
         </SectionReveal>
       </div>
 

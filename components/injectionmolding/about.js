@@ -10,11 +10,11 @@ const fadeUp = {
 };
 
 const aboutHighlights = [
-  "25 years of proven manufacturing excellence",
-  "\u20b9100 crore investment in state-of-the-art infrastructure",
-  "Machines ranging from 160 to 3000 tons for maximum versatility",
-  "Comprehensive quality management and certification",
-  "Dedicated to building long-term production partnerships",
+  "Process-driven manufacturing built for repeatable plastic component output",
+  "Advanced infrastructure for medium and high-volume OEM programs",
+  "Machine range from 160 to 3000 tons for part-size flexibility",
+  "Documented quality checks and traceable production workflows",
+  "Long-term manufacturing partnerships focused on delivery reliability",
 ];
 
 export default function AboutSection() {
@@ -25,25 +25,25 @@ export default function AboutSection() {
           <div className="about-text">
             <div className="about-tag">
               <span className="about-dot" />
-              <span>About Us</span> 
+              <span>About Us</span>
             </div>
             <h2>About Prem Industries India Limited</h2>
             <p className="about-copy">
-              Founded with a vision to revolutionize manufacturing in India,
-              Prem Industries India Limited has grown from a single facility to
-              a multi-unit operation spanning across Ghaziabad and Greater
-              Noida.
+              Prem Industries India Limited has expanded into a modern
+              multi-unit manufacturing setup serving demanding industrial,
+              appliance, and consumer product categories across India.
             </p>
             <p className="about-copy">
-              With 25 years of industry experience, we&apos;ve built our
-              reputation on three core principles: innovation, quality, and
-              unwavering commitment to our clients&apos; success.
+              Our injection moulding division is structured around process
+              control, mould discipline, and repeatable cycle performance so
+              customers receive stable part quality, finish consistency, and
+              reliable cycle output across batches.
             </p>
             <p className="about-copy">
-              Our entry into injection molding represents the next chapter in
-              our growth story&mdash;one where we combine decades of
-              manufacturing excellence with cutting-edge technology to deliver
-              solutions that drive industries forward.
+              By combining engineering support, scalable capacity, tooling
+              readiness, and responsive production planning, we help partners
+              accelerate launches, reduce supply uncertainty, and maintain
+              product consistency in market.
             </p>
             <div className="about-points">
               {aboutHighlights.map((item) => (

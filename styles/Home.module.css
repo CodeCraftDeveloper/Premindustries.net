@@ -120,10 +120,6 @@ a.secondary {
     border-color: transparent;
   }
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
 }
 
 @media (max-width: 600px) {

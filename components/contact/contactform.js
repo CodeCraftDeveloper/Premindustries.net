@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 
-export default function FooterForm() {
+export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    subject: "",
     phone_no: "",
     message: "",
   });
@@ -25,9 +26,9 @@ export default function FooterForm() {
     const timestamp = new Date().toISOString();
     const payload = { ...form, timestamp };
 
-    // Submit to current API
     let apiSuccess = false;
     let apiError = "";
+
     try {
       const res = await fetch(
         "https://premindustries-in-form-api.vercel.app/api/submit-form-contact.js",
@@ -35,9 +36,10 @@ export default function FooterForm() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
-        }
+        },
       );
       const data = await res.json().catch(() => ({}));
+
       if (res.ok) {
         apiSuccess = true;
       } else {
@@ -47,7 +49,6 @@ export default function FooterForm() {
       apiError = "API submission failed.";
     }
 
-    // Fire-and-forget Netlify submission (ignore response)
     try {
       await fetch("https://premindustries-contact-form.netlify.app/", {
         method: "POST",
@@ -57,6 +58,7 @@ export default function FooterForm() {
           "form-name": "contact",
           name: form.name,
           email: form.email,
+          subject: form.subject,
           phone: form.phone_no,
           message: form.message,
           timestamp,
@@ -67,155 +69,237 @@ export default function FooterForm() {
     }
 
     if (apiSuccess) {
-      setForm({ name: "", email: "", phone_no: "", message: "" });
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        phone_no: "",
+        message: "",
+      });
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 2500);
     } else {
       setStatus(apiError);
     }
+
     setLoading(false);
   };
 
+  const labelClassName = "text-xs font-medium tracking-[0.04em] text-[#63758c]";
+  const fieldShellClassName =
+    "mt-1 border-b-2 border-[#d6dde4] transition focus-within:border-[#53336c]";
+  const inputClassName =
+    "w-full appearance-none border-0 bg-transparent px-0 pb-2 pt-1 text-base font-normal text-brand-navy outline-none transition placeholder:text-[#9ba8b7] focus:ring-0 sm:text-lg";
+
   return (
-    <section className="contact-sec-wrapper fix section-bg pt-5 pb-5">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12">
-            <h2 className="text-white">Get in Touch</h2>
-            <p className="text-white pb-4">
-              Have any questions about your order or feedback about our service?
-              We’d love to hear from you.
-            </p>
-
-            {/* Responsive form wrapper */}
-            <div
-              className="homepage-contact-from"
-              style={{
-                maxWidth: "100%",
-                margin: "0 auto",
-                background: "rgba(0,0,0,0.15)",
-                borderRadius: "12px",
-                padding: "32px 20px",
-                boxSizing: "border-box",
-              }}
-            >
-              <form
-                className="row p-2"
-                id="contact-form"
-                onSubmit={handleSubmit}
-                noValidate
-                style={{ margin: 0 }}
-              >
-                <div className="col-md-6 col-12 mb-3">
-                  <div className="single-personal-info">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name*"
-                      value={form.name}
-                      onChange={handleChange}
-                      required
-                      autoComplete="name"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="col-md-6 col-12 mb-3">
-                  <div className="single-personal-info">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email*"
-                      value={form.email}
-                      onChange={handleChange}
-                      required
-                      autoComplete="email"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="col-md-12 col-12 mb-3">
-                  <div className="single-personal-info">
-                    <input
-                      type="tel"
-                      name="phone_no"
-                      placeholder="Number*"
-                      value={form.phone_no}
-                      onChange={handleChange}
-                      required
-                      autoComplete="tel"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="col-md-12 col-12 mb-3">
-                  <div className="single-personal-info">
-                    <textarea
-                      name="message"
-                      placeholder="Message*"
-                      value={form.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      style={{ width: "100%", resize: "vertical" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="col-md-12 col-12">
-                  <input
-                    className="submit-btn"
-                    type="submit"
-                    value={loading ? "Submitting Form..." : "Submit Details"}
-                    disabled={loading}
-                    aria-busy={loading}
-                    style={{ width: "100%" }}
-                  />
-                </div>
-              </form>
-
-              {/* Success popup */}
-              {showPopup && (
-                <div
-                  style={{
-                    position: "fixed",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    background: "linear-gradient(90deg,#38ef7d,#11998e)",
-                    color: "#fff",
-                    padding: "16px 32px",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
-                    fontWeight: "bold",
-                    fontSize: "1.1rem",
-                    zIndex: 9999,
-                    transition: "opacity 0.3s",
-                  }}
-                  role="status"
-                  aria-live="polite"
-                >
-                  Form submitted successfully!
-                </div>
-              )}
-
-              {/* Inline error */}
-              {status && !showPopup && (
-                <span
-                  className="form-message"
-                  style={{ color: "#ff0000" }}
-                  role="alert"
-                >
-                  {status}
-                </span>
-              )}
+    <>
+      <form
+        className="contact-form-grid grid gap-7"
+        id="contact-form"
+        onSubmit={handleSubmit}
+        noValidate
+      >
+        <div className="contact-form-two-col grid gap-6 md:grid-cols-2">
+          <label className="block">
+            <span className={labelClassName}>Your Name</span>
+            <div className={fieldShellClassName}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                autoComplete="name"
+                className={inputClassName}
+              />
             </div>
-          </div>
+          </label>
+
+          <label className="block">
+            <span className={labelClassName}>Your Email</span>
+            <div className={fieldShellClassName}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                autoComplete="email"
+                className={inputClassName}
+              />
+            </div>
+          </label>
         </div>
-      </div>
-    </section>
+
+        <label className="block">
+          <span className={labelClassName}>Your Subject</span>
+          <div className={fieldShellClassName}>
+            <input
+              type="text"
+              name="subject"
+              placeholder="Tell us what you need help with"
+              value={form.subject}
+              onChange={handleChange}
+              required
+              className={inputClassName}
+            />
+          </div>
+        </label>
+
+        <label className="block">
+          <span className={labelClassName}>Phone Number</span>
+          <div className={fieldShellClassName}>
+            <input
+              type="tel"
+              name="phone_no"
+              placeholder="Enter your phone number"
+              value={form.phone_no}
+              onChange={handleChange}
+              autoComplete="tel"
+              className={inputClassName}
+            />
+          </div>
+        </label>
+
+        <label className="block">
+          <span className={`${labelClassName} text-[#e11d2e]`}>Message</span>
+          <div className={fieldShellClassName}>
+            <textarea
+              name="message"
+              placeholder="Write your requirement or message"
+              value={form.message}
+              onChange={handleChange}
+              required
+              rows={4}
+              className={`contact-form-textarea ${inputClassName} min-h-[112px] resize-y`}
+            />
+          </div>
+        </label>
+
+        <div className="contact-form-actions flex flex-wrap items-center gap-4 pt-1">
+          <button
+            className="contact-form-button inline-flex min-w-[150px] items-center justify-center rounded-[8px] border border-[#1b2f5b] bg-[#1b2f5b] px-6 py-3 text-sm font-semibold tracking-[0.02em] text-white shadow-[0_14px_30px_rgba(27,47,91,0.18)] transition hover:border-[#e11d2e] hover:bg-[#e11d2e] disabled:cursor-not-allowed disabled:opacity-70"
+            type="submit"
+            disabled={loading}
+            aria-busy={loading}
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+
+          {status && !showPopup ? (
+            <p className="text-sm font-medium text-red-600" role="alert">
+              {status}
+            </p>
+          ) : null}
+        </div>
+      </form>
+
+      {showPopup ? (
+        <div
+          className="fixed left-1/2 top-1/2 z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-[linear-gradient(90deg,#38ef7d,#11998e)] px-8 py-4 text-center text-lg font-bold text-white shadow-float"
+          role="status"
+          aria-live="polite"
+        >
+          Form submitted successfully!
+        </div>
+      ) : null}
+
+      <style jsx>{`
+        @media (min-width: 1024px) and (max-height: 900px) {
+          .contact-form-grid {
+            gap: 1.15rem;
+          }
+
+          .contact-form-two-col {
+            gap: 1rem 1.5rem;
+          }
+
+          .contact-form-textarea {
+            min-height: 84px;
+          }
+
+          .contact-form-actions {
+            padding-top: 0;
+          }
+
+          .contact-form-button {
+            min-width: 138px;
+            padding: 0.7rem 1.25rem;
+          }
+        }
+
+        @media (min-width: 1280px) and (max-height: 860px) {
+          .contact-form-grid {
+            gap: 1rem;
+          }
+
+          .contact-form-textarea {
+            min-height: 74px;
+          }
+        }
+
+        @media (min-width: 1024px) and (max-height: 780px) {
+          .contact-form-grid {
+            gap: 0.8rem;
+          }
+
+          .contact-form-two-col {
+            gap: 0.8rem 1rem;
+          }
+
+          .contact-form-grid :global(label > span:first-child) {
+            font-size: 12px;
+          }
+
+          .contact-form-grid :global(input),
+          .contact-form-grid :global(textarea) {
+            font-size: 16px;
+            padding-top: 0.2rem;
+            padding-bottom: 0.35rem;
+          }
+
+          .contact-form-grid :global(div[class*="border-b"]) {
+            margin-top: 0.2rem;
+          }
+
+          .contact-form-textarea {
+            min-height: 56px;
+          }
+
+          .contact-form-button {
+            min-width: 128px;
+            padding: 0.62rem 1.1rem;
+            font-size: 12px;
+          }
+        }
+
+        @media (min-width: 1024px) and (max-height: 700px) {
+          .contact-form-grid {
+            gap: 0.65rem;
+          }
+
+          .contact-form-two-col {
+            gap: 0.65rem 0.9rem;
+          }
+
+          .contact-form-grid :global(input),
+          .contact-form-grid :global(textarea) {
+            font-size: 16px;
+            padding-bottom: 0.28rem;
+          }
+
+          .contact-form-textarea {
+            min-height: 44px;
+          }
+
+          .contact-form-button {
+            min-width: 120px;
+            padding: 0.55rem 1rem;
+          }
+        }
+      `}</style>
+    </>
   );
 }

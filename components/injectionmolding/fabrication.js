@@ -7,55 +7,55 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 export default function InjectionProcess() {
   const machineSlides = [
     {
-      title: "250 Ton Injection Molding Machine",
+      title: "250 Ton Injection Moulding Machine",
       description:
-        "Compact high-precision molding system ideal for small to medium components with excellent repeatability.",
+        "Compact high-precision moulding system ideal for small to medium components with excellent repeatability.",
       image: "/injectionmolding/machines/250Ton.png",
     },
     {
-      title: "360 Ton Injection Molding Machine",
+      title: "360 Ton Injection Moulding Machine",
       description:
         "Mid-range production press engineered for stable clamping force and consistent dimensional accuracy.",
       image: "/injectionmolding/machines/360TON.png",
     },
     {
-      title: "450 Ton Injection Molding Machine",
+      title: "450 Ton Injection Moulding Machine",
       description:
-        "Versatile molding platform suitable for automotive and industrial-grade components.",
+        "Versatile moulding platform suitable for automotive and industrial-grade components.",
       image: "/injectionmolding/machines/450ton.png",
     },
     {
-      title: "600 Ton Injection Molding Machine",
+      title: "600 Ton Injection Moulding Machine",
       description:
         "High-performance press designed for large-volume production with uniform fill and reduced scrap rates.",
       image: "/injectionmolding/machines/600ton.png",
     },
     {
-      title: "850 Ton Injection Molding Machine",
+      title: "850 Ton Injection Moulding Machine",
       description:
         "Heavy-duty clamping system built for large industrial parts requiring strong structural stability.",
       image: "/injectionmolding/machines/850Ton.png",
     },
     {
-      title: "1000 Ton Injection Molding Machine",
+      title: "1000 Ton Injection Moulding Machine",
       description:
         "Engineered for complex tooling and high-tonnage applications with consistent cycle efficiency.",
       image: "/injectionmolding/machines/1000ton.png",
     },
     {
-      title: "1400 Ton Injection Molding Machine",
+      title: "1400 Ton Injection Moulding Machine",
       description:
-        "Industrial-scale molding system supporting large molds and extended production runs.",
+        "Industrial-scale moulding system supporting large moulds and extended production runs.",
       image: "/injectionmolding/machines/1400Ton.png",
     },
     {
-      title: "1800 Ton Injection Molding Machine",
+      title: "1800 Ton Injection Moulding Machine",
       description:
         "Large-part manufacturing press delivering uniform material flow and stable clamping force.",
       image: "/injectionmolding/machines/1800ton.png",
     },
     {
-      title: "3000 Ton Injection Molding Machine",
+      title: "3000 Ton Injection Moulding Machine",
       description:
         "Ultra heavy-duty platform for oversized components and advanced automation integration.",
       image: "/injectionmolding/machines/3000ton.png",
@@ -69,13 +69,13 @@ export default function InjectionProcess() {
         <div className="range-grid">
           <div className="range-text">
             <p className="range-copy">
-              Our facility houses state-of-the-art injection molding machines
+              Our facility houses state-of-the-art injection moulding machines
               capable of handling projects of any scale&mdash;from intricate
               small components to large industrial parts.
             </p>
             <p className="range-copy">
               Whether you need high-volume production or specialized precision
-              molding, our diverse machine range ensures we can deliver exactly
+              moulding, our diverse machine range ensures we can deliver exactly
               what your project demands.
             </p>
           </div>
@@ -324,10 +324,27 @@ export default function InjectionProcess() {
           .range-slide {
             grid-template-columns: 1fr;
             min-height: unset;
+            gap: 12px;
+            padding: 18px 16px;
+          }
+
+          .slide-text {
+            padding-left: 0;
+          }
+
+          .slide-text h3 {
+            margin: 0 0 8px;
+            font-size: 30px;
+            line-height: 1.08;
+          }
+
+          .slide-text p {
+            font-size: 14px;
+            line-height: 1.6;
           }
 
           .slide-media {
-            height: 280px;
+            height: 220px;
           }
 
           .slide-image {

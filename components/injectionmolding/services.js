@@ -13,26 +13,26 @@ const fadeUp = {
 
 const serviceTabs = [
   {
-    label: "Mold Design",
-    title: "Advanced injection mold design & engineering",
+    label: "Mould Design",
+    title: "Advanced injection mould design & engineering",
     description:
-      "Our mold design process focuses on precision, durability, and repeatability. We validate every tool through detailed analysis before production.",
+      "Our mould design process focuses on precision, durability, and repeatability. We validate every tool through detailed analysis before production.",
     bullets: [
       "DFM & DFA analysis",
-      "Mold flow & cooling simulation",
-      "Multi-cavity & family molds",
+      "Mould flow & cooling simulation",
+      "Multi-cavity & family moulds",
       "Long-life tool design planning",
     ],
     image:
       "https://images.pexels.com/photos/18569745/pexels-photo-18569745.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
-    label: "Injection Molding",
-    title: "High-performance injection molding production",
+    label: "Injection Moulding",
+    title: "High-performance injection moulding production",
     description:
-      "We deliver consistent, high-volume injection molding using modern machines, optimized cycle times, and automated material handling.",
+      "We deliver consistent, high-volume injection moulding using modern machines, optimized cycle times, and automated material handling.",
     bullets: [
-      "50-1000 ton injection molding machines",
+      "50-1000 ton injection moulding machines",
       "Thermoplastic & engineering polymers",
       "Robotic part handling",
       "High-repeatability mass production",
@@ -42,7 +42,7 @@ const serviceTabs = [
   },
   {
     label: "Secondary Operations",
-    title: "Post-molding finishing & assembly",
+    title: "Post-moulding finishing & assembly",
     description:
       "Our secondary operations ensure parts are production-ready with precise finishing, assembly, and packaging under one roof.",
     bullets: [
@@ -56,9 +56,9 @@ const serviceTabs = [
   },
   {
     label: "Quality Assurance",
-    title: "Built-in quality control for injection molding",
+    title: "Built-in quality control for injection moulding",
     description:
-      "Quality is integrated into every stage of our injection molding process, ensuring compliance, traceability, and zero-defect output.",
+      "Quality is integrated into every stage of our injection moulding process, ensuring compliance, traceability, and zero-defect output.",
     bullets: [
       "ISO-compliant quality systems",
       "First article & PPAP inspection",
@@ -85,7 +85,7 @@ export default function ServicesSection() {
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="services-tabs"
+          className="services-tabs max-[768px]:!grid max-[768px]:grid-cols-2 max-[768px]:gap-3 max-[768px]:w-full"
         >
           {serviceTabs.map((tab, index) => (
             <button
@@ -93,7 +93,7 @@ export default function ServicesSection() {
               onClick={() => setActiveService(index)}
               className={`services-tab${
                 activeService === index ? " is-active" : ""
-              }`}
+              } max-[768px]:!w-full max-[768px]:min-w-0 max-[768px]:whitespace-normal max-[768px]:leading-[1.2]`}
             >
               {tab.label}
             </button>
@@ -137,58 +137,60 @@ export default function ServicesSection() {
 
         .services-shell {
           width: min(1200px, 92%);
-          margin: 0 auto 18px;
+          margin: 0 auto 26px;
           text-align: center;
-          padding: 24px 0 0;
+          padding: 20px 0 0;
         }
 
         .services-heading {
           text-align: center;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
         }
 
         .services-eyebrow {
-          margin: 18px 0 0;
-          font-size: clamp(22px, 3vw, 60px) !important;
-          letter-spacing: 0.4em;
+          margin: 0 0 10px;
+          font-size: clamp(13px, 1.3vw, 16px) !important;
+          letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(220, 235, 255, 0.78);
           font-family: "Oswald", sans-serif;
-          line-height: 1.1;
+          font-weight: 500;
+          line-height: 1.2;
         }
 
         .services-heading h2 {
-          margin: 12px 0 0;
-          font-size: clamp(24px, 3vw, 34px);
-          font-weight: 600;
+          margin: 0;
+          font-size: clamp(28px, 3.4vw, 42px);
+          font-weight: 700;
           text-transform: none;
           color: #ffffff;
-          line-height: 1.2;
+          line-height: 1.12;
+          font-family: "Oswald", sans-serif;
         }
 
         .services-tabs {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          gap: 24px;
+          gap: 14px;
           width: 100%;
-          margin: 18px auto 28px;
+          margin: 0 auto;
         }
 
         .services-tab {
           border-radius: 999px;
-          padding: 10px 18px;
+          padding: 11px 20px;
           background: transparent;
           border: 1px solid rgba(255, 255, 255, 0.25);
           color: rgba(255, 255, 255, 0.75);
           font-size: 13px;
           font-weight: 600;
-          font-family: "Oswald", sans-serif;
-          letter-spacing: 0.02em;
+          font-family: "Roboto", sans-serif;
+          letter-spacing: 0.01em;
           cursor: pointer;
           transition: all 0.2s ease;
           text-align: center;
-          margin: 0 10px;
+          margin: 0;
         }
 
         .services-tab:hover {
@@ -206,28 +208,31 @@ export default function ServicesSection() {
           width: min(1200px, 92%);
           margin: 0 auto;
           display: grid;
-          gap: 30px;
+          gap: 38px;
           grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-          align-items: start;
+          align-items: center;
         }
 
         .services-content h3 {
-          margin: 0 0 12px;
-          font-size: clamp(20px, 2.4vw, 28px);
-          font-weight: 600;
+          margin: 0 0 14px;
+          font-size: clamp(28px, 2.9vw, 40px);
+          font-weight: 700;
           color: #ffffff;
+          line-height: 1.14;
+          font-family: "Oswald", sans-serif;
         }
 
         .services-description {
-          margin: 0 0 20px;
-          font-size: 14px;
-          color: rgba(255, 255, 255, 0.7);
-          line-height: 1.6;
+          margin: 0 0 24px;
+          font-size: 16px;
+          color: rgba(235, 245, 255, 0.82);
+          line-height: 1.72;
+          font-family: "Roboto", sans-serif;
         }
 
         .services-bullets {
           display: grid;
-          gap: 12px;
+          gap: 14px 18px;
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -235,8 +240,9 @@ export default function ServicesSection() {
           display: flex;
           align-items: center;
           gap: 10px;
-          font-size: 13px;
-          color: rgba(255, 255, 255, 0.8);
+          font-size: 15px;
+          color: rgba(235, 245, 255, 0.9);
+          font-family: "Roboto", sans-serif;
         }
 
         .services-dot {
@@ -257,7 +263,7 @@ export default function ServicesSection() {
         }
 
         .services-image-media {
-          object-fit: contain;
+          object-fit: cover;
           object-position: center;
         }
 
@@ -272,6 +278,7 @@ export default function ServicesSection() {
 
           .services-tabs {
             width: min(720px, 94%);
+            gap: 10px;
           }
         }
 
@@ -281,18 +288,26 @@ export default function ServicesSection() {
           }
 
           .services-tabs {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 8px;
-            width: min(520px, 92%);
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            column-gap: 12px;
+            row-gap: 12px;
+            width: 100%;
             margin: 12px auto 20px;
+            align-items: stretch;
+            justify-items: stretch;
           }
 
           .services-tab {
-            width: 100%;
-            padding: 9px 12px;
+            display: flex;
+            width: 100% !important;
+            min-width: 0;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 10px;
             letter-spacing: 0.02em;
             margin: 0;
+            text-align: center;
           }
 
           .services-shell {
@@ -301,12 +316,12 @@ export default function ServicesSection() {
           }
 
           .services-eyebrow {
-            font-size: clamp(18px, 7vw, 32px) !important;
-            letter-spacing: 0.24em;
+            font-size: clamp(12px, 3.8vw, 14px) !important;
+            letter-spacing: 0.14em;
           }
 
           .services-heading h2 {
-            font-size: clamp(20px, 6vw, 28px);
+            font-size: clamp(24px, 6vw, 32px);
           }
 
           .services-content {
@@ -314,18 +329,12 @@ export default function ServicesSection() {
           }
 
           .services-description {
-            font-size: 13px;
+            font-size: 14px;
           }
 
           .services-image {
             border-radius: 14px;
             aspect-ratio: 4 / 3;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .services-tabs {
-            grid-template-columns: 1fr;
           }
         }
       `}</style>

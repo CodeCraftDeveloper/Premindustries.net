@@ -36,7 +36,7 @@ const heroSlides = [
       "Built at our facility with controlled quality checks, durable materials, and production-grade exhaust engineering. Powerful suction (1000-1500 m³/hr), baffle filtration, and heat-resistant finishes engineered for Indian cooking.",
     title: "In-House Manufacturing",
     sku: "End-to-end production control",
-    copy: "30-40% cost advantage on sheet metal and 45-50% savings on plastic molding.",
+    copy: "30-40% cost advantage on sheet metal and 45-50% savings on plastic moulding.",
   },
   {
     image: "/whatsnew/chimneys/2.jpeg",
@@ -165,7 +165,7 @@ export default function ChimneyProductPage() {
           name="description"
           content="Manufacturing excellence since 1975. Built in India with global standards, powerful suction, baffle filtration, and advanced auto-clean chimney technology."
         />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="noindex,nofollow" />
         <meta
           property="og:title"
           content="Smart Kitchen Chimneys for Next India | Prem Industries"
@@ -359,7 +359,7 @@ export default function ChimneyProductPage() {
             <div className="skills-box">
               <h4>Our Skills</h4>
               <p>
-                Precision-led processes across fabrication, molding, and final
+                Precision-led processes across fabrication, moulding, and final
                 testing deliver dependable chimney performance.
               </p>
               <div className="skill-list">

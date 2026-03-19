@@ -237,11 +237,28 @@ export default function IndustrySegmentsSection() {
 
         @media (max-width: 520px) {
           .segments-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
           }
 
           .segment-card {
-            min-height: 120px;
+            min-height: 98px;
+            padding: 10px 8px;
+          }
+
+          .segment-icon {
+            width: 36px;
+            height: 36px;
+          }
+
+          .segment-icon :global(svg) {
+            width: 36px;
+            height: 36px;
+          }
+
+          .segment-label {
+            font-size: 16px;
+            line-height: 1.15;
           }
         }
       `}</style>

@@ -4,22 +4,22 @@ import Image from "next/image";
 
 const certs = [
   {
-    alt: "Injection molding certificate 1",
+    alt: "Injection moulding certificate 1",
     src: "/injectionmolding/injectionCertificate1.png",
     label: "ISO 14001:2015",
   },
   {
-    alt: "Injection molding certificate 2",
+    alt: "Injection moulding certificate 2",
     src: "/injectionmolding/injectionCertificate2.png",
     label: "Certificate of Registration",
   },
   {
-    alt: "Injection molding certificate 3",
+    alt: "Injection moulding certificate 3",
     src: "/injectionmolding/injectionCertificate3.png",
     label: "ISO 9001:2015",
   },
   {
-    alt: "Injection molding certificate 4",
+    alt: "Injection moulding certificate 4",
     src: "/injectionmolding/injectionCertificate4.png",
     label: "Certificate of Registration",
   },
@@ -139,14 +139,20 @@ export default function CertificationsSection({ bgColor = "#14264f" }) {
           }
         }
 
-        @media (max-width: 700px) {
-          .cert-grid {
-            grid-template-columns: 1fr;
-          }
-        }
         @media (max-width: 640px) {
           .cert-card {
             border-radius: 14px;
+            padding: 16px 16px 20px;
+          }
+
+          .cert-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+          }
+
+          .cert-label {
+            font-size: 9px;
+            padding: 5px 6px;
           }
         }
       `}</style>

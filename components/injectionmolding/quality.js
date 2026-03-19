@@ -7,7 +7,7 @@ export default function QualityChecklistSection() {
         <div className="quality-bg">
           <Image
             src="https://images.pexels.com/photos/60575/smoke-smoking-chimney-fireplace-60575.jpeg"
-            alt="Injection molding facility"
+            alt="Injection moulding facility"
             fill
             sizes="100vw"
             style={{ objectFit: "cover" }}
@@ -17,7 +17,7 @@ export default function QualityChecklistSection() {
         <div className="quality-wedge" aria-hidden="true" />
 
         <div className="quality-content">
-          <h2>Injection Molded Part Quality Control Checklist</h2>
+          <h2>Injection Moulded Part Quality Control Checklist</h2>
           <p>
             Quality isn&apos;t just a goal&mdash;it&apos;s our standard. Every
             component that leaves our facility undergoes rigorous inspection to
@@ -39,7 +39,7 @@ export default function QualityChecklistSection() {
         <div className="quality-photo">
           <Image
             src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg"
-            alt="Injection molding machine"
+            alt="Injection moulding machine"
             fill
             sizes="(max-width: 900px) 70vw, 360px"
             style={{ objectFit: "cover" }}
@@ -183,20 +183,58 @@ export default function QualityChecklistSection() {
         @media (max-width: 640px) {
           .quality-wrap {
             height: auto;
-            padding-bottom: 40px;
+            padding-bottom: 28px;
+          }
+
+          .quality-overlay {
+            background: linear-gradient(
+              180deg,
+              rgba(6, 36, 86, 0.88) 0%,
+              rgba(6, 36, 86, 0.8) 60%,
+              rgba(6, 36, 86, 0.74) 100%
+            );
+          }
+
+          .quality-wedge {
+            display: none;
           }
 
           .quality-content {
-            padding: 28px;
+            padding: 24px 20px 0;
             max-width: none;
+          }
+
+          .quality-content h2 {
+            font-size: clamp(20px, 8vw, 30px);
+            line-height: 1.12;
+            letter-spacing: 0.05em;
+          }
+
+          .quality-content p {
+            margin-top: 14px;
+            font-size: 14px;
+            line-height: 1.7;
+            text-align: left;
+          }
+
+          .quality-list {
+            margin-top: 14px;
+            gap: 8px;
+          }
+
+          .quality-list span {
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            padding: 6px 10px;
           }
 
           .quality-photo {
             position: relative;
             inset: auto;
-            margin: 12px 0 0 24px;
-            width: min(70%, 260px);
-            height: 220px;
+            margin: 18px auto 0;
+            width: min(78%, 250px);
+            height: 170px;
+            transform: rotate(-3deg);
           }
         }
       `}</style>

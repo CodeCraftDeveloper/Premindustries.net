@@ -10,7 +10,7 @@ export default function InjectionCtaSection() {
         <div className="cta-image">
           <Image
             src="/injectionmolding/machines/850Ton.png"
-            alt="Injection molding tool"
+            alt="Injection moulding tool"
             fill
             sizes="(max-width: 900px) 100vw, 30vw"
             style={{ objectFit: "cover" }}
@@ -107,6 +107,7 @@ export default function InjectionCtaSection() {
           background: transparent;
           border-color: rgba(255, 255, 255, 0.6);
           color: #ffffff;
+          border-radius: 999px;
         }
 
         :global(.cta-section h2),
@@ -155,11 +156,39 @@ export default function InjectionCtaSection() {
           }
 
           .cta-image {
-            min-height: 200px;
+            min-height: 150px;
           }
 
           .cta-body {
             padding: 20px 24px;
+            gap: 10px;
+          }
+
+          .cta-body h2 {
+            font-size: 18px;
+            line-height: 1.2;
+          }
+
+          .cta-body p {
+            font-size: 13px;
+            line-height: 1.65;
+          }
+
+          .cta-buttons {
+            margin-top: 4px;
+          }
+
+          .cta-button {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+          }
+
+          :global(.cta-image img) {
+            object-fit: contain !important;
+            object-position: center top !important;
+            padding: 8px 10px 0;
           }
         }
       `}</style>

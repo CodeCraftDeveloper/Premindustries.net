@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import InfrastructureData from "./infrastructureData";
 
 const infraCards = [
   {
@@ -142,6 +144,13 @@ export default function Infrastructure() {
               </div>
             ))}
           </div>
+          <div className="press-infra-links">
+            {InfrastructureData.map((item) => (
+              <Link key={item.id} href={item.category} className="press-infra-link">
+                {item.location}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="press-infra-media">
@@ -194,6 +203,40 @@ export default function Infrastructure() {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 16px;
+        }
+
+        .press-infra-links {
+          margin-top: 18px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .press-infra-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          border: 1px solid rgba(11, 60, 160, 0.16);
+          background: #ffffff;
+          padding: 10px 16px;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.03em;
+          color: #0b1b2b;
+          text-decoration: none;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
+        }
+
+        .press-infra-link:hover,
+        .press-infra-link:focus-visible {
+          transform: translateY(-1px);
+          border-color: rgba(11, 60, 160, 0.38);
+          box-shadow: 0 12px 20px rgba(13, 28, 45, 0.12);
+          outline: none;
         }
 
         .press-infra-card {
