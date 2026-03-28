@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { useRouter } from "next/router";
 import MobileMenu from "./MobileMenu";
 import { desktopNavItems } from "./navData";
@@ -109,6 +110,7 @@ const DesktopNavItem = ({
   const childStateClassName = isActive
     ? "bg-black/5 !text-black"
     : "!text-black hover:bg-black/5 hover:!text-black";
+  const CaretIcon = isRoot ? ChevronDown : ChevronRight;
 
   if (!hasChildren) {
     return (
@@ -167,14 +169,7 @@ const DesktopNavItem = ({
           ariaCurrent={isActive ? "page" : undefined}
         >
           <span>{formatNavLabel(item.label)}</span>
-          <i
-            className={
-              isRoot
-                ? "fa-solid fa-chevron-down text-[10px]"
-                : "fa-solid fa-chevron-right text-[10px]"
-            }
-            aria-hidden="true"
-          />
+          <CaretIcon className="h-[10px] w-[10px]" aria-hidden="true" />
         </MenuLink>
       ) : (
         <button
@@ -199,14 +194,7 @@ const DesktopNavItem = ({
           }
         >
           <span>{formatNavLabel(item.label)}</span>
-          <i
-            className={
-              isRoot
-                ? "fa-solid fa-chevron-down text-[10px]"
-                : "fa-solid fa-chevron-right text-[10px]"
-            }
-            aria-hidden="true"
-          />
+          <CaretIcon className="h-[10px] w-[10px]" aria-hidden="true" />
         </button>
       )}
 
@@ -325,7 +313,7 @@ const Header = () => {
           <nav
             aria-label="Primary navigation"
             className="site-header-nav hidden lg:flex lg:min-w-0 lg:justify-center lg:self-stretch"
-            style={{ fontFamily: "Roboto, sans-serif" }}
+            style={{ fontFamily: "var(--font-roboto)" }}
           >
             <ul className="site-header-list flex h-full items-stretch gap-0">
               {desktopNavItems.map((item) => (
@@ -447,7 +435,7 @@ const Header = () => {
           align-items: center;
           gap: 0.35rem;
           padding: 0.25rem 0;
-          font-family: "Roboto", sans-serif;
+          font-family: var(--font-roboto);
           font-size: 15px;
           font-weight: 600;
           letter-spacing: 0.07em;
@@ -499,7 +487,7 @@ const Header = () => {
           justify-content: space-between;
           border-radius: 0.75rem;
           padding: 0.75rem 1rem;
-          font-family: "Roboto", sans-serif;
+          font-family: var(--font-roboto);
           font-size: 15px;
           line-height: 1;
           font-weight: 600;
@@ -519,7 +507,7 @@ const Header = () => {
         .site-header-nav :global(button.site-header-top-link),
         .site-header-nav :global(.site-header-submenu a.site-header-link),
         .site-header-nav :global(.site-header-submenu button.site-header-link) {
-          font-family: "Roboto", sans-serif !important;
+          font-family: var(--font-roboto) !important;
           font-size: 15px !important;
           font-weight: 600 !important;
           line-height: 1 !important;

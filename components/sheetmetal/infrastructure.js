@@ -121,7 +121,7 @@ export default function Infrastructure() {
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeUp}
     >
-      <div className="container press-infra-grid">
+      <div className="press-infra-grid mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="press-infra-text">
           <h2>INFRASTRUCTURE FOR PRESS SHOP</h2>
           <p>
@@ -189,7 +189,7 @@ export default function Infrastructure() {
           font-size: clamp(26px, 3.4vw, 40px);
           margin: 0 0 12px;
           color: #0b1b2b;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
         }
 
         .press-infra-text p {
@@ -201,41 +201,56 @@ export default function Infrastructure() {
 
         .press-infra-cards {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 16px;
         }
 
         .press-infra-links {
-          margin-top: 18px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px;
+          margin-top: 22px;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, max-content));
+          gap: 12px 14px;
+          align-items: start;
         }
 
         .press-infra-link {
           display: inline-flex;
           align-items: center;
           justify-content: center;
+          gap: 8px;
           border-radius: 999px;
-          border: 1px solid rgba(11, 60, 160, 0.16);
-          background: #ffffff;
-          padding: 10px 16px;
-          font-size: 13px;
+          border: 1px solid rgba(11, 60, 160, 0.12);
+          background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+          padding: 10px 18px;
+          font-size: 12px;
           font-weight: 700;
-          letter-spacing: 0.03em;
+          letter-spacing: 0.08em;
           color: #0b1b2b;
           text-decoration: none;
+          text-transform: uppercase;
+          box-shadow: 0 10px 20px rgba(13, 28, 45, 0.08);
           transition:
             transform 0.2s ease,
             box-shadow 0.2s ease,
-            border-color 0.2s ease;
+            border-color 0.2s ease,
+            background 0.2s ease,
+            color 0.2s ease;
+        }
+
+        .press-infra-link::after {
+          content: "->";
+          font-size: 11px;
+          line-height: 1;
+          color: #e92227;
         }
 
         .press-infra-link:hover,
         .press-infra-link:focus-visible {
-          transform: translateY(-1px);
-          border-color: rgba(11, 60, 160, 0.38);
-          box-shadow: 0 12px 20px rgba(13, 28, 45, 0.12);
+          transform: translateY(-2px);
+          border-color: rgba(233, 34, 39, 0.24);
+          background: linear-gradient(180deg, #ffffff 0%, #fff1f2 100%);
+          color: #091728;
+          box-shadow: 0 14px 24px rgba(13, 28, 45, 0.12);
           outline: none;
         }
 
@@ -318,6 +333,10 @@ export default function Infrastructure() {
 
         @media (max-width: 640px) {
           .press-infra-cards {
+            grid-template-columns: 1fr;
+          }
+
+          .press-infra-links {
             grid-template-columns: 1fr;
           }
 

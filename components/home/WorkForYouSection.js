@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,6 +14,35 @@ import {
 } from "./homeMotion";
 
 export default function WorkForYouSection() {
+  const [showVideo, setShowVideo] = useState(false);
+  const mediaRef = useRef(null);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const saveData = navigator.connection?.saveData;
+
+    if (prefersReducedMotion || saveData || !mediaRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        setShowVideo(true);
+        observer.disconnect();
+      },
+      { rootMargin: "160px 0px" },
+    );
+
+    observer.observe(mediaRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-white px-[14px] pb-[34px] pt-[26px] sm:px-[18px] lg:px-6">
       <div className="mx-auto max-w-[1380px]">
@@ -55,17 +85,29 @@ export default function WorkForYouSection() {
             className="relative min-h-[280px] overflow-hidden rounded-[4px] lg:min-h-[360px]"
             variants={revealLeft}
             {...getAosProps("left", 60)}
+            ref={mediaRef}
           >
-            <video
-              className="block h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source src="/home/luxury-packaging.mp4" type="video/mp4" />
-            </video>
+            {showVideo ? (
+              <video
+                className="block h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              >
+                <source src="/home/luxury-packaging.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src="/home/hero-packaging.jpg"
+                alt="Prem Industries packaging operations"
+                fill
+                priority={false}
+                sizes="(max-width: 1023px) 100vw, 70vw"
+                className="object-cover"
+              />
+            )}
           </motion.div>
 
           <div className="grid gap-[10px] lg:grid-rows-[auto_1fr]">

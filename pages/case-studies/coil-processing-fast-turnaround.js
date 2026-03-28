@@ -1,17 +1,8 @@
-import Head from "next/head";
 import Link from "next/link";
 
 export default function CoilProcessingCaseStudy() {
   return (
     <>
-      <Head>
-        <title>Coil Processing Fast-Turnaround Program | Case Study</title>
-        <meta
-          name="description"
-          content="Case study on improving turnaround predictability for a fabrication customer through coordinated CTL, shearing, and slitting operations."
-        />
-      </Head>
-
       <section className="bg-brand-surface py-12 sm:py-16 lg:py-20">
         <div className="site-shell-tight">
           <article className="rounded-shell border border-brand-border/70 bg-white px-6 py-7 shadow-panel sm:px-8 sm:py-9 lg:px-10">

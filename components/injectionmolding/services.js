@@ -153,7 +153,7 @@ export default function ServicesSection() {
           letter-spacing: 0.16em;
           text-transform: uppercase;
           color: rgba(220, 235, 255, 0.78);
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           font-weight: 500;
           line-height: 1.2;
         }
@@ -165,7 +165,7 @@ export default function ServicesSection() {
           text-transform: none;
           color: #ffffff;
           line-height: 1.12;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
         }
 
         .services-tabs {
@@ -185,7 +185,7 @@ export default function ServicesSection() {
           color: rgba(255, 255, 255, 0.75);
           font-size: 13px;
           font-weight: 600;
-          font-family: "Roboto", sans-serif;
+          font-family: var(--font-roboto);
           letter-spacing: 0.01em;
           cursor: pointer;
           transition: all 0.2s ease;
@@ -219,7 +219,7 @@ export default function ServicesSection() {
           font-weight: 700;
           color: #ffffff;
           line-height: 1.14;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
         }
 
         .services-description {
@@ -227,7 +227,7 @@ export default function ServicesSection() {
           font-size: 16px;
           color: rgba(235, 245, 255, 0.82);
           line-height: 1.72;
-          font-family: "Roboto", sans-serif;
+          font-family: var(--font-roboto);
         }
 
         .services-bullets {
@@ -242,7 +242,7 @@ export default function ServicesSection() {
           gap: 10px;
           font-size: 15px;
           color: rgba(235, 245, 255, 0.9);
-          font-family: "Roboto", sans-serif;
+          font-family: var(--font-roboto);
         }
 
         .services-dot {

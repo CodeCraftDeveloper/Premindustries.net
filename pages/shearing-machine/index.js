@@ -1,4 +1,3 @@
-import Head from "next/head";
 import MachineContentSection from "@/components/common/MachineContentSection";
 import SectionReveal from "@/components/common/SectionReveal";
 import Hero from "@/components/shearing-machine/hero";
@@ -19,18 +18,6 @@ const listItems = [
 export default function ShearingMachinePage() {
   return (
     <>
-      <Head>
-        <title>Shearing Machine - Prem Industries India Limited</title>
-        <meta
-          name="description"
-          content="Explore our high-quality shearing machines."
-        />
-        <meta
-          name="title"
-          content="Shearing Machine - Prem Industries India Limited"
-        />
-      </Head>
-
       <SectionReveal>
         <Hero />
       </SectionReveal>

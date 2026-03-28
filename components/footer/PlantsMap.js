@@ -5,11 +5,15 @@ import { useEffect, useRef } from "react";
 const PlantsMap = ({ plants }) => {
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
+  const hasInitializedRef = useRef(false);
 
   useEffect(() => {
     let mounted = true;
+    let observer;
 
     const initMap = async () => {
+      if (hasInitializedRef.current) return;
+
       const leafletModule = await import("leaflet");
       const L = leafletModule.default ?? leafletModule;
 
@@ -22,10 +26,12 @@ const PlantsMap = ({ plants }) => {
         return;
       }
 
+      hasInitializedRef.current = true;
+
       const map = L.map(mapRef.current, {
         zoomControl: true,
         attributionControl: false,
-        scrollWheelZoom: true,
+        scrollWheelZoom: false,
         touchZoom: true,
         dragging: true,
         doubleClickZoom: true,
@@ -88,15 +94,32 @@ const PlantsMap = ({ plants }) => {
       requestAnimationFrame(() => map.invalidateSize());
     };
 
-    initMap();
+    if (mapRef.current && "IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (!entry?.isIntersecting) return;
+          observer?.disconnect();
+          initMap();
+        },
+        { root: null, rootMargin: "300px 0px", threshold: 0.01 },
+      );
+
+      observer.observe(mapRef.current);
+    } else {
+      initMap();
+    }
 
     return () => {
       mounted = false;
+      observer?.disconnect();
 
       if (mapInstance.current) {
         mapInstance.current.remove();
         mapInstance.current = null;
       }
+
+      hasInitializedRef.current = false;
     };
   }, [plants]);
 

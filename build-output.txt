@@ -1,0 +1,83 @@
+﻿
+> premindustries-nextjs@0.1.0 build
+> node scripts/write-build-meta.js && next build
+
+   Γû▓ Next.js 15.4.6
+   - Environments: .env.local
+
+   Linting and checking validity of types ...
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully in 10.0s
+   Collecting page data ...
+   Generating static pages (0/251) ...
+   Generating static pages (62/251) 
+   Generating static pages (125/251) 
+   Generating static pages (188/251) 
+ Γ£ô Generating static pages (251/251)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (pages)                                                              Size  First Load JS
+Γöî ΓùÅ /                                                                   12.7 kB         192 kB
+Γö£   /_app                                                                   0 B         139 kB
+Γö£ ΓùÅ /[slug]/[keyword] (125049 ms)                                         300 B         143 kB
+Γö£   Γö£ /injection-molding/oem-plastic-supplier-india (1622 ms)
+Γö£   Γö£ /injection-molding/what-is-injection-molding (1618 ms)
+Γö£   Γö£ /injection-molding/injection-molding-cost-factors (1617 ms)
+Γö£   Γö£ /injection-molding/plastic-vs-metal-parts-comparison (1617 ms)
+Γö£   Γö£ /injection-molding/benefits-of-injection-molding (1617 ms)
+Γö£   Γö£ /injection-molding/reliable-plastic-manufacturer-india (1617 ms)
+Γö£   Γö£ /injection-molding/how-to-choose-molding-supplier (1616 ms)
+Γö£   Γöö [+205 more paths] (avg 555 ms)
+Γö£ Γùï /404                                                                  719 B         140 kB
+Γö£ Γùï /about                                                              7.07 kB         186 kB
+Γö£ Γùï /about/adani-group (2044 ms)                                          299 B         179 kB
+Γö£ Γùï /about/awards (2046 ms)                                               292 B         179 kB
+Γö£ Γùï /about/chairmans-office                                               301 B         179 kB
+Γö£ Γùï /about/goel-group                                                     296 B         179 kB
+Γö£ Γùï /about/leadership                                                     295 B         179 kB
+Γö£ Γùï /about/our-journey                                                    297 B         179 kB
+Γö£ Γùï /blogs (2045 ms)                                                    2.75 kB         178 kB
+Γö£ ΓùÅ /blogs/[slug] (466 ms)                                              4.72 kB         180 kB
+Γö£   Γöö /blogs/aahar-2026-delhi (466 ms)
+Γö£ Γùï /career (2045 ms)                                                   3.07 kB         178 kB
+Γö£ Γùï /case-studies (1267 ms)                                             1.24 kB         141 kB
+Γö£ Γùï /case-studies/coil-processing-fast-turnaround (1262 ms)             1.07 kB         141 kB
+Γö£ Γùï /case-studies/injection-molding-appliance-housing (1272 ms)         1.08 kB         141 kB
+Γö£ Γùï /case-studies/sheet-metal-automotive-bracket-line (1266 ms)         1.14 kB         141 kB
+Γö£ Γùï /clients (799 ms)                                                   5.75 kB         145 kB
+Γö£ Γùï /contact (797 ms)                                                   5.21 kB         180 kB
+Γö£ Γùï /contract-manufacturing-india (1261 ms)                               795 B         144 kB
+Γö£ Γùï /ctl-machine (799 ms)                                               2.08 kB         177 kB
+Γö£ Γùï /custom-product-manufacturing-india (1262 ms)                         814 B         144 kB
+Γö£ Γùï /industrial-manufacturing-services (1262 ms)                          814 B         144 kB
+Γö£ Γùï /industrial-solutions-india (1263 ms)                               1.36 kB         144 kB
+Γö£ Γùï /injection-molding (2050 ms)                                        18.6 kB         224 kB
+Γö£ Γùï /manufacturing-company-india (801 ms)                               1.34 kB         144 kB
+Γö£ Γùï /oem-manufacturing-india (800 ms)                                   1.27 kB         144 kB
+Γö£ Γùï /packaging (799 ms)                                                   274 B         143 kB
+Γö£ Γùï /press-shop (2045 ms)                                               2.01 kB         177 kB
+Γö£ Γùï /privacy-policy (2045 ms)                                           2.38 kB         178 kB
+Γö£ Γùï /redirects/whatsnew/chimney (800 ms)                                12.4 kB         188 kB
+Γö£ Γùï /redirects/whatsnew/coolers (800 ms)                                6.33 kB         146 kB
+Γö£ Γùï /shearing-machine (2044 ms)                                         2.07 kB         177 kB
+Γö£ Γùï /sheet-metal                                                          279 B         143 kB
+Γö£ Γùï /sheet-metal-components                                             12.5 kB         218 kB
+Γö£ ╞Æ /sitemap.xml                                                          249 B         140 kB
+Γö£ Γùï /slitting-machine                                                   1.99 kB         177 kB
+Γö£ Γùï /terms-and-conditions                                                2.5 kB         178 kB
+Γö£ Γùï /third-party-manufacturing-india                                      801 B         144 kB
+Γöö Γùï /turnkey-manufacturing-services                                       832 B         144 kB
++ First Load JS shared by all                                            168 kB
+  Γö£ chunks/framework-2c9863a08d67ec10.js                                57.7 kB
+  Γö£ chunks/main-13a1a79468c2990a.js                                     31.7 kB
+  Γö£ chunks/pages/_app-9124a1b556ca88d2.js                               48.2 kB
+  Γö£ css/1029dc74103f72d5.css                                            28.7 kB
+  Γöö other shared chunks (total)                                         1.79 kB
+
+╞Æ Middleware                                                              34 kB
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses getStaticProps)
+╞Æ  (Dynamic)  server-rendered on demand
+

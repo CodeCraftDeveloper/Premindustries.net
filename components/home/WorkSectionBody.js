@@ -38,7 +38,7 @@ const tabs = [
     description:
       "As a prominent player in the steel industry, we deliver high-grade steel solutions engineered for strength, consistency, and long-term performance. With modern processing capabilities and strict quality systems, we support demanding industrial applications while continuing to drive innovation across our product range.",
     image: "/home/sector-steelsector.jpg",
-    href: "/sheet-metal",
+    href: "/sheet-metal-components",
   },
   {
     id: "retail",
@@ -71,7 +71,7 @@ const tabs = [
     description:
       "Prem Industries delivers high-precision sheet metal components for automotive, appliance, industrial, and infrastructure applications. Backed by modern fabrication, press shop capability, and strict quality controls, we manufacture durable parts with consistency at scale.",
     image: "/home/sector-steelsector.jpg",
-    href: "/sheet-metal",
+    href: "/sheet-metal-components",
   },
   {
     id: "injection-moulding",
@@ -82,7 +82,7 @@ const tabs = [
     description:
       "Our injection moulding business combines modern machinery, process discipline, and scalable production to deliver reliable plastic components across consumer, industrial, and appliance categories. We focus on repeatability, finish quality, and dependable delivery.",
     image: "/home/Innovation.jpg",
-    href: "/injectionmoulding",
+    href: "/injection-molding",
   },
 ];
 

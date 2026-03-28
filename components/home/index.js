@@ -16,14 +16,7 @@ import WhyPremSection from "./WhyPremSection";
 import ExecutionProcessSection from "./ExecutionProcessSection";
 import HomeCtaSection from "./HomeCtaSection";
 import HeroSection from "./HeroSection";
-import {
-  getAosProps,
-  homeViewport,
-  motion,
-  revealLeft,
-  revealRight,
-  revealSoft,
-} from "./homeMotion";
+import RecentBlogsSection from "@/components/blogs/RecentBlogsSection";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
@@ -37,21 +30,13 @@ export default function HomeTwoClient() {
   // const handleOutsideClick = (e) => {
   //   if (e.target.id === "popup") setShowPopup(false);
   // };
-  const sectionProps = (variants, aosDirection, delay = 0) => ({
-    initial: "hidden",
-    whileInView: "show",
-    viewport: homeViewport,
-    variants,
-    ...getAosProps(aosDirection, delay),
-  });
-
   return (
     <div className="home-typography">
-      <motion.section {...sectionProps(revealSoft, "up")}>
+      <section>
         <HeroSection />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealRight, "right", 40)}>
+      <section>
         <AboutSection
           subhead="About"
           head="Prem Industries India Limited"
@@ -61,11 +46,11 @@ export default function HomeTwoClient() {
           btnText="read more"
           verticalText="ABOUT"
         />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealLeft, "left", 60)}>
+      <section>
         <WorkForYouSection />
-      </motion.section>
+      </section>
 
       {/* <motion.section
         initial={{ opacity: 0, y: 24 }}
@@ -112,30 +97,34 @@ export default function HomeTwoClient() {
         <WhyPremSection />
       </motion.section> */}
 
-      <motion.section {...sectionProps(revealSoft, "up", 80)}>
+      <section>
         <WorkSectionHead />
         <WorkSectionBody />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealRight, "right", 40)}>
+      <section>
         <ExecutionProcessSection />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealLeft, "left", 60)}>
+      <section>
         <SustainabilitySection />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealRight, "right", 80)}>
+      <section>
         <InnovationSection />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealLeft, "left", 60)}>
+      <section>
         <HomeCtaSection />
-      </motion.section>
+      </section>
 
-      <motion.section {...sectionProps(revealSoft, "up", 40)}>
+      <section>
+        <RecentBlogsSection />
+      </section>
+
+      <section>
         <CounterSection />
-      </motion.section>
+      </section>
 
       {/* Popup (uncomment to enable)
       {showPopup && (

@@ -18,7 +18,7 @@ const cards = [
 export default function MissionVisionSection() {
   return (
     <section className="mission-vision">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="head">
           <p className="kicker">OUR DIRECTION</p>
           <h2>Purpose-driven growth with execution at the center.</h2>
@@ -38,12 +38,6 @@ export default function MissionVisionSection() {
         .mission-vision {
           padding: 22px 0 10px;
           background: #f8f8f6;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
         }
 
         .head {
@@ -95,20 +89,8 @@ export default function MissionVisionSection() {
         }
 
         @media (max-width: 992px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
           .grid {
             grid-template-columns: 1fr;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
           }
         }
       `}</style>

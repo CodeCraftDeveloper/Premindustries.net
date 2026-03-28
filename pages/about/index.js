@@ -6,24 +6,11 @@ import MissionSection from "../../components/about/MissionSection";
 import VisionSection from "../../components/about/VisionSection";
 import ValueSection from "../../components/about/ValueSection";
 import KeypointSection from "../../components/about/KeyPointSection";
-import Head from "next/head";
 import SectionReveal from "@/components/common/SectionReveal";
 
 export default function index() {
   return (
     <>
-      <Head>
-        <title>About Prem Industries | Manufacturing Company in India</title>
-        <meta
-          name="title"
-          content="About Prem Industries | Manufacturing Company in India"
-        />
-        <meta
-          name="description"
-          content="Learn about Prem Industries India Limited, an Indian manufacturing company serving OEMs and industrial buyers through sheet metal fabrication, injection moulding, and process-driven production."
-        />
-      </Head>
-
       <SectionReveal>
         <PageBanner title="About Us" bannerBg="/about/banner.jpg" />
       </SectionReveal>

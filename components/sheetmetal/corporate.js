@@ -70,11 +70,11 @@ export default function CorporateVideo() {
         }
       `}</style>
 
-      <div className="container-fluid pt-1 pattern-bg" />
+      <div className="w-full pt-1 pattern-bg" />
 
-      <div className="container">
-        <div className="row text-center">
-          <div className="col-md-12">
+      <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
+        <div className="text-center">
+          <div>
             <h1 style={{ fontSize: "clamp(26px, 4vw, 40px)" }}>
               Our Corporate Video
             </h1>

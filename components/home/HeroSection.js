@@ -2,249 +2,199 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  getAosProps,
-  homeViewport,
-  motion,
-  revealCard,
-  revealLeft,
-  staggerCards,
-  staggerContainer,
-} from "./homeMotion";
 
 const heroCards = [
   {
     href: "https://prempackaging.com/",
     title: "Packaging Solutions",
+    eyebrow: "Packaging",
     body: "Custom packaging support for FMCG, retail, D2C, and industrial supply programs with dependable repeat-order execution.",
     accent: "#ef4a3a",
-    external: true,
   },
   {
     href: "/sheet-metal-components",
     title: "Sheet Metal Fabrication",
+    eyebrow: "Sheet Metal",
     body: "Precision sheet metal components for automotive, appliance, infrastructure, and OEM supply chains.",
     accent: "#2f3577",
   },
   {
-    href: "/injectionmoulding",
+    href: "/injection-molding",
     title: "Injection Moulding",
+    eyebrow: "Injection",
     body: "High-volume plastic components with controlled tolerances for appliance, consumer, and industrial applications.",
     accent: "#29d17d",
   },
 ];
 
+function hexToRgba(hex, alpha) {
+  const value = hex.replace("#", "");
+  const normalized =
+    value.length === 3
+      ? value
+          .split("")
+          .map((char) => char + char)
+          .join("")
+      : value;
+
+  const r = Number.parseInt(normalized.slice(0, 2), 16);
+  const g = Number.parseInt(normalized.slice(2, 4), 16);
+  const b = Number.parseInt(normalized.slice(4, 6), 16);
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-var(--site-header-height))] overflow-hidden px-4 py-6 text-white sm:px-5 sm:py-8 md:px-6 md:py-10 lg:h-[calc(100vh-var(--site-header-height))] lg:px-7 lg:py-12 xl:px-8 xl:py-14">
+    <section className="relative min-h-[calc(100vh-var(--site-header-height))] overflow-hidden text-white lg:h-[calc(100svh-var(--site-header-height))]">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/sheetmetal/best.jpg"
+          src="/home/u-copy.png"
           alt="Prem Industries facility"
           fill
           priority
-          className="object-cover object-[center_top] sm:object-center"
+          fetchPriority="high"
+          className="object-cover object-center [filter:contrast(1.1)_saturate(1.1)]"
           sizes="100vw"
         />
       </div>
 
-      <div className="absolute inset-0 z-[1] bg-transparent" />
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(11,15,20,0.65)_0%,rgba(11,15,20,0.45)_35%,rgba(11,15,20,0.15)_70%,rgba(11,15,20,0.05)_100%)] after:absolute after:inset-0 after:content-[''] after:bg-[linear-gradient(120deg,rgba(255,90,79,0.15)_0%,rgba(255,90,79,0.05)_30%,rgba(0,0,0,0)_62%)]" />
 
-      <div className="relative z-[2] mx-auto flex h-full w-full max-w-[1360px] flex-col justify-start pt-3 sm:pt-4 lg:pt-5 xl:pt-7">
-        <motion.div
-          className="hero-text flex max-w-[980px] flex-col gap-2 text-left text-white sm:gap-3 lg:max-w-[900px] xl:max-w-[1040px]"
-          initial="hidden"
-          whileInView="show"
-          viewport={homeViewport}
-          variants={revealLeft}
-          {...getAosProps("left", 40)}
-        >
-          <p className="font-hero home-heavy text-[9px] uppercase tracking-[0.16em] text-white/82 sm:text-[11px] sm:tracking-[0.2em]">
-            Prem Industries India Limited
-          </p>
-          <h1 className="hero-main-title font-hero home-heavy m-0 max-w-[820px] text-[clamp(20px,5.4vw,52px)] uppercase leading-[0.96] tracking-[-0.02em] text-white sm:max-w-[820px] lg:text-[clamp(36px,3.2vw,46px)] xl:max-w-[920px] xl:text-[clamp(40px,3vw,52px)] 2xl:max-w-[980px] 2xl:text-[clamp(52px,4vw,72px)]">
-            Prem Industries group solutions built for scale and reliability
-          </h1>
-          <p className="hero-subtitle font-hero m-0 max-w-[780px] text-[clamp(12px,2.4vw,20px)] font-extrabold leading-[1.28] text-white/95 lg:max-w-[760px] lg:text-[clamp(16px,1.5vw,20px)] xl:max-w-[840px] xl:text-[clamp(17px,1.45vw,21px)] 2xl:max-w-[900px] 2xl:text-[clamp(20px,2vw,28px)]">
-            Packaging, sheet metal fabrication, injection moulding, retail, and
-            construction support from one process-driven business group.
-          </p>
-          <p className="hero-copy m-0 max-w-[760px] text-[12px] font-medium leading-[1.58] text-white/90 sm:text-[14px] sm:leading-[1.7] lg:max-w-[720px] lg:text-[14px] lg:leading-[1.68] xl:max-w-[800px] xl:text-[15px] xl:leading-[1.72] 2xl:max-w-[860px] 2xl:text-[17px] 2xl:leading-[1.78]">
-            ISO-aligned quality systems, traceability, and disciplined execution
-            trusted by FMCG brands, OEMs, infrastructure partners, and
-            multi-sector enterprises.
-          </p>
-          <div className="pt-1 sm:pt-2">
-            <Link
-              href="/contact"
-              className="font-hero inline-flex w-fit items-center justify-center rounded-[14px] bg-[#ef3a32] px-4 py-2.5 text-[12px] font-extrabold !text-white shadow-[0_12px_24px_rgba(239,58,50,0.35)] transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_16px_28px_rgba(239,58,50,0.45)] sm:px-6 sm:py-3 sm:text-[15px] lg:px-5 lg:py-2.5 lg:text-[14px] xl:px-6 xl:py-3 xl:text-[15px]"
+      <div className="relative z-20 h-full min-h-[calc(100vh-var(--site-header-height))] w-full px-6 sm:px-8 lg:min-h-0 lg:px-12 xl:px-16">
+        <div className="flex h-full flex-col pt-20 pb-6 sm:pt-24 sm:pb-7 lg:pt-16 lg:pb-3 xl:pt-20 xl:pb-4 [@media(min-width:1024px)_and_(max-height:900px)]:pt-[3.25rem] [@media(min-width:1024px)_and_(max-height:900px)]:pb-[0.6rem] [@media(min-width:1024px)_and_(max-height:780px)]:pt-10 [@media(min-width:1024px)_and_(max-height:780px)]:pb-[0.4rem]">
+          <div className="w-full">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.18em] text-white/55 [text-shadow:0_2px_16px_rgba(0,0,0,0.22)] sm:mb-5">
+              Prem Industries India Limited
+            </p>
+
+            <h1
+              className="m-0 w-full max-w-none text-[clamp(48px,6vw,80px)] leading-[1.05] tracking-[-0.04em] text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.22)] [@media(min-width:1024px)_and_(max-height:900px)]:text-[clamp(40px,4.8vw,62px)] [@media(min-width:1024px)_and_(max-height:900px)]:leading-[1.03] [@media(min-width:1024px)_and_(max-height:780px)]:text-[clamp(34px,4.2vw,52px)]"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+              }}
             >
-              Discuss Your Requirement
-            </Link>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="mt-5 grid w-full grid-cols-1 gap-3 pb-2 sm:mt-7 sm:gap-2.5 lg:mx-auto lg:mt-auto lg:max-w-[1020px] lg:grid-cols-3 lg:gap-3 lg:pb-0 xl:max-w-[1140px] xl:gap-4"
-          initial="hidden"
-          whileInView="show"
-          viewport={homeViewport}
-          variants={staggerContainer}
-          {...getAosProps("right", 120)}
-        >
-          {heroCards.map((card, index) => {
-            const cardClassName =
-              "hero-sector-card group relative mx-auto flex h-full min-h-[132px] w-full max-w-[400px] cursor-pointer flex-col items-center rounded-[20px] border border-white bg-white px-4 pb-3 pt-3 text-center shadow-[0_18px_38px_rgba(12,20,32,0.18)] transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_24px_42px_rgba(12,20,32,0.24)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/90 sm:min-h-[150px] sm:max-w-[460px] sm:rounded-[22px] sm:px-5 sm:pb-4 sm:pt-4 lg:mx-0 lg:min-h-[168px] lg:w-full lg:max-w-[320px] lg:px-5 lg:pb-4 lg:pt-4 xl:min-h-[182px] xl:max-w-[360px] xl:px-6 xl:pb-5 xl:pt-5";
-            const content = (
-              <div className="flex h-full w-full flex-col items-center justify-between">
-                <div className="flex w-full flex-col items-center">
-                  <h3
-                    className="hero-sector-title m-0 mb-2 w-full whitespace-nowrap px-1 font-extrabold uppercase tracking-normal sm:mb-3 sm:px-2"
-                    style={{
-                      fontFamily: '"Exo 2", sans-serif',
-                      color: "#202a67",
-                      fontSize: "clamp(12px, 3.8vw, 18px)",
-                      lineHeight: 1.1,
-                      letterSpacing: "-0.03em",
-                    }}
-                  >
-                    {card.title}
-                  </h3>
-                  <p
-                    className="hero-sector-copy mt-2 m-0 min-h-[3.6em] max-w-[340px] px-1 text-[11px] font-bold leading-[1.45] sm:mt-2.5 sm:min-h-[4.2em] sm:text-[13px] sm:leading-[1.55] lg:mt-2.5 lg:min-h-[4.35em] lg:text-[13px] lg:leading-[1.45] xl:mt-3 xl:min-h-[4.65em] xl:text-[14px] xl:leading-[1.55]"
-                    style={{
-                      fontFamily: "Roboto, sans-serif",
-                      color: "#535b6e",
-                    }}
-                  >
-                    {card.body}
-                  </p>
-                </div>
-                <span
-                  className="hero-sector-cta font-hero mt-auto inline-flex items-center gap-[6px] pt-2 text-[11px] font-extrabold tracking-normal sm:pt-3 sm:text-[13px] lg:pt-3 lg:text-[13px] xl:text-[14px]"
-                  style={{ color: "#ef3a32" }}
-                >
-                  Visit
-                  <span aria-hidden="true" className="text-[16px] leading-none">
-                    &gt;
-                  </span>
+              <span className="block">
+                Prem Industries Group Built for{" "}
+                <span className="text-[#ff4d4d] [text-shadow:0_4px_20px_rgba(255,77,77,0.4)]">
+                  Scale
                 </span>
-              </div>
-            );
+                .
+              </span>
+              <span className="block">Engineered for Reliability.</span>
+            </h1>
 
-            if (card.external) {
-              return (
-                <motion.a
-                  key={card.title}
-                  href={card.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={cardClassName}
-                  style={{ boxShadow: `inset 4px 0 0 ${card.accent}` }}
-                  variants={revealCard}
-                  custom={index}
-                >
-                  {content}
-                </motion.a>
-              );
-            }
+            <p className="mt-6 w-full max-w-none text-[clamp(17px,2vw,22px)] font-normal leading-[1.42] text-white/85 [text-shadow:0_2px_16px_rgba(0,0,0,0.22)] sm:mt-7 [@media(min-width:1024px)_and_(max-height:900px)]:mt-4 [@media(min-width:1024px)_and_(max-height:900px)]:text-[clamp(15px,1.5vw,18px)] [@media(min-width:1024px)_and_(max-height:900px)]:leading-[1.34] [@media(min-width:1024px)_and_(max-height:780px)]:mt-3 [@media(min-width:1024px)_and_(max-height:780px)]:text-[14px] [@media(min-width:1024px)_and_(max-height:780px)]:leading-[1.3]">
+              Precision manufacturing systems across packaging, sheet metal,
+              and injection moulding designed for output stability,
+              traceability, and long-term operational confidence.
+            </p>
 
-            return (
-              <motion.div
-                key={card.title}
-                className="h-full"
-                variants={revealCard}
-                custom={index}
+            <div className="mt-9 sm:mt-10 [@media(min-width:1024px)_and_(max-height:900px)]:mt-[1.1rem] [@media(min-width:1024px)_and_(max-height:780px)]:mt-[0.9rem]">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff4d4d,#ff2a2a)] px-7 py-3.5 text-[13px] font-semibold tracking-[0.03em] text-white shadow-[0_10px_30px_rgba(255,77,77,0.4)] transition duration-200 hover:-translate-y-0.5"
               >
-                <Link
-                  href={card.href}
-                  className={cardClassName}
-                  style={{ boxShadow: `inset 4px 0 0 ${card.accent}` }}
+                Discuss Your Requirement
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-auto grid w-full grid-cols-1 gap-4 px-7 pt-3 sm:px-12 sm:pt-4 lg:grid-cols-3 lg:gap-8 lg:px-20 lg:pt-4 xl:px-32 [@media(min-width:1024px)_and_(max-height:900px)]:gap-4 [@media(min-width:1024px)_and_(max-height:900px)]:pt-2 [@media(min-width:1024px)_and_(max-height:780px)]:pt-[0.35rem]">
+            {heroCards.map((card, index) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="group relative flex min-h-[212px] w-full flex-col overflow-hidden rounded-[24px] border border-white/30 p-8 shadow-[0_10px_30px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.6)] backdrop-blur-[20px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2.5 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.6)] [@media(min-width:1024px)_and_(max-height:900px)]:min-h-[178px] [@media(min-width:1024px)_and_(max-height:900px)]:p-5 [@media(min-width:1024px)_and_(max-height:780px)]:min-h-[160px] [@media(min-width:1024px)_and_(max-height:780px)]:px-4 [@media(min-width:1024px)_and_(max-height:780px)]:py-[0.9rem]"
+                style={{
+                  "--card-accent": card.accent,
+                  backgroundImage: `radial-gradient(circle at top left, ${hexToRgba(card.accent, 0.15)}, transparent 42%), linear-gradient(145deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55))`,
+                }}
+              >
+                <span
+                  className="pointer-events-none absolute inset-x-0 top-0 h-px opacity-90"
+                  aria-hidden="true"
+                  style={{
+                    background: `linear-gradient(90deg, ${hexToRgba(card.accent, 0.95)} 0%, ${hexToRgba(card.accent, 0.42)} 52%, rgba(255,255,255,0.1) 100%)`,
+                  }}
+                />
+                <span
+                  className="pointer-events-none absolute -left-8 top-0 h-28 w-28 rounded-full opacity-75 blur-3xl"
+                  aria-hidden="true"
+                  style={{ backgroundColor: card.accent }}
+                />
+                <span
+                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0.16)_28%,rgba(255,255,255,0.03)_56%,rgba(255,255,255,0)_100%)]"
+                  aria-hidden="true"
+                />
+                <span
+                  className="pointer-events-none absolute inset-[1px] rounded-[23px] border border-white/40"
+                  aria-hidden="true"
+                />
+                <span
+                  className="pointer-events-none absolute inset-0 opacity-[0.08]"
+                  aria-hidden="true"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle, rgba(15,23,42,0.22) 0.6px, transparent 0.8px)",
+                    backgroundSize: "12px 12px",
+                  }}
+                />
+
+                <div className="relative z-10 flex items-center justify-between gap-4">
+                  <span
+                    className="inline-flex items-center gap-[0.55rem] rounded-full border border-white/60 bg-white/55 px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 shadow-[0_6px_16px_rgba(15,23,42,0.06)] [@media(min-width:1024px)_and_(max-height:780px)]:px-[0.65rem] [@media(min-width:1024px)_and_(max-height:780px)]:py-[0.38rem] [@media(min-width:1024px)_and_(max-height:780px)]:text-[9px]"
+                    style={{ fontFamily: "var(--font-sans)" }}
+                  >
+                    <span
+                      className="h-2 w-2 rounded-full"
+                      aria-hidden="true"
+                      style={{
+                        backgroundColor: card.accent,
+                        boxShadow: `0 0 14px ${card.accent}`,
+                      }}
+                    />
+                    {card.eyebrow}
+                  </span>
+                  <span className="text-[11px] font-medium tracking-[0.24em] text-slate-400">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <h3
+                  className="relative z-10 mt-5 text-[24px] leading-[1.02] tracking-[-0.5px] text-slate-900 [@media(min-width:1024px)_and_(max-height:780px)]:mt-3 [@media(min-width:1024px)_and_(max-height:780px)]:text-[18px] xl:text-[26px]"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 600,
+                  }}
                 >
-                  {content}
-                </Link>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                  {card.title}
+                </h3>
+
+                <p
+                  className="relative z-10 mt-3 max-w-[32ch] text-[14px] leading-[1.65] text-slate-600 [@media(min-width:1024px)_and_(max-height:780px)]:mt-[0.45rem] [@media(min-width:1024px)_and_(max-height:780px)]:text-[13px] [@media(min-width:1024px)_and_(max-height:780px)]:leading-[1.4]"
+                  style={{ fontFamily: "var(--font-sans)" }}
+                >
+                  {card.body}
+                </p>
+
+                <div className="relative z-10 mt-auto flex items-center justify-between gap-4 border-t border-slate-200/70 pt-6 [@media(min-width:1024px)_and_(max-height:780px)]:pt-[0.75rem]">
+                  <span
+                    className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-900"
+                    style={{ fontFamily: "var(--font-sans)" }}
+                  >
+                    Explore Sector
+                  </span>
+                  <span className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-full bg-white text-[22px] leading-none text-[color:var(--card-accent)] shadow-[0_8px_20px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:scale-110">
+                    &rarr;
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
-
-      <style jsx>{`
-        @media (min-width: 1024px) and (max-width: 1699px) {
-          .hero-main-title {
-            max-width: 760px !important;
-            font-size: 36px !important;
-            line-height: 0.96 !important;
-          }
-
-          .hero-subtitle {
-            max-width: 700px !important;
-            font-size: 16px !important;
-            line-height: 1.26 !important;
-          }
-
-          .hero-copy {
-            max-width: 680px !important;
-            font-size: 13px !important;
-            line-height: 1.68 !important;
-          }
-        }
-
-        @media (min-width: 1280px) and (max-width: 1699px) {
-          .hero-main-title {
-            font-size: 40px !important;
-          }
-
-          .hero-subtitle {
-            font-size: 17px !important;
-          }
-        }
-
-        @media (min-width: 1024px) and (max-width: 1699px) {
-          .hero-sector-card {
-            min-height: 128px !important;
-            max-width: 292px !important;
-            padding: 0.6rem 0.95rem 0.55rem !important;
-          }
-
-          .hero-sector-title {
-            margin-bottom: 0.25rem !important;
-          }
-
-          .hero-sector-copy {
-            margin-top: 0.25rem !important;
-            min-height: 4.1em !important;
-          }
-
-          .hero-sector-cta {
-            padding-top: 0.35rem !important;
-          }
-        }
-
-        @media (min-width: 1280px) and (max-width: 1699px) {
-          .hero-sector-card {
-            min-height: 134px !important;
-            max-width: 304px !important;
-          }
-        }
-
-        @media (min-width: 1700px) {
-          .hero-main-title {
-            max-width: 980px !important;
-            font-size: 58px !important;
-          }
-
-          .hero-subtitle {
-            max-width: 900px !important;
-            font-size: 22px !important;
-          }
-
-          .hero-copy {
-            max-width: 860px !important;
-            font-size: 17px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

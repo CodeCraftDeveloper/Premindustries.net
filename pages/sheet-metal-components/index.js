@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Hero from "@/components/sheetmetal/hero";
 import AboutSection from "@/components/sheetmetal/about";
 import FabricationProcessSection from "@/components/sheetmetal/fabrication";
@@ -6,8 +6,6 @@ import InfrastructureSection from "@/components/sheetmetal/infrastructure";
 import SustainabilitySection from "@/components/sheetmetal/sustainability";
 import CorporateVideoSection from "@/components/sheetmetal/corporate";
 import ClientSection from "@/components/sheetmetal/clients";
-import Head from "next/head";
-import LogoIntro from "@/components/common/LogoIntro";
 import SectionReveal from "@/components/common/SectionReveal";
 import FaqBlock from "@/components/common/FaqBlock";
 
@@ -41,22 +39,9 @@ const sheetMetalFaqs = [
 ];
 
 export default function Index() {
-  const [showIntro, setShowIntro] = useState(true);
   return (
     <>
-      <Head>
-        <title>Sheet Metal Components Manufacturer in India | Prem Industries</title>
-        <meta
-          name="description"
-          content="Explore Prem Industries' sheet metal component manufacturing capability for OEMs, industrial buyers, and high-volume fabrication programs in India."
-        />
-        <meta
-          name="title"
-          content="Sheet Metal Components Manufacturer in India | Prem Industries"
-        />
-      </Head>
-      {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
-      <div className={`intro-shell${showIntro ? " intro-active" : ""}`}>
+      <div className="intro-shell">
         <SectionReveal>
           <Hero />
         </SectionReveal>
@@ -100,17 +85,6 @@ export default function Index() {
 
         .intro-shell :global(.hero-text) {
           animation: heroTextFadeUp 0.7s ease-out both;
-        }
-
-        .intro-shell.intro-active :global(.hero-content),
-        .intro-shell.intro-active :global(.hero-text),
-        .intro-shell.intro-active :global(.hero-eyebrow),
-        .intro-shell.intro-active :global(.hero-lead),
-        .intro-shell.intro-active :global(.hero-sublead),
-        .intro-shell.intro-active :global(.hero-btn) {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
         }
 
         @keyframes heroTextFadeUp {

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import KeywordLandingPage from "@/components/common/KeywordLandingPage";
 
 const solutionAreas = [
   {
@@ -19,46 +19,73 @@ const solutionAreas = [
 ];
 
 export default function IndustrialSolutionsIndiaPage() {
+  const internalLinks = [
+    {
+      href: "/manufacturing-company-india",
+      label: "Industrial Manufacturing Company India",
+      description: "Enterprise-scale production support and execution",
+    },
+    {
+      href: "/oem-manufacturing-india",
+      label: "OEM Manufacturing India",
+      description: "Reliable contract manufacturing for long-term programs",
+    },
+    {
+      href: "/contract-manufacturing-india",
+      label: "Contract Manufacturing India",
+      description: "Structured outsourcing and scalable supply models",
+    },
+    {
+      href: "/custom-product-manufacturing-india",
+      label: "Custom Product Manufacturing India",
+      description: "Tailored production workflows for unique products",
+    },
+    {
+      href: "/turnkey-manufacturing-services",
+      label: "Turnkey Manufacturing Services",
+      description: "End-to-end manufacturing execution and delivery",
+    },
+    {
+      href: "/contact",
+      label: "Contact Prem Industries",
+      description: "Discuss your industrial project requirements",
+    },
+  ];
+
   return (
-    <main className="py-5 bg-white">
-      <section className="container">
-        <p className="text-uppercase text-muted fw-semibold mb-2">
-          Industrial Solutions Provider India
-        </p>
-        <h1 className="display-6 fw-bold mb-3">Industrial Solutions India</h1>
-        <p className="lead text-secondary mb-4">
-          Prem Industries delivers industrial solutions in India for OEM and
-          B2B buyers that need reliable manufacturing services, engineering
-          support, and scalable output across repeat production programs.
-        </p>
-
-        <div className="row g-4 mb-4">
-          {solutionAreas.map((area) => (
-            <div key={area.title} className="col-md-4">
-              <article className="border rounded-3 p-4 h-100">
-                <h2 className="h5 mb-2">{area.title}</h2>
-                <p className="mb-0 text-secondary">{area.detail}</p>
-              </article>
-            </div>
-          ))}
-        </div>
-
-        <div className="p-4 rounded-3" style={{ background: "#f6f8fb" }}>
-          <h2 className="h5 mb-2">Need an industrial manufacturing partner?</h2>
-          <p className="mb-3 text-secondary">
-            Connect with our team for project discussions on custom
-            manufacturing, production capacity, quality expectations, and
-            delivery planning.
-          </p>
-          <div className="d-flex flex-wrap gap-3">
-            <Link href="/oem-manufacturing-india">OEM Manufacturing India</Link>
-            <Link href="/manufacturing-company-india">
-              Manufacturing Company India
-            </Link>
-            <Link href="/contact">Contact Prem Industries</Link>
-          </div>
-        </div>
-      </section>
-    </main>
+    <KeywordLandingPage
+      eyebrow="Industrial Solutions Provider India"
+      title="Industrial Solutions India"
+      intro="Prem Industries delivers industrial solutions in India for OEM and B2B buyers that need reliable manufacturing services, engineering support, and scalable output across repeat production programs."
+      spotlightCards={solutionAreas}
+      sections={[
+        {
+          heading: "Need an industrial manufacturing partner?",
+          body: "Connect with our team for project discussions on custom manufacturing, production capacity, quality expectations, and delivery planning across multi-process industrial programs.",
+        },
+        {
+          heading: "Structured for long-term program support",
+          body: "Our industrial solutions model is built to help customers consolidate execution under a dependable manufacturing partner with practical process discipline and supply continuity.",
+        },
+        {
+          heading: "Aligned to OEM and B2B procurement logic",
+          body: "These service structures are designed for buyers who need clear capability positioning, repeat-order reliability, and fast pathways into technical or commercial conversations.",
+        },
+      ]}
+      primaryCta={{ href: "/contact", label: "Contact Prem Industries" }}
+      secondaryCta={{
+        href: "/oem-manufacturing-india",
+        label: "OEM Manufacturing India",
+      }}
+      whatsappCta={{
+        href: "https://wa.me/918447247227?text=I%20need%20industrial%20solutions%20support%20in%20India.",
+        label: "WhatsApp",
+      }}
+      relatedTitle="Related industrial pages"
+      relatedLinks={internalLinks.slice(0, 4)}
+      internalLinksTitle="Related Industrial Service Pages"
+      internalLinks={internalLinks}
+      heroImage="/sheetmetal/press-new.jpg"
+    />
   );
 }

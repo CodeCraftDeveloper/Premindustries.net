@@ -17,7 +17,7 @@ const PageBanner = ({ bannerBg, title }) => {
 
       <div className="site-shell-tight relative flex min-h-[280px] items-end py-16 sm:min-h-[320px] sm:py-20 lg:min-h-[360px] lg:py-24">
         <div className="max-w-4xl">
-          <h1 className="wow fadeInLeft animated mb-0 font-display text-4xl font-extrabold uppercase tracking-[0.1em] text-white sm:text-5xl lg:text-7xl">
+          <h1 className="mb-0 font-display text-4xl font-extrabold uppercase tracking-[0.1em] text-white sm:text-5xl lg:text-7xl">
             {title}
           </h1>
         </div>

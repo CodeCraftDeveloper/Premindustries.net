@@ -2,604 +2,105 @@ import "@/styles/tailwind.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
+import {
+  Exo_2,
+  Inter,
+  Montserrat,
+  Oswald,
+  Plus_Jakarta_Sans,
+  Roboto,
+} from "next/font/google";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import Header from "../components/navbar/Header";
 import Footer from "../components/footer/Footer";
 import Seo from "@/components/common/Seo";
 import ScrollTopButton from "@/components/common/ScrollTopButton";
-import {
-  getKeywordsForMetadata,
-  seoArchitecture,
-} from "@/lib/seo/keywordArchitecture";
-import { getKeywordSeoByPath } from "@/lib/seo/keywordFunnelMap";
-import { getDirectorySeoByPath } from "@/lib/seo/directoryPageData";
-import { serviceDataMap } from "@/lib/seo/serviceDataMap";
+import { getSeoData } from "@/lib/seo/seoConfig";
 
-const parentAuthorityKeywords = seoArchitecture.parent.keywords;
-const injectionCoreKeywords =
-  seoArchitecture.verticals.injectionMolding.keywordGroups.core;
-const injectionKeywords =
-  seoArchitecture.verticals.injectionMolding.keywordGroups;
-const industrialKeywords =
-  seoArchitecture.verticals.industrialOem.keywordGroups;
-const sheetMetalKeywords =
-  seoArchitecture.verticals.sheetMetalFabrication.keywordGroups;
+// ─── Fonts ─────────────────────────────────────────────────────────────────
+// Font roles
+// Inter → body / UI text
+// Plus_Jakarta_Sans → display headings
+// Exo_2 → home section accent text
+// Oswald → condensed headline treatments
+// Montserrat → hero and showcase accents
+// Roboto → navigation and supporting UI text
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter-ui",
+  weight: ["400", "500"],
+  display: "swap",
+});
 
-const homepageKeywords = getKeywordsForMetadata([
-  ...parentAuthorityKeywords.slice(0, 5),
-  ...parentAuthorityKeywords.slice(12, 15),
-]);
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta-display",
+  weight: ["600", "700", "800"],
+  display: "swap",
+});
 
-const manufacturingCompanyKeywords = getKeywordsForMetadata(
-  parentAuthorityKeywords.slice(0, 10),
-);
+const exo = Exo_2({
+  subsets: ["latin"],
+  variable: "--font-home-ui",
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
-const industrialSolutionsKeywords = getKeywordsForMetadata([
-  parentAuthorityKeywords[2],
-  parentAuthorityKeywords[4],
-  parentAuthorityKeywords[10],
-  parentAuthorityKeywords[11],
-  parentAuthorityKeywords[12],
-]);
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-condensed-ui",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
-const oemManufacturingKeywords = getKeywordsForMetadata([
-  parentAuthorityKeywords[3],
-  parentAuthorityKeywords[8],
-  parentAuthorityKeywords[18],
-  parentAuthorityKeywords[7],
-  ...seoArchitecture.verticals.industrialOem.keywordGroups.core.slice(0, 2),
-]);
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-hero-ui",
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+});
 
-const injectionMoldingManufacturerIndiaKeywords = getKeywordsForMetadata([
-  injectionKeywords.core[0],
-  injectionKeywords.core[2],
-  injectionKeywords.customOem[4],
-  injectionKeywords.longTail[2],
-  injectionKeywords.highIntent[0],
-]);
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto-ui",
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
 
-const plasticInjectionMoldingCompanyKeywords = getKeywordsForMetadata([
-  injectionKeywords.core[1],
-  injectionKeywords.productBased[2],
-  injectionKeywords.productBased[3],
-  injectionKeywords.industryBased[4],
-  injectionKeywords.highIntent[1],
-]);
-
-const customPlasticMoldingKeywords = getKeywordsForMetadata([
-  injectionKeywords.core[4],
-  injectionKeywords.productBased[1],
-  injectionKeywords.customOem[2],
-  injectionKeywords.highIntent[3],
-  injectionKeywords.conversion[2],
-]);
-
-const oemInjectionMoldingIndiaKeywords = getKeywordsForMetadata([
-  injectionKeywords.customOem[0],
-  injectionKeywords.customOem[1],
-  injectionKeywords.customOem[4],
-  injectionKeywords.productBased[4],
-  injectionKeywords.conversion[4],
-]);
-
-const highPrecisionPlasticMoldingKeywords = getKeywordsForMetadata([
-  injectionKeywords.longTail[1],
-  injectionKeywords.technical[0],
-  injectionKeywords.technical[4],
-  injectionKeywords.longTail[4],
-  injectionKeywords.highIntent[2],
-]);
-
-const contractManufacturingIndiaKeywords = getKeywordsForMetadata([
-  industrialKeywords.core[1],
-  industrialKeywords.b2b[0],
-  industrialKeywords.location[0],
-  industrialKeywords.highIntent[0],
-  industrialKeywords.conversion[4],
-]);
-
-const industrialManufacturingServicesKeywords = getKeywordsForMetadata([
-  industrialKeywords.core[2],
-  industrialKeywords.b2b[3],
-  industrialKeywords.advanced[2],
-  industrialKeywords.highIntent[2],
-  industrialKeywords.location[3],
-]);
-
-const customProductManufacturingIndiaKeywords = getKeywordsForMetadata([
-  industrialKeywords.core[3],
-  industrialKeywords.productBased[2],
-  industrialKeywords.highIntent[3],
-  industrialKeywords.b2b[4],
-  industrialKeywords.conversion[2],
-]);
-
-const thirdPartyManufacturingIndiaKeywords = getKeywordsForMetadata([
-  industrialKeywords.core[4],
-  industrialKeywords.advanced[1],
-  industrialKeywords.blog[2],
-  industrialKeywords.highIntent[1],
-  industrialKeywords.location[4],
-]);
-
-const turnkeyManufacturingServicesKeywords = getKeywordsForMetadata([
-  industrialKeywords.longTail[3],
-  industrialKeywords.longTail[2],
-  industrialKeywords.advanced[0],
-  industrialKeywords.advanced[4],
-  industrialKeywords.conversion[0],
-]);
-
-const sheetMetalFabricationIndiaKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.core[0],
-  sheetMetalKeywords.core[2],
-  sheetMetalKeywords.industries[2],
-  sheetMetalKeywords.scaling[0],
-  sheetMetalKeywords.location[0],
-]);
-
-const sheetMetalManufacturerIndiaKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.core[1],
-  sheetMetalKeywords.products[0],
-  sheetMetalKeywords.products[2],
-  sheetMetalKeywords.b2bOem[0],
-  sheetMetalKeywords.scaling[2],
-]);
-
-const customSheetMetalFabricationKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.core[4],
-  sheetMetalKeywords.b2bOem[2],
-  sheetMetalKeywords.products[1],
-  sheetMetalKeywords.scaling[3],
-  sheetMetalKeywords.longTail[3],
-]);
-
-const precisionSheetMetalPartsKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.products[2],
-  sheetMetalKeywords.longTail[1],
-  sheetMetalKeywords.products[0],
-  sheetMetalKeywords.scaling[4],
-  sheetMetalKeywords.conversion[2],
-]);
-
-const laserCuttingServicesIndiaKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.services[0],
-  sheetMetalKeywords.services[4],
-  sheetMetalKeywords.blog[2],
-  sheetMetalKeywords.industries[1],
-  sheetMetalKeywords.location[4],
-]);
-
-const cncSheetMetalFabricationKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.services[1],
-  sheetMetalKeywords.core[2],
-  sheetMetalKeywords.b2bOem[4],
-  sheetMetalKeywords.industries[2],
-  sheetMetalKeywords.conversion[4],
-]);
-
-const metalBendingServicesKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.services[2],
-  sheetMetalKeywords.products[4],
-  sheetMetalKeywords.industries[3],
-  sheetMetalKeywords.longTail[2],
-  sheetMetalKeywords.conversion[0],
-]);
-
-const weldingFabricationServicesKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.services[3],
-  sheetMetalKeywords.services[4],
-  sheetMetalKeywords.industries[2],
-  sheetMetalKeywords.b2bOem[1],
-  sheetMetalKeywords.conversion[3],
-]);
-
-const oemSheetMetalManufacturerKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.b2bOem[0],
-  sheetMetalKeywords.industries[4],
-  sheetMetalKeywords.b2bOem[3],
-  sheetMetalKeywords.scaling[1],
-  sheetMetalKeywords.scaling[2],
-]);
-
-const sheetMetalFabricationQuoteKeywords = getKeywordsForMetadata([
-  sheetMetalKeywords.conversion[0],
-  sheetMetalKeywords.conversion[1],
-  sheetMetalKeywords.conversion[4],
-  sheetMetalKeywords.core[0],
-  sheetMetalKeywords.location[3],
-]);
-
-const dynamicServiceSeoByPath = Object.entries(serviceDataMap).reduce(
-  (acc, [slug, config]) => {
-    acc[`/${slug}`] = config.seo;
-    return acc;
-  },
-  {},
-);
-
-const dynamicKeywordSeoByPath = getKeywordSeoByPath();
-const dynamicDirectorySeoByPath = getDirectorySeoByPath();
-
-const DEFAULT_SEO = {
-  title:
-    "Industrial Manufacturing Company India | Prem Industries India Limited",
-  description:
-    "Prem Industries India Limited is an industrial manufacturing company in India providing OEM manufacturing, industrial solutions, and end-to-end manufacturing services.",
-  keywords: getKeywordsForMetadata(parentAuthorityKeywords.slice(0, 5)),
-  image: "/logo-main-desktop.png",
-};
-
-const SEO_BY_PATH = {
-  "/": {
-    title: "Manufacturing Company India | Prem Industries India Limited",
-    description:
-      "Prem Industries is a manufacturing company in India offering industrial solutions, OEM manufacturing support, and scalable production services for B2B sectors.",
-    keywords: homepageKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/about": {
-    title: "About Prem Industries | Industrial Company India",
-    description:
-      "Learn about Prem Industries India Limited, an Indian manufacturing group delivering industrial engineering, production capability, and OEM-focused execution.",
-    keywords:
-      "Indian manufacturing group, private manufacturing company India, industrial engineering company India, manufacturing group India",
-    image: "/about/banner.jpg",
-  },
-  "/clients": {
-    title: "Clients | Prem Industries India Limited",
-    description:
-      "Discover the sectors and clients served by Prem Industries India Limited across packaging, steel, retail, and construction domains.",
-    keywords:
-      "Prem Industries clients, industrial clients India, sector partnerships",
-    image: "/clients/banner.jpg",
-  },
-  "/contact": {
-    title: "Contact Us | Prem Industries India Limited",
-    description:
-      "Contact Prem Industries India Limited for sheet metal, steel, injection moulding, and industrial manufacturing requirements.",
-    keywords:
-      "contact Prem Industries, industrial manufacturing inquiry, sheet metal supplier India",
-    image: "/contact/banner.jpg",
-  },
-  "/privacy-policy": {
-    title: "Privacy Policy | Prem Industries India Limited",
-    description:
-      "Read the privacy policy of Prem Industries India Limited to understand how we collect, use, and protect your information.",
-    keywords: "privacy policy, Prem Industries privacy",
-    image: "/privacy/banner.jpg",
-  },
-  "/terms-and-conditions": {
-    title: "Terms and Conditions | Prem Industries India Limited",
-    description:
-      "Read the terms and conditions governing the use of Prem Industries India Limited services, products, and website.",
-    keywords: "terms and conditions, Prem Industries terms",
-    image: "/terms-and-conditions/banner.jpg",
-  },
-  "/sheet-metal-components": {
-    title: "Sheet Metal Components | Prem Industries India Limited",
-    description:
-      "High-precision sheet metal components with fabrication, infrastructure, and quality assurance support for diverse industrial applications.",
-    keywords:
-      "sheet metal components India, precision sheet metal fabrication, industrial sheet metal",
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/sheet-metal-fabrication-india": {
-    title: "Sheet Metal Fabrication India | Prem Industries",
-    description:
-      "Sheet metal fabrication in India for OEM and industrial buyers requiring repeatable quality, scalable throughput, and reliable production support.",
-    keywords: sheetMetalFabricationIndiaKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/sheet-metal-manufacturer-india": {
-    title: "Sheet Metal Manufacturer India | Prem Industries",
-    description:
-      "Sheet metal manufacturer in India delivering precision parts and dependable output for industrial and OEM manufacturing programs.",
-    keywords: sheetMetalManufacturerIndiaKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/custom-sheet-metal-fabrication": {
-    title: "Custom Sheet Metal Fabrication | Prem Industries",
-    description:
-      "Custom sheet metal fabrication for customer-specific parts with controlled workflows, quality checkpoints, and scalable dispatch support.",
-    keywords: customSheetMetalFabricationKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/precision-sheet-metal-parts": {
-    title: "Precision Sheet Metal Parts | Prem Industries",
-    description:
-      "Precision sheet metal parts manufacturing for industrial applications where dimensional consistency and repeatability are critical.",
-    keywords: precisionSheetMetalPartsKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/laser-cutting-services-india": {
-    title: "Laser Cutting Services India | Prem Industries",
-    description:
-      "Laser cutting services in India for industrial fabrication workflows requiring profile accuracy, quality consistency, and reliable throughput.",
-    keywords: laserCuttingServicesIndiaKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/cnc-sheet-metal-fabrication": {
-    title: "CNC Sheet Metal Fabrication | Prem Industries",
-    description:
-      "CNC sheet metal fabrication services for OEM and B2B programs needing repeatable processing, controlled quality, and scalable execution.",
-    keywords: cncSheetMetalFabricationKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/metal-bending-services": {
-    title: "Metal Bending Services | Prem Industries",
-    description:
-      "Metal bending services for sheet metal programs that need dependable forming quality and production-ready component output.",
-    keywords: metalBendingServicesKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/welding-fabrication-services": {
-    title: "Welding Fabrication Services | Prem Industries",
-    description:
-      "Welding fabrication services for industrial and OEM projects requiring strong assembly integrity and repeatable fabrication quality.",
-    keywords: weldingFabricationServicesKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/oem-sheet-metal-manufacturer": {
-    title: "OEM Sheet Metal Manufacturer | Prem Industries",
-    description:
-      "OEM sheet metal manufacturer supporting high-volume industrial programs with structured process control and delivery-focused execution.",
-    keywords: oemSheetMetalManufacturerKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/sheet-metal-fabrication-quote": {
-    title: "Sheet Metal Fabrication Quote | Prem Industries",
-    description:
-      "Request a sheet metal fabrication quote for custom components, OEM manufacturing requirements, and bulk industrial fabrication programs.",
-    keywords: sheetMetalFabricationQuoteKeywords,
-    image: "/sheetmetal/press-new.jpg",
-  },
-  ...dynamicServiceSeoByPath,
-  ...dynamicKeywordSeoByPath,
-  ...dynamicDirectorySeoByPath,
-  "/injectionmoulding": {
-    title: "Injection Molding Manufacturer India | Prem Industries",
-    description:
-      "Injection molding manufacturer in India for custom plastic components, OEM plastic parts, and high-precision industrial molding programs.",
-    keywords: getKeywordsForMetadata(injectionCoreKeywords),
-    image: "/injectionmolding/injection.webp",
-  },
-  "/injection-molding-manufacturer-india": {
-    title: "Injection Molding Manufacturer India | Prem Industries",
-    description:
-      "Injection molding manufacturer in India for OEM and B2B buyers needing scalable output, process control, and dependable component quality.",
-    keywords: injectionMoldingManufacturerIndiaKeywords,
-    image: "/injectionmolding/injection.webp",
-  },
-  "/plastic-injection-molding-company": {
-    title: "Plastic Injection Molding Company | Prem Industries",
-    description:
-      "Plastic injection molding company delivering repeatable molded part production for industrial, appliance, and consumer product applications.",
-    keywords: plasticInjectionMoldingCompanyKeywords,
-    image: "/injectionmolding/injection.webp",
-  },
-  "/custom-plastic-molding": {
-    title: "Custom Plastic Molding | Prem Industries",
-    description:
-      "Custom plastic molding services with structured quality checkpoints and scalable manufacturing support for customer-specific parts.",
-    keywords: customPlasticMoldingKeywords,
-    image: "/injectionmolding/injection.webp",
-  },
-  "/oem-injection-molding-india": {
-    title: "OEM Injection Molding India | Prem Industries",
-    description:
-      "OEM injection molding in India with production planning, stable process control, and delivery-focused execution for long-term programs.",
-    keywords: oemInjectionMoldingIndiaKeywords,
-    image: "/injectionmolding/injection.webp",
-  },
-  "/high-precision-plastic-molding": {
-    title: "High Precision Plastic Molding | Prem Industries",
-    description:
-      "High precision plastic molding support for engineered applications requiring repeatability, controlled quality, and reliable throughput.",
-    keywords: highPrecisionPlasticMoldingKeywords,
-    image: "/injectionmolding/injection.webp",
-  },
-  "/manufacturing-company-india": {
-    title: "Industrial Manufacturing Company India | Prem Industries",
-    description:
-      "Prem Industries is an industrial manufacturing company in India supporting contract manufacturing, OEM programs, and end-to-end manufacturing solutions.",
-    keywords: manufacturingCompanyKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/industrial-solutions-india": {
-    title: "Industrial Solutions Provider India | Prem Industries",
-    description:
-      "Industrial solutions provider in India delivering custom manufacturing solutions, B2B production support, and scalable industrial services.",
-    keywords: industrialSolutionsKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/oem-manufacturing-india": {
-    title: "OEM Manufacturing Company India | Prem Industries",
-    description:
-      "OEM manufacturing company in India with contract manufacturing services, factory-scale production capability, and quality-led industrial execution.",
-    keywords: oemManufacturingKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/contract-manufacturing-india": {
-    title: "Contract Manufacturing India | Prem Industries",
-    description:
-      "Contract manufacturing in India for B2B and OEM programs requiring dependable execution, quality consistency, and scalable production planning.",
-    keywords: contractManufacturingIndiaKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/industrial-manufacturing-services": {
-    title: "Industrial Manufacturing Services | Prem Industries",
-    description:
-      "Industrial manufacturing services for enterprises seeking reliable production systems, process discipline, and delivery-focused execution.",
-    keywords: industrialManufacturingServicesKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/custom-product-manufacturing-india": {
-    title: "Custom Product Manufacturing India | Prem Industries",
-    description:
-      "Custom product manufacturing in India with controlled production workflows, quality checkpoints, and scale-ready execution support.",
-    keywords: customProductManufacturingIndiaKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/third-party-manufacturing-india": {
-    title: "Third Party Manufacturing India | Prem Industries",
-    description:
-      "Third party manufacturing in India for brands looking to outsource production to a reliable industrial manufacturing partner.",
-    keywords: thirdPartyManufacturingIndiaKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/turnkey-manufacturing-services": {
-    title: "Turnkey Manufacturing Services | Prem Industries",
-    description:
-      "Turnkey manufacturing services with end-to-end industrial execution support, from production planning through delivery alignment.",
-    keywords: turnkeyManufacturingServicesKeywords,
-    image: "/home/hero-packaging.jpg",
-  },
-  "/press-shop": {
-    title: "Press Shop Services | Prem Industries India Limited",
-    description:
-      "Press shop solutions for stamping, forming, and precision sheet metal conversion with consistent dimensional accuracy.",
-    keywords:
-      "press shop services, sheet metal stamping India, precision forming",
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/ctl-machine": {
-    title: "CTL Machine Services | Prem Industries India Limited",
-    description:
-      "Cut-to-length machine services for high-accuracy flat sheets with controlled tolerances, flatness, and repeatable output.",
-    keywords: "CTL machine India, cut to length steel, sheet blanking services",
-    image: "/sheetmetal/ctl-1.jpg",
-  },
-  "/shearing-machine": {
-    title: "Shearing Machine Services | Prem Industries India Limited",
-    description:
-      "Precision shearing services for clean, burr-free cuts across mild steel, stainless steel, and aluminum sheets.",
-    keywords:
-      "shearing machine services, sheet metal shearing India, precision cutting",
-    image: "/sheetmetal/shearing-1.jpg",
-  },
-  "/slitting-machine": {
-    title: "Slitting Machine Services | Prem Industries India Limited",
-    description:
-      "Slitting services for accurate coil conversion into custom strip widths with reliable quality and throughput.",
-    keywords:
-      "slitting machine India, coil slitting services, precision strip cutting",
-    image: "/sheetmetal/slitting-1.jpg",
-  },
-  "/redirects/whatsnew/coolers": {
-    title: "Cooler Components Manufacturing | Prem Industries",
-    description:
-      "Explore advanced injection moulded cooler component manufacturing with high-capacity infrastructure and quality traceability.",
-    keywords:
-      "cooler component manufacturing, injection moulding coolers, plastic cooler parts",
-    image: "/whatsnew/1.png",
-    noindex: true,
-  },
-  "/redirects/whatsnew/chimney": {
-    title: "Smart Kitchen Chimneys for Next India | Prem Industries",
-    description:
-      "BIS certified kitchen chimney manufacturing with strong suction performance, OEM readiness, and in-house production control.",
-    keywords:
-      "kitchen chimney manufacturing India, BIS certified chimneys, OEM chimney production",
-    image: "/whatsnew/chimneys/1.jpeg",
-    noindex: true,
-  },
-  "/case-studies": {
-    title: "Manufacturing Case Studies | Prem Industries India Limited",
-    description:
-      "Read real-world case studies from Prem Industries across sheet metal, injection moulding, and coil processing operations.",
-    keywords:
-      "manufacturing case studies India, sheet metal case study, injection moulding case study",
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/case-studies/sheet-metal-automotive-bracket-line": {
-    title: "Automotive Bracket Line Stabilization | Prem Industries Case Study",
-    description:
-      "Case study on improving dimensional consistency and dispatch reliability in a sheet metal automotive bracket program.",
-    keywords:
-      "sheet metal case study, automotive bracket manufacturing, production quality improvement",
-    image: "/sheetmetal/press-new.jpg",
-  },
-  "/case-studies/injection-molding-appliance-housing": {
-    title:
-      "Injection Moulding Appliance Housing Ramp-Up | Prem Industries Case Study",
-    description:
-      "Case study on scaling appliance housing production through process control and stable injection moulding output.",
-    keywords:
-      "injection moulding case study, appliance housing manufacturing, moulding process control",
-    image: "/injectionmolding/injection.webp",
-  },
-  "/case-studies/coil-processing-fast-turnaround": {
-    title:
-      "Coil Processing Fast-Turnaround Program | Prem Industries Case Study",
-    description:
-      "Case study on improving material conversion turnaround using coordinated CTL, shearing, and slitting workflows.",
-    keywords:
-      "coil processing case study, CTL shearing slitting workflow, fast turnaround manufacturing",
-    image: "/sheetmetal/slitting-1.jpg",
-  },
-  "/404": {
-    title: "Page Not Found | Prem Industries India Limited",
-    description:
-      "The page you are looking for does not exist. Return to Prem Industries India Limited homepage.",
-    noindex: true,
-    image: "/logo-main-desktop.png",
-  },
-};
+// ─── GA Measurement ID ─────────────────────────────────────────────────────
+const GA_ID = "G-W5TJVHXT4T";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const seoData = getSeoData(router.asPath || "/");
 
-  useEffect(() => {
-    let attempts = 0;
-    const maxAttempts = 40;
-
-    const initAnimations = () => {
-      const hasWOW =
-        typeof window !== "undefined" && typeof window.WOW !== "undefined";
-
-      if (hasWOW) {
-        new window.WOW().init();
-      }
-
-      if (hasWOW || attempts >= maxAttempts) {
-        return;
-      }
-
-      attempts += 1;
-      window.setTimeout(initAnimations, 100);
-    };
-
-    initAnimations();
-  }, [router.asPath]);
-
-  const cleanPath = (router.asPath || "/").split("?")[0].split("#")[0] || "/";
-  const routeSeo = SEO_BY_PATH[cleanPath] || DEFAULT_SEO;
+  // Apply all active font variables to the root element
+  const classNames = `${inter.variable} ${jakarta.variable} ${exo.variable} ${oswald.variable} ${montserrat.variable} ${roboto.variable}`;
 
   return (
     <>
+      {/* ── Google Analytics – present on every page ──────────────── */}
       <Script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
       />
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
-        strategy="afterInteractive"
-      />
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-      <ScrollTopButton />
-      <Seo
-        title={routeSeo.title}
-        description={routeSeo.description}
-        keywords={routeSeo.keywords}
-        path={cleanPath}
-        image={routeSeo.image || DEFAULT_SEO.image}
-        noindex={Boolean(routeSeo.noindex)}
-      />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+        `}
+      </Script>
+
+      <main className={`${classNames} font-sans`}>
+        <Header />
+        <Seo {...seoData} />
+        <Component {...pageProps} />
+        <Footer />
+        <ScrollTopButton />
+      </main>
     </>
   );
 }

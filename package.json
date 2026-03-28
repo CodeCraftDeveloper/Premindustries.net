@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node -e \"const fs=require('fs');try{fs.rmSync('.next-dev',{recursive:true,force:true});}catch(e){}\" && next dev",
-    "dev:clean": "node -e \"const fs=require('fs');for (const dir of ['.next-dev','.next']) { try { fs.rmSync(dir,{recursive:true,force:true}); } catch(e) {} }\" && next dev",
-    "build": "next build",
+    "dev": "next dev",
+    "dev:clean": "node -e \"const fs=require('fs'); try { fs.rmSync('.next',{recursive:true,force:true}); } catch(e) {}\" && next dev",
+    "build": "node scripts/write-build-meta.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +13,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "framer-motion": "^11.0.0",
     "leaflet": "^1.9.4",
+    "lucide-react": "^0.577.0",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-countup": "^6.5.3",

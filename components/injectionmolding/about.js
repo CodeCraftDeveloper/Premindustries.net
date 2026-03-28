@@ -118,7 +118,7 @@ export default function AboutSection() {
           font-size: clamp(26px, 3.2vw, 38px);
           text-transform: none;
           color: #0b1b2b;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
         }
 
         .about-points {

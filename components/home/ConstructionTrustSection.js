@@ -13,7 +13,7 @@ const bullets = [
 export default function ConstructionTrustSection() {
   return (
     <section className="construction-trust">
-        <div className="container">
+      <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="shell">
           <article className="left-panel">
             <p className="kicker">PREM INDUSTRIES</p>
@@ -74,12 +74,6 @@ export default function ConstructionTrustSection() {
         .construction-trust {
           background: #f3f3f3;
           padding: 14px 0 30px;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
         }
 
         .shell {
@@ -212,11 +206,6 @@ export default function ConstructionTrustSection() {
         }
 
         @media (max-width: 991px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
           .shell {
             grid-template-columns: 1fr;
           }
@@ -227,11 +216,6 @@ export default function ConstructionTrustSection() {
         }
 
         @media (max-width: 576px) {
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
-          }
-
           .shell {
             padding: 10px;
           }

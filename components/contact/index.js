@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Card from "./card";
 import ContactForm from "./contactform";
 
 const infoItems = [
   {
     key: "phone",
-    icon: "fa-phone",
+    icon: Phone,
     content: (props) => (
       <>
         <span>{props.number}</span>
@@ -18,7 +19,7 @@ const infoItems = [
   },
   {
     key: "email",
-    icon: "fa-envelope",
+    icon: Mail,
     content: (props) => (
       <>
         <span>{props.email}</span>
@@ -29,7 +30,7 @@ const infoItems = [
   },
   {
     key: "address",
-    icon: "fa-location-dot",
+    icon: MapPin,
     content: (props) => (
       <>
         <span>{props.address}</span>
@@ -84,26 +85,33 @@ export default function ContactPageContents(props) {
                   </p>
 
                   <div className="contact-panel-list mt-3 space-y-4">
-                    {infoItems.map((item) => (
-                      <a
-                        key={item.key}
-                        href={item.href(props)}
-                        target={item.external ? "_blank" : undefined}
-                        rel={item.external ? "noopener noreferrer" : undefined}
-                        className="flex items-start gap-4 rounded-[18px] border border-white/10 bg-[#223a71] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition hover:bg-[#28427e]"
-                      >
-                        <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#1b2f5b]">
-                          <i
-                            className={`fa-solid ${item.icon}`}
-                            aria-hidden="true"
-                          />
-                        </span>
+                    {infoItems.map((item) => {
+                      const Icon = item.icon;
 
-                        <span className="grid gap-1 pt-1">
-                          {item.content(props)}
-                        </span>
-                      </a>
-                    ))}
+                      return (
+                        <a
+                          key={item.key}
+                          href={item.href(props)}
+                          target={item.external ? "_blank" : undefined}
+                          rel={
+                            item.external ? "noopener noreferrer" : undefined
+                          }
+                          className="flex items-start gap-4 rounded-[18px] border border-white/10 bg-[#223a71] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition hover:bg-[#28427e]"
+                        >
+                          <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#1b2f5b]">
+                            <Icon
+                              className="h-4 w-4"
+                              strokeWidth={2.2}
+                              aria-hidden="true"
+                            />
+                          </span>
+
+                          <span className="grid gap-1 pt-1">
+                            {item.content(props)}
+                          </span>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </aside>

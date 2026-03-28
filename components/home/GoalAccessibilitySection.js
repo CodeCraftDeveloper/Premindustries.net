@@ -13,7 +13,7 @@ const points = [
 export default function GoalAccessibilitySection() {
   return (
     <section className="goal-section">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="shell">
           <div className="left">
             <div className="image-main">
@@ -78,12 +78,6 @@ export default function GoalAccessibilitySection() {
         .goal-section {
           background: #f2f2f2;
           padding: 18px 0 32px;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
         }
 
         .shell {
@@ -227,11 +221,6 @@ export default function GoalAccessibilitySection() {
         }
 
         @media (max-width: 991px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
           .shell {
             grid-template-columns: 1fr;
           }
@@ -242,11 +231,6 @@ export default function GoalAccessibilitySection() {
         }
 
         @media (max-width: 576px) {
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
-          }
-
           .shell {
             padding: 14px;
           }

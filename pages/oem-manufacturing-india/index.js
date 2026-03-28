@@ -1,4 +1,4 @@
-import Link from "next/link";
+import KeywordLandingPage from "@/components/common/KeywordLandingPage";
 
 const oemHighlights = [
   "OEM manufacturing company in India with multi-process production capability",
@@ -8,54 +8,91 @@ const oemHighlights = [
 ];
 
 export default function OemManufacturingIndiaPage() {
-  return (
-    <main className="py-5 bg-white">
-      <section className="container">
-        <p className="text-uppercase text-muted fw-semibold mb-2">
-          OEM Manufacturing Company India
-        </p>
-        <h1 className="display-6 fw-bold mb-3">OEM Manufacturing India</h1>
-        <p className="lead text-secondary mb-4">
-          We support OEM manufacturing in India through structured production,
-          quality-focused contract execution, and scalable industrial supply
-          support.
-        </p>
+  const relatedLinks = [
+    {
+      href: "/industrial-solutions-india",
+      label: "Industrial Solutions India",
+      description: "Broader industrial support for OEM programs",
+    },
+    {
+      href: "/manufacturing-company-india",
+      label: "Manufacturing Company India",
+      description: "Our full-scale manufacturing capability overview",
+    },
+    {
+      href: "/contact",
+      label: "Get Manufacturing Quote",
+      description: "Share requirements and receive a direct response",
+    },
+  ];
 
-        <div className="row g-4 mb-4">
-          <div className="col-lg-8">
-            <h2 className="h4 mb-3">
-              OEM and contract manufacturing strengths
-            </h2>
-            <ul className="ps-3 mb-0">
-              {oemHighlights.map((point) => (
-                <li key={point} className="mb-2 text-secondary">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="col-lg-4">
-            <div className="border rounded-3 p-4 h-100">
-              <h2 className="h5 mb-3">Related manufacturing pages</h2>
-              <ul className="list-unstyled mb-0 d-grid gap-2">
-                <li>
-                  <Link href="/industrial-solutions-india">
-                    Industrial Solutions India
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/manufacturing-company-india">
-                    Manufacturing Company India
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact">Get Manufacturing Quote</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  const internalLinks = [
+    {
+      href: "/industrial-solutions-india",
+      label: "Industrial Solutions India",
+      description: "Broader industrial support for OEM programs",
+    },
+    {
+      href: "/manufacturing-company-india",
+      label: "Manufacturing Company India",
+      description: "Our full-scale manufacturing capability overview",
+    },
+    {
+      href: "/third-party-manufacturing-india",
+      label: "Third Party Manufacturing India",
+      description: "Outsourced production programs with quality control",
+    },
+    {
+      href: "/industrial-manufacturing-services",
+      label: "Industrial Manufacturing Services",
+      description: "Execution systems for high-volume industrial clients",
+    },
+    {
+      href: "/turnkey-manufacturing-services",
+      label: "Turnkey Manufacturing Services",
+      description: "End-to-end delivery from onboarding to dispatch",
+    },
+    {
+      href: "/contact",
+      label: "Get Manufacturing Quote",
+      description: "Share requirements and receive a direct response",
+    },
+  ];
+
+  return (
+    <KeywordLandingPage
+      eyebrow="OEM Manufacturing Company India"
+      title="OEM Manufacturing India"
+      intro="We support OEM manufacturing in India through structured production, quality-focused contract execution, and scalable industrial supply support."
+      highlights={oemHighlights}
+      sections={[
+        {
+          heading: "OEM and contract manufacturing strengths",
+          body: "Our OEM programs are structured to help customers reduce execution uncertainty through tighter process control, aligned engineering support, and repeatable production management.",
+        },
+        {
+          heading: "Designed for recurring industrial demand",
+          body: "We support long-term component supply programs where consistency, delivery coordination, and quality documentation matter as much as throughput capacity.",
+        },
+        {
+          heading: "Single-partner thinking for manufacturing buyers",
+          body: "By combining multiple manufacturing capabilities within one operating framework, we help procurement and operations teams simplify coordination while improving production visibility.",
+        },
+      ]}
+      primaryCta={{ href: "/contact", label: "Get Manufacturing Quote" }}
+      secondaryCta={{
+        href: "/manufacturing-company-india",
+        label: "Manufacturing Company India",
+      }}
+      whatsappCta={{
+        href: "https://wa.me/918447247227?text=I%20need%20OEM%20manufacturing%20support%20in%20India.",
+        label: "WhatsApp",
+      }}
+      relatedTitle="Related manufacturing pages"
+      relatedLinks={relatedLinks}
+      internalLinksTitle="Related OEM Service Pages"
+      internalLinks={internalLinks}
+      heroImage="/sheetmetal/press-new.jpg"
+    />
   );
 }

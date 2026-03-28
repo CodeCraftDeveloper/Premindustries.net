@@ -1,12 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
-const pillars = [
-  "Global Leaders",
-  "People Experience",
-  "Brilliant Services",
-];
+const pillars = ["Global Leaders", "People Experience", "Brilliant Services"];
 
 const capabilityCards = [
   {
@@ -35,14 +32,15 @@ const operatingHighlights = [
 export default function EntryHeroSection() {
   return (
     <section className="entry-hero">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="hero-shell">
           <div className="hero-left hero-text">
             <p className="hero-kicker">ABOUT PREM INDUSTRIES</p>
             <h1>World&apos;s Leading Contract Logistics Provider.</h1>
             <p className="hero-copy">
               Prem Industries delivers end-to-end logistics and manufacturing
-              support with dependable timelines and quality-controlled execution.
+              support with dependable timelines and quality-controlled
+              execution.
             </p>
 
             <ul className="hero-points" aria-label="Core strengths">
@@ -74,10 +72,15 @@ export default function EntryHeroSection() {
             </div>
 
             <div className="hero-image-wrap">
-              <img
+              <Image
                 src="/sheetmetal/shearing-1.jpg"
                 alt="Prem Industries warehouse operations"
                 className="hero-image"
+                width={600}
+                height={400}
+                priority={true}
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
               />
             </div>
           </div>
@@ -127,12 +130,6 @@ export default function EntryHeroSection() {
         .entry-hero {
           padding: 48px 0 56px;
           background: #f8f8f6;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
         }
 
         .hero-shell {
@@ -396,11 +393,6 @@ export default function EntryHeroSection() {
         }
 
         @media (max-width: 992px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
           .hero-shell {
             grid-template-columns: 1fr;
             gap: 20px;
@@ -423,11 +415,6 @@ export default function EntryHeroSection() {
         @media (max-width: 576px) {
           .entry-hero {
             padding: 24px 0 36px;
-          }
-
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
           }
 
           .hero-shell {

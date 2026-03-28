@@ -15,7 +15,7 @@ const fadeUp = {
 export default function FabricationProcess() {
   return (
     <motion.section
-      className="container text-center pt-2"
+      className="mx-auto w-full max-w-[1380px] px-[14px] pt-2 text-center sm:px-[18px] lg:px-6"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -30,7 +30,7 @@ export default function FabricationProcess() {
           src="/sheetmetal/fabrication-process.jpg"
           alt="SHEET METAL FABRICATION PROCESS"
           priority
-          className="img-fluid"
+          className="h-auto w-full"
           height={600}
           width={2200}
         />

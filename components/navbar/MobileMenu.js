@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronDown, ExternalLink, Mail, Phone, X } from "lucide-react";
 import { mobileNavItems } from "./navData";
 
 const formatNavLabel = (label) => (typeof label === "string" ? label.toUpperCase() : label);
@@ -62,8 +63,8 @@ const MobileNavItem = ({ item, depth = 0, closeMobileMenu }) => {
       <details className={detailsClassName}>
         <summary className={summaryClassName}>
           <span>{formatNavLabel(item.label)}</span>
-          <i
-            className="fa-solid fa-chevron-down text-[11px] transition group-open:rotate-180"
+          <ChevronDown
+            className="h-[11px] w-[11px] transition group-open:rotate-180"
             aria-hidden="true"
           />
         </summary>
@@ -76,7 +77,10 @@ const MobileNavItem = ({ item, depth = 0, closeMobileMenu }) => {
               onClick={closeMobileMenu}
             >
               <span>VISIT {formatNavLabel(item.label)}</span>
-              <i className="fa-solid fa-arrow-up-right-from-square text-[11px]" aria-hidden="true" />
+              <ExternalLink
+                className="h-[11px] w-[11px]"
+                aria-hidden="true"
+              />
             </MobileLink>
           ) : null}
 
@@ -124,7 +128,7 @@ const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
             ? "site-mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm translate-x-0 flex-col bg-brand-navy px-5 pb-6 pt-5 shadow-float transition duration-300"
             : "site-mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm translate-x-full flex-col bg-brand-navy px-5 pb-6 pt-5 shadow-float transition duration-300"
         }
-        style={{ fontFamily: "Roboto, sans-serif" }}
+        style={{ fontFamily: "var(--font-roboto)" }}
         >
         <div className="mb-6 flex items-center justify-between gap-4 border-b border-white/10 pb-4">
           <div className="flex items-center rounded-xl bg-white px-3 py-2">
@@ -144,7 +148,7 @@ const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
             aria-label="Close menu"
           >
-            <i className="fa-solid fa-xmark text-lg" aria-hidden="true" />
+            <X className="h-[18px] w-[18px]" aria-hidden="true" />
           </button>
         </div>
 
@@ -165,7 +169,10 @@ const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
             href="mailto:info@premindustries.in"
             className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:bg-white/10"
           >
-            <i className="fa-solid fa-envelope text-brand-red" aria-hidden="true" />
+            <Mail
+              className="h-[18px] w-[18px] text-brand-red"
+              aria-hidden="true"
+            />
             <span>info@premindustries.in</span>
           </a>
 
@@ -173,7 +180,10 @@ const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
             href="tel:+918447247227"
             className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:bg-white/10"
           >
-            <i className="fa-solid fa-phone text-brand-red" aria-hidden="true" />
+            <Phone
+              className="h-[18px] w-[18px] text-brand-red"
+              aria-hidden="true"
+            />
             <span>+91-84-472-47227</span>
           </a>
 

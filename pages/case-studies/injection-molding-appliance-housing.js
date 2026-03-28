@@ -1,17 +1,8 @@
-import Head from "next/head";
 import Link from "next/link";
 
 export default function InjectionMoldingApplianceCaseStudy() {
   return (
     <>
-      <Head>
-        <title>Appliance Housing Ramp-Up | Case Study</title>
-        <meta
-          name="description"
-          content="Case study on scaling appliance housing production with improved process control and lower rejection pressure in injection moulding operations."
-        />
-      </Head>
-
       <section className="bg-brand-surface py-12 sm:py-16 lg:py-20">
         <div className="site-shell-tight">
           <article className="rounded-shell border border-brand-border/70 bg-white px-6 py-7 shadow-panel sm:px-8 sm:py-9 lg:px-10">
@@ -43,7 +34,7 @@ export default function InjectionMoldingApplianceCaseStudy() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/injectionmoulding"
+                href="/injection-molding"
                 className="inline-flex items-center gap-2 rounded-full bg-brand-navy px-5 py-3 font-display text-sm font-bold uppercase tracking-[0.08em] text-white"
               >
                 Explore injection moulding

@@ -22,7 +22,7 @@ const points = [
 export default function WhyPremSection() {
   return (
     <section className="why-prem">
-      <div className="container shell">
+      <div className="mx-auto grid w-full max-w-[1380px] gap-[18px] px-[14px] sm:px-[18px] lg:grid-cols-[minmax(260px,0.9fr)_minmax(260px,1.2fr)] lg:px-6">
         <div className="left">
           <p className="kicker">WHY PREM INDUSTRIES</p>
           <h2>A partner built for consistency, scale, and trust.</h2>
@@ -47,18 +47,6 @@ export default function WhyPremSection() {
         .why-prem {
           padding: 10px 0 22px;
           background: #f8f8f6;
-        }
-
-        .container {
-          max-width: 1380px;
-          padding-left: 24px;
-          padding-right: 24px;
-        }
-
-        .shell {
-          display: grid;
-          grid-template-columns: minmax(260px, 0.9fr) minmax(260px, 1.2fr);
-          gap: 18px;
         }
 
         .left {
@@ -119,24 +107,8 @@ export default function WhyPremSection() {
         }
 
         @media (max-width: 992px) {
-          .container {
-            padding-left: 18px;
-            padding-right: 18px;
-          }
-
-          .shell {
-            grid-template-columns: 1fr;
-          }
-
           .right {
             grid-template-columns: 1fr;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .container {
-            padding-left: 14px;
-            padding-right: 14px;
           }
         }
       `}</style>

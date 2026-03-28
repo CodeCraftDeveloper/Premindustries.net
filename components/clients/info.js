@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ExternalLink, Landmark } from "lucide-react";
 import {
   clientEvidence,
   clientGroups,
@@ -53,10 +54,7 @@ function SourceLink({ href, children, light = false }) {
       }`}
     >
       <span>{children}</span>
-      <i
-        className="fa-solid fa-arrow-up-right-from-square text-[10px]"
-        aria-hidden="true"
-      />
+      <ExternalLink className="h-[10px] w-[10px]" aria-hidden="true" />
     </a>
   );
 }
@@ -143,8 +141,8 @@ function EvidenceCard({ value, label, body, sourceUrl }) {
           </h3>
         </div>
         <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-surface text-brand-navy sm:h-11 sm:w-11">
-          <i
-            className="fa-solid fa-building-columns text-[12px] sm:text-[16px]"
+          <Landmark
+            className="h-[12px] w-[12px] sm:h-[16px] sm:w-[16px]"
             aria-hidden="true"
           />
         </span>
@@ -220,7 +218,10 @@ function ClientTile({ name, tone }) {
 export default function ClientPageContents() {
   return (
     <main className="overflow-x-hidden bg-[linear-gradient(180deg,#eef3fb_0%,#ffffff_32%,#f7f9fd_100%)] pb-12 sm:pb-14 lg:pb-16">
-      <section className="relative overflow-hidden border-t-4 border-brand-red bg-[#0f2348] text-white">
+      <section
+        className="relative overflow-hidden border-t-4 border-brand-red bg-[#0f2348] text-white"
+        style={{ minHeight: "calc(100dvh - var(--site-header-height))" }}
+      >
         <div className="absolute inset-0">
           <Image
             src="/clients/banner.jpg"
@@ -234,16 +235,19 @@ export default function ClientPageContents() {
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(10,22,44,0.92)_0%,rgba(10,22,44,0.8)_40%,rgba(10,22,44,0.42)_70%,rgba(10,22,44,0.12)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_24%,rgba(233,34,39,0.18),transparent_22%)]" />
 
-        <div className="site-shell relative z-[2] grid gap-7 px-0 py-12 sm:gap-8 sm:py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.95fr)] lg:items-end lg:py-20">
+        <div
+          className="site-shell relative z-[2] grid gap-7 px-0 py-12 sm:gap-8 sm:py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.95fr)] lg:items-center lg:py-20"
+          style={{ minHeight: "calc(100dvh - var(--site-header-height))" }}
+        >
           <div className="px-4 sm:px-0">
-            <span className="inline-flex rounded-full bg-white/12 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/82 backdrop-blur-sm">
+            <span className="inline-flex rounded-full bg-white/12 px-3.5 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] text-white/82 backdrop-blur-sm sm:px-4 sm:py-2 sm:text-[10px]">
               B2B Client Network
             </span>
-            <h1 className="mt-5 max-w-4xl font-['Oswald'] text-[clamp(2rem,10vw,5.4rem)] font-[700] uppercase leading-[0.95] tracking-[0.02em] text-white sm:tracking-[0.04em]">
+            <h1 className="mt-4 max-w-[860px] font-condensed text-[clamp(2rem,4.8vw,3.95rem)] font-[700] uppercase leading-[0.92] tracking-[0.012em] text-white sm:mt-5 sm:tracking-[0.025em] lg:max-w-[780px]">
               Trusted By Procurement Teams, OEM Programs, Marketplace Accounts,
               And Industrial Buyers
             </h1>
-            <p className="mt-4 max-w-3xl text-[14px] leading-[1.75] text-white/84 sm:mt-5 sm:text-[16px] sm:leading-[1.85]">
+            <p className="mt-3.5 max-w-[700px] text-[12px] leading-[1.65] text-white/84 sm:mt-4 sm:text-[14px] sm:leading-[1.72] lg:text-[14.5px]">
               Prem Industries works with a broad B2B client base across
               packaging, repeat supply programs, industrial demand,
               retail-linked operations, and OEM-facing execution. This page now
@@ -291,7 +295,7 @@ export default function ClientPageContents() {
             <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/74">
               Featured Accounts
             </span>
-            <h2 className="mt-4 font-['Oswald'] text-[clamp(1.8rem,3.8vw,2.9rem)] font-[700] uppercase leading-[0.96] tracking-[0.04em]">
+            <h2 className="mt-4 font-condensed text-[clamp(1.8rem,3.8vw,2.9rem)] font-[700] uppercase leading-[0.96] tracking-[0.04em]">
               Relationship Signals For B2B Buyers
             </h2>
             <p className="mt-3 max-w-[360px] text-[13px] leading-[1.65] text-white/76 sm:text-[14px] sm:leading-[1.75]">
@@ -313,7 +317,7 @@ export default function ClientPageContents() {
           <span className="inline-flex rounded-full bg-brand-surface px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-red">
             Client Bands
           </span>
-          <h2 className="mt-4 max-w-5xl font-['Oswald'] text-[clamp(2rem,4vw,3.2rem)] font-[700] uppercase leading-[0.96] tracking-[0.04em] text-brand-navy">
+          <h2 className="mt-4 max-w-5xl font-condensed text-[clamp(2rem,4vw,3.2rem)] font-[700] uppercase leading-[0.96] tracking-[0.04em] text-brand-navy">
             Sector Clusters For A More Industrial B2B Presentation
           </h2>
           <p className="mt-4 max-w-4xl text-[15px] leading-[1.85] text-brand-slate">
@@ -359,7 +363,7 @@ export default function ClientPageContents() {
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/68">
               Next Step
             </p>
-            <h2 className="mt-3 font-['Oswald'] text-[clamp(2rem,4vw,3.1rem)] font-[700] uppercase leading-[0.96] tracking-[0.04em]">
+            <h2 className="mt-3 font-condensed text-[clamp(2rem,4vw,3.1rem)] font-[700] uppercase leading-[0.96] tracking-[0.04em]">
               Need A Stronger Partner Proof Page Or Sector-Specific B2B
               Capability Deck?
             </h2>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const SectorCard = ({
   title,
@@ -35,7 +36,7 @@ const SectorCard = ({
         </h3>
         {href ? (
           <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-surface text-brand-red transition group-hover:bg-brand-red group-hover:text-white">
-            <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </span>
         ) : (
           <span className="inline-flex rounded-full bg-brand-surface px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-slate">

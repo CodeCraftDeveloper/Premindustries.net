@@ -6,8 +6,7 @@ export const desktopNavItems = [
     children: [
       {
         label: "Packaging Sector",
-        href: "https://prempackaging.com/",
-        external: true,
+        href: "/packaging",
       },
       {
         label: "Steel Sector",
@@ -38,7 +37,7 @@ export const desktopNavItems = [
       },
       {
         label: "Moulding Sector",
-        href: "/injectionmoulding",
+        href: "/injection-molding",
       },
       {
         label: "Retail Sector",
@@ -60,6 +59,7 @@ export const desktopNavItems = [
     ],
   },
   { label: "Our Clients", href: "/clients" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Contact Us", href: "/contact" },
   {
     label: "Other Websites",

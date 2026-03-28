@@ -12,6 +12,29 @@ const fadeUp = {
 };
 
 export default function Clients() {
+  const clientColumns = [
+    [
+      "HAIER APPLIANCES (INDIA) PVT LTD",
+      "SYMPHONY LIMITED",
+      "AMBER ENTERPRISES INDIA LTD.",
+      "POLYCAB INDIA PRIVATE LIMITED",
+      "MINI METRO EV LLP",
+      "EASTERN BEARINGS PVT. LTD",
+      "PURSHOTOM PROFILE PVT. LTD.",
+      "RM COMPONENTS",
+    ],
+    [
+      "EPACK POLYMERS PVT. LTD.",
+      "RELIABLE BARREL PVT. LTD.",
+      "FILTECH",
+      "RANA MATERIAL HANDELING EQUIPMENT PVT. LTD.",
+      "MAHESHWARI ELECTRICALS MFRS PVT. LTD.",
+      "STROLLER MOUNTING SYSTEMS PVT. LTD.",
+      "VIJAY SHREE STELL INDUSTRIES",
+      "RADISH TECNOLOGIES",
+    ],
+  ];
+
   return (
     <motion.section
       className="faq-funfact-section mt-3"
@@ -21,11 +44,14 @@ export default function Clients() {
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeUp}
     >
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="fun-fact-wrapper text-white text-center">
-          <div className="row">
-            <div className="col-md-12 mb-4">
-              <h2 className="text-white" style={{ fontSize: "clamp(26px, 4vw, 40px)" }}>
+          <div>
+            <div className="mb-4">
+              <h2
+                className="text-white"
+                style={{ fontSize: "clamp(26px, 4vw, 40px)" }}
+              >
                 OUR CLIENTS
               </h2>
             </div>
@@ -33,194 +59,39 @@ export default function Clients() {
         </div>
 
         <div className="faq-wrapper mb-5 pb-0">
-          <div className="row">
-            <div className="col-lg-12 col-12 col-xl-12 pe-lg-0">
+          <div>
+            <div className="lg:pe-0">
               <div className="faq-content shadow-lg">
-                <div className="faq-accordion">
-                  <div className="accordion" id="accordion">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <ul>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {clientColumns.map((column, index) => (
+                    <div key={`client-column-${index}`}>
+                      <ul className="space-y-1">
+                        {column.map((client) => (
                           <li
+                            key={client}
                             style={{
                               fontSize: "clamp(13px, 2vw, 17px)",
                               fontWeight: 800,
                               color: "#14254C",
                             }}
-                            className="mb-1"
                           >
-                            HAIER APPLIANCES (INDIA) PVT LTD
+                            {client}
                           </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            SYMPHONY LIMITED
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            AMBER ENTERPRISES INDIA LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            POLYCAB INDIA PRIVATE LIMITED
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            MINI METRO EV LLP
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            EASTERN BEARINGS PVT. LTD
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            PURSHOTOM PROFILE PVT. LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            RM COMPONENTS
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className="col-md-6">
-                        <ul>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            EPACK POLYMERS PVT. LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            RELIABLE BARREL PVT. LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            FILTECH
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            RANA MATERIAL HANDELING EQUIPMENT PVT. LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            MAHESHWARI ELECTRICALS MFRS PVT. LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            STROLLER MOUNTING SYSTEMS PVT. LTD.
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            VIJAY SHREE STELL INDUSTRIES
-                          </li>
-                          <li
-                            style={{
-                              fontSize: "clamp(13px, 2vw, 17px)",
-                              fontWeight: 800,
-                              color: "#14254C",
-                            }}
-                            className="mb-1"
-                          >
-                            RADISH TECNOLOGIES
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div
-                        className="col-md-12"
-                        style={{
-                          textAlign: "right",
-                          fontSize: "clamp(14px, 2.4vw, 20px)",
-                          fontWeight: 800,
-                          color: "#14254C",
-                        }}
-                      >
-                        and many more...
-                      </div>
+                        ))}
+                      </ul>
                     </div>
+                  ))}
+
+                  <div
+                    className="md:col-span-2"
+                    style={{
+                      textAlign: "right",
+                      fontSize: "clamp(14px, 2.4vw, 20px)",
+                      fontWeight: 800,
+                      color: "#14254C",
+                    }}
+                  >
+                    and many more...
                   </div>
                 </div>
               </div>

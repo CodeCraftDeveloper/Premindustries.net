@@ -1,22 +1,10 @@
 import React from "react";
-import Head from "next/head";
 import PageContent from "@/components/contact/index";
 import SectionReveal from "@/components/common/SectionReveal";
 
 export default function Index() {
   return (
     <>
-      <Head>
-        <title>Contact Prem Industries | Industrial Manufacturing Inquiries</title>
-        <meta
-          name="title"
-          content="Contact Prem Industries | Industrial Manufacturing Inquiries"
-        />
-        <meta
-          name="description"
-          content="Contact Prem Industries India Limited for sheet metal fabrication, injection moulding, OEM manufacturing support, production planning, and project discussions."
-        />
-      </Head>
       <SectionReveal>
         <PageContent
           maintitle="Connect with our manufacturing teams for RFQs, technical discussions, development support, and production planning across our core sectors."
@@ -31,8 +19,8 @@ export default function Index() {
           CardImage2="/clients/SteelSector.jpg"
           CardImage3="/clients/RetailSector.jpg"
           CardImage4="/clients/ConstructionSector.jpg"
-          CardLink1="https://prempackaging.com/"
-          CardLink2="/sheet-metal"
+          CardLink1="/packaging"
+          CardLink2="/sheet-metal-components"
           CardLink3=""
           CardLink4=""
         />

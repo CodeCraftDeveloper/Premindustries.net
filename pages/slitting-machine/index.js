@@ -1,4 +1,3 @@
-import Head from "next/head";
 import MachineContentSection from "@/components/common/MachineContentSection";
 import SectionReveal from "@/components/common/SectionReveal";
 import Hero from "@/components/slitting-machine/hero";
@@ -19,18 +18,6 @@ const listItems = [
 export default function SlittingMachinePage() {
   return (
     <>
-      <Head>
-        <title>Slitting Machine - Prem Industries India Limited</title>
-        <meta
-          name="description"
-          content="Explore our high-quality Slitting Machines."
-        />
-        <meta
-          name="title"
-          content="Slitting Machine - Prem Industries India Limited"
-        />
-      </Head>
-
       <SectionReveal>
         <Hero />
       </SectionReveal>

@@ -170,8 +170,11 @@ const ExperienceShowcase = ({
           content: "";
           position: absolute;
           inset: 0;
-          background:
-            linear-gradient(180deg, rgba(64, 16, 10, 0.28) 0%, rgba(20, 37, 76, 0.1) 100%);
+          background: linear-gradient(
+            180deg,
+            rgba(64, 16, 10, 0.28) 0%,
+            rgba(20, 37, 76, 0.1) 100%
+          );
           pointer-events: none;
         }
 
@@ -258,7 +261,7 @@ const ExperienceShowcase = ({
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          margin-top: 2rem;
+          margin-top: 2.45rem;
           min-width: 10.25rem;
           background: #202a67;
           padding: 1rem 1.75rem;
@@ -268,7 +271,10 @@ const ExperienceShowcase = ({
           letter-spacing: 0.01em;
           text-transform: uppercase;
           color: #ffffff !important;
-          transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background-color 0.2s ease;
         }
 
         .experience-btn:hover {
@@ -281,9 +287,23 @@ const ExperienceShowcase = ({
           .experience-vertical-wrap {
             display: none;
           }
+
+          .experience-shell {
+            grid-template-columns: minmax(0, 32rem) minmax(0, 1fr);
+            gap: clamp(1.5rem, 2.2vw, 2.4rem);
+            width: min(100% - 2rem, 86rem);
+          }
+
+          .experience-media {
+            margin-right: 0;
+          }
+
+          .experience-copy {
+            padding-left: clamp(0.5rem, 1.2vw, 1.25rem);
+          }
         }
 
-        @media (min-width: 1280px) and (max-width: 1599px) {
+        @media (min-width: 1400px) and (max-width: 1599px) {
           .experience-shell {
             grid-template-columns: 15% 35% 50%;
             width: min(100% - 2rem, 96rem);
@@ -398,7 +418,7 @@ const ExperienceShowcase = ({
           }
 
           .experience-btn {
-            margin-top: 1.6rem;
+            margin-top: 2rem;
             min-width: 9.5rem;
             padding: 0.9rem 1.4rem;
             font-size: 0.92rem;
@@ -478,7 +498,7 @@ const ExperienceShowcase = ({
           }
 
           .experience-btn {
-            margin-top: 1.55rem;
+            margin-top: 1.9rem;
             width: 100%;
             min-width: 0;
           }

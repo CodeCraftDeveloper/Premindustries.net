@@ -15,6 +15,7 @@ const cornerClass =
 
 export default function InjectionHero() {
   const [useVideoFallback, setUseVideoFallback] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   useEffect(() => {
     const probe = document.createElement("video");
@@ -25,6 +26,20 @@ export default function InjectionHero() {
 
     if (!canPlayWebm) {
       setUseVideoFallback(true);
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const saveData = navigator.connection?.saveData;
+
+    if (!prefersReducedMotion && !saveData) {
+      const frameId = window.requestAnimationFrame(() => {
+        setShouldLoadVideo(true);
+      });
+
+      return () => window.cancelAnimationFrame(frameId);
     }
   }, []);
 
@@ -33,7 +48,7 @@ export default function InjectionHero() {
       <div className="relative">
         <section className="relative z-[6] h-[calc(92svh-64px)] min-h-[calc(92svh-64px)] max-h-[calc(92svh-64px)] overflow-hidden border-t-4 border-[#e11d2e] bg-[#0b3b6c] sm:h-[calc(92svh-68px)] sm:min-h-[calc(92svh-68px)] sm:max-h-[calc(92svh-68px)] lg:h-[calc(88svh-74px)] lg:min-h-[calc(88svh-74px)] lg:max-h-[calc(88svh-74px)] xl:h-[calc(88svh-78px)] xl:min-h-[calc(88svh-78px)] xl:max-h-[calc(88svh-78px)]">
           <div className="absolute inset-0">
-            {useVideoFallback ? (
+            {useVideoFallback || !shouldLoadVideo ? (
               <Image
                 src="/injectionmolding/injection.webp"
                 alt="Injection moulding production line"
@@ -49,7 +64,7 @@ export default function InjectionHero() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster="/injectionmolding/machines/3000ton.png"
                 onError={() => setUseVideoFallback(true)}
               >
@@ -70,10 +85,10 @@ export default function InjectionHero() {
             <span className="inline-flex w-fit items-center rounded-full bg-white/18 px-[14px] py-[6px] text-[10px] font-semibold uppercase tracking-[0.14em] text-white sm:text-[12px] sm:tracking-[0.18em] lg:px-4 lg:py-[7px] lg:text-[12px] xl:px-[18px] xl:py-[8px] xl:text-[13px] min-[1600px]:text-[14px]">
               Injection Moulding Manufacturer In India
             </span>
-            <h1 className="mt-3 mb-[10px] font-['Oswald'] font-[700] text-[clamp(24px,6vw,48px)] uppercase leading-[1.05] tracking-[0.06em] text-white [text-shadow:0_6px_18px_rgba(0,0,0,0.45)] lg:mt-4 lg:mb-4 lg:max-w-full lg:text-[clamp(50px,3.9vw,68px)] xl:text-[clamp(58px,4.1vw,80px)] min-[1600px]:text-[clamp(68px,4.3vw,92px)] max-[768px]:max-w-[94vw] max-[768px]:text-[clamp(22px,9.2vw,40px)] max-[768px]:tracking-[0.04em]">
+            <h1 className="mt-3 mb-[10px] font-condensed font-[700] text-[clamp(24px,6vw,48px)] uppercase leading-[1.05] tracking-[0.06em] text-white [text-shadow:0_6px_18px_rgba(0,0,0,0.45)] lg:mt-4 lg:mb-4 lg:max-w-full lg:text-[clamp(50px,3.9vw,68px)] xl:text-[clamp(58px,4.1vw,80px)] min-[1600px]:text-[clamp(68px,4.3vw,92px)] max-[768px]:max-w-[94vw] max-[768px]:text-[clamp(22px,9.2vw,40px)] max-[768px]:tracking-[0.04em]">
               Precision Injection Moulding For OEM And Industrial Programs
             </h1>
-            <p className="mb-[18px] max-w-[620px] font-['Roboto'] text-[14px] leading-[1.6] tracking-[0.01em] text-white/90 [text-shadow:0_4px_12px_rgba(0,0,0,0.35)] sm:text-[15px] lg:mb-7 lg:max-w-full lg:text-[17px] lg:leading-[1.65] xl:text-[19px] xl:leading-[1.62] min-[1600px]:text-[22px] min-[1600px]:leading-[1.58] max-[768px]:max-w-[94vw]">
+            <p className="mb-[18px] max-w-[620px] font-roboto text-[14px] leading-[1.6] tracking-[0.01em] text-white/90 [text-shadow:0_4px_12px_rgba(0,0,0,0.35)] sm:text-[15px] lg:mb-7 lg:max-w-full lg:text-[17px] lg:leading-[1.65] xl:text-[19px] xl:leading-[1.62] min-[1600px]:text-[22px] min-[1600px]:leading-[1.58] max-[768px]:max-w-[94vw]">
               Prem Industries operates a state-of-the-art injection moulding
               division with machine capacity from 160 to 3000 tons, supporting
               OEM plastic components, consumer durables, industrial assemblies,
@@ -138,13 +153,13 @@ export default function InjectionHero() {
 
             <div className="relative flex min-h-[320px] min-w-0 flex-col justify-center overflow-visible bg-transparent pt-1 pr-8 max-[1200px]:pr-4 max-[900px]:min-h-0 max-[900px]:items-center max-[900px]:px-2 max-[900px]:text-center">
               <div className="relative z-[2] flex min-h-full max-w-[840px] flex-col justify-center">
-                <h2 className="mb-1 font-['Oswald'] text-[clamp(28px,3.4vw,40px)] font-[700] uppercase tracking-[0.12em] text-[rgba(255,255,255,0.9)]">
+                <h2 className="mb-1 font-condensed text-[clamp(28px,3.4vw,40px)] font-[700] uppercase tracking-[0.12em] text-[rgba(255,255,255,0.9)]">
                   50+ Years of Excellence
                 </h2>
-                <span className="mb-2 inline-flex font-['Roboto'] text-[clamp(15px,1.7vw,19px)] font-normal uppercase tracking-[0.06em] text-[rgba(220,235,255,0.85)]">
+                <span className="mb-2 inline-flex font-roboto text-[clamp(15px,1.7vw,19px)] font-normal uppercase tracking-[0.06em] text-[rgba(220,235,255,0.85)]">
                   Business Experience
                 </span>
-                <p className="mb-6 max-w-full font-['Roboto'] text-[14px] font-light leading-[1.8] text-[rgba(235,245,255,0.9)] [text-align:justify] [text-justify:inter-word] lg:text-[15px] max-[900px]:max-w-none max-[900px]:text-left">
+                <p className="mb-6 max-w-full font-roboto text-[14px] font-light leading-[1.8] text-[rgba(235,245,255,0.9)] [text-align:justify] [text-justify:inter-word] lg:text-[15px] max-[900px]:max-w-none max-[900px]:text-left">
                   Prem Industries brings decades of manufacturing experience to
                   injection moulding, combining established execution discipline
                   with modern plastic processing capability. Our goal is to help

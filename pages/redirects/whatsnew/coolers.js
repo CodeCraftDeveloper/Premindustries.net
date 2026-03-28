@@ -90,7 +90,7 @@ export default function CoolersProductPage() {
           name="description"
           content="Precision injection moulded cooler components built for scale, with advanced tonnage infrastructure and quality traceability."
         />
-        <meta name="robots" content="noindex,nofollow" />
+        <meta name="robots" content="noindex,follow" />
         <meta property="og:title" content="Coolers | Prem Industries" />
         <meta
           property="og:description"
@@ -1013,6 +1013,11 @@ export default function CoolersProductPage() {
           .feature-list {
             grid-template-columns: 1fr;
             max-width: 520px;
+            gap: 16px;
+          }
+
+          .feature-image-wrap {
+            aspect-ratio: 4 / 3;
           }
 
           .scope-grid {
@@ -1046,6 +1051,7 @@ export default function CoolersProductPage() {
 
           .hero {
             padding-top: 28px;
+            gap: 18px;
           }
 
           .hero-label {
@@ -1061,6 +1067,23 @@ export default function CoolersProductPage() {
           .content-section h2,
           .feature-copy h3 {
             font-size: 24px;
+          }
+
+          .hero-left p:last-child,
+          .hero-right p,
+          .subtext {
+            font-size: 13px;
+            line-height: 1.65;
+          }
+
+          .hero-right-sub {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+          }
+
+          .hero-image-wrap {
+            width: min(180px, 48vw);
+            height: min(280px, 74vw);
           }
 
           .hero-cards,
@@ -1085,6 +1108,50 @@ export default function CoolersProductPage() {
 
           .hero-card {
             min-height: 0;
+            padding: 18px 14px 14px;
+          }
+
+          .hero-card-id {
+            top: 10px;
+            left: 12px;
+            width: 28px;
+            height: 28px;
+          }
+
+          .hero-card h4 {
+            margin: 8px 0 6px;
+            font-size: 14px;
+            line-height: 1.3;
+          }
+
+          .hero-card p {
+            font-size: 11px;
+            line-height: 1.35;
+          }
+
+          .chip,
+          .scope-chip {
+            min-height: 56px;
+            font-size: 12.5px;
+            line-height: 1.35;
+          }
+
+          .feature-list {
+            gap: 14px;
+          }
+
+          .feature-image-wrap {
+            border-radius: 16px;
+          }
+
+          .surface-section {
+            padding-top: 12px;
+            padding-bottom: 28px;
+          }
+
+          .content-section {
+            padding-top: 40px;
+            padding-bottom: 56px;
           }
         }
 

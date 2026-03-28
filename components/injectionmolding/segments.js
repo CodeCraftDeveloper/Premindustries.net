@@ -165,7 +165,7 @@ export default function IndustrySegmentsSection() {
           letter-spacing: 0.12em;
           text-transform: uppercase;
           color: #0b3378;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
         }
 
         .segments-grid {

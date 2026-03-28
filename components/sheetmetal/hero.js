@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -162,6 +163,23 @@ const fadeUp = {
 };
 
 export default function HeroTwo() {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const saveData = navigator.connection?.saveData;
+
+    if (!prefersReducedMotion && !saveData) {
+      const frameId = window.requestAnimationFrame(() => {
+        setShouldLoadVideo(true);
+      });
+
+      return () => window.cancelAnimationFrame(frameId);
+    }
+  }, []);
+
   return (
     <motion.section
       className="sheetmetal-landing"
@@ -172,19 +190,30 @@ export default function HeroTwo() {
     >
       <div className="hero">
         <div className="hero-media">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="hero-video"
-          >
-            <source src="/sheetmetal/Comp%201_1.mp4" type="video/mp4" />
-          </video>
+          {shouldLoadVideo ? (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              className="hero-video"
+            >
+              <source src="/sheetmetal/Comp%201_1.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src="/sheetmetal/press-new.jpg"
+              alt="Sheet metal manufacturing at Prem Industries"
+              fill
+              priority
+              sizes="100vw"
+              className="hero-video"
+            />
+          )}
         </div>
         <div className="hero-overlay" />
-        <div className="container hero-content">
+        <div className="hero-content mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
           <div className="hero-text">
             <span className="hero-eyebrow">
               Sheet Metal Components Manufacturer In India
@@ -212,7 +241,7 @@ export default function HeroTwo() {
         </div>
       </div>
 
-      <div className="container feature-grid">
+      <div className="feature-grid mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         {featureCards.map((card, index) => (
           <div
             className="feature-card"
@@ -233,7 +262,7 @@ export default function HeroTwo() {
         ))}
       </div>
 
-      <div className="container quick-row">
+      <div className="quick-row mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="quick-strip">
           {quickPills.map((item) => (
             <div className="quick-pill" key={item.title}>
@@ -249,7 +278,7 @@ export default function HeroTwo() {
         </div>
       </div>
 
-      <div className="container applications">
+      <div className="applications mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="applications-header">
           <h2>Sheet Metal Manufacturing Applications</h2>
           <p>
@@ -374,7 +403,7 @@ export default function HeroTwo() {
 
         .hero-text h1 {
           font-size: clamp(34px, 4.2vw, 58px);
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           text-transform: uppercase;
           margin: 0;
           line-height: 1.05;
@@ -546,7 +575,7 @@ export default function HeroTwo() {
           font-size: clamp(22px, 3vw, 34px);
           margin: 0 0 12px;
           color: var(--sm-ink);
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           text-transform: uppercase;
         }
 
@@ -678,7 +707,7 @@ export default function HeroTwo() {
         .coverage-text h2 {
           font-size: clamp(26px, 3.5vw, 40px);
           margin: 0 0 16px;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           text-transform: uppercase;
         }
 

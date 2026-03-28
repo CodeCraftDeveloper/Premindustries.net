@@ -1,4 +1,3 @@
-import Head from "next/head";
 import MachineContentSection from "@/components/common/MachineContentSection";
 import SectionReveal from "@/components/common/SectionReveal";
 import Hero from "@/components/ctl-machine/hero";
@@ -18,18 +17,6 @@ const listItems = [
 export default function CtlMachinePage() {
   return (
     <>
-      <Head>
-        <title>CTL Machine - Prem Industries India Limited</title>
-        <meta
-          name="description"
-          content="Explore our high-quality CTL Machines."
-        />
-        <meta
-          name="title"
-          content="CTL Machine - Prem Industries India Limited"
-        />
-      </Head>
-
       <SectionReveal>
         <Hero />
       </SectionReveal>

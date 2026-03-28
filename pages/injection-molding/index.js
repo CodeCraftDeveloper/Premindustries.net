@@ -1,6 +1,5 @@
-import KeywordLandingPage from "@/components/common/KeywordLandingPage";
-import { serviceDataMap } from "@/lib/seo/serviceDataMap";
+import InjectionMoldingHubPage from "@/components/injectionmolding/InjectionMoldingHubPage";
 
 export default function InjectionMoldingServicePage() {
-  return <KeywordLandingPage {...serviceDataMap["injection-molding"]} />;
+  return <InjectionMoldingHubPage />;
 }

@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 function QuickIcon({ name }) {
   if (name === "factory") {
@@ -96,92 +96,61 @@ const fadeUp = {
 };
 
 export default function AboutTwo() {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const saveData = navigator.connection?.saveData;
+
+    if (!prefersReducedMotion && !saveData) {
+      const frameId = window.requestAnimationFrame(() => {
+        setShouldLoadVideo(true);
+      });
+
+      return () => window.cancelAnimationFrame(frameId);
+    }
+  }, []);
+
   return (
     <>
-      <section className="about-section mb-5" style={{ overflowX: "hidden" }}>
-        <div className="container">
-          <div className="row align-items-center mt-3">
-            <div className="col-xl-12 mt-5 mt-lg-0 col-12">
-              <div className="block-contents">
-                <div className="section-title">
-                  <h3
-                    className=""
-                    style={{ fontSize: "clamp(26px, 4vw, 40px)" }}
-                  >
-                    Sheet Metal Components Manufacturing
-                  </h3>
-                </div>
-              </div>
+      <section className="about-section mb-5 overflow-x-hidden">
+        <div className="mx-auto w-full max-w-[1380px] px-[14px] py-4 sm:px-[18px] sm:py-5 lg:px-6 lg:py-6">
+          <div className="max-w-[1220px]">
+            <h3
+              className="font-condensed text-[clamp(2.1rem,4vw,3.5rem)] uppercase leading-[1.02] tracking-[0.01em] text-[#0b1b2b]"
+            >
+              Sheet Metal Components Manufacturing
+            </h3>
 
-              <p
-                className=""
-                style={{
-                  textAlign: "justify",
-                  fontSize: "clamp(14px, 2.2vw, 17px)",
-                }}
-              >
-                Prem Industries India Limited operates an integrated sheet metal
-                components manufacturing division designed for dimensional
-                accuracy, repeatability, and high-volume dispatch. From coil
-                handling and cutting to forming and fabrication, our workflow is
-                aligned for OEM and industrial production programs where quality
-                consistency matters in every batch.
-              </p>
-            </div>
+            <p
+              className="mt-4 max-w-[1240px] text-[clamp(14px,1.2vw,17px)] leading-[1.7] text-[#22354a]"
+            >
+              Prem Industries India Limited operates an integrated sheet metal
+              components manufacturing division designed for dimensional
+              accuracy, repeatability, and high-volume dispatch. From coil
+              handling and cutting to forming and fabrication, our workflow is
+              aligned for OEM and industrial production programs where quality
+              consistency matters in every batch.
+            </p>
           </div>
 
-          <div className="row align-items-center">
-            <div className="col-xl-6 col-12 pe-xl-0">
-              <div className="d-flex flex-column" style={{ gap: 0 }}>
-                {/* Optimized Next.js image (equivalent to your background block) */}
-                <div
-                  className="mt-4 shadow-sm"
-                  style={{ borderRadius: "12px" }}
-                >
-                  <div
-                    className="position-relative w-100"
-                    style={{
-                      aspectRatio: "9 / 5",
-                      borderRadius: "12px",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <Image
-                      src={"/sheetmetal/about.jpg"}
-                      alt="Sheet metal components at Prem Industries"
-                      fill
-                      style={{ objectFit: "contain" }}
-                      priority
-                    />
-                  </div>
-                </div>
-
-                {/* If you prefer to keep a CSS background instead of <Image>, use this block:
-              <div
-                className="bg-cover wow fadeInLeft animated mt-4 shadow-sm"
-                style={{
-                  backgroundImage: `url(${typeof AboutImg2 === 'string' ? AboutImg2 : AboutImg2.src})`,
-                  borderRadius: '12px',
-                  width: '100%',
-                  aspectRatio: '9/5',
-                  backgroundSize: 'contain',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  minHeight: 0,
-                  marginTop: 0,
-                }}
-              /> */}
+          <div className="mt-8 grid items-start gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] xl:gap-8">
+            <div className="relative overflow-hidden rounded-[18px] shadow-[0_20px_40px_rgba(10,20,35,0.1)]">
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src="/sheetmetal/about.jpg"
+                  alt="Sheet metal components at Prem Industries"
+                  fill
+                  priority
+                  className="object-cover object-center"
+                />
               </div>
             </div>
 
-            <div className="col-xl-6 mt-5 mt-lg-0 col-12">
-              <p
-                className="mt-2"
-                style={{
-                  textAlign: "justify",
-                  fontSize: "clamp(14px, 2.2vw, 17px)",
-                }}
-              >
+            <div className="flex flex-col gap-7 pt-1 text-[clamp(14px,1.15vw,17px)] leading-[1.75] text-[#22354a] xl:pt-8">
+              <p>
                 Our manufacturing setup combines modern machinery, process
                 monitoring, and trained teams to serve automotive, appliance,
                 infrastructure, and general engineering applications. We focus
@@ -189,13 +158,7 @@ export default function AboutTwo() {
                 times so customers can plan downstream assembly, vendor
                 schedules, and material movement with confidence.
               </p>
-              <p
-                className="mt-2"
-                style={{
-                  textAlign: "justify",
-                  fontSize: "clamp(14px, 2.2vw, 17px)",
-                }}
-              >
+              <p>
                 Beyond part manufacturing, we emphasize engineering support,
                 quality checkpoints, packaging discipline, and dispatch
                 readiness to reduce rejection risk at customer plants. This
@@ -207,23 +170,34 @@ export default function AboutTwo() {
         </div>
       </section>
       <section className="coverage-section">
-        <video
-          className="coverage-video"
-          src="/home/sustainability2.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        {shouldLoadVideo ? (
+          <video
+            className="coverage-video"
+            src="/home/sustainability2.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+          />
+        ) : (
+          <Image
+            src="/sheetmetal/press-new.jpg"
+            alt="Sheet metal industry coverage at Prem Industries"
+            fill
+            sizes="100vw"
+            className="coverage-video"
+          />
+        )}
         <div className="coverage-overlay" />
-        <div className="container coverage-content">
+        <div className="mx-auto grid w-full max-w-[1380px] items-start justify-items-start gap-5 px-[14px] sm:px-[18px] lg:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] lg:px-6 coverage-content">
           <div className="coverage-text">
             <h2>Sheet Metal Industry Coverage</h2>
             <p>
               Our sheet metal component portfolio spans automotive,
-              construction, electrical, appliance, and consumer categories,
-              with production capability for both standard and custom
-              engineered parts.
+              construction, electrical, appliance, and consumer categories, with
+              production capability for both standard and custom engineered
+              parts.
             </p>
             <p>
               We support applications such as enclosures, support brackets,
@@ -310,7 +284,7 @@ export default function AboutTwo() {
         .coverage-text h2 {
           font-size: clamp(26px, 3.5vw, 40px);
           margin: 0 0 16px;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           text-transform: uppercase;
           color: #ffffff;
           text-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);

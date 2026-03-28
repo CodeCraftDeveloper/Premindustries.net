@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 
 const studies = [
@@ -14,7 +13,7 @@ const studies = [
     title: "Appliance Housing Ramp-Up",
     excerpt:
       "A high-volume injection moulding program delivered with tighter process control and reduced rejection impact.",
-    service: "/injectionmoulding",
+    service: "/injection-molding",
   },
   {
     href: "/case-studies/coil-processing-fast-turnaround",
@@ -28,14 +27,6 @@ const studies = [
 export default function CaseStudiesIndexPage() {
   return (
     <>
-      <Head>
-        <title>Case Studies | Prem Industries India Limited</title>
-        <meta
-          name="description"
-          content="Explore real-world manufacturing case studies from Prem Industries across sheet metal, injection moulding, and coil processing programs."
-        />
-      </Head>
-
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="site-shell-tight">
           <div className="rounded-shell border border-brand-border/70 px-6 py-7 shadow-panel sm:px-8 sm:py-9 lg:px-10">

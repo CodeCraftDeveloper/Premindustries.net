@@ -144,7 +144,7 @@ export default function InjectionProcess() {
           line-height: 1.15;
           position: relative;
           display: block;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           text-align: center;
         }
 
@@ -227,7 +227,7 @@ export default function InjectionProcess() {
           font-size: clamp(20px, 2.4vw, 30px);
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-condensed);
           color: #f8fbff;
           line-height: 1.2;
         }

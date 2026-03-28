@@ -123,38 +123,75 @@ export default function ChimneyProductPage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const currentSlide = heroSlides[activeSlide];
   const heroSectionRef = useRef(null);
+  const heroMetricsRef = useRef({ top: 0, maxScrollable: 0 });
+  const activeSlideRef = useRef(0);
+  const scrollRafRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => {
+    activeSlideRef.current = activeSlide;
+  }, [activeSlide]);
+
+  useEffect(() => {
+    const updateMetrics = () => {
       const section = heroSectionRef.current;
       if (!section) return;
 
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + window.scrollY;
       const maxScrollableInSection = Math.max(
-        sectionHeight - window.innerHeight,
+        rect.height - window.innerHeight,
         0,
       );
+
+      heroMetricsRef.current = {
+        top: sectionTop,
+        maxScrollable: maxScrollableInSection,
+      };
+    };
+
+    const updateSlideFromScroll = () => {
+      const { top, maxScrollable } = heroMetricsRef.current;
       const scrollInSection = Math.min(
-        Math.max(window.scrollY - sectionTop, 0),
-        maxScrollableInSection,
+        Math.max(window.scrollY - top, 0),
+        maxScrollable,
       );
-      const progress =
-        maxScrollableInSection > 0
-          ? scrollInSection / maxScrollableInSection
-          : 0;
+      const progress = maxScrollable > 0 ? scrollInSection / maxScrollable : 0;
       // Make early scroll feel more responsive so first slide change happens sooner.
       const adjustedProgress = Math.pow(progress, 0.8);
       const nextIndex = Math.min(
         heroSlides.length - 1,
         Math.floor(adjustedProgress * heroSlides.length),
       );
-      setActiveSlide((prev) => (prev === nextIndex ? prev : nextIndex));
+
+      if (nextIndex !== activeSlideRef.current) {
+        activeSlideRef.current = nextIndex;
+        setActiveSlide(nextIndex);
+      }
     };
 
-    onScroll();
+    const onScroll = () => {
+      if (scrollRafRef.current !== null) return;
+
+      scrollRafRef.current = window.requestAnimationFrame(() => {
+        scrollRafRef.current = null;
+        updateSlideFromScroll();
+      });
+    };
+
+    updateMetrics();
+    updateSlideFromScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", updateMetrics, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateMetrics);
+
+      if (scrollRafRef.current !== null) {
+        window.cancelAnimationFrame(scrollRafRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -165,7 +202,7 @@ export default function ChimneyProductPage() {
           name="description"
           content="Manufacturing excellence since 1975. Built in India with global standards, powerful suction, baffle filtration, and advanced auto-clean chimney technology."
         />
-        <meta name="robots" content="noindex,nofollow" />
+        <meta name="robots" content="noindex,follow" />
         <meta
           property="og:title"
           content="Smart Kitchen Chimneys for Next India | Prem Industries"
@@ -437,19 +474,16 @@ export default function ChimneyProductPage() {
           --nav-offset: 92px;
           position: relative;
           width: 100%;
-          height: calc(
-            var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-              var(--hero-scroll-factor, 0.45) + var(--nav-offset)
-          );
-          min-height: 100vh;
+          height: auto;
+          min-height: 0;
           padding-top: var(--nav-offset);
           background: #000000;
-          overflow-x: clip;
+          overflow: visible;
         }
 
         .hero-card {
-          position: sticky;
-          top: var(--nav-offset);
+          position: relative;
+          top: auto;
           width: 100%;
           height: calc(100vh - var(--nav-offset));
           min-height: calc(100vh - var(--nav-offset));
@@ -1896,11 +1930,8 @@ export default function ChimneyProductPage() {
         @media (max-width: 980px) {
           .whatsnew-page {
             --nav-offset: 84px;
-            height: calc(
-              var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-                var(--hero-scroll-factor, 0.45) + var(--nav-offset)
-            );
-            min-height: 100vh;
+            height: auto;
+            min-height: 0;
           }
 
           .hero-card {
@@ -2054,11 +2085,8 @@ export default function ChimneyProductPage() {
         @media (max-width: 768px) {
           .whatsnew-page {
             --nav-offset: 78px;
-            height: calc(
-              var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-                var(--hero-scroll-factor, 0.45) + var(--nav-offset)
-            );
-            min-height: 100vh;
+            height: auto;
+            min-height: 0;
           }
 
           .hero-card {
@@ -2277,11 +2305,8 @@ export default function ChimneyProductPage() {
         @media (max-width: 540px) {
           .whatsnew-page {
             --nav-offset: 78px;
-            height: calc(
-              var(--hero-steps, 3) * (100vh - var(--nav-offset)) *
-                var(--hero-scroll-factor, 0.45) + var(--nav-offset)
-            );
-            min-height: 100vh;
+            height: auto;
+            min-height: 0;
             padding-top: var(--nav-offset);
           }
 
