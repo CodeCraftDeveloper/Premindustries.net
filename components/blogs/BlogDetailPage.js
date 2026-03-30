@@ -109,10 +109,9 @@ export default function BlogDetailPage({ post }) {
                 Prem Industries India Limited at AAHAR 2026
               </h2>
               <p className="mt-4 max-w-4xl text-[16px] leading-[1.9] text-brand-slate">
-                This page captures Prem Industries India Limited&apos;s recent
-                event presence at AAHAR 2026 in New Delhi and provides official
-                context around the exhibition, venue, and relevance for
-                packaging and manufacturing conversations.
+                Prem Industries India Limited participated in AAHAR 2026 in New
+                Delhi and presented packaging and manufacturing capability at
+                the event.
               </p>
             </div>
 

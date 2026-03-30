@@ -1,7 +1,7 @@
 import KeywordLandingPage from "@/components/common/KeywordLandingPage";
 
 const oemHighlights = [
-  "OEM manufacturing company in India with multi-process production capability",
+  "OEM manufacturing support with multi-process production capability",
   "Contract manufacturing programs designed for high-volume and repeat consistency",
   "Engineering and production teams aligned for quality-first execution",
   "Single-partner model for component manufacturing and delivery coordination",

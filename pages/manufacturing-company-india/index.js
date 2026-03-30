@@ -35,7 +35,7 @@ export default function ManufacturingCompanyIndiaPage() {
     {
       href: "/industrial-solutions-india",
       label: "Industrial Solutions India",
-      description: "Explore OEM-focused industrial execution models",
+      description: "Explore our industrial execution approach",
     },
     {
       href: "/oem-manufacturing-india",
@@ -68,11 +68,11 @@ export default function ManufacturingCompanyIndiaPage() {
     <KeywordLandingPage
       eyebrow="Prem Industries India Limited"
       title="Industrial Manufacturing Company India"
-      intro="Prem Industries is an industrial manufacturing company in India delivering end-to-end production support for OEMs, industrial buyers, and high-volume product teams."
+      intro="Prem Industries delivers end-to-end production support for OEMs, industrial buyers, and high-volume product teams."
       highlights={capabilities}
       sections={[
         {
-          heading: "Why enterprises choose our manufacturing group",
+          heading: "Why enterprises choose Prem Industries",
           body: "As a multi-sector manufacturing company, we combine engineering, production, quality systems, and delivery coordination to support scalable product programs across India.",
         },
         {
@@ -80,7 +80,7 @@ export default function ManufacturingCompanyIndiaPage() {
           body: "Our manufacturing structure is designed to support sourcing teams that need consistent component quality, realistic production planning, and dependable dispatch execution across repeat cycles.",
         },
         {
-          heading: "A broader industrial capability under one group",
+          heading: "A broader industrial capability in one place",
           body: "From formed metal parts and injection moulded components to press-shop execution and customer-specific manufacturing support, our group model helps reduce vendor fragmentation for growing programs.",
         },
       ]}

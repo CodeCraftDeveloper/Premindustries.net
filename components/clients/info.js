@@ -250,9 +250,8 @@ export default function ClientPageContents() {
             <p className="mt-3.5 max-w-[700px] text-[12px] leading-[1.65] text-white/84 sm:mt-4 sm:text-[14px] sm:leading-[1.72] lg:text-[14.5px]">
               Prem Industries works with a broad B2B client base across
               packaging, repeat supply programs, industrial demand,
-              retail-linked operations, and OEM-facing execution. This page now
-              presents that network in the same industrial visual language used
-              across the rest of the site.
+              retail-linked operations, and OEM-facing execution. The client
+              network shown here is organized from the confirmed public roster.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-2.5 sm:mt-7 sm:gap-3">

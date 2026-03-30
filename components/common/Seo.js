@@ -218,7 +218,7 @@ export default function Seo({
     },
     image: absoluteUrl("/logo-main-desktop.png"),
     description:
-      "Industrial manufacturing company in India providing sheet metal fabrication, injection moulding, coil processing, and OEM manufacturing services.",
+      "Prem Industries India Limited provides sheet metal fabrication, injection moulding, coil processing, and OEM manufacturing services.",
     priceRange: "$$",
     openingHours: "Mo-Sa 09:00-18:00",
     geo: {

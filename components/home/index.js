@@ -40,7 +40,7 @@ export default function HomeTwoClient() {
         <AboutSection
           subhead="About"
           head="Prem Industries India Limited"
-          text1="Prem Industries India Limited is a manufacturing company in India serving OEMs, industrial buyers, and supply chain partners through sheet metal fabrication, steel processing, injection moulding, and packaging-linked support. Our facilities in Uttar Pradesh are built for repeatability, production discipline, and dependable delivery."
+          text1="Prem Industries India Limited supports OEMs, industrial buyers, and supply chain partners through sheet metal fabrication, steel processing, injection moulding, and packaging-linked support. Our facilities in Uttar Pradesh are built for repeatability, production discipline, and dependable delivery."
           text2="From engineering alignment and tooling support to production control and dispatch planning, every stage is managed with measurable quality systems and process visibility. We work with customers who need consistent output, practical lead times, and a long-term manufacturing partner."
           text3="Our focus is to manufacture reliable industrial products, reduce execution risk for customers, and strengthen supply chains with scalable, quality-driven production."
           btnText="read more"

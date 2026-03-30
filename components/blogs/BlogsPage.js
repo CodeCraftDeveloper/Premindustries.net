@@ -42,10 +42,9 @@ export default function BlogsPage() {
                 </h1>
                 <p className="mt-5 max-w-4xl text-[16px] leading-[1.9] text-brand-slate">
                   Explore recent exhibitions, event highlights, and business
-                  updates from Prem Industries India Limited. This page is
-                  designed as an editorial record of where we participate, what
-                  we present, and how our manufacturing and packaging journey
-                  connects with real industry conversations.
+                  updates from Prem Industries India Limited. The section
+                  brings together event participation, exhibition highlights,
+                  and official references linked to those updates.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2.5">
                   <EventMetaPill label="Industry Events" />
@@ -121,7 +120,7 @@ export default function BlogsPage() {
 
               <div className="mt-12 border-t border-[#e6ecf4] pt-8">
                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-brand-red">
-                  Coverage Focus
+                  What You&apos;ll Find
                 </p>
                 <div className="mt-5 grid max-w-4xl gap-5 md:grid-cols-3">
                   <article className="border-t border-[#e6ecf4] pt-5">
@@ -140,7 +139,7 @@ export default function BlogsPage() {
                     </h3>
                     <p className="mt-3 text-[14px] leading-[1.8] text-brand-slate">
                       Practical updates around packaging, manufacturing, buyer
-                      engagement, and execution relevance.
+                      engagement, and ongoing business activity.
                     </p>
                   </article>
 
@@ -149,8 +148,8 @@ export default function BlogsPage() {
                       Official references
                     </h3>
                     <p className="mt-3 text-[14px] leading-[1.8] text-brand-slate">
-                      Event pages, fact sheets, and source-backed context to
-                      keep each update credible and search-friendly.
+                      Event pages and fact sheets used to verify key event
+                      details.
                     </p>
                   </article>
                 </div>
