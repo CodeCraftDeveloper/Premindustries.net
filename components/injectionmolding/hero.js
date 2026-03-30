@@ -81,18 +81,33 @@ export default function InjectionHero() {
             aria-hidden="true"
           />
 
-          <div className="relative z-[3] flex w-[min(90%,680px)] max-w-[680px] flex-col items-start px-5 pt-12 pb-20 text-left text-white sm:px-8 md:px-12 lg:h-full lg:w-1/2 lg:max-w-none lg:justify-center lg:px-16 lg:py-0 xl:px-24 min-[1600px]:px-[132px] max-[1200px]:max-w-[600px] max-[900px]:w-[min(92%,640px)] max-[900px]:pt-11 max-[900px]:pb-[180px] max-[768px]:w-[min(96%,720px)] max-[768px]:max-w-full max-[768px]:px-4">
+          <div className="relative z-[3] flex w-[min(90%,680px)] max-w-[680px] flex-col items-start px-5 pt-14 pb-20 text-left text-white sm:px-8 md:px-12 lg:h-full lg:w-[58%] lg:max-w-none lg:justify-center lg:px-16 lg:pt-16 lg:pb-12 xl:w-[56%] xl:px-24 min-[1600px]:w-[60%] min-[1600px]:px-[132px] max-[1200px]:max-w-[600px] max-[900px]:w-[min(92%,640px)] max-[900px]:pt-11 max-[900px]:pb-[180px] max-[768px]:w-[min(96%,720px)] max-[768px]:max-w-full max-[768px]:px-4">
             <span className="inline-flex w-fit items-center rounded-full bg-white/18 px-[14px] py-[6px] text-[10px] font-semibold uppercase tracking-[0.14em] text-white sm:text-[12px] sm:tracking-[0.18em] lg:px-4 lg:py-[7px] lg:text-[12px] xl:px-[18px] xl:py-[8px] xl:text-[13px] min-[1600px]:text-[14px]">
-              Injection Moulding Manufacturer In India
+              Injection Moulding Solutions In India
             </span>
-            <h1 className="mt-3 mb-[10px] font-condensed font-[700] text-[clamp(24px,6vw,48px)] uppercase leading-[1.05] tracking-[0.06em] text-white [text-shadow:0_6px_18px_rgba(0,0,0,0.45)] lg:mt-4 lg:mb-4 lg:max-w-full lg:text-[clamp(50px,3.9vw,68px)] xl:text-[clamp(58px,4.1vw,80px)] min-[1600px]:text-[clamp(68px,4.3vw,92px)] max-[768px]:max-w-[94vw] max-[768px]:text-[clamp(22px,9.2vw,40px)] max-[768px]:tracking-[0.04em]">
-              Precision Injection Moulding For OEM And Industrial Programs
+            <h1 className="mt-3 mb-3 font-display text-[clamp(24px,6vw,48px)] font-extrabold uppercase leading-[0.94] tracking-[-0.035em] text-white [text-shadow:0_6px_18px_rgba(0,0,0,0.45)] lg:mt-4 lg:mb-4 lg:max-w-[16ch] lg:text-[clamp(38px,3.15vw,54px)] xl:max-w-[17ch] xl:text-[clamp(42px,3.35vw,60px)] 2xl:max-w-[18ch] 2xl:text-[clamp(50px,3.6vw,72px)] max-[768px]:max-w-[94vw] max-[768px]:text-[clamp(22px,9vw,38px)] max-[768px]:tracking-[-0.03em]">
+              <span className="block lg:hidden">
+                Precision Injection Moulding for OEM and Industrial Programs
+              </span>
+
+              <span className="hidden lg:block 2xl:hidden">
+                <span className="block">Precision Injection</span>
+                <span className="block">Moulding for OEM</span>
+                <span className="block">and Industrial</span>
+                <span className="block">Programs</span>
+              </span>
+
+              <span className="hidden 2xl:block">
+                <span className="block">Precision Injection</span>
+                <span className="block">Moulding for OEM</span>
+                <span className="block">and Industrial Programs</span>
+              </span>
             </h1>
-            <p className="mb-[18px] max-w-[620px] font-roboto text-[14px] leading-[1.6] tracking-[0.01em] text-white/90 [text-shadow:0_4px_12px_rgba(0,0,0,0.35)] sm:text-[15px] lg:mb-7 lg:max-w-full lg:text-[17px] lg:leading-[1.65] xl:text-[19px] xl:leading-[1.62] min-[1600px]:text-[22px] min-[1600px]:leading-[1.58] max-[768px]:max-w-[94vw]">
-              Prem Industries operates a state-of-the-art injection moulding
-              division with machine capacity from 160 to 3000 tons, supporting
-              OEM plastic components, consumer durables, industrial assemblies,
-              and scale-ready production programs.
+            <p className="mb-[18px] max-w-[620px] font-roboto text-[14px] leading-[1.6] tracking-[0.01em] text-white/90 [text-shadow:0_4px_12px_rgba(0,0,0,0.35)] sm:text-[15px] lg:mb-7 lg:max-w-[34rem] lg:text-[16px] lg:leading-[1.6] xl:text-[18px] xl:leading-[1.58] min-[1600px]:text-[20px] min-[1600px]:leading-[1.56] max-[768px]:max-w-[94vw]">
+              Prem Industries supports OEM plastic components, consumer
+              durables, and industrial assemblies with injection moulding
+              capacity from 160 to 3000 tons, backed by a production setup
+              built for repeatability, scale, and delivery confidence.
             </p>
             <Link href="/contact" className={heroCtaClass}>
               Request An Injection Quote
@@ -208,15 +223,15 @@ export default function InjectionHero() {
             </div>
 
             <div className="mb-[18px] flex flex-1 flex-col gap-1 max-[768px]:items-center max-[768px]:text-center">
-                <span className="text-[15px] font-semibold uppercase tracking-[0.04em] text-[#0b3378] sm:text-[18px]">
+              <span className="text-[15px] font-semibold uppercase tracking-[0.04em] text-[#0b3378] sm:text-[18px]">
                 Expanding Into
-                </span>
+              </span>
               <span className="text-[18px] font-extrabold uppercase tracking-[0.02em] text-[#0b3378] sm:text-[22px]">
                 Injection Moulding
               </span>
-                <span className="text-[15px] font-semibold uppercase leading-[1.4] tracking-[0.04em] text-[#0b3378] sm:text-[18px]">
-                to expand and reinforce our industrial manufacturing capability
-                </span>
+              <span className="text-[15px] font-semibold uppercase leading-[1.4] tracking-[0.04em] text-[#0b3378] sm:text-[18px]">
+                to strengthen our industrial manufacturing capability
+              </span>
             </div>
 
             <div className="mb-[18px] grid gap-[10px] text-[14px] leading-[1.6] text-[#1c2d57]">
@@ -227,8 +242,8 @@ export default function InjectionHero() {
                 talent for large-scale manufacturing.
               </p>
               <p className="m-0">
-                Our vision is clear: to become India&apos;s trusted partner for
-                precision plastic moulding across diverse sectors.
+                Our vision is to become a trusted manufacturing partner for
+                precision plastic moulding across diverse industrial sectors.
               </p>
             </div>
 

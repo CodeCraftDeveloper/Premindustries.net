@@ -1,6 +1,7 @@
 // components/HomeTwoClient.js
 "use client";
 
+import PageLogoIntroGate from "@/components/common/PageLogoIntroGate";
 import EntryHeroSection from "./EntryHeroSection";
 import AboutSection from "./AboutSection";
 import WorkSectionHead from "./WorkSectionHead";
@@ -20,7 +21,6 @@ import RecentBlogsSection from "@/components/blogs/RecentBlogsSection";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
-// import { useEffect, useState } from "react";
 
 export default function HomeTwoClient() {
   // Popup logic (uncomment if you decide to use it)
@@ -32,6 +32,8 @@ export default function HomeTwoClient() {
   // };
   return (
     <div className="home-typography">
+      <PageLogoIntroGate storageKey="prem-logo-intro-home" />
+
       <section>
         <HeroSection />
       </section>

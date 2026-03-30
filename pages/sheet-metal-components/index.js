@@ -1,4 +1,5 @@
 import React from "react";
+import PageLogoIntroGate from "@/components/common/PageLogoIntroGate";
 import Hero from "@/components/sheetmetal/hero";
 import AboutSection from "@/components/sheetmetal/about";
 import FabricationProcessSection from "@/components/sheetmetal/fabrication";
@@ -41,6 +42,8 @@ const sheetMetalFaqs = [
 export default function Index() {
   return (
     <>
+      <PageLogoIntroGate storageKey="prem-logo-intro-sheet-metal" />
+
       <div className="intro-shell">
         <SectionReveal>
           <Hero />
