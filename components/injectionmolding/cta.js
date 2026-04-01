@@ -20,11 +20,11 @@ export default function InjectionCtaSection() {
           {/* <div className="cta-stripes" aria-hidden="true" /> */}
           <h2>Ready to Start Your Next Project?</h2>
           <p>
-            Let&apos;s talk about how Prem Industries can bring precision,
-            reliability, and innovation to your manufacturing needs. Whether you
-            need consumer durables, e-commerce solutions, or custom components
-            tailored to your specifications, we have the expertise and
-            technology to make it happen.
+            Let&apos;s talk about how Prem Industries India Limited can bring
+            precision, reliability, and innovation to your manufacturing needs.
+            Whether you need consumer durables, e-commerce solutions, or custom
+            components tailored to your specifications, we have the expertise
+            and technology to make it happen.
           </p>
           <div className="cta-buttons">
             <Link href="/contact" className="cta-button ghost">

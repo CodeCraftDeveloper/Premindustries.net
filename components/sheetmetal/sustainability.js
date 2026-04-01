@@ -64,7 +64,7 @@ export default function SustainabilitySection() {
             <div className="h-[360px] w-full max-w-[520px] overflow-hidden shadow-[0_12px_30px_rgba(0,0,0,0.12)] sm:h-[420px] md:h-[460px] lg:h-[500px] lg:max-w-[560px] xl:h-[560px] xl:max-w-[640px] 2xl:h-[620px] 2xl:max-w-[720px]">
               <Image
                 src="/sheetmetal/sustainability.jpg"
-                alt="Sustainability at Prem Industries"
+                alt="Sustainability at Prem Industries India Limited"
                 width={600}
                 height={700}
                 className="h-full w-full object-cover"

@@ -35,12 +35,12 @@ export default function EntryHeroSection() {
       <div className="mx-auto w-full max-w-[1380px] px-[14px] sm:px-[18px] lg:px-6">
         <div className="hero-shell">
           <div className="hero-left hero-text">
-            <p className="hero-kicker">ABOUT PREM INDUSTRIES</p>
+            <p className="hero-kicker">ABOUT PREM INDUSTRIES INDIA LIMITED</p>
             <h1>World&apos;s Leading Contract Logistics Provider.</h1>
             <p className="hero-copy">
-              Prem Industries delivers end-to-end logistics and manufacturing
-              support with dependable timelines and quality-controlled
-              execution.
+              Prem Industries India Limited delivers end-to-end logistics and
+              manufacturing support with dependable timelines and
+              quality-controlled execution.
             </p>
 
             <ul className="hero-points" aria-label="Core strengths">
@@ -74,7 +74,7 @@ export default function EntryHeroSection() {
             <div className="hero-image-wrap">
               <Image
                 src="/sheetmetal/shearing-1.jpg"
-                alt="Prem Industries warehouse operations"
+                alt="Prem Industries India Limited warehouse operations"
                 className="hero-image"
                 width={600}
                 height={400}

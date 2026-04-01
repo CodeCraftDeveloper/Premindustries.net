@@ -39,7 +39,7 @@ export default function Innovation() {
           >
             <Image
               src="/home/Innovation.jpg"
-              alt="Innovation at Prem Industries"
+              alt="Innovation at Prem Industries India Limited manufacturing facility"
               fill
               priority={false}
               className="object-cover"

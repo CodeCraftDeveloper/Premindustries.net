@@ -4,7 +4,7 @@ import { SITE_URL, getSitemapEntries } from "@/lib/seo/siteRoutes";
 const PAGE_IMAGES = {
   "/": {
     loc: `${SITE_URL}/home/u-copy.png`,
-    title: "Prem Industries Manufacturing Facility",
+    title: "Prem Industries India Limited Manufacturing Facility",
   },
   "/sheet-metal-components": {
     loc: `${SITE_URL}/sheetmetal/press-new.jpg`,
@@ -16,7 +16,7 @@ const PAGE_IMAGES = {
   },
   "/press-shop": {
     loc: `${SITE_URL}/sheetmetal/press-new.jpg`,
-    title: "Press Shop Services - Prem Industries",
+    title: "Press Shop Services - Prem Industries India Limited",
   },
   "/ctl-machine": {
     loc: `${SITE_URL}/sheetmetal/ctl-1.jpg`,

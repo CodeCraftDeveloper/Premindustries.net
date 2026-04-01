@@ -69,7 +69,7 @@ const tabs = [
     mobileHeading: "Precision sheet metal solutions built to scale.",
     desktopTitle: ["Precision sheet metal", "solutions built to scale."],
     description:
-      "Prem Industries delivers high-precision sheet metal components for automotive, appliance, industrial, and infrastructure applications. Backed by modern fabrication, press shop capability, and strict quality controls, we manufacture durable parts with consistency at scale.",
+      "Prem Industries India Limited delivers high-precision sheet metal components for automotive, appliance, industrial, and infrastructure applications. Backed by modern fabrication, press shop capability, and strict quality controls, we manufacture durable parts with consistency at scale.",
     image: "/home/sector-steelsector.jpg",
     href: "/sheet-metal-components",
   },
@@ -146,9 +146,7 @@ export default function ProjectsTab() {
               variants={revealLeft}
               {...getAosProps("left", 120)}
             >
-              <h3
-                className="sector-title font-display max-w-[720px] text-[clamp(1.9rem,7vw,2.75rem)] font-semibold leading-[1.05] tracking-normal text-brand-navy sm:text-[3rem] sm:leading-[1.06] lg:max-w-[1020px] xl:max-w-[1120px]"
-              >
+              <h3 className="sector-title font-display max-w-[720px] text-[clamp(1.9rem,7vw,2.75rem)] font-semibold leading-[1.05] tracking-normal text-brand-navy sm:text-[3rem] sm:leading-[1.06] lg:max-w-[1020px] xl:max-w-[1120px]">
                 <span className="block md:hidden">{current.mobileHeading}</span>
                 <span className="hidden md:block">
                   {current.desktopTitle.map((line) => (

@@ -298,11 +298,11 @@ const Header = () => {
             href="/"
             scroll
             className="site-header-logo relative flex shrink-0 items-center py-1.5 lg:justify-self-center"
-            aria-label="Prem Industries home"
+            aria-label="Prem Industries India Limited home"
           >
             <Image
               src="/logo.png"
-              alt="Prem Industries"
+              alt="Prem Industries India Limited"
               width={100}
               height={70}
               className="h-auto w-[52px] sm:w-[60px] lg:w-[74px] xl:w-[84px]"

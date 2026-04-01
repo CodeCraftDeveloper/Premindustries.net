@@ -1,4 +1,4 @@
-# Performance Audit Report - Prem Industries
+# Performance Audit Report - Prem Industries India Limited
 
 **Date:** March 21, 2026  
 **Lighthouse Score:** 48/100 → Target: 75+ ✅
@@ -206,7 +206,7 @@ You have:
 **Fix:** Use one SVG logo for all and resize with CSS:
 
 ```javascript
-<Image src="/logo.svg" alt="Prem Industries" width={w} height={h} priority />
+<Image src="/logo.svg" alt="Prem Industries India Limited" width={w} height={h} priority />
 ```
 
 **Expected Saving:** 150-200 KiB total

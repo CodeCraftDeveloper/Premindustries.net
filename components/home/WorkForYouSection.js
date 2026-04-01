@@ -68,9 +68,10 @@ export default function WorkForYouSection() {
             variants={revealRight}
             {...getAosProps("right", 120)}
           >
-            Prem Industries combines decades of operational experience with
-            modern production systems to support OEM sourcing, industrial
-            manufacturing, and supply continuity for growing businesses.
+            Prem Industries India Limited combines decades of operational
+            experience with modern production systems to support OEM sourcing,
+            industrial manufacturing, and supply continuity for growing
+            businesses.
           </motion.p>
         </div>
 
@@ -101,7 +102,7 @@ export default function WorkForYouSection() {
             ) : (
               <Image
                 src="/home/hero-packaging.jpg"
-                alt="Prem Industries packaging operations"
+                alt="Prem Industries India Limited packaging operations"
                 fill
                 priority={false}
                 sizes="(max-width: 1023px) 100vw, 70vw"
@@ -117,7 +118,7 @@ export default function WorkForYouSection() {
               {...getAosProps("right", 120)}
             >
               <h3 className="m-0 text-[20px] font-bold text-white">
-                Prem Industries
+                Prem Industries India Limited
               </h3>
               <p className="mb-[10px] mt-2 text-[12px] leading-[1.5] text-white/90">
                 Discuss your product requirement, production volume, and

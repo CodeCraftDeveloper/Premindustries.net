@@ -8,7 +8,7 @@ const ImageStatementSection = ({
   image,
   imagePosition = "left",
   eyebrow = "Our Direction",
-  accentLabel = "Prem Industries",
+  accentLabel = "Prem Industries India Limited`",
 }) => {
   const imageFirst = imagePosition === "left";
 
@@ -69,7 +69,10 @@ const ImageStatementSection = ({
                   {title}
                 </h2>
 
-                <div className="mt-5 h-[3px] w-24 bg-brand-red" aria-hidden="true" />
+                <div
+                  className="mt-5 h-[3px] w-24 bg-brand-red"
+                  aria-hidden="true"
+                />
 
                 <p className="mt-6 max-w-[780px] text-[16px] leading-[1.9] text-[#45556f] sm:text-[17px]">
                   {body}

@@ -53,10 +53,11 @@ export default function CareerPage() {
               Careers for people who want to build disciplined industrial work.
             </h1>
             <p className="mt-5 max-w-3xl text-[15px] leading-[1.9] text-brand-slate sm:text-[16px]">
-              Prem Industries is growing across manufacturing, OEM support,
-              quality systems, and customer-led execution. We look for people
-              who value accountability, operational clarity, and long-term
-              contribution inside a process-oriented industrial business.
+              Prem Industries India Limited is growing across manufacturing, OEM
+              support, quality systems, and customer-led execution. We look for
+              people who value accountability, operational clarity, and
+              long-term contribution inside a process-oriented industrial
+              business.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -115,7 +116,8 @@ export default function CareerPage() {
               Where You Can Contribute
             </span>
             <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.2rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.03em] text-brand-navy">
-              Core career paths across operations, quality, engineering, and growth.
+              Core career paths across operations, quality, engineering, and
+              growth.
             </h2>
           </div>
 
@@ -185,7 +187,8 @@ export default function CareerPage() {
             </h2>
             <p className="mt-4 max-w-3xl text-[15px] leading-[1.85] text-white/84">
               Share your resume, role interest, and relevant experience with our
-              team at <span className="font-semibold">info@premindustries.in</span>.
+              team at{" "}
+              <span className="font-semibold">info@premindustries.in</span>.
             </p>
           </div>
 

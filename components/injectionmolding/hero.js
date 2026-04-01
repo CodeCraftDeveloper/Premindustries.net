@@ -104,10 +104,10 @@ export default function InjectionHero() {
               </span>
             </h1>
             <p className="mb-[18px] max-w-[620px] font-roboto text-[14px] leading-[1.6] tracking-[0.01em] text-white/90 [text-shadow:0_4px_12px_rgba(0,0,0,0.35)] sm:text-[15px] lg:mb-7 lg:max-w-[34rem] lg:text-[16px] lg:leading-[1.6] xl:text-[18px] xl:leading-[1.58] min-[1600px]:text-[20px] min-[1600px]:leading-[1.56] max-[768px]:max-w-[94vw]">
-              Prem Industries supports OEM plastic components, consumer
-              durables, and industrial assemblies with injection moulding
-              capacity from 160 to 3000 tons, backed by a production setup
-              built for repeatability, scale, and delivery confidence.
+              Prem Industries India Limited supports OEM plastic components,
+              consumer durables, and industrial assemblies with injection
+              moulding capacity from 160 to 3000 tons, backed by a production
+              setup built for repeatability, scale, and delivery confidence.
             </p>
             <Link href="/contact" className={heroCtaClass}>
               Request An Injection Quote
@@ -175,12 +175,13 @@ export default function InjectionHero() {
                   Business Experience
                 </span>
                 <p className="mb-6 max-w-full font-roboto text-[14px] font-light leading-[1.8] text-[rgba(235,245,255,0.9)] [text-align:justify] [text-justify:inter-word] lg:text-[15px] max-[900px]:max-w-none max-[900px]:text-left">
-                  Prem Industries brings decades of manufacturing experience to
-                  injection moulding, combining established execution discipline
-                  with modern plastic processing capability. Our goal is to help
-                  customers source molded components from a partner that
-                  understands quality consistency, production planning, and
-                  long-term supply reliability.
+                  Prem Industries India Limited brings decades of manufacturing
+                  experience to injection moulding, combining established
+                  execution discipline with modern plastic processing
+                  capability. Our goal is to help customers source molded
+                  components from a partner that understands quality
+                  consistency, production planning, and long-term supply
+                  reliability.
                 </p>
                 <Link href="/about" className={experienceCtaClass}>
                   Learn More About Us

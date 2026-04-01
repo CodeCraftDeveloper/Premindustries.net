@@ -85,13 +85,13 @@ export default function CoolersProductPage() {
   return (
     <>
       <Head>
-        <title>Coolers | Prem Industries</title>
+        <title>Coolers | Prem Industries India Limited</title>
         <meta
           name="description"
           content="Precision injection moulded cooler components built for scale, with advanced tonnage infrastructure and quality traceability."
         />
         <meta name="robots" content="noindex,follow" />
-        <meta property="og:title" content="Coolers | Prem Industries" />
+        <meta property="og:title" content="Coolers | Prem Industries India Limited" />
         <meta
           property="og:description"
           content="Complete cooler component manufacturing under one roof with advanced injection moulding infrastructure."

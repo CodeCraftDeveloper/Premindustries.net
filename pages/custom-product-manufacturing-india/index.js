@@ -5,7 +5,7 @@ export default function CustomProductManufacturingIndiaPage() {
     <KeywordLandingPage
       eyebrow="Industrial OEM Vertical"
       title="Custom Product Manufacturing India"
-      intro="Prem Industries supports custom product manufacturing in India with production planning models designed for repeatability, quality confidence, and schedule control."
+      intro="Prem Industries India Limited supports custom product manufacturing in India with production planning models designed for repeatability, quality confidence, and schedule control."
       sections={[
         {
           heading: "Custom requirements, industrial discipline",

@@ -47,7 +47,8 @@ export default function ExecutionProcessSection() {
             DELIVERY MODEL
           </p>
           <h2 className="mt-[10px] text-[clamp(24px,2.5vw,34px)] leading-[1.2] text-[#161616]">
-            How Prem Industries manages industrial programs with confidence.
+            How Prem Industries India Limited manages industrial programs with
+            confidence.
           </h2>
         </motion.div>
 
@@ -64,7 +65,10 @@ export default function ExecutionProcessSection() {
               key={step.id}
               className="rounded-[8px] border border-[#ecebe8] bg-white p-4"
               variants={revealCard}
-              {...getAosProps(index % 2 === 0 ? "right" : "left", 80 + index * 60)}
+              {...getAosProps(
+                index % 2 === 0 ? "right" : "left",
+                80 + index * 60,
+              )}
             >
               <span className="inline-flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#c5302c] text-[12px] font-bold text-white">
                 {step.id}

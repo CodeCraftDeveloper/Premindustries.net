@@ -5,7 +5,7 @@ export default function ContractManufacturingIndiaPage() {
     <KeywordLandingPage
       eyebrow="Industrial OEM Vertical"
       title="Contract Manufacturing India"
-      intro="Prem Industries offers contract manufacturing in India for enterprises that need dependable production support, quality discipline, and scalable output planning."
+      intro="Prem Industries India Limited offers contract manufacturing in India for enterprises that need dependable production support, quality discipline, and scalable output planning."
       sections={[
         {
           heading: "Structured contract execution",

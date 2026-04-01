@@ -28,7 +28,8 @@ const injectionFaqs = [
       "Our teams follow setup discipline, in-process verification, and documented quality checkpoints to maintain dimensional and finish consistency across batches.",
   },
   {
-    question: "Can Prem Industries support production scale-up requirements?",
+    question:
+      "Can Prem Industries India Limited support production scale-up requirements?",
     answer:
       "Yes. We are equipped to support ramp-ups through structured planning, machine capacity alignment, and delivery-focused execution for ongoing customer programs.",
   },

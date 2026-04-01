@@ -32,7 +32,7 @@ const Keypoints = () => {
             Core Strengths
           </span>
           <h2 className="mt-4 font-display text-[clamp(2rem,3.8vw,3.15rem)] font-black uppercase leading-[0.96] tracking-[-0.03em] text-brand-navy">
-            What Sets Prem Industries Apart
+            What Sets Prem Industries India Limited Apart
           </h2>
         </div>
 
@@ -49,7 +49,12 @@ const Keypoints = () => {
 
               <div className="flex items-center gap-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-[18px] bg-brand-surface shadow-[inset_0_0_0_1px_rgba(20,37,76,0.06)]">
-                  <Image src={item.icon} alt={item.title} height={48} width={48} />
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    height={48}
+                    width={48}
+                  />
                 </div>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
                   0{index + 1}

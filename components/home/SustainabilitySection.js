@@ -45,13 +45,13 @@ export default function Sustainability() {
             </h2>
 
             <p className="mt-4 text-[16.5px] leading-relaxed text-gray-600 xl:text-[17px] 2xl:text-[18px]">
-              Sustainability at Prem Industries is built around responsible
-              manufacturing, material efficiency, and long-term operational
-              discipline. We work to reduce waste, improve resource use, and
-              support eco-conscious product development wherever practical
-              across packaging, plastics, and metal-based programs. Our goal is
-              to deliver reliable industrial output while steadily improving the
-              environmental footprint of our operations.
+              Sustainability at Prem Industries India Limited is built around
+              responsible manufacturing, material efficiency, and long-term
+              operational discipline. We work to reduce waste, improve resource
+              use, and support eco-conscious product development wherever
+              practical across packaging, plastics, and metal-based programs.
+              Our goal is to deliver reliable industrial output while steadily
+              improving the environmental footprint of our operations.
             </p>
           </motion.div>
 

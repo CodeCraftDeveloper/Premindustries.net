@@ -128,7 +128,7 @@ const PlantsMap = ({ plants }) => {
       ref={mapRef}
       className="plants-map h-[220px] sm:h-[220px] lg:h-[220px]"
       role="img"
-      aria-label="Prem Industries plant locations map"
+      aria-label="Prem Industries India Limited plant locations map"
     />
   );
 };

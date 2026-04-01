@@ -5,7 +5,7 @@ export default function ThirdPartyManufacturingIndiaPage() {
     <KeywordLandingPage
       eyebrow="Industrial OEM Vertical"
       title="Third Party Manufacturing India"
-      intro="Third party manufacturing support in India from Prem Industries for brands seeking a reliable production partner with scalable execution capability and process visibility."
+      intro="Third party manufacturing support in India from Prem Industries India Limited for brands seeking a reliable production partner with scalable execution capability and process visibility."
       sections={[
         {
           heading: "Reliable outsourcing support",

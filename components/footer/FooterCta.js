@@ -76,7 +76,7 @@ const socialLinks = [
     external: true,
   },
   {
-    label: "Prem Industries LinkedIn",
+    label: "Prem Industries India Limited LinkedIn",
     href: "https://www.linkedin.com/company/prem-industries-india/about/?viewAsMember=true",
     Icon: LinkedInIcon,
     external: true,
@@ -132,7 +132,7 @@ const FooterCta = () => {
           >
             <Image
               src="/logo-white.png"
-              alt="Prem Industries logo"
+              alt="Prem Industries India Limited logo"
               width={140}
               height={140}
               className="w-[74px] drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)] sm:w-[88px] lg:w-[120px]"

@@ -12,7 +12,7 @@ import FaqBlock from "@/components/common/FaqBlock";
 
 const sheetMetalFaqs = [
   {
-    question: "What sheet metal services does Prem Industries provide?",
+    question: "What sheet metal services does Prem Industries India Limited provide?",
     answer:
       "We support integrated sheet metal workflows including fabrication, forming, infrastructure-backed production, and quality-controlled component dispatch for industrial applications.",
   },

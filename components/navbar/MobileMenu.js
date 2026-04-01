@@ -134,7 +134,7 @@ const MobileMenu = ({ mobileMenu, handleMobileMenu, closeMobileMenu }) => {
           <div className="flex items-center rounded-xl bg-white px-3 py-2">
             <Image
               src="/logo.png"
-              alt="Prem Industries"
+              alt="Prem Industries India Limited"
               width={100}
               height={70}
               className="h-auto w-[84px]"

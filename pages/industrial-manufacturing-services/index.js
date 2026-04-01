@@ -5,7 +5,7 @@ export default function IndustrialManufacturingServicesPage() {
     <KeywordLandingPage
       eyebrow="Industrial OEM Vertical"
       title="Industrial Manufacturing Services"
-      intro="Industrial manufacturing services from Prem Industries for OEM and B2B brands that need stable production systems, quality control, and delivery-focused execution."
+      intro="Industrial manufacturing services from Prem Industries India Limited for OEM and B2B brands that need stable production systems, quality control, and delivery-focused execution."
       sections={[
         {
           heading: "Engineering to production continuity",

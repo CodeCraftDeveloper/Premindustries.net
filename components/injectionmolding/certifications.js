@@ -52,7 +52,7 @@ export default function CertificationsSection({ bgColor = "#14264f" }) {
           to continuous improvement. These certifications aren&apos;t just
           badges&mdash;they&apos;re promises we make to our clients about the
           reliability and excellence you can expect from every partnership with
-          Prem Industries.
+          Prem Industries India Limited.
         </p>
       </div>
 

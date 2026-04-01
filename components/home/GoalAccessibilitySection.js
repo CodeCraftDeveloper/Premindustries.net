@@ -48,12 +48,12 @@ export default function GoalAccessibilitySection() {
             <p className="kicker">WHO WE ARE</p>
             <h2>Engineering Precision. Delivering Excellence.</h2>
             <p className="copy">
-              Prem Industries is committed to delivering high-quality sheet
-              metal components and precision-engineered solutions for
-              automotive, industrial, and appliance sectors. Through advanced
-              manufacturing, disciplined execution, and customer-focused
-              innovation, we ensure reliability, efficiency, and long-term value
-              in every project.
+              Prem Industries India Limited is committed to delivering
+              high-quality sheet metal components and precision-engineered
+              solutions for automotive, industrial, and appliance sectors.
+              Through advanced manufacturing, disciplined execution, and
+              customer-focused innovation, we ensure reliability, efficiency,
+              and long-term value in every project.
             </p>
 
             <div className="points">

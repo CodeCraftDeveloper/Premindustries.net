@@ -50,7 +50,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/home/u-copy.png"
-          alt="Prem Industries facility"
+          alt="Prem Industries India Limited facility"
           fill
           priority
           fetchPriority="high"
@@ -75,8 +75,9 @@ export default function HeroSection() {
                 fontWeight: 800,
               }}
             >
+              <span className="block">Prem Industries India Limited</span>
               <span className="block">
-                Prem Industries Group Built for{" "}
+                Group Built for{" "}
                 <span className="text-[#ff4d4d] [text-shadow:0_4px_20px_rgba(255,77,77,0.4)]">
                   Scale
                 </span>
@@ -86,9 +87,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-6 w-full max-w-none text-[clamp(17px,2vw,22px)] font-normal leading-[1.42] text-white/85 [text-shadow:0_2px_16px_rgba(0,0,0,0.22)] sm:mt-7 [@media(min-width:1024px)_and_(max-height:900px)]:mt-4 [@media(min-width:1024px)_and_(max-height:900px)]:text-[clamp(15px,1.5vw,18px)] [@media(min-width:1024px)_and_(max-height:900px)]:leading-[1.34] [@media(min-width:1024px)_and_(max-height:780px)]:mt-3 [@media(min-width:1024px)_and_(max-height:780px)]:text-[14px] [@media(min-width:1024px)_and_(max-height:780px)]:leading-[1.3]">
-              Precision manufacturing systems across packaging, sheet metal,
-              and injection moulding designed for output stability,
-              traceability, and long-term operational confidence.
+              Precision manufacturing systems across packaging, sheet metal, and
+              injection moulding designed for output stability, traceability,
+              and long-term operational confidence.
             </p>
 
             <div className="mt-9 sm:mt-10 [@media(min-width:1024px)_and_(max-height:900px)]:mt-[1.1rem] [@media(min-width:1024px)_and_(max-height:780px)]:mt-[0.9rem]">

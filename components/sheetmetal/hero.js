@@ -10,7 +10,7 @@ import { Navigation } from "swiper/modules";
 const featureCards = [
   {
     title: "Precision Sheet Metal Engineering",
-    text: "Prem Industries delivers precision sheet metal manufacturing backed by engineering support, process control, and production infrastructure built for repeat quality.",
+    text: "Prem Industries India Limited delivers precision sheet metal manufacturing backed by engineering support, process control, and production infrastructure built for repeat quality.",
     image: "/sheetmetal/press-new.jpg",
   },
   {
@@ -204,7 +204,7 @@ export default function HeroTwo() {
           ) : (
             <Image
               src="/sheetmetal/press-new.jpg"
-              alt="Sheet metal manufacturing at Prem Industries"
+              alt="Sheet metal manufacturing at Prem Industries India Limited"
               fill
               priority
               sizes="100vw"
@@ -225,9 +225,9 @@ export default function HeroTwo() {
             </h1>
 
             <p className="hero-lead">
-              Prem Industries runs an integrated sheet metal and components
-              division built for precision engineering, process discipline, and
-              reliable OEM supply.
+              Prem Industries India Limited runs an integrated sheet metal and
+              components division built for precision engineering, process
+              discipline, and reliable OEM supply.
             </p>
             <p className="hero-sublead">
               With integrated processing from steel coil to finished component,

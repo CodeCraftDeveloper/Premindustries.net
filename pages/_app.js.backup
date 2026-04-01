@@ -326,16 +326,16 @@ const SEO_BY_PATH = {
   "/": {
     title: "Manufacturing Company India | Prem Industries India Limited",
     description:
-      "Prem Industries supports industrial customers with manufacturing services, OEM production support, and scalable execution across B2B sectors.",
+      "Prem Industries India Limited supports industrial customers with manufacturing services, OEM production support, and scalable execution across B2B sectors.",
     keywords: homepageKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/about": {
-    title: "About Prem Industries | Industrial Company India",
+    title: "About Prem Industries India Limited | Industrial Company India",
     description:
       "Learn about Prem Industries India Limited, our manufacturing capabilities, and the values that guide our work.",
     keywords:
-      "Prem Industries, manufacturing capabilities, industrial engineering, company overview",
+      "Prem Industries India Limited, manufacturing capabilities, industrial engineering, company overview",
     image: "/about/banner.jpg",
   },
   "/clients": {
@@ -343,7 +343,7 @@ const SEO_BY_PATH = {
     description:
       "Discover the sectors and clients served by Prem Industries India Limited across packaging, steel, retail, and construction domains.",
     keywords:
-      "Prem Industries clients, industrial clients India, sector partnerships",
+      "Prem Industries India Limited clients, industrial clients India, sector partnerships",
     image: "/clients/banner.jpg",
   },
   "/blogs": {
@@ -351,7 +351,7 @@ const SEO_BY_PATH = {
     description:
       "Read recent blogs, exhibition updates, and event highlights from Prem Industries India Limited, including our recent AAHAR 2026 update.",
     keywords:
-      "Prem Industries blogs, industrial events India, manufacturing event updates, AAHAR 2026 Prem Industries",
+      "Prem Industries India Limited blogs, industrial events India, manufacturing event updates, AAHAR 2026 Prem Industries India Limited",
     image: "/aahar/AaharBanner2026.jpeg",
   },
   "/contact": {
@@ -359,7 +359,7 @@ const SEO_BY_PATH = {
     description:
       "Contact Prem Industries India Limited for sheet metal, steel, injection moulding, and industrial manufacturing requirements.",
     keywords:
-      "contact Prem Industries, industrial manufacturing inquiry, sheet metal supplier India",
+      "contact Prem Industries India Limited, industrial manufacturing inquiry, sheet metal supplier India",
     image: "/contact/banner.jpg",
   },
   "/career": {
@@ -367,21 +367,21 @@ const SEO_BY_PATH = {
     description:
       "Explore careers at Prem Industries India Limited across manufacturing, operations, quality, engineering, planning, and industrial business functions.",
     keywords:
-      "Prem Industries careers, manufacturing jobs India, industrial company careers, operations jobs India",
+      "Prem Industries India Limited careers, manufacturing jobs India, industrial company careers, operations jobs India",
     image: "/about/banner.jpg",
   },
   "/privacy-policy": {
     title: "Privacy Policy | Prem Industries India Limited",
     description:
       "Read the privacy policy of Prem Industries India Limited to understand how we collect, use, and protect your information.",
-    keywords: "privacy policy, Prem Industries privacy",
+    keywords: "privacy policy, Prem Industries India Limited privacy",
     image: "/privacy/banner.jpg",
   },
   "/terms-and-conditions": {
     title: "Terms and Conditions | Prem Industries India Limited",
     description:
       "Read the terms and conditions governing the use of Prem Industries India Limited services, products, and website.",
-    keywords: "terms and conditions, Prem Industries terms",
+    keywords: "terms and conditions, Prem Industries India Limited terms",
     image: "/terms-and-conditions/banner.jpg",
   },
   "/sheet-metal-components": {
@@ -393,70 +393,70 @@ const SEO_BY_PATH = {
     image: "/sheetmetal/press-new.jpg",
   },
   "/sheet-metal-fabrication-india": {
-    title: "Sheet Metal Fabrication India | Prem Industries",
+    title: "Sheet Metal Fabrication India | Prem Industries India Limited",
     description:
       "Sheet metal fabrication in India for OEM and industrial buyers requiring repeatable quality, scalable throughput, and reliable production support.",
     keywords: sheetMetalFabricationIndiaKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/sheet-metal-manufacturer-india": {
-    title: "Sheet Metal Manufacturer India | Prem Industries",
+    title: "Sheet Metal Manufacturer India | Prem Industries India Limited",
     description:
       "Sheet metal manufacturer in India delivering precision parts and dependable output for industrial and OEM manufacturing programs.",
     keywords: sheetMetalManufacturerIndiaKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/custom-sheet-metal-fabrication": {
-    title: "Custom Sheet Metal Fabrication | Prem Industries",
+    title: "Custom Sheet Metal Fabrication | Prem Industries India Limited",
     description:
       "Custom sheet metal fabrication for customer-specific parts with controlled workflows, quality checkpoints, and scalable dispatch support.",
     keywords: customSheetMetalFabricationKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/precision-sheet-metal-parts": {
-    title: "Precision Sheet Metal Parts | Prem Industries",
+    title: "Precision Sheet Metal Parts | Prem Industries India Limited",
     description:
       "Precision sheet metal parts manufacturing for industrial applications where dimensional consistency and repeatability are critical.",
     keywords: precisionSheetMetalPartsKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/laser-cutting-services-india": {
-    title: "Laser Cutting Services India | Prem Industries",
+    title: "Laser Cutting Services India | Prem Industries India Limited",
     description:
       "Laser cutting services in India for industrial fabrication workflows requiring profile accuracy, quality consistency, and reliable throughput.",
     keywords: laserCuttingServicesIndiaKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/cnc-sheet-metal-fabrication": {
-    title: "CNC Sheet Metal Fabrication | Prem Industries",
+    title: "CNC Sheet Metal Fabrication | Prem Industries India Limited",
     description:
       "CNC sheet metal fabrication services for OEM and B2B programs needing repeatable processing, controlled quality, and scalable execution.",
     keywords: cncSheetMetalFabricationKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/metal-bending-services": {
-    title: "Metal Bending Services | Prem Industries",
+    title: "Metal Bending Services | Prem Industries India Limited",
     description:
       "Metal bending services for sheet metal programs that need dependable forming quality and production-ready component output.",
     keywords: metalBendingServicesKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/welding-fabrication-services": {
-    title: "Welding Fabrication Services | Prem Industries",
+    title: "Welding Fabrication Services | Prem Industries India Limited",
     description:
       "Welding fabrication services for industrial and OEM projects requiring strong assembly integrity and repeatable fabrication quality.",
     keywords: weldingFabricationServicesKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/oem-sheet-metal-manufacturer": {
-    title: "OEM Sheet Metal Manufacturer | Prem Industries",
+    title: "OEM Sheet Metal Manufacturer | Prem Industries India Limited",
     description:
       "OEM sheet metal manufacturer supporting high-volume industrial programs with structured process control and delivery-focused execution.",
     keywords: oemSheetMetalManufacturerKeywords,
     image: "/sheetmetal/press-new.jpg",
   },
   "/sheet-metal-fabrication-quote": {
-    title: "Sheet Metal Fabrication Quote | Prem Industries",
+    title: "Sheet Metal Fabrication Quote | Prem Industries India Limited",
     description:
       "Request a sheet metal fabrication quote for custom components, OEM manufacturing requirements, and bulk industrial fabrication programs.",
     keywords: sheetMetalFabricationQuoteKeywords,
@@ -468,98 +468,98 @@ const SEO_BY_PATH = {
   ...dynamicAboutSeoByPath,
   ...dynamicBlogSeoByPath,
   "/injectionmoulding": {
-    title: "Injection Molding Manufacturer India | Prem Industries",
+    title: "Injection Molding Manufacturer India | Prem Industries India Limited",
     description:
       "Injection molding manufacturer in India for custom plastic components, OEM plastic parts, and high-precision industrial molding programs.",
     keywords: getKeywordsForMetadata(injectionCoreKeywords),
     image: "/injectionmolding/injection.webp",
   },
   "/injection-molding-manufacturer-india": {
-    title: "Injection Molding Manufacturer India | Prem Industries",
+    title: "Injection Molding Manufacturer India | Prem Industries India Limited",
     description:
       "Injection molding manufacturer in India for OEM and B2B buyers needing scalable output, process control, and dependable component quality.",
     keywords: injectionMoldingManufacturerIndiaKeywords,
     image: "/injectionmolding/injection.webp",
   },
   "/plastic-injection-molding-company": {
-    title: "Plastic Injection Molding Company | Prem Industries",
+    title: "Plastic Injection Molding Company | Prem Industries India Limited",
     description:
       "Plastic injection molding company delivering repeatable molded part production for industrial, appliance, and consumer product applications.",
     keywords: plasticInjectionMoldingCompanyKeywords,
     image: "/injectionmolding/injection.webp",
   },
   "/custom-plastic-molding": {
-    title: "Custom Plastic Molding | Prem Industries",
+    title: "Custom Plastic Molding | Prem Industries India Limited",
     description:
       "Custom plastic molding services with structured quality checkpoints and scalable manufacturing support for customer-specific parts.",
     keywords: customPlasticMoldingKeywords,
     image: "/injectionmolding/injection.webp",
   },
   "/oem-injection-molding-india": {
-    title: "OEM Injection Molding India | Prem Industries",
+    title: "OEM Injection Molding India | Prem Industries India Limited",
     description:
       "OEM injection molding in India with production planning, stable process control, and delivery-focused execution for long-term programs.",
     keywords: oemInjectionMoldingIndiaKeywords,
     image: "/injectionmolding/injection.webp",
   },
   "/high-precision-plastic-molding": {
-    title: "High Precision Plastic Molding | Prem Industries",
+    title: "High Precision Plastic Molding | Prem Industries India Limited",
     description:
       "High precision plastic molding support for engineered applications requiring repeatability, controlled quality, and reliable throughput.",
     keywords: highPrecisionPlasticMoldingKeywords,
     image: "/injectionmolding/injection.webp",
   },
   "/manufacturing-company-india": {
-    title: "Industrial Manufacturing Company India | Prem Industries",
+    title: "Industrial Manufacturing Company India | Prem Industries India Limited",
     description:
-      "Prem Industries supports contract manufacturing, OEM programs, and end-to-end production solutions for industrial customers.",
+      "Prem Industries India Limited supports contract manufacturing, OEM programs, and end-to-end production solutions for industrial customers.",
     keywords: manufacturingCompanyKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/industrial-solutions-india": {
-    title: "Industrial Solutions Provider India | Prem Industries",
+    title: "Industrial Solutions Provider India | Prem Industries India Limited",
     description:
       "Industrial solutions provider in India delivering custom manufacturing solutions, B2B production support, and scalable industrial services.",
     keywords: industrialSolutionsKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/oem-manufacturing-india": {
-    title: "OEM Manufacturing Company India | Prem Industries",
+    title: "OEM Manufacturing Company India | Prem Industries India Limited",
     description:
       "OEM manufacturing support with contract production services, factory-scale capability, and quality-led industrial execution.",
     keywords: oemManufacturingKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/contract-manufacturing-india": {
-    title: "Contract Manufacturing India | Prem Industries",
+    title: "Contract Manufacturing India | Prem Industries India Limited",
     description:
       "Contract manufacturing in India for B2B and OEM programs requiring dependable execution, quality consistency, and scalable production planning.",
     keywords: contractManufacturingIndiaKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/industrial-manufacturing-services": {
-    title: "Industrial Manufacturing Services | Prem Industries",
+    title: "Industrial Manufacturing Services | Prem Industries India Limited",
     description:
       "Industrial manufacturing services for enterprises seeking reliable production systems, process discipline, and delivery-focused execution.",
     keywords: industrialManufacturingServicesKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/custom-product-manufacturing-india": {
-    title: "Custom Product Manufacturing India | Prem Industries",
+    title: "Custom Product Manufacturing India | Prem Industries India Limited",
     description:
       "Custom product manufacturing in India with controlled production workflows, quality checkpoints, and scale-ready execution support.",
     keywords: customProductManufacturingIndiaKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/third-party-manufacturing-india": {
-    title: "Third Party Manufacturing India | Prem Industries",
+    title: "Third Party Manufacturing India | Prem Industries India Limited",
     description:
       "Third party manufacturing in India for brands looking to outsource production to a reliable industrial manufacturing partner.",
     keywords: thirdPartyManufacturingIndiaKeywords,
     image: "/home/hero-packaging.jpg",
   },
   "/turnkey-manufacturing-services": {
-    title: "Turnkey Manufacturing Services | Prem Industries",
+    title: "Turnkey Manufacturing Services | Prem Industries India Limited",
     description:
       "Turnkey manufacturing services with end-to-end industrial execution support, from production planning through delivery alignment.",
     keywords: turnkeyManufacturingServicesKeywords,
@@ -597,7 +597,7 @@ const SEO_BY_PATH = {
     image: "/sheetmetal/slitting-1.jpg",
   },
   "/redirects/whatsnew/coolers": {
-    title: "Cooler Components Manufacturing | Prem Industries",
+    title: "Cooler Components Manufacturing | Prem Industries India Limited",
     description:
       "Explore advanced injection moulded cooler component manufacturing with high-capacity infrastructure and quality traceability.",
     keywords:
@@ -606,7 +606,7 @@ const SEO_BY_PATH = {
     noindex: true,
   },
   "/redirects/whatsnew/chimney": {
-    title: "Smart Kitchen Chimneys for Next India | Prem Industries",
+    title: "Smart Kitchen Chimneys for Next India | Prem Industries India Limited",
     description:
       "BIS certified kitchen chimney manufacturing with strong suction performance, OEM readiness, and in-house production control.",
     keywords:
@@ -617,13 +617,13 @@ const SEO_BY_PATH = {
   "/case-studies": {
     title: "Manufacturing Case Studies | Prem Industries India Limited",
     description:
-      "Read real-world case studies from Prem Industries across sheet metal, injection moulding, and coil processing operations.",
+      "Read real-world case studies from Prem Industries India Limited across sheet metal, injection moulding, and coil processing operations.",
     keywords:
       "manufacturing case studies India, sheet metal case study, injection moulding case study",
     image: "/sheetmetal/press-new.jpg",
   },
   "/case-studies/sheet-metal-automotive-bracket-line": {
-    title: "Automotive Bracket Line Stabilization | Prem Industries Case Study",
+    title: "Automotive Bracket Line Stabilization | Prem Industries India Limited Case Study",
     description:
       "Case study on improving dimensional consistency and dispatch reliability in a sheet metal automotive bracket program.",
     keywords:
@@ -641,7 +641,7 @@ const SEO_BY_PATH = {
   },
   "/case-studies/injection-molding-appliance-housing": {
     title:
-      "Injection Moulding Appliance Housing Ramp-Up | Prem Industries Case Study",
+      "Injection Moulding Appliance Housing Ramp-Up | Prem Industries India Limited Case Study",
     description:
       "Case study on scaling appliance housing production through process control and stable injection moulding output.",
     keywords:
@@ -659,7 +659,7 @@ const SEO_BY_PATH = {
   },
   "/case-studies/coil-processing-fast-turnaround": {
     title:
-      "Coil Processing Fast-Turnaround Program | Prem Industries Case Study",
+      "Coil Processing Fast-Turnaround Program | Prem Industries India Limited Case Study",
     description:
       "Case study on improving material conversion turnaround using coordinated CTL, shearing, and slitting workflows.",
     keywords:

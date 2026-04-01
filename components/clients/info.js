@@ -225,7 +225,7 @@ export default function ClientPageContents() {
         <div className="absolute inset-0">
           <Image
             src="/clients/banner.jpg"
-            alt="Prem Industries client network"
+            alt="Prem Industries India Limited client network"
             fill
             priority
             sizes="100vw"
@@ -248,7 +248,7 @@ export default function ClientPageContents() {
               And Industrial Buyers
             </h1>
             <p className="mt-3.5 max-w-[700px] text-[12px] leading-[1.65] text-white/84 sm:mt-4 sm:text-[14px] sm:leading-[1.72] lg:text-[14.5px]">
-              Prem Industries works with a broad B2B client base across
+              Prem Industries India Limited works with a broad B2B client base across
               packaging, repeat supply programs, industrial demand,
               retail-linked operations, and OEM-facing execution. The client
               network shown here is organized from the confirmed public roster.

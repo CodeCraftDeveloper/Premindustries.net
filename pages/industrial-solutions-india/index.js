@@ -47,7 +47,7 @@ export default function IndustrialSolutionsIndiaPage() {
     },
     {
       href: "/contact",
-      label: "Contact Prem Industries",
+      label: "Contact Prem Industries India Limited",
       description: "Discuss your industrial project requirements",
     },
   ];
@@ -56,7 +56,7 @@ export default function IndustrialSolutionsIndiaPage() {
     <KeywordLandingPage
       eyebrow="Industrial Solutions Provider India"
       title="Industrial Solutions India"
-      intro="Prem Industries delivers industrial solutions in India for OEM and B2B buyers that need reliable manufacturing services, engineering support, and scalable output across repeat production programs."
+      intro="Prem Industries India Limited delivers industrial solutions in India for OEM and B2B buyers that need reliable manufacturing services, engineering support, and scalable output across repeat production programs."
       spotlightCards={solutionAreas}
       sections={[
         {
@@ -72,7 +72,7 @@ export default function IndustrialSolutionsIndiaPage() {
           body: "These service structures are designed for buyers who need clear capability positioning, repeat-order reliability, and fast pathways into technical or commercial conversations.",
         },
       ]}
-      primaryCta={{ href: "/contact", label: "Contact Prem Industries" }}
+      primaryCta={{ href: "/contact", label: "Contact Prem Industries India Limited" }}
       secondaryCta={{
         href: "/oem-manufacturing-india",
         label: "OEM Manufacturing India",

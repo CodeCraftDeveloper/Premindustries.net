@@ -24,7 +24,7 @@ export default function WhyPremSection() {
     <section className="why-prem">
       <div className="mx-auto grid w-full max-w-[1380px] gap-[18px] px-[14px] sm:px-[18px] lg:grid-cols-[minmax(260px,0.9fr)_minmax(260px,1.2fr)] lg:px-6">
         <div className="left">
-          <p className="kicker">WHY PREM INDUSTRIES</p>
+          <p className="kicker">WHY PREM INDUSTRIES INDIA LIMITED</p>
           <h2>A partner built for consistency, scale, and trust.</h2>
           <p>
             We blend manufacturing depth with execution systems that help

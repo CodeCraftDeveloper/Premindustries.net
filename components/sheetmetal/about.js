@@ -118,15 +118,11 @@ export default function AboutTwo() {
       <section className="about-section mb-5 overflow-x-hidden">
         <div className="mx-auto w-full max-w-[1380px] px-[14px] py-4 sm:px-[18px] sm:py-5 lg:px-6 lg:py-6">
           <div className="max-w-[1220px]">
-            <h3
-              className="font-condensed text-[clamp(2.1rem,4vw,3.5rem)] uppercase leading-[1.02] tracking-[0.01em] text-[#0b1b2b]"
-            >
+            <h3 className="font-condensed text-[clamp(2.1rem,4vw,3.5rem)] uppercase leading-[1.02] tracking-[0.01em] text-[#0b1b2b]">
               Sheet Metal Components Manufacturing
             </h3>
 
-            <p
-              className="mt-4 max-w-[1240px] text-[clamp(14px,1.2vw,17px)] leading-[1.7] text-[#22354a]"
-            >
+            <p className="mt-4 max-w-[1240px] text-[clamp(14px,1.2vw,17px)] leading-[1.7] text-[#22354a]">
               Prem Industries India Limited operates an integrated sheet metal
               components manufacturing division designed for dimensional
               accuracy, repeatability, and high-volume dispatch. From coil
@@ -141,7 +137,7 @@ export default function AboutTwo() {
               <div className="relative aspect-[16/9] w-full">
                 <Image
                   src="/sheetmetal/about.jpg"
-                  alt="Sheet metal components at Prem Industries"
+                  alt="Sheet metal components at Prem Industries India Limited"
                   fill
                   priority
                   className="object-cover object-center"
@@ -183,7 +179,7 @@ export default function AboutTwo() {
         ) : (
           <Image
             src="/sheetmetal/press-new.jpg"
-            alt="Sheet metal industry coverage at Prem Industries"
+            alt="Sheet metal industry coverage at Prem Industries India Limited"
             fill
             sizes="100vw"
             className="coverage-video"

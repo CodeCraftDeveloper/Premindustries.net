@@ -68,11 +68,11 @@ export default function ManufacturingCompanyIndiaPage() {
     <KeywordLandingPage
       eyebrow="Prem Industries India Limited"
       title="Industrial Manufacturing Company India"
-      intro="Prem Industries delivers end-to-end production support for OEMs, industrial buyers, and high-volume product teams."
+      intro="Prem Industries India Limited delivers end-to-end production support for OEMs, industrial buyers, and high-volume product teams."
       highlights={capabilities}
       sections={[
         {
-          heading: "Why enterprises choose Prem Industries",
+          heading: "Why enterprises choose Prem Industries India Limited",
           body: "As a multi-sector manufacturing company, we combine engineering, production, quality systems, and delivery coordination to support scalable product programs across India.",
         },
         {

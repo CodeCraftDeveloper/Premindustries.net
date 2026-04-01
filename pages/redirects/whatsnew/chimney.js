@@ -197,7 +197,7 @@ export default function ChimneyProductPage() {
   return (
     <>
       <Head>
-        <title>Smart Kitchen Chimneys for Next India | Prem Industries</title>
+        <title>Smart Kitchen Chimneys for Next India | Prem Industries India Limited</title>
         <meta
           name="description"
           content="Manufacturing excellence since 1975. Built in India with global standards, powerful suction, baffle filtration, and advanced auto-clean chimney technology."
@@ -205,7 +205,7 @@ export default function ChimneyProductPage() {
         <meta name="robots" content="noindex,follow" />
         <meta
           property="og:title"
-          content="Smart Kitchen Chimneys for Next India | Prem Industries"
+          content="Smart Kitchen Chimneys for Next India | Prem Industries India Limited"
         />
         <meta
           property="og:description"
@@ -378,7 +378,7 @@ export default function ChimneyProductPage() {
               <p className="showcase-kicker">About Us</p>
               <h3>We Always Make The Best</h3>
               <p>
-                Prem Industries combines deep manufacturing heritage with modern
+                Prem Industries India Limited combines deep manufacturing heritage with modern
                 chimney engineering. Every product is designed for Indian
                 cooking conditions with consistent quality checks and long-life
                 performance.

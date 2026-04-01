@@ -5,7 +5,7 @@ export default function TurnkeyManufacturingServicesPage() {
     <KeywordLandingPage
       eyebrow="Industrial OEM Vertical"
       title="Turnkey Manufacturing Services"
-      intro="Turnkey manufacturing services from Prem Industries for businesses that need coordinated end-to-end execution across manufacturing workflows and supply cycles."
+      intro="Turnkey manufacturing services from Prem Industries India Limited for businesses that need coordinated end-to-end execution across manufacturing workflows and supply cycles."
       sections={[
         {
           heading: "End-to-end manufacturing coordination",

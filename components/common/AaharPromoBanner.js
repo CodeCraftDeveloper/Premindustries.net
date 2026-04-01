@@ -22,8 +22,8 @@ export default function AaharPromoBanner() {
           AAHAR 2026
         </h2>
         <p className="mx-auto max-w-[1360px] text-[clamp(16px,1.1vw,36px)] leading-[1.35] text-[#27364f]">
-          Visit Prem Industries at AAHAR 2026 to explore our latest sustainable
-          packaging innovations.{" "}
+          Visit Prem Industries India Limited at AAHAR 2026 to explore our
+          latest sustainable packaging innovations.{" "}
           <Link href="/contact" className="font-bold !text-[#e12929]">
             CONNECT WITH OUR TEAM
           </Link>{" "}
