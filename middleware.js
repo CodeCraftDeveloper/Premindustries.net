@@ -13,6 +13,7 @@ const LEGACY_HOSTS = new Set([
 export function middleware(request) {
   const hostHeader = request.headers.get("host");
   const host = hostHeader ? hostHeader.toLowerCase() : "";
+  const hostWithoutPort = host.replace(/:\d+$/, "");
   const forwardedProto = request.headers.get("x-forwarded-proto");
   const redirectUrl = request.nextUrl.clone();
   let shouldRedirect = false;
@@ -28,12 +29,18 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
-  if (forwardedProto && forwardedProto !== "https") {
+  if (forwardedProto && forwardedProto.split(",")[0].trim() !== "https") {
     redirectUrl.protocol = "https";
     shouldRedirect = true;
   }
 
-  if (LEGACY_HOSTS.has(host) || host === "") {
+  if (LEGACY_HOSTS.has(hostWithoutPort) || hostWithoutPort === "") {
+    redirectUrl.protocol = "https";
+    redirectUrl.host = CANONICAL_HOST;
+    shouldRedirect = true;
+  }
+
+  if (hostWithoutPort === CANONICAL_HOST && host.endsWith(":3000")) {
     redirectUrl.protocol = "https";
     redirectUrl.host = CANONICAL_HOST;
     shouldRedirect = true;
