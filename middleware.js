@@ -12,17 +12,23 @@ const LEGACY_HOSTS = new Set([
 
 export function middleware(request) {
   const hostHeader = request.headers.get("host");
-  const host = hostHeader ? hostHeader.toLowerCase() : "";
-  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const forwardedHostHeader = request.headers.get("x-forwarded-host");
+  const rawHost = (forwardedHostHeader || hostHeader || "").toLowerCase();
+  const hostToken = rawHost.split(",")[0].trim();
+  const hostWithoutPort = hostToken.replace(/:\d+$/, "");
+  const forwardedProtoHeader = request.headers.get("x-forwarded-proto");
+  const forwardedProto = forwardedProtoHeader
+    ? forwardedProtoHeader.split(",")[0].trim().toLowerCase()
+    : "";
   const redirectUrl = request.nextUrl.clone();
   let shouldRedirect = false;
   const isLocalHost =
-    host.startsWith("localhost") ||
-    host.startsWith("127.0.0.1") ||
-    host.startsWith("[::1]") ||
-    host.includes(".devtunnels.") ||
-    host.includes(".ngrok.") ||
-    host.includes(".local");
+    hostToken.startsWith("localhost") ||
+    hostToken.startsWith("127.0.0.1") ||
+    hostToken.startsWith("[::1]") ||
+    hostToken.includes(".devtunnels.") ||
+    hostToken.includes(".ngrok.") ||
+    hostToken.includes(".local");
 
   if (isLocalHost) {
     return NextResponse.next();
@@ -33,9 +39,20 @@ export function middleware(request) {
     shouldRedirect = true;
   }
 
-  if (LEGACY_HOSTS.has(host) || host === "") {
+  if (LEGACY_HOSTS.has(hostWithoutPort) || hostWithoutPort === "") {
     redirectUrl.protocol = "https";
     redirectUrl.host = CANONICAL_HOST;
+    shouldRedirect = true;
+  }
+
+  if (hostWithoutPort === CANONICAL_HOST && hostToken.includes(":")) {
+    redirectUrl.protocol = "https";
+    redirectUrl.host = CANONICAL_HOST;
+    shouldRedirect = true;
+  }
+
+  if (hostWithoutPort && redirectUrl.host !== hostWithoutPort) {
+    redirectUrl.host = hostWithoutPort;
     shouldRedirect = true;
   }
 
