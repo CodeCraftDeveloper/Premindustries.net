@@ -15,12 +15,14 @@ export function middleware(request) {
   const forwardedHostHeader = request.headers.get("x-forwarded-host");
   const rawHost = (forwardedHostHeader || hostHeader || "").toLowerCase();
   const hostToken = rawHost.split(",")[0].trim();
-  const hostWithoutPort = hostToken.replace(/:\d+$/, "");
+  const publicHostname = hostToken.replace(/:\d+$/, "");
   const forwardedProtoHeader = request.headers.get("x-forwarded-proto");
   const forwardedProto = forwardedProtoHeader
     ? forwardedProtoHeader.split(",")[0].trim().toLowerCase()
     : "";
   const redirectUrl = request.nextUrl.clone();
+  const requestedHostname = redirectUrl.hostname.toLowerCase();
+  const requestedPort = redirectUrl.port;
   let shouldRedirect = false;
   const isLocalHost =
     hostToken.startsWith("localhost") ||
@@ -39,20 +41,21 @@ export function middleware(request) {
     shouldRedirect = true;
   }
 
-  if (LEGACY_HOSTS.has(hostWithoutPort) || hostWithoutPort === "") {
+  const targetHostname =
+    !publicHostname || LEGACY_HOSTS.has(publicHostname)
+      ? CANONICAL_HOST
+      : publicHostname;
+
+  if (targetHostname !== requestedHostname) {
     redirectUrl.protocol = "https";
-    redirectUrl.host = CANONICAL_HOST;
+    redirectUrl.hostname = targetHostname;
+    redirectUrl.port = "";
     shouldRedirect = true;
   }
 
-  if (hostWithoutPort === CANONICAL_HOST && hostToken.includes(":")) {
+  if (requestedPort) {
     redirectUrl.protocol = "https";
-    redirectUrl.host = CANONICAL_HOST;
-    shouldRedirect = true;
-  }
-
-  if (hostWithoutPort && redirectUrl.host !== hostWithoutPort) {
-    redirectUrl.host = hostWithoutPort;
+    redirectUrl.port = "";
     shouldRedirect = true;
   }
 
