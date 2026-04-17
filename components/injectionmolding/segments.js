@@ -94,17 +94,19 @@ const segments = [
   {
     title: (
       <>
-        Healthcare
+        White
         <br />
-        & Hygiene
+        Goods
       </>
     ),
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="16" y="26" width="32" height="10" rx="2" />
-        <path d="M20 36v14M44 36v14" />
-        <rect x="14" y="20" width="14" height="6" rx="2" />
-        <rect x="36" y="20" width="14" height="6" rx="2" />
+        <rect x="18" y="10" width="28" height="44" rx="4" />
+        <path d="M18 22h28" />
+        <circle cx="24" cy="16" r="1.8" />
+        <circle cx="30" cy="16" r="1.8" />
+        <circle cx="32" cy="38" r="9" />
+        <path d="M26 46l12-12" />
       </svg>
     ),
   },
