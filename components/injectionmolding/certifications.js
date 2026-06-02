@@ -20,7 +20,7 @@ const certs = [
   },
   {
     alt: "Injection moulding certificate 4",
-    src: "/injectionmolding/injectionCertificate4.png",
+    src: "/injectionmolding/injectionCertificate4.webp",
     label: "Certificate of Registration",
   },
 ];
