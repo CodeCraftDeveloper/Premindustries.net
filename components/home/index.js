@@ -18,6 +18,7 @@ import ExecutionProcessSection from "./ExecutionProcessSection";
 import HomeCtaSection from "./HomeCtaSection";
 import HeroSection from "./HeroSection";
 import RecentBlogsSection from "@/components/blogs/RecentBlogsSection";
+import WhatsNewSection from "./WhatsNewSection";
 // If you later want the popup, place the image in /public and import it:
 // import Image from "next/image";
 // import PopupImg from "/public/your-popup-image.png";
@@ -36,6 +37,10 @@ export default function HomeTwoClient() {
 
       <section>
         <HeroSection />
+      </section>
+
+      <section>
+        <WhatsNewSection />
       </section>
 
       <section>

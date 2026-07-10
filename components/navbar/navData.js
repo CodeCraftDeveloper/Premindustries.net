@@ -6,7 +6,8 @@ export const desktopNavItems = [
     children: [
       {
         label: "Packaging Sector",
-        href: "/packaging",
+        href: "https://prempackaging.com/",
+        external: true,
       },
       {
         label: "Steel Sector",

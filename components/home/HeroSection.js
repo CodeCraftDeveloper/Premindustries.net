@@ -46,7 +46,7 @@ function hexToRgba(hex, alpha) {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-var(--site-header-height))] overflow-hidden text-white lg:h-[calc(100svh-var(--site-header-height))]">
+    <section className="relative min-h-[calc(100vh-var(--site-header-height))] overflow-visible text-white lg:h-[calc(100svh-var(--site-header-height))] lg:overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/home/u-copy.png"
@@ -61,8 +61,8 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(11,15,20,0.65)_0%,rgba(11,15,20,0.45)_35%,rgba(11,15,20,0.15)_70%,rgba(11,15,20,0.05)_100%)] after:absolute after:inset-0 after:content-[''] after:bg-[linear-gradient(120deg,rgba(255,90,79,0.15)_0%,rgba(255,90,79,0.05)_30%,rgba(0,0,0,0)_62%)]" />
 
-      <div className="relative z-20 h-full min-h-[calc(100vh-var(--site-header-height))] w-full px-6 sm:px-8 lg:min-h-0 lg:px-12 xl:px-16">
-        <div className="flex h-full flex-col pt-20 pb-6 sm:pt-24 sm:pb-7 lg:pt-16 lg:pb-3 xl:pt-20 xl:pb-4 [@media(min-width:1024px)_and_(max-height:900px)]:pt-[3.25rem] [@media(min-width:1024px)_and_(max-height:900px)]:pb-[0.6rem] [@media(min-width:1024px)_and_(max-height:780px)]:pt-10 [@media(min-width:1024px)_and_(max-height:780px)]:pb-[0.4rem]">
+      <div className="relative z-20 h-auto min-h-[calc(100vh-var(--site-header-height))] w-full px-6 sm:px-8 lg:h-full lg:min-h-0 lg:px-12 xl:px-16">
+        <div className="flex h-auto min-h-full flex-col pt-20 pb-6 sm:pt-24 sm:pb-7 lg:h-full lg:min-h-0 lg:pt-16 lg:pb-3 xl:pt-20 xl:pb-4 [@media(min-width:1024px)_and_(max-height:900px)]:pt-[3.25rem] [@media(min-width:1024px)_and_(max-height:900px)]:pb-[0.6rem] [@media(min-width:1024px)_and_(max-height:780px)]:pt-10 [@media(min-width:1024px)_and_(max-height:780px)]:pb-[0.4rem]">
           <div className="w-full">
             <p className="mb-4 text-[11px] uppercase tracking-[0.18em] text-white/55 [text-shadow:0_2px_16px_rgba(0,0,0,0.22)] sm:mb-5">
               Prem Industries India Limited
@@ -102,12 +102,12 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="mt-auto grid w-full grid-cols-1 gap-4 px-7 pt-3 sm:px-12 sm:pt-4 lg:grid-cols-3 lg:gap-8 lg:px-20 lg:pt-4 xl:px-32 [@media(min-width:1024px)_and_(max-height:900px)]:gap-4 [@media(min-width:1024px)_and_(max-height:900px)]:pt-2 [@media(min-width:1024px)_and_(max-height:780px)]:pt-[0.35rem]">
+          <div className="mt-auto flex w-full flex-row overflow-x-auto snap-x snap-mandatory gap-4 px-6 -mx-6 w-[calc(100%+3rem)] pt-6 pb-6 scrollbar-none lg:grid lg:grid-cols-3 lg:gap-8 lg:px-20 lg:pt-4 xl:px-32 lg:mx-0 lg:w-full lg:overflow-visible lg:pb-0 [@media(min-width:1024px)_and_(max-height:900px)]:gap-4 [@media(min-width:1024px)_and_(max-height:900px)]:pt-2 [@media(min-width:1024px)_and_(max-height:780px)]:pt-[0.35rem]">
             {heroCards.map((card, index) => (
               <Link
                 key={card.title}
                 href={card.href}
-                className="group relative flex min-h-[212px] w-full flex-col overflow-hidden rounded-[24px] border border-white/30 p-8 shadow-[0_10px_30px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.6)] backdrop-blur-[20px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2.5 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.6)] [@media(min-width:1024px)_and_(max-height:900px)]:min-h-[178px] [@media(min-width:1024px)_and_(max-height:900px)]:p-5 [@media(min-width:1024px)_and_(max-height:780px)]:min-h-[160px] [@media(min-width:1024px)_and_(max-height:780px)]:px-4 [@media(min-width:1024px)_and_(max-height:780px)]:py-[0.9rem]"
+                className="group relative flex min-h-[188px] w-[82vw] shrink-0 snap-center flex-col overflow-hidden rounded-[20px] border border-white/30 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.6)] backdrop-blur-[20px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2.5 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.6)] lg:w-full lg:min-h-[212px] lg:rounded-[24px] lg:p-8 [@media(min-width:1024px)_and_(max-height:900px)]:min-h-[178px] [@media(min-width:1024px)_and_(max-height:900px)]:p-5 [@media(min-width:1024px)_and_(max-height:780px)]:min-h-[160px] [@media(min-width:1024px)_and_(max-height:780px)]:px-4 [@media(min-width:1024px)_and_(max-height:780px)]:py-[0.9rem]"
                 style={{
                   "--card-accent": card.accent,
                   backgroundImage: `radial-gradient(circle at top left, ${hexToRgba(card.accent, 0.15)}, transparent 42%), linear-gradient(145deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55))`,
@@ -164,7 +164,7 @@ export default function HeroSection() {
                 </div>
 
                 <h3
-                  className="relative z-10 mt-5 text-[24px] leading-[1.02] tracking-[-0.5px] text-slate-900 [@media(min-width:1024px)_and_(max-height:780px)]:mt-3 [@media(min-width:1024px)_and_(max-height:780px)]:text-[18px] xl:text-[26px]"
+                  className="relative z-10 mt-3 text-[18px] leading-[1.1] tracking-[-0.5px] text-slate-900 lg:mt-5 lg:text-[24px] xl:text-[26px] [@media(min-width:1024px)_and_(max-height:780px)]:mt-3 [@media(min-width:1024px)_and_(max-height:780px)]:text-[18px]"
                   style={{
                     fontFamily: "var(--font-display)",
                     fontWeight: 600,
@@ -174,20 +174,20 @@ export default function HeroSection() {
                 </h3>
 
                 <p
-                  className="relative z-10 mt-3 max-w-[32ch] text-[14px] leading-[1.65] text-slate-600 [@media(min-width:1024px)_and_(max-height:780px)]:mt-[0.45rem] [@media(min-width:1024px)_and_(max-height:780px)]:text-[13px] [@media(min-width:1024px)_and_(max-height:780px)]:leading-[1.4]"
+                  className="relative z-10 mt-2 max-w-[32ch] text-[12px] leading-[1.5] text-slate-600 lg:mt-3 lg:text-[14px] lg:leading-[1.65] [@media(min-width:1024px)_and_(max-height:780px)]:mt-[0.45rem] [@media(min-width:1024px)_and_(max-height:780px)]:text-[13px] [@media(min-width:1024px)_and_(max-height:780px)]:leading-[1.4]"
                   style={{ fontFamily: "var(--font-sans)" }}
                 >
                   {card.body}
                 </p>
 
-                <div className="relative z-10 mt-auto flex items-center justify-between gap-4 border-t border-slate-200/70 pt-6 [@media(min-width:1024px)_and_(max-height:780px)]:pt-[0.75rem]">
+                <div className="relative z-10 mt-auto flex items-center justify-between gap-4 border-t border-slate-200/70 pt-4 lg:pt-6 [@media(min-width:1024px)_and_(max-height:780px)]:pt-[0.75rem]">
                   <span
                     className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-900"
                     style={{ fontFamily: "var(--font-sans)" }}
                   >
                     Explore Sector
                   </span>
-                  <span className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-full bg-white text-[22px] leading-none text-[color:var(--card-accent)] shadow-[0_8px_20px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:scale-110">
+                  <span className="inline-flex h-[40px] w-[40px] items-center justify-center rounded-full bg-white text-[18px] leading-none text-[color:var(--card-accent)] shadow-[0_8px_20px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover:scale-110 lg:h-[52px] lg:w-[52px] lg:text-[22px]">
                     &rarr;
                   </span>
                 </div>
@@ -196,6 +196,15 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .scrollbar-none::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-none {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }

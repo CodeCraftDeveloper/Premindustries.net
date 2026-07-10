@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import WhyChoosePremChimneys from "@/components/whatsnew/WhyChoosePremChimneys";
 
-const DIRECT_LINK = "https://premindustries.net/redirects/whatsnew/chimney";
+const DIRECT_LINK = "https://premindustries.in/redirects/whatsnew/chimney";
 
 const detailItems = [
   {
@@ -197,7 +197,9 @@ export default function ChimneyProductPage() {
   return (
     <>
       <Head>
-        <title>Smart Kitchen Chimneys for Next India | Prem Industries India Limited</title>
+        <title>
+          Smart Kitchen Chimneys for Next India | Prem Industries India Limited
+        </title>
         <meta
           name="description"
           content="Manufacturing excellence since 1975. Built in India with global standards, powerful suction, baffle filtration, and advanced auto-clean chimney technology."
@@ -314,7 +316,7 @@ export default function ChimneyProductPage() {
               ))}
             </div>
             <a
-              href="https://premindustries.net/"
+              href="https://premindustries.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="primary-btn"
@@ -378,10 +380,10 @@ export default function ChimneyProductPage() {
               <p className="showcase-kicker">About Us</p>
               <h3>We Always Make The Best</h3>
               <p>
-                Prem Industries India Limited combines deep manufacturing heritage with modern
-                chimney engineering. Every product is designed for Indian
-                cooking conditions with consistent quality checks and long-life
-                performance.
+                Prem Industries India Limited combines deep manufacturing
+                heritage with modern chimney engineering. Every product is
+                designed for Indian cooking conditions with consistent quality
+                checks and long-life performance.
               </p>
               <Link
                 href="/contact"

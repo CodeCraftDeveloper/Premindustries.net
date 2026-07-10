@@ -13,4 +13,4 @@ Disallow: /api/
 # Slow down aggressive bots slightly
 Crawl-delay: 1
 
-Sitemap: https://premindustries.net/sitemap.xml
+Sitemap: https://premindustries.in/sitemap.xml
