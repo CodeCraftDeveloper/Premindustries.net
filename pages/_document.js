@@ -7,6 +7,12 @@ export default function Document() {
         {/* Favicon */}
         <link rel="icon" href="/title-logo.png" />
 
+        {/* Google Site Verification */}
+        <meta
+          name="google-site-verification"
+          content="cqhSIS65Vmd737jO-JPThqumO0QxC0-88YsA25-s3Dg"
+        />
+
         {/* Telephone format detection */}
         <meta name="format-detection" content="telephone=no" />
 

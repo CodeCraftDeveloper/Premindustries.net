@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const heroCards = [
@@ -48,15 +47,17 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-var(--site-header-height))] overflow-visible text-white lg:h-[calc(100svh-var(--site-header-height))] lg:overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/home/u-copy.png"
-          alt="Prem Industries India Limited facility"
-          fill
-          priority
-          fetchPriority="high"
-          className="object-cover object-center [filter:contrast(1.1)_saturate(1.1)]"
-          sizes="100vw"
-        />
+        <video
+          className="h-full w-full object-cover object-center [filter:contrast(1.08)_saturate(1.1)]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/home/u-copy.png"
+        >
+          <source src="/home/PremHero.mp4" type="video/mp4" />
+        </video>
       </div>
 
       <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(11,15,20,0.65)_0%,rgba(11,15,20,0.45)_35%,rgba(11,15,20,0.15)_70%,rgba(11,15,20,0.05)_100%)] after:absolute after:inset-0 after:content-[''] after:bg-[linear-gradient(120deg,rgba(255,90,79,0.15)_0%,rgba(255,90,79,0.05)_30%,rgba(0,0,0,0)_62%)]" />
