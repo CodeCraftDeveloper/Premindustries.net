@@ -286,7 +286,7 @@ function SectionRenderer({ section }) {
 }
 
 export default function AboutSubpageLayout({ pageKey, page }) {
-  const isFullWidthPage = pageKey === "goel-group";
+  const isFullWidthPage = pageKey === "prem-group" || pageKey === "group-ecosystem";
   const leadSection = isFullWidthPage ? page.sections?.[0] : null;
   const remainingSections = isFullWidthPage
     ? page.sections?.slice(1) || []

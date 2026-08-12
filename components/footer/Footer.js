@@ -49,7 +49,8 @@ const quickLinks = [
 ];
 
 const aboutLinks = [
-  { label: "About Goel Group", href: "/about/goel-group" },
+  { label: "Prem Group Ecosystem", href: "/about/prem-group" },
+  { label: "Group Ecosystem", href: "/about/group-ecosystem" },
   { label: "Chairman's Office", href: "/about/chairmans-office" },
   { label: "Leadership", href: "/about/leadership" },
   { label: "Our Journey", href: "/about/our-journey" },
