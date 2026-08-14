@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# Block crawling of redirect-only pages (already noindex)
-Disallow: /redirects/
-
 # Block Next.js internals
 Disallow: /_next/
 
