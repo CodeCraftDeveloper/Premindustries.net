@@ -69,7 +69,7 @@ const roboto = Roboto({
 });
 
 // ─── GA Measurement ID ─────────────────────────────────────────────────────
-const GA_ID = "G-W5TJVHXT4T";
+const GA_ID = "G-HF5R69Z99H";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
